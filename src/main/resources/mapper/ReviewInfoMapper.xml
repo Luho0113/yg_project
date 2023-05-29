@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.younggam.app.mapper.ReviewInfoMapper">
+
+	<select id="selectReviewInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
+		select * 
+		from review_info
+	</select>
+	
+	<insert id="insertReviewInfo">
+		insert into review_info(ri_content, ri_star, ui_id, mi_title) 
+		values (#{riContent}, #{riStar}, #{uiId}, #{miTitle})
+	</insert>
+
+
+
+</mapper>
