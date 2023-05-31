@@ -2,7 +2,31 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.younggam.app.mapper.ReviewInfoMapper">
+<mapper namespace="com.younggam.app.mapper.UserInfoMapper">
+	
+	<!-- 회원 가입 -->
+	<insert id="insertUserInfo">
+		INSERT INTO user_info(ui_id, ui_name, ui_nickname, ui_password, ui_file_path, ui_email)
+		VALUES(#{uiId}, #{uiName}, #{uiNickname}, #{uiPassword}, #{uiFilePath}, #{uiEmail})
+	</insert>
+	
+	<!-- 아이디 중복 조회 -->
+	<select id="selectUserInfoByUiId" resultType="com.younggam.app.vo.UserInfoVO">
+		SELECT * FROM user_info
+		WHERE ui_id = #{uiId}
+	</select>
+	
+	<!-- 로그인 -->
+	<select id="selectUserInfo" resultType="com.younggam.app.vo.UserInfoVO">
+		SELECT * FROM user_info
+		WHERE ui_id = #{uiId}
+		AND ui_password = #{uiPassword}
+	</select>
 
-
+	<!-- 회원 탈퇴 -->
+	<delete id="deleteUserInfo">
+		DELETE FROM user_info
+		where ui_id = #{uiId}
+	</delete>
+	
 </mapper>
