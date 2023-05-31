@@ -36,6 +36,8 @@ public class UserInfoService {
 
 			userInfo.getUiFile().transferTo(file);
 			userInfo.setUiFilePath("/resources/upload/" + name + extName);
+		} else if("".equals(extName)) {
+			
 		}
 
 		

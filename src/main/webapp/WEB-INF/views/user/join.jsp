@@ -28,16 +28,17 @@
 </form>
 
 <script>
-	
 	function checkValue(){
-		const uiName = docoument.querySelector('#uiName');
+		
+		const uiName = document.querySelector('#uiName');
 		if (uiName.value.trim().length < 2) {
 			alert('이름을 2글자 이상 입력해주세요.');
 			uiName.value = '';
 			uiName.focus();
 			return false;
 		}
-	
+		
+		const uiPassword = document.querySelector('#uiPassword');
 		const uiPasswordCheck = document.querySelector('#uiPasswordCheck');
 		if (uiPasswordCheck.value != uiPassword.value) {
 			alert('비밀번호 확인이 틀렸습니다.');
@@ -45,6 +46,8 @@
 			uiPasswordCheck.focus();
 			return false;
 		}
+		
+		return true;
 	}
 	
 	function loadImg(obj){
