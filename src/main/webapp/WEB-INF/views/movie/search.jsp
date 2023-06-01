@@ -8,12 +8,13 @@
 </head>
 <body>
 <form action="/search">
-	<input id="search" name="search" value="${param.text}">
+	<input id="search" name="search" value="${param.search}">
 	<button>검색</button>
 </form>
+<h3>검색어: ${param.search}</h3> <!-- input의 value -->
+<h3>결과: ${searchMovieResult}</h3> <!-- action 보내고 돌려 받은 값 -->
 
 
-${searchMovieResult}
 
 </body>
 <script>
