@@ -11,6 +11,7 @@
 
 <h3>프로필 수정</h3>
 
+
 <button onclick="location.href='/user/delete'">탈퇴하기</button>
 
 </body>

@@ -22,6 +22,8 @@
 	<button onclick="location.href='/myInfo'">내 프로필</button>
 	<button onclick="location.href='/logout'">로그아웃</button>
 	<button onclick="location.href='/review-insert'">후기 작성</button>
+	<button onclick="location.href='/search'">영화 검색</button>
+	<button onclick="location.href='/reviews'">후기 게시판</button>
 </c:if>
 
 </body>
