@@ -97,6 +97,7 @@ public class MovieService {
             		map.put("release_date", known.getString("release_date")); //영화 개봉일
             		map.put("title", known.getString("title")); //영화 한국어 제목
             		
+            		
             		movieList.add(map);
             	}
             //영화 이름을 검색했을 경우 실행	
@@ -108,6 +109,7 @@ public class MovieService {
                 map.put("poster_path", object.getString("poster_path")); //영화 포스터(URL 일부만 들어 있음)
                 map.put("release_date", object.getString("release_date")); //영화 개봉일
                 map.put("title", object.getString("title")); //영화 한국어 제목
+
                 
                 movieList.add(map);
             }

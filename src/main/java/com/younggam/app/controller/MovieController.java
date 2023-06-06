@@ -28,6 +28,14 @@ public class MovieController {
 		return "movie/search";
 	}
 	
+	@GetMapping("/detail")
+	public String getDetail() {
+		return "movie/detail";
+	}
+	
+	
+
+	
 	
 	
 }
