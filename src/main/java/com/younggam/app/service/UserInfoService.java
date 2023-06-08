@@ -49,6 +49,7 @@ public class UserInfoService {
 		
 		return uiMapper.selectUserInfoByUiId(userInfo);
 	}
+
 	
 	//3) 로그인
 	public boolean login(UserInfoVO userInfo, HttpSession session) {

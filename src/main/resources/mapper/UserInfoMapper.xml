@@ -11,7 +11,7 @@
 	</insert>
 	
 	<!-- 아이디 중복 조회 -->
-	<select id="selectUserInfoByUiId" resultType="com.younggam.app.vo.UserInfoVO">
+	<select id="selectUserInfoByUiId" resultType="com.younggam.app.vo.UserInfoVO" >
 		SELECT * FROM user_info
 		WHERE ui_id = #{uiId}
 	</select>
