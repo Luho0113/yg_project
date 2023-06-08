@@ -14,7 +14,7 @@
 
 <form method="POST" action="/join" onsubmit="return checkValue()" enctype="multipart/form-data">
 	<div id="imgDiv" style="display:none">
-		<img src="" width="300">
+		<img src="" width="300" onerror="noImage()">
 	</div>
 	<label for="uiFilePath">프로필 이미지 : </label>
 	<input type="file" name="uiFile" id="uiFile" onchange="loadImg(this)"> <br>
@@ -28,6 +28,11 @@
 </form>
 
 <script>
+
+	function noImage(){
+		$("img").attr("src", "https://ifh.cc/g/cDROLZ.png"); //대체 이미지
+	}
+	
 	function checkValue(){
 		
 		const uiName = document.querySelector('#uiName');

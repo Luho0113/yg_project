@@ -19,9 +19,9 @@ public class NaverLoginController {
 	private UserInfoService uiService;
 	
 	//1)로그인 성공 후 화면
-	@GetMapping("/naver-main")
+	@GetMapping("/naver-login")
 	public String naverMain() {
-		return "naver/naver-main";
+		return "naver/naver-login";
 	}
 	
 

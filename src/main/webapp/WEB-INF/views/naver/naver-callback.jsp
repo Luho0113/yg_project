@@ -26,7 +26,7 @@
     alert(naver_id_login.getProfileData('email'));
     alert(naver_id_login.getProfileData('nickname'));
     alert(naver_id_login.getProfileData('age'));
-    window.close();
+    window.self.close(); //팝업창 닫기?
   }
   
 </script>

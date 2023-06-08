@@ -18,7 +18,7 @@ public class UserInfoService {
 	@Autowired
 	private UserInfoMapper uiMapper;
 	
-	private final String uploadFilePath = "C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources";
+	private final String uploadFilePath = "C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
 	
 	//1) 회원가입
 	public boolean join(UserInfoVO userInfo) throws IllegalStateException, IOException {
