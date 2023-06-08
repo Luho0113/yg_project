@@ -51,6 +51,7 @@ public class UserInfoController {
 	}
 	
 	
+	
 
 	
 	
@@ -61,18 +62,18 @@ public class UserInfoController {
 		return "user/login";
 	}
 	
-	@PostMapping("/login")
-	public String login(@ModelAttribute UserInfoVO user, HttpSession session, Model m) {
-		
-		if(uiService.login(user, session)) {
-			
-			return "index";
-		}
-		
-		m.addAttribute("msg", "아이디나 비밀번호가 잘못되었습니다.");
-		
-		return "user/login";
-	}
+//	@PostMapping("/login")
+//	public String login(@ModelAttribute UserInfoVO user, HttpSession session, Model m) {
+//		
+//		if(uiService.login(user, session)) {
+//			
+//			return "index";
+//		}
+//		
+//		m.addAttribute("msg", "아이디나 비밀번호가 잘못되었습니다.");
+//		
+//		return "user/login";
+//	}
 	
 	
 	//3) 로그아웃

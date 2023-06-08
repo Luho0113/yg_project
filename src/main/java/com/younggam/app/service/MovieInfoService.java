@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MovieInfoService {
 	
-	private final String pjPath = "C:\\Users\\USER\\git\\yg_project\\src\\main\\webapp\\resources\\upload";
+	private final String pjPath = "C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
 	@Autowired
 	private MovieInfoMapper miMapper;
 	//영화 목록

@@ -5,12 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Index</title>
+<title>영감</title>
 </head>
 <body>
-	<h3>index</h3>
-
-
+	<h3>영감</h3>
 
 	<c:if test="${user.uiId == null}">
 		<p>로그인이 필요합니다.</p>
