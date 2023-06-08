@@ -5,9 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>리뷰 상세</title>
 </head>
 <body>
-	<h1>영화 목록</h1>
+	<button>좋아요</button>
+	<button>싫어요</button>
+	<button>댓글</button>
 </body>
 </html>

@@ -1,48 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>리뷰 작성 페이지</title>
 </head>
 <body>
-<form action="/review-insert" method="POST">
-	이름: <input type="text" name="uiId" id="uiId"><br>
-	영화 제목: <input type="text" name="miTitle" id="miTitle"><button type="button" onclick="searchMovie()">검색</button><br>
-	<ul id="title"></ul>
-	내용: <textarea name="riContent" id="riContent"></textarea><br>
-	평점: <input type="text" name="riStar" id="riStar"><br>
-	<button type="submit" onclick="location.href='/review-list'">리뷰등록</button>
-</form>
+	<h2>리뷰 작성</h2>
+	<form action="" method="Post">
+		<input id="" class=""><button>검색</button>
+		<ul>
+			<li>감독: </li>
+			<li>개봉 연도: </li>
+			<li>영감 포인드: 
+				<input type="checkbox" name="연출" value="1">
+				<input type="checkbox" name="연기" value="1">
+				<input type="checkbox" name="스토리" value="1">
+				<input type="checkbox" name="OST" value="1">
+				<input type="checkbox" name="영상미" value="1">
+			</li>
+		</ul>	
+	
+	
+	
+	</form>
 </body>
-<script>
-function searchMovie(){
-var a = 0;
-const searchKeyword = document.getElementById('miTitle').value;
-const searchURL = 'https://api.themoviedb.org/3/search/movie?query=' + searchKeyword + '&include_adult=false&language=ko-KR&page=1';
-const options = {
-		  method: 'GET',
-		  headers: {
-		    accept: 'application/json',
-		    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZGE0NzZkY2EyOTk4Y2MwYWNiN2U2MzU5NjMzMDhhNSIsInN1YiI6IjY0NzM2ZTJkOTQwOGVjMDBlMTRjZGVhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rmNtSzDfgUgipyAKkyWki-Jrae8kipwRPI9ISiHdpzM'
-		  }
-		};
-
-		fetch(searchURL, options)
-		  .then(response => response.json())
-		  .then(response => {
-			  for(a; a < response.results.length; a++){
-				  
-				  let tagArea = document.getElementById('title');
-				  let new_pTag = document.createElement('li');
-				  
-				  new_pTag.innerHTML = response.results[a].title;
-				  tagArea.appendChild(new_pTag);
-				  
-			  }
-		  })
-		  .catch(err => console.error(err));
-}
-</script>
 </html>
