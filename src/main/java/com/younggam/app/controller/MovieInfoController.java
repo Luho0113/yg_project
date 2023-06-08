@@ -43,10 +43,9 @@ public class MovieInfoController {
 	}
 
 	@PostMapping("/admin/movie-add")
-	public String addMovie(MovieInfoVO movie, Model m, HttpSession session, @RequestParam List<String> miGenre)
+	public String addMovie(AdminInfoVO admin, MovieInfoVO movie, Model m, HttpSession session, @RequestParam List<String> miGenre)
 			throws Exception {
-		AdminInfoVO admin = (AdminInfoVO) session.getAttribute("admin");
-		movie.setMiCode(admin.getAdminId());
+		admin = (AdminInfoVO) session.getAttribute("admin");
 		List<String> genres = miGenre;
 		m.addAttribute("genres", genres);
 		String msg = "영화 등록이 실패하였습니다.";
