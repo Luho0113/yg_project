@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
@@ -17,8 +19,11 @@ public class SpringSecurityConfig {
         http.csrf().disable().cors().disable()
                 .authorizeHttpRequests(request -> request
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
-                        .requestMatchers("/images/**", "/", "/join").permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/images/**")).permitAll()  
+                        .requestMatchers(new AntPathRequestMatcher("/")).permitAll() 
+                        .requestMatchers(new AntPathRequestMatcher("/join")).permitAll()
                         .anyRequest().authenticated()
+                        
                 )
                 .formLogin(login -> login
                         .loginPage("/login")	// 커스텀 로그인 페이지 지정
@@ -28,6 +33,7 @@ public class SpringSecurityConfig {
                         .defaultSuccessUrl("/", true) //로그인 성공 시 이동할 수 있는 기본 페이지
                         .permitAll()
                 )
+                
                 .logout(withDefaults());
 
         return http.build();

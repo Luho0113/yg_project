@@ -61,7 +61,8 @@ public class UserInfoController {
 
 		return "user/login";
 	}
-	
+
+	//스프링에서 인증을 관리
 //	@PostMapping("/login")
 //	public String login(@ModelAttribute UserInfoVO user, HttpSession session, Model m) {
 //		
