@@ -82,9 +82,10 @@ public class UserInfoService {
 		
 		return uiMapper.deleteUserInfo(userInfo) == 1;
 	}
-
-	public Optional<UserInfoMapper> getUserInfoVOByUiId(String uiId) {
-		// TODO Auto-generated method stub
+	
+	
+	//스프링 시큐리티
+	public Optional<UserInfoVO> findOne(String uiId){
 		return uiMapper.findUserInfoByUiId(uiId);
 	}
 	

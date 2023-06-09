@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import com.younggam.app.mapper.UserInfoMapper;
 import com.younggam.app.service.UserInfoService;
+import com.younggam.app.vo.UserInfoVO;
 
 @Component
 public class MyUserDetailsService implements UserDetailsService{
@@ -29,14 +30,14 @@ public class MyUserDetailsService implements UserDetailsService{
 		// Id만 가지고 DB에서 유저 정보를 가져옴 (비밀번호 일치 여부는 스프링에서 진행)
 		
 		//Optional : NPE 발생을 방지하기 위해 사용(null을 반환하면 에러를 유발할 가능성이 높을 때)
-		Optional<UserInfoMapper> findOne = uiService.getUserInfoVOByUiId(uiId); //..?
-		UserInfoMapper member = findOne.orElseThrow(() -> new UsernameNotFoundException("없는 회원입니다 ㅠ"));
+		Optional<UserInfoVO> findOne = uiService.findOne(uiId);
+		UserInfoVO userInfo = findOne.orElseThrow(()->new UsernameNotFoundException("없는 회원임!"));
+		
 		
 		return User.builder()
-                .username(member.uiId)
-                .password(member.getPw())
-                .roles(member.getRoles())
-                .build();
+				.username(userInfo.getUiId())
+				.password(userInfo.getUiPassword())
+				.build();
 	}
 
 }

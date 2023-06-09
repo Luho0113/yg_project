@@ -37,4 +37,11 @@
 		WHERE ui_id = #{uiId}
 	</update>
 	
+	
+	<select id="findUserInfoByUiId" resultType="com.younggam.app.vo.UserInfoVO">
+		SELECT * FROM user_info
+		WHERE ui_id = #{uiId}
+		AND ui_password = #{uiPassword}
+	</select>
+	
 </mapper>
