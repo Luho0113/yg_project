@@ -22,8 +22,9 @@ public interface UserInfoMapper {
 	
 	//탈퇴
 	int deleteUserInfo(UserInfoVO userInfo);
-
-	Optional<UserInfoMapper> findUserInfoByUiId(String uiId);
+	
+	//스프링 시큐리티
+	Optional<UserInfoVO> findUserInfoByUiId(String uiId); 
 
 	
 	

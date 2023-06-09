@@ -19,6 +19,7 @@ public class SpringSecurityConfig {
         http.csrf().disable().cors().disable()
                 .authorizeHttpRequests(request -> request
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
+                        .antMatchers("/**").permitAll() //모든 요청 허용
                         .requestMatchers(new AntPathRequestMatcher("/images/**")).permitAll()  
                         .requestMatchers(new AntPathRequestMatcher("/")).permitAll() 
                         .requestMatchers(new AntPathRequestMatcher("/join")).permitAll() //.requestMatchers("/", "/login").permitAll() 형태로 안되는 이유 찾아보기
