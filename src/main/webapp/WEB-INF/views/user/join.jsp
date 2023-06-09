@@ -99,7 +99,6 @@
 				uiEmail.value = '';
 				uiEmail.value = uiEmail.value + val;
 			} 
-			
 		}
 
 		//회원가입 유효성 검사

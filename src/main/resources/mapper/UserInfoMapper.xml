@@ -26,7 +26,15 @@
 	<!-- 회원 탈퇴 -->
 	<delete id="deleteUserInfo">
 		DELETE FROM user_info
-		where ui_id = #{uiId}
+		WHERE ui_id = #{uiId}
 	</delete>
+	
+	<!-- 정보수정 -->
+	<update id="updateUserInfo">
+		UPDATE user_info
+		SET ui_password = #{uiPassword}, ui_name = #{uiName}, ui_nickname = #{uiNickname}, 
+			ui_file_path = #{uiFilePath}, ui_email = #{uiEmail}
+		WHERE ui_id = #{uiId}
+	</update>
 	
 </mapper>

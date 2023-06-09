@@ -21,12 +21,13 @@ public class SpringSecurityConfig {
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/images/**")).permitAll()  
                         .requestMatchers(new AntPathRequestMatcher("/")).permitAll() 
-                        .requestMatchers(new AntPathRequestMatcher("/join")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/join")).permitAll() //.requestMatchers("/", "/login").permitAll() 형태로 안되는 이유 찾아보기
+                        .requestMatchers(new AntPathRequestMatcher("/search")).permitAll()
                         .anyRequest().authenticated()
                         
                 )
                 .formLogin(login -> login
-                        .loginPage("/login")	// 커스텀 로그인 페이지 지정
+                        .loginPage("/login")	// [A] 커스텀 로그인 페이지 지정
                         .loginProcessingUrl("/login")	// [B] submit 받을 url
                         .usernameParameter("uiId")	// [C] submit할 아이디
                         .passwordParameter("uiPassword")	// [D] submit할 비밀번호

@@ -10,15 +10,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.younggam.app.service.UserInfoService;
 import com.younggam.app.vo.UserInfoVO;
 
 @Controller
 public class UserInfoController {
-
+	//회원 관리 컨트롤러 (가입, 로그인, 로그아웃, 탈퇴)
+	
 	@GetMapping("/")
 	public String home() {
 		return "index";
@@ -51,10 +50,6 @@ public class UserInfoController {
 	}
 	
 	
-	
-
-	
-	
 	//2) 로그인
 	@GetMapping("/login")
 	public String login() {
@@ -62,7 +57,7 @@ public class UserInfoController {
 		return "user/login";
 	}
 
-	//스프링에서 인증을 관리
+	
 //	@PostMapping("/login")
 //	public String login(@ModelAttribute UserInfoVO user, HttpSession session, Model m) {
 //		
@@ -79,16 +74,18 @@ public class UserInfoController {
 	
 	//3) 로그아웃
 	@GetMapping("/logout")
-	public String logout(HttpSession session) {
+	public String userLogout(HttpSession session) {
 		session.invalidate();
 		return "index";
 	}
+	
+	
 	
 	//4) 탈퇴
 	@GetMapping("/user/delete")
 	public String userDelete(HttpSession session, Model m) {
 		UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user");
-		if(uiService.delete(sessionUserInfo)) {
+		if(uiService.deleteUserInfo(sessionUserInfo)) {
 			m.addAttribute("msg", "정상적으로 탈퇴되었습니다.");
 			session.invalidate(); //세션도 초기화
 		}
