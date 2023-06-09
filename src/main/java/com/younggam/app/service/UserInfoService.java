@@ -2,6 +2,7 @@ package com.younggam.app.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Optional;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
@@ -30,17 +31,11 @@ public class UserInfoService {
 				extName = extName.substring(extName.lastIndexOf(".")); // .jpg, .png
 			}
 			String name = UUID.randomUUID().toString(); // 문자와 숫자로 이루어진 난수
-			
-
 			File file = new File(uploadFilePath, name + extName);
 
 			userInfo.getUiFile().transferTo(file);
 			userInfo.setUiFilePath("/resources/upload/" + name + extName);
-		} else if("".equals(extName)) {
-			
-		}
-
-		
+		} 
 		return uiMapper.insertUserInfo(userInfo)==1;
 	}
 	
@@ -49,6 +44,7 @@ public class UserInfoService {
 		
 		return uiMapper.selectUserInfoByUiId(userInfo);
 	}
+
 	
 	//3) 로그인
 	public boolean login(UserInfoVO userInfo, HttpSession session) {
@@ -63,10 +59,33 @@ public class UserInfoService {
 		return false;
 	}
 	
-	//4) 탈퇴
-	public boolean delete(UserInfoVO userInfo) {
+	
+	//4) 정보수정
+	public boolean updateUserInfo(UserInfoVO userInfo) throws IllegalStateException, IOException {
+		String extName = userInfo.getUiFile().getOriginalFilename();
+
+		if (!"".equals(extName)) {
+			if (extName.lastIndexOf(".") != -1) { // 확장자명이 틀리면 idx = -1
+				extName = extName.substring(extName.lastIndexOf(".")); // .jpg, .png
+			}
+			String name = UUID.randomUUID().toString(); // 문자와 숫자로 이루어진 난수
+			File file = new File(uploadFilePath, name + extName);
+
+			userInfo.getUiFile().transferTo(file);
+			userInfo.setUiFilePath("/resources/upload/" + name + extName);
+		} 
+		return uiMapper.updateUserInfo(userInfo) == 1;
+	}
+	
+	//5) 탈퇴
+	public boolean deleteUserInfo(UserInfoVO userInfo) {
 		
 		return uiMapper.deleteUserInfo(userInfo) == 1;
+	}
+
+	public Optional<UserInfoMapper> getUserInfoVOByUiId(String uiId) {
+		// TODO Auto-generated method stub
+		return uiMapper.findUserInfoByUiId(uiId);
 	}
 	
 	

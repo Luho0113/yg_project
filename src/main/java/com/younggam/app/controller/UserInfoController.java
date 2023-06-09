@@ -16,7 +16,8 @@ import com.younggam.app.vo.UserInfoVO;
 
 @Controller
 public class UserInfoController {
-
+	//회원 관리 컨트롤러 (가입, 로그인, 로그아웃, 탈퇴)
+	
 	@GetMapping("/")
 	public String home() {
 		return "index";
@@ -49,40 +50,42 @@ public class UserInfoController {
 	}
 	
 	
-	
 	//2) 로그인
 	@GetMapping("/login")
 	public String login() {
 
 		return "user/login";
 	}
+
 	
-	@PostMapping("/login")
-	public String login(@ModelAttribute UserInfoVO user, HttpSession session, Model m) {
-		
-		if(uiService.login(user, session)) {
-			
-			return "index";
-		}
-		
-		m.addAttribute("msg", "아이디나 비밀번호가 잘못되었습니다.");
-		
-		return "user/login";
-	}
+//	@PostMapping("/login")
+//	public String login(@ModelAttribute UserInfoVO user, HttpSession session, Model m) {
+//		
+//		if(uiService.login(user, session)) {
+//			
+//			return "index";
+//		}
+//		
+//		m.addAttribute("msg", "아이디나 비밀번호가 잘못되었습니다.");
+//		
+//		return "user/login";
+//	}
 	
 	
 	//3) 로그아웃
 	@GetMapping("/logout")
-	public String logout(HttpSession session) {
+	public String userLogout(HttpSession session) {
 		session.invalidate();
 		return "index";
 	}
+	
+	
 	
 	//4) 탈퇴
 	@GetMapping("/user/delete")
 	public String userDelete(HttpSession session, Model m) {
 		UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user");
-		if(uiService.delete(sessionUserInfo)) {
+		if(uiService.deleteUserInfo(sessionUserInfo)) {
 			m.addAttribute("msg", "정상적으로 탈퇴되었습니다.");
 			session.invalidate(); //세션도 초기화
 		}

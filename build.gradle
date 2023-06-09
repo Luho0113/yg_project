@@ -24,6 +24,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-web-services'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.1'
+	implementation 'org.springframework.boot:spring-boot-starter-security' //스프링 시큐리티 
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' //jsp 분석 추가
   	implementation 'javax.servlet:jstl' //추가
   	
