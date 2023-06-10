@@ -20,13 +20,13 @@
 </c:if>
 
 <c:forEach items="${movie}" var="movie">
-	<h3><a href="credit?movieId=${movie.id}">${movie.title}</a></h3> <%-- action 보내고 돌려 받은 값 -->
-	<p>영화 아이디: ${movie.id}</p> <%-- action 보내고 돌려 받은 값 --%>
-	<p>개봉연도: ${movie.release_date}</p> <%-- action 보내고 돌려 받은 값 --%>
+	<h3><a href="credit?movieId=${movie.id}">${movie.title}</a></h3> <%-- action 보내고 돌려 받은 값 --> --%>
+	<p>개봉연도: ${movie.releaseDate}</p> <%-- action 보내고 돌려 받은 값 --%>
 	<p>줄거리: ${movie.overview}</p> <%-- action 보내고 돌려 받은 값 --%>
-	<p>원제: ${movie.original_title}</p>
-	<p>감독: ${movie.director}</p>
-	<p><img id="poster" src="https://image.tmdb.org/t/p/w300${movie.poster_path}" width="50" height="100" /></p>
+	<p>원제: ${movie.originalTitle}</p>
+	<p>감독: ${movie.directors}</p>
+	<p>제작국가: ${movie.productionConturies}</p>
+	<p><img id="poster" src="https://image.tmdb.org/t/p/w300${movie.posterPath}" width="50" height="100" /></p>
 	
 
 </c:forEach>
