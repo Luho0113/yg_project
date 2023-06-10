@@ -66,7 +66,8 @@ public class MovieService {
 
 					//known_For 배열 뽑아서 know object 만들기
 					for(int j = 0; j < knownFor.length(); j++) {
-
+						movieVO = new MovieVO();
+						
 						JSONObject known  = knownFor.getJSONObject(j);
 						
 						if(known.getString("media_type").equalsIgnoreCase("tv")){
