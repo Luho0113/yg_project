@@ -1,8 +1,7 @@
 package com.younggam.app.controller;
 
 import java.util.List;
-
-import javax.servlet.http.HttpSession;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,7 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.younggam.app.service.MovieService;
 import com.younggam.app.service.ReviewService;
 import com.younggam.app.vo.ReviewInfoVO;
 
@@ -19,6 +20,9 @@ public class ReviewInfoController {
 
 	@Autowired
 	private ReviewService riServie;
+	
+	@Autowired
+	private MovieService movieService;
 	
 	//전체 글 조회
 	@GetMapping("/reviews")
@@ -30,7 +34,8 @@ public class ReviewInfoController {
 	
 	//글 작성 요청
 	@GetMapping("/review-insert")
-	public String goInsertReviewInfo() {
+	public String goInsertReviewInfo(@RequestParam Map<String, String> param, Model m) {
+		m.addAttribute("movie", movieService.getMovie(param));
 		return "review/review-insert";
 	}
 	

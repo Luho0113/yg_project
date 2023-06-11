@@ -15,6 +15,7 @@
 </form>
 
 <h3>검색어: ${param.search}</h3> <%-- input의 value --%>
+
 <c:if test="${empty movie}">
 	<p>검색 결과가 없어요 :( </p>
 </c:if>
@@ -27,8 +28,6 @@
 	<p>감독: ${movie.directors}</p>
 	<p>제작국가: ${movie.productionConturies}</p>
 	<p><img id="poster" src="https://image.tmdb.org/t/p/w300${movie.posterPath}" width="50" height="100" /></p>
-	
-
 </c:forEach>
 
 
