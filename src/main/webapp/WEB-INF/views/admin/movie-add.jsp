@@ -39,9 +39,6 @@ function uploadImg(obj){
 </script>
    <form method="POST" action="/admin/movie-add" enctype="multipart/form-data">
       <h2>영화 등록</h2>
-      <label for="miCode">코드</label> 
-      <input type="text" id="miCode" name="miCode"><br>
-
       <label for="miTitle">제목</label> 
       <input type="text" id="miTitle" name="miTitle"><br>
        

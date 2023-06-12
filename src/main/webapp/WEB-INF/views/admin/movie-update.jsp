@@ -43,7 +43,6 @@ function add_row(table_id){
 		enctype="multipart/form-data">
 		<h2>영화 수정</h2>
 		<input type="hidden" name="miCode" value="${movie.miCode}">
-		
 		<label for="miTitle">제목</label> 
 		<input type="text" id="miTitle" name="miTitle" value="${movie.miTitle}"><br>
 		 

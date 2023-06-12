@@ -4,7 +4,15 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.younggam.app.mapper.MovieInfoMapper">
 <select id="selectMovieInfos" resultType="com.younggam.app.vo.MovieInfoVO">
+	<![CDATA[
 	select * from Movie_info
+	order by mi_code desc
+	limit #{pageStart}, #{perPageNum}
+	]]>
+</select>
+
+<select id="countMovieInfo" resultType="int">
+	select count(*) from Movie_info
 </select>
 
 <select id="selectMovieInfo" resultType="com.younggam.app.vo.MovieInfoVO">
@@ -13,9 +21,9 @@
 </select>
 
 <insert id="addMovieInfo">
-	insert into Movie_info(mi_code, mi_title, mi_orgtitle, mi_open_date, mi_show_time, mi_nation, 
+	insert into Movie_info(mi_title, mi_orgtitle, mi_open_date, mi_show_time, mi_nation, 
 	mi_genre, mi_director, mi_actor, mi_cast, mi_image, mi_overview, mi_adult) values
-  	(#{miCode}, #{miTitle}, #{miOrgTitle}, DATE_FORMAT(#{miOpenDate}, '%Y-%m-%d'), #{miShowTime}, 
+  	(#{miTitle}, #{miOrgTitle}, DATE_FORMAT(#{miOpenDate}, '%Y-%m-%d'), #{miShowTime}, 
   	#{miNation}, #{miGenre}, #{miDirector}, #{miActor}, #{miCast}, #{miImage}, #{miOverview}, #{miAdult})
 </insert>
 

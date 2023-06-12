@@ -13,24 +13,40 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.younggam.app.service.MovieInfoService;
 import com.younggam.app.vo.AdminInfoVO;
+import com.younggam.app.vo.Criteria;
 import com.younggam.app.vo.MovieInfoVO;
+import com.younggam.app.vo.Paging;
 
 @Controller
 public class MovieInfoController {
 	@Autowired
 	private MovieInfoService miService;
 
-	//영화 목록
+//	//영화 목록
+//	@GetMapping("/admin/movies")
+//	   public String getMovieInfos(MovieInfoVO movie, Model m) {
+//	      List<MovieInfoVO> movies = miService.getBoardInfos(movie);
+//	      m.addAttribute("movies", movies);
+//	      return "admin/movie-list"; 
+//	   }
+	//페이징
 	@GetMapping("/admin/movies")
-	public String getMovieInfos(MovieInfoVO movie, Model m) {
-		List<MovieInfoVO> movies = miService.getMovieInfos(movie);
+	public String searchMovie(Criteria cri, Model m) {
+		int movieListCnt = miService.getMovieCnt(); //전체 글 갯수
+		
+		Paging paging = new Paging(); //페이징 객체
+		paging.setCri(cri);
+		paging.setTotalCount(movieListCnt);
+		
+		List<MovieInfoVO> movies = miService.getMovieInfos(cri);
 		m.addAttribute("movies", movies);
+		m.addAttribute("paging", paging);
 		return "admin/movie-list";
 	}
 
 	//영화 상세 정보
 	@GetMapping("/admin/movie")
-	public String getMovieInfo(Model m, @RequestParam("miCode") String miCode) {
+	public String getMovieInfo(Model m, @RequestParam("miCode") int miCode) {
 		MovieInfoVO movie = miService.getMovieInfo(miCode);
 		m.addAttribute("movie", movie);
 		return "admin/movie-view";
@@ -61,7 +77,7 @@ public class MovieInfoController {
 
 	//영화 수정
 	@GetMapping("/admin/movie-update")
-	public String updateMovie(Model m, @RequestParam("miCode") String miCode) {
+	public String updateMovie(Model m, @RequestParam("miCode") int miCode) {
 		MovieInfoVO movie = miService.getMovieInfo(miCode);
 		m.addAttribute("movie", movie);
 		return "admin/movie-update";
@@ -82,7 +98,7 @@ public class MovieInfoController {
 	
 	//영화 삭제
 	@GetMapping("/admin/movie-delete")
-	public String deleteMovie(Model m, @RequestParam("miCode") String miCode) {
+	public String deleteMovie(Model m, @RequestParam("miCode") int miCode) {
 		String msg = "영화 삭제가 실패하였습니다.";
 		String url = "/admin/movie-view?miCode=" + miCode;
 		if (miService.deleteMovieInfo(miCode)) {

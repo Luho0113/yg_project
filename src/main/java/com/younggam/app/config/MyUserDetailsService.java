@@ -2,23 +2,19 @@ package com.younggam.app.config;
 
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.younggam.app.mapper.UserInfoMapper;
 import com.younggam.app.service.UserInfoService;
 import com.younggam.app.vo.UserInfoVO;
 
 @Component
 public class MyUserDetailsService implements UserDetailsService{
 	//UserDetailsService를 상속받아 DB에서 회원정보를 받아오고 스프링부트에 넘겨주는 역할
-	
-	@Autowired
-	private UserInfoService uiService;
+	private final UserInfoService uiService;
 	
 	public MyUserDetailsService(UserInfoService uiService) {
         this.uiService = uiService;
@@ -37,6 +33,7 @@ public class MyUserDetailsService implements UserDetailsService{
 		return User.builder()
 				.username(userInfo.getUiId())
 				.password(userInfo.getUiPassword())
+				.roles("DEFAULT") //권한 DEFAULT 값이라도 추가
 				.build();
 	}
 

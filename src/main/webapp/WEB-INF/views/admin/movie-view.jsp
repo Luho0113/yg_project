@@ -10,10 +10,6 @@
 <body>
 <table border="1">
 	<tr>
-		<th>코드</th>
-		<td>${movie.miCode}</td>
-	</tr>
-	<tr>
 		<th>제목</th>
 		<td>${movie.miTitle}</td>
 	</tr>
@@ -51,7 +47,7 @@
 		<c:if test="${movie.miImage == null}">
 		</c:if>
 		<c:if test="${movie.miImage != null}">
-		<img src= "${movie.miImage}">
+		<img src= "${movie.miImage}" width="150">
 		</c:if>
 		</td>
 	</tr>

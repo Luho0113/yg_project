@@ -89,13 +89,13 @@ public class UserInfoService {
 		return uiMapper.findUserInfoByUiId(uiId);
 	}
 	
-	public boolean isValidMember(String userId, String password) {
-        Optional<UserInfoVO> member = findOne(userId);
-        if (member.isPresent()) {
-            return member.get().getUiPassword().equals(password);
-        }
-        return false;
-    }
+//	public boolean isValidMember(String userId, String password) {
+//        Optional<UserInfoVO> member = findOne(userId);
+//        if (member.isPresent()) {
+//            return member.get().getUiPassword().equals(password);
+//        }
+//        return false;
+//    }
 	
 	
 }

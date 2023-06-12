@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class MovieInfoVO {
 	private MultipartFile miFile;
-	private String miCode;
+	private int miCode;
 	private String miTitle;
 	private String miOrgTitle;
 	private String miOpenDate;

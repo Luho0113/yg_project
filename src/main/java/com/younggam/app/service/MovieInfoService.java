@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.younggam.app.mapper.MovieInfoMapper;
+import com.younggam.app.vo.Criteria;
 import com.younggam.app.vo.MovieInfoVO;
 
 import lombok.extern.slf4j.Slf4j;
@@ -17,15 +18,22 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MovieInfoService {
 	
-	private final String pjPath = "C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
+	private final String pjPath = "C:\\Users\\User\\eclipse-workspace7\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
 	@Autowired
 	private MovieInfoMapper miMapper;
-	//영화 목록
-	public List<MovieInfoVO> getMovieInfos(MovieInfoVO movieInfo){
-		return miMapper.selectMovieInfos(movieInfo);
+	
+	//영화 페이징
+	public int getMovieCnt(){
+		return miMapper.countMovieInfo();
 	}
+	
+	//영화 검색
+	public List<MovieInfoVO> getMovieInfos(Criteria cri){
+		return miMapper.selectMovieInfos(cri);
+	}
+
 	//영화 상세 정보
-	public MovieInfoVO getMovieInfo(String miCode) {
+	public MovieInfoVO getMovieInfo(int miCode) {
 		return miMapper.selectMovieInfo(miCode);
 	}
 	//영화 등록
@@ -58,7 +66,7 @@ public class MovieInfoService {
 		return miMapper.updateMovieInfo(movie)==1;
 	}	
 	//영화 삭제
-	public boolean deleteMovieInfo(String miCode) {
+	public boolean deleteMovieInfo(int miCode) {
 		return miMapper.deleteMovieInfo(miCode)==1;
 	}
 	
