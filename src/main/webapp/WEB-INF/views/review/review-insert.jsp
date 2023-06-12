@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>리뷰 작성 페이지</title>
-<link rel="stylesheet" href="${path}/resources/css/review-star.css">
+<link rel="stylesheet" href="${path}/resources/css/review/review-star.css">
 <script src="${path}/resources/js/review-star.js"></script>
 </head>
 
