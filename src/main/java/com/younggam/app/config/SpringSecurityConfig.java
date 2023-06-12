@@ -5,6 +5,7 @@ import javax.servlet.DispatcherType;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -12,6 +13,13 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 public class SpringSecurityConfig {
+	
+	
+	@Bean
+	PasswordEncoder passwordEncoder() {
+	    return new SimplePasswordEncoder();
+	}
+	
 	
 	//기본 로그인 정보 : user, 서버 실행 시 콘솔에 뜨는 임시 비밀번호
 	@Bean

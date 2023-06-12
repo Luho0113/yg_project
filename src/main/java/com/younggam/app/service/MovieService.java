@@ -1,13 +1,14 @@
 package com.younggam.app.service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.boot.configurationprocessor.json.JSONArray;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Service;
+
+import com.younggam.app.vo.MovieVO;
 
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
@@ -17,10 +18,10 @@ import okhttp3.Response;
 @Service
 @Slf4j
 public class MovieService {
-
+	
 	//TMDB API 요청 Method (기본)
-	public List<Map<String, String>> getMovie(Map<String, String> param) {
-		List<Map<String, String>> movieList = new ArrayList<>();
+	public List<MovieVO> getMovie(Map<String, String> param) {
+		List<MovieVO> movieList = new ArrayList<>();
 		try {
 
 			//영화 검색 요청 주소 시작 ---
@@ -56,7 +57,7 @@ public class MovieService {
 			//.string(): 응답 본문을 닫는다.   (닫지 않으면 문제가 생길 수 있다고 한다.)      
 
 			for(int i = 0; i < results.length(); i++) {
-
+				MovieVO movieVO = new MovieVO();
 				JSONObject object  = results.getJSONObject(i); //JSONArray를 하나씩(i) 꺼내서 JSONObject로 변경해서 object에서 Key로 value를 뽑는 방식이다.
 
 				//사람 이름을 검색했을 경우 실행
@@ -65,38 +66,57 @@ public class MovieService {
 
 					//known_For 배열 뽑아서 know object 만들기
 					for(int j = 0; j < knownFor.length(); j++) {
-						Map<String, String> map = new HashMap<>();
+						movieVO = new MovieVO();
+						
 						JSONObject known  = knownFor.getJSONObject(j);
-
+						
 						if(known.getString("media_type").equalsIgnoreCase("tv")){
 							continue; //만약 해당 인물의 필모그래피에 tv(드라마)가 있다면 해당 배열은 건너뛰기!(드라마 검색 및 출력은 불가능하게 처리하였다.)
 						}
-						map.put("id", known.getString("id")); //영화 아이디
-						map.put("original_title", known.getString("original_title")); //영화 원제   
-						map.put("overview", known.getString("overview")); //영화 줄거리
-						map.put("poster_path", known.getString("poster_path")); //영화 포스터(URL 일부만 들어 있음)
-						map.put("release_date", known.getString("release_date")); //영화 개봉일
-						map.put("title", known.getString("title")); //영화 한국어 제목
-						map.put("director", getCredit(map.get("id")));
-
-
-						movieList.add(i, map);
-
-
+						
+						movieVO.setId(known.getString("id"));
+						movieVO.setTitle(known.getString("title"));
+						movieVO.setOriginalTitle(known.getString("original_title"));
+						movieVO.setPosterPath(known.getString("poster_path"));
+						movieVO.setOverview(known.getString("overview"));
+						movieVO.setReleaseDate(known.getString("release_date"));
+						movieVO.setAdult(known.getString("adult"));
+						movieVO.setDirectors(getCredit(movieVO.getId()));
+						movieVO.setProductionConturies(getConturies(movieVO.getId()));
+						
+						JSONArray genreIdArray = known.getJSONArray("genre_ids");
+						List<String> genreIds = new ArrayList<>();
+						
+						for(int k = 0; k < genreIdArray.length(); k++) {
+							genreIds.add(genreIdArray.getString(k));
+							movieVO.setGenreIds(genreIds);
+						}
+						
+						movieList.add(movieVO);
 					}//end of inner for
 
 					//영화 이름을 검색했을 경우 실행   
 				}else if(object.getString("media_type").equalsIgnoreCase("movie")) {
-					Map<String, String> map = new HashMap<>();
-					map.put("id", object.getString("id")); //영화 아이디
-					map.put("original_title", object.getString("original_title")); //영화 원제
-					map.put("overview", object.getString("overview")); //영화 줄거리
-					map.put("poster_path", object.getString("poster_path")); //영화 포스터(URL 일부만 들어 있음)
-					map.put("release_date", object.getString("release_date")); //영화 개봉일
-					map.put("title", object.getString("title")); //영화 한국어 제목
-					map.put("director", getCredit(map.get("id")));
-
-					movieList.add(map);
+					
+					movieVO.setId(object.getString("id"));
+					movieVO.setTitle(object.getString("title"));
+					movieVO.setOriginalTitle(object.getString("original_title"));
+					movieVO.setPosterPath(object.getString("poster_path"));
+					movieVO.setOverview(object.getString("overview"));
+					movieVO.setReleaseDate(object.getString("release_date"));
+					movieVO.setAdult(object.getString("adult"));
+					movieVO.setDirectors(getCredit(movieVO.getId()));
+					movieVO.setProductionConturies(getConturies(movieVO.getId()));
+					
+					JSONArray genreIdArray = object.getJSONArray("genre_ids");
+					List<String> genreIds = new ArrayList<>();
+					
+					for(int k = 0; k < genreIdArray.length(); k++) {
+						genreIds.add(genreIdArray.getString(k));
+						movieVO.setGenreIds(genreIds);
+					}
+					
+					movieList.add(movieVO);
 					
 				}//end of outer if
 
@@ -114,9 +134,10 @@ public class MovieService {
 
 
 	//TMDB API 요청 Method (크레딧)
-	public String getCredit(String movieId) {
+	public List<String> getCredit(String movieId) {
 		//Map<String, String> creditList = new HashMap<>();
-		String director = "";
+		List<String> directors = new ArrayList<>();
+		//String director = "";
 		try {
 
 			OkHttpClient client = new OkHttpClient();
@@ -139,8 +160,7 @@ public class MovieService {
 				JSONObject object  = crew.getJSONObject(i); //JSONArray를 하나씩(i) 꺼내서 JSONObject로 변경해서 object에서 Key로 value를 뽑는 방식이다.
 
 				if(object.has("job") && object.getString("job").equalsIgnoreCase("director")) {
-					director = object.optString("name");
-
+					directors.add(object.optString("name")); 
 				}
 
 			}//end of for
@@ -149,9 +169,47 @@ public class MovieService {
 		} catch (Exception e) {
 			System.err.println(e.toString());
 		}//end of catch
-		return director;
+		return directors;
 
 	}//end of getCredit
+	
+	
+	//TMDB API 요청 Method (제작 국가)
+	public List<String> getConturies(String movieId) {
+		List<String> countries = new ArrayList<>();
+		try {
+
+			OkHttpClient client = new OkHttpClient();
+
+			Request request = new Request.Builder()
+			  .url("https://api.themoviedb.org/3/movie/" + movieId + "?language=ko-KR")
+			  .get()
+			  .addHeader("accept", "application/json")
+			  .addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZGE0NzZkY2EyOTk4Y2MwYWNiN2U2MzU5NjMzMDhhNSIsInN1YiI6IjY0NzM2ZTJkOTQwOGVjMDBlMTRjZGVhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rmNtSzDfgUgipyAKkyWki-Jrae8kipwRPI9ISiHdpzM")
+			  .build();
+
+			Response response = client.newCall(request).execute();
+
+			//요청 결과를 JSON 형식으로 변경 
+			JSONObject jsonObject = new JSONObject(response.body().string()); //String 형식을 JSON 형식으로 변환한다.
+			JSONArray countriesJson = jsonObject.getJSONArray("production_countries"); //JSON 형식으로 만들어진 jsonObject에서 cast[]를 뽑아서 cast에 담는다.     
+
+			for(int i = 0; i < countriesJson.length(); i++) {
+				JSONObject object = countriesJson.getJSONObject(i); //JSONArray를 하나씩(i) 꺼내서 JSONObject로 변경해서 object에서 Key로 value를 뽑는 방식이다.
+				countries.add(object.optString("name")); 			
+			}//end of for
+
+
+		} catch (Exception e) {
+			System.err.println(e.toString());
+		}//end of catch
+		return countries;
+
+	}//end of getConturies
+	
+	
+	
+	
 
 
 }//end of class
