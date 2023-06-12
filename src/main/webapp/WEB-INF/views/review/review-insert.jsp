@@ -14,9 +14,9 @@
 <body>
 <h3>리뷰 작성 페이지</h3><%-- 이후 페이지 정리 필요함 --%>
     
-	<form autocomplete="off" action="/review-insert" method="GET">
+	<form autocomplete="off" action="/review-insert" method="GET" name="form">
         <div class="autocomplete" style="width:300px;">
-          <input id="myInput" type="text" name="search" placeholder="Country" value="${param.search}">
+          <input id="myInput" type="text" name="search" placeholder="영화, 감독, 배우를 검색해보세요." value="${param.search}">
         </div>
         <input type="submit">
     </form>
@@ -24,10 +24,10 @@
     <form action="#" method="POST">
         <table>
             <tr>
-                <th>감독</th><td>블라블라</td>
+                <th>감독</th><td id="director"></td>
             </tr>
             <tr>
-                <th>개봉 연도</th><td>블라블라</td>
+                <th>개봉 연도</th><td id="releaseDate"></td>
             </tr>
             <tr>
                 <th>영감 포인트</th>
@@ -75,11 +75,15 @@
 
 
 <script>
-var countries = new Array();
+var movieReleaseDate = new Array();
+var movieDirectors = new Array();
+var movieTitle = new Array();
 	<c:forEach items="${movie}" var="movie">
-		 countries.push("${movie['title']}");
+		movieReleaseDate.push("${movie['releaseDate']}");
+		movieDirectors.push("${movie['directors']}");
+		movieTitle.push("${movie['title']}");
     </c:forEach>
-    autocomplete(document.getElementById("myInput"), countries);
+    autocomplete(document.getElementById("myInput"), movieTitle, movieReleaseDate, movieDirectors);
 </script>
 
 </html>

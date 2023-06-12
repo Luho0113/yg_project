@@ -1,21 +1,32 @@
 const drawStar = (target) => {
     document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
   }
-  
-  function autocomplete(inp, arr) {
+
+/* onload 말고 submit 했을 때만,,, 으로 하고싶은데,, */
+onload =  function(){
+	document.form.search.focus();
+}
+
+function changetoblur(){
+	document.form.search.blur();
+}
+
+/* 맨 밑에 있는데 이 함수 전체가 input를 클릭했을 때 실행되는 것임 */
+  function autocomplete(inp, arr, date, directors) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
     /* 자동 완성 함수는 두 개의 인수를 사용합니다,
     텍스트 필드 요소 및 가능한 자동 완성 값 배열 */
     var currentFocus;
     /*execute a function when someone writes in the text field:*/
-    /* 텍스트 필드에 글을 쓸 때 기능을 실행합니다 */
+    /* 텍스트 필드가 focus 되었을 때 기능을 실행합니다 */
 
-    inp.addEventListener("input", function() {
+    inp.addEventListener("focus", function() {
         var a, b, i, val = this.value;
         /*close any already open lists of autocompleted values*/
         /* 이미 열려 있는 자동 완성 값 목록 닫기 */
-        closeAllLists();
+        /*closeAllLists();*/ /* 옆에 주석처리한 거 아직은 문제가 없는데 이후에 생길수도 있음 */
+        
         if (!val) { return false;}
 
         currentFocus = -1; /* -1 대입 */
@@ -34,35 +45,28 @@ const drawStar = (target) => {
         /*for each item in the array...*/
         /* 배열의 각 항목에 대해 */
         for (i = 0; i < arr.length; i++) {
-          /*check if the item starts with the same letters as the text field value:*/
-          /* 항목이 텍스트 필드 값과 동일한 문자로 시작하는지 확인합니다 */
-          if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-            /*create a DIV element for each matching element:*/
-            /* 일치하는 각 요소에 대해 DIV 요소 생성 */
             b = document.createElement("DIV");
-            
-            /*make the matching letters bold:*/
-            /* 일치하는 글자를 굵게 표시합니다 */
-            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-            b.innerHTML += arr[i].substr(val.length);
-            /*   <div><strong>브래</strong>들리 쿠퍼</div>   */
-            /*insert a input field that will hold the current array item's value:*/
-            /* 현재 배열 항목의 값을 유지할 입력 필드 삽입 */
+            b.innerHTML = arr[i];
             b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+            
+            
             /*execute a function when someone clicks on the item value (DIV element):*/
             /* 항목 값(DIV 요소)을 클릭하면 다음과 같은 기능이 실행됩니다: */
                 b.addEventListener("click", function() {
                 /*insert the value for the autocomplete text field:*/
                 /* 자동 완성 텍스트 필드 값 삽입 */
                 inp.value = this.getElementsByTagName("input")[0].value;
+                
+                /* 바로 아래줄 수정 필요 */
+                document.getElementById('.director').text = '브래들리 쿠퍼';
                 /*close the list of autocompleted values,
                 (or any other open lists of autocompleted values:*/
                 /* 자동 완성 값 리스트를 닫습니다,
                 (또는 자동 완성된 값의 열려 있는 다른 목록) */
-                closeAllLists();
+                /*closeAllLists();*/
             });
             a.appendChild(b);
-          }
+          
         }
     });
     /* input 했을 때 실행되는 함수 끝나는 부분 */
@@ -92,12 +96,11 @@ const drawStar = (target) => {
           /* 그리고 현재 항목을 더 잘 볼 수 있도록 합니다 */
           addActive(x);
         } else if (e.keyCode == 13) {
-          /*If the ENTER key is pressed, prevent the form from being submitted,*/
-          /* ENTER 키를 누르면 양식이 제출되지 않습니다 */
-          e.preventDefault();
           if (currentFocus > -1) {
             /*and simulate a click on the "active" item:*/
             /* "활성" 항목을 클릭하는 시뮬레이션을 수행합니다: */
+            e.preventDefault();
+            changetoblur();
             if (x) x[currentFocus].click();
           }
         }
@@ -122,6 +125,7 @@ const drawStar = (target) => {
         x[i].classList.remove("autocomplete-active");
       }
     }
+    
     function closeAllLists(elmnt) {
       /*close all autocomplete lists in the document,
       except the one passed as an argument:*/
