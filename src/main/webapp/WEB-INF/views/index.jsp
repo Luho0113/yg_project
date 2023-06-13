@@ -9,6 +9,10 @@
 </head>
 <body>
 	<h3>영감</h3>
+	
+	
+	<p>접속아이디 : ${loginId} </p>
+	<p>접속권한 : ${loginRoles} </p>
 
 	<c:if test="${user.uiId == null}">
 		<p>로그인이 필요합니다.</p>

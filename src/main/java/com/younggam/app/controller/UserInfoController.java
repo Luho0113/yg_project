@@ -5,6 +5,8 @@ import java.io.IOException;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +22,13 @@ public class UserInfoController {
 	
 	@GetMapping("/")
 	public String home() {
+		//@AuthenticationPrincipal User user, Model model ->매개값
+		//백엔드에서 유저 정보 알아내기 (@AuthenticationPrincipal을 사용해서)
+		//로그인한 유저를 유지하는 부분 = 세션과 쿠키를 사용해야 함
+		//지금 사용하면 오류있음 주석처리해서 테스트하기..
+		//model.addAttribute("loginId", user.getUsername());
+		//model.addAttribute("loginRoles", user.getAuthorities());
+		
 		return "index";
 	}
 	

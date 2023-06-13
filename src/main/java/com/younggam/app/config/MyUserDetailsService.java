@@ -20,6 +20,7 @@ public class MyUserDetailsService implements UserDetailsService{
         this.uiService = uiService;
     }
 	
+	//UserDetails : 인증된 핵심 사용자 정보 (권한, 비밀번호, 사용자명, 각종 상태)를 제공하기 위한 인터페이스
 	@Override
 	public UserDetails loadUserByUsername(String uiId) throws UsernameNotFoundException {
 		// uiId에는 .usernameParameter("uiId") 에 해당하는 정보가 들어옴
@@ -30,6 +31,8 @@ public class MyUserDetailsService implements UserDetailsService{
 		UserInfoVO userInfo = findOne.orElseThrow(()->new UsernameNotFoundException("없는 회원임!"));
 		
 		
+		//User : 사용자 정보를 포함하는 entity 객체로 UserDetails의 구현체
+		//권한을 설정해주지 않으면 로그인에서 에러가 났었음
 		return User.builder()
 				.username(userInfo.getUiId())
 				.password(userInfo.getUiPassword())
