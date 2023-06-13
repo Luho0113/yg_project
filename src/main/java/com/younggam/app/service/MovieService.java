@@ -8,6 +8,7 @@ import org.springframework.boot.configurationprocessor.json.JSONArray;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Service;
 
+import com.younggam.app.vo.CastVO;
 import com.younggam.app.vo.MovieVO;
 
 import lombok.extern.slf4j.Slf4j;
@@ -208,8 +209,5 @@ public class MovieService {
 	}//end of getConturies
 	
 	
-	
-	
-
 
 }//end of class
