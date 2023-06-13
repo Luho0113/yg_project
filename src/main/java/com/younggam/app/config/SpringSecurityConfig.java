@@ -1,30 +1,36 @@
 package com.younggam.app.config;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 import javax.servlet.DispatcherType;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
-import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 public class SpringSecurityConfig {
 	
 	
+	private MyUserDetailsService detailService;
+	
 	@Bean
 	PasswordEncoder passwordEncoder() {
-	    return new SimplePasswordEncoder();
+	    return new BCryptPasswordEncoder();
 	}
 	
 	
 	//기본 로그인 정보 : user, 서버 실행 시 콘솔에 뜨는 임시 비밀번호
-	@Bean
+	//@Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable().cors().disable()
+        		.authenticationProvider(null)
+        		.userDetailsService(detailService)
                 .authorizeHttpRequests(request -> request
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
                         .antMatchers("/**").permitAll() //모든 요청 허용
@@ -48,5 +54,13 @@ public class SpringSecurityConfig {
 
         return http.build();
     }
+	
+	@Bean
+	public WebSecurityCustomizer webSecurityCustomizer() {
+		return web->{
+			web.ignoring()
+			.antMatchers("/**");
+		};
+	}
 	
 }

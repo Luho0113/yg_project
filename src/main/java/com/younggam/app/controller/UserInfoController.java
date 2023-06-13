@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.younggam.app.service.UserInfoService;
 import com.younggam.app.vo.UserInfoVO;
@@ -57,7 +58,13 @@ public class UserInfoController {
 		
 		return "user/login";
 	}
+
 	
+	@GetMapping("/check-id")
+	@ResponseBody
+	public boolean checkId(@ModelAttribute UserInfoVO user, Model m) throws IllegalStateException, IOException {		
+		return uiService.getUserInfoVOByUiId(user) != null;
+	}
 	
 	//2) 로그인
 	@GetMapping("/login")

@@ -49,7 +49,8 @@ public class MovieService {
 			//.execute()니까 동기 방식이고 그 결과를 어떻게 할 것인지 아래에서 처리한다. 
 
 			//요청 결과를 JSON 형식으로 변경 
-			JSONObject jsonObject = new JSONObject(response.body().string()); //String 형식을 JSON 형식으로 변환한다.
+			String json = response.body().string();
+			JSONObject jsonObject = new JSONObject(json); //String 형식을 JSON 형식으로 변환한다.
 			JSONArray results = jsonObject.getJSONArray("results"); //JSON 형식으로 만들어진 jsonObject에서 results[]를 뽑아서 results에 담는다.
 
 
@@ -128,7 +129,7 @@ public class MovieService {
 
 
 		} catch (Exception e){
-			System.err.println(e.toString());
+			log.error("error=>{}", e);
 		}
 		return movieList;
 	}//end of get()

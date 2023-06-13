@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import com.younggam.app.service.UserInfoService;
 import com.younggam.app.vo.UserInfoVO;
 
-@Component
+//@Component
 public class MyUserDetailsService implements UserDetailsService{
 	//UserDetailsService를 상속받아 DB에서 회원정보를 받아오고 스프링부트에 넘겨주는 역할
 	private final UserInfoService uiService;

@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -26,14 +27,14 @@
 			</label>
 		</div>
 		<div>
-			<label> 아이디 : <input type="text" name="uiId" id="uiId">
+			<label> 아이디 : <input type="text" name="uiId" id="uiId" onkeyup="checkId(this)">
 			</label>
 			<button type="button" onclick="uiIdCheck();">중복확인</button>
 			<span class="uiId_ok" style="display: none">사용 가능한 아이디입니다.</span>
 			<span class="uiId_already" style="display: none">이미 사용 중인 아이디입니다.</span>
 		</div>
 		<div>
-			<label> 닉네임 : <input type="text" name="uiNickname" id="uiNickname"> </label>
+			<label> 닉네임 : <input type="text" name="uiNickname" id="uiNickname" > </label>
 		</div>
 		<div>
 			<label> 비밀번호 : <input type="password" name="uiPassword"
@@ -63,7 +64,7 @@
 
 	<script>
 		function noImage() {
-			$("img").attr("src", "https://ifh.cc/g/cDROLZ.png"); //대체 이미지
+			//$("img").attr("src", "https://ifh.cc/g/cDROLZ.png"); //대체 이미지
 		}
 
 		//아이디 중복 체크 팝업창
@@ -72,8 +73,25 @@
 			window.open("", "", "width=600, height=200, left=200, top=100");
 		}
 		
-		function checkId(){
-			if(cnt == 0){ //cnt가 1이 아니면(=0일 경우) -> 사용 가능한 아이디 
+		function checkId(obj){
+			if(obj.value.length<6){
+				return;
+			}
+			$.get({
+				url:'/check-id',
+				data:{uiId:obj.value},
+				success:function(res){
+					if(res){
+						$('.uiId_already').css('display','');
+						$('.uiId_ok').css('display','none');
+					}else{
+						$('.uiId_already').css('display','none');
+						$('.uiId_ok').css('display','');
+					}
+					console.log(res);
+				}
+			})
+			/* if(cnt == 0){ //cnt가 1이 아니면(=0일 경우) -> 사용 가능한 아이디 
                 $('.id_ok').css("display","inline-block"); 
                 $('.id_already').css("display", "none");
             } else { // cnt가 1일 경우 -> 이미 존재하는 아이디
@@ -81,8 +99,8 @@
                 $('.id_ok').css("display", "none");
                 alert("아이디를 다시 입력해주세요");
                 $('#id').val('');
-            }
-	        };
+            } */
+	    };
 	        
 		//이메일 옵션 선택후 주소 자동 완성
 		function change_email() {

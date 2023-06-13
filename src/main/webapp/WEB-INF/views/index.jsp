@@ -19,6 +19,10 @@
 		<button onclick="location.href='/login'">로그인</button>
 		<button onclick="location.href='/join'">회원가입</button>
 	</c:if>
+	
+	<c:if test="${admin.adminId != null}">
+	
+	</c:if>
 	<c:if test="${user.uiId != null}">
 	${user.uiNickname}님 안녕하세요! <br>
 		<div>
