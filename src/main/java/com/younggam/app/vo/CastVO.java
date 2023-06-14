@@ -7,6 +7,6 @@ public class CastVO {
 	
 	private String actor; //배우명
 	private String character; //배역명
-	private String porfilePath; //프로필 이미지
+	private String profilePath; //프로필 이미지
 
 }

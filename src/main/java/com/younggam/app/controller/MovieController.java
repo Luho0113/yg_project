@@ -39,10 +39,13 @@ public class MovieController {
 	@GetMapping("/detail")
 	public String getCast(@RequestParam("movieId") String movieId, Model m) {
 		m.addAttribute("cast", movieDetailService.getCast(movieId));
+		m.addAttribute("movieData",movieDetailService.getMovieDetail(movieId));
 		return "movie/detail"; //값 이후에 detail로 변경하기
 	}
 	
 	
+	
+
 
 	
 	
