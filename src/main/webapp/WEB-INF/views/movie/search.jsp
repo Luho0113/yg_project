@@ -21,7 +21,7 @@
 </c:if>
 
 <c:forEach items="${movie}" var="movie">
-	<h3><a href="credit?movieId=${movie.id}">${movie.title}</a></h3> <%-- action 보내고 돌려 받은 값 --> --%>
+	<h3><a href="detail?movieId=${movie.id}">${movie.title}</a></h3> <%-- action 보내고 돌려 받은 값 --> --%>
 	<p>개봉연도: ${movie.releaseDate}</p> <%-- action 보내고 돌려 받은 값 --%>
 	<p>줄거리: ${movie.overview}</p> <%-- action 보내고 돌려 받은 값 --%>
 	<p>원제: ${movie.originalTitle}</p>

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.younggam.app.service.MovieDetailService;
 import com.younggam.app.service.MovieService;
 
 @Controller
@@ -16,22 +17,29 @@ public class MovieController {
 	@Autowired
 	private MovieService movieService;
 	
+	@Autowired
+	private MovieDetailService movieDetailService;
+	
 	@GetMapping("/search")
 	public String getMovie(@RequestParam Map<String, String> param, Model m) {
 		m.addAttribute("movie", movieService.getMovie(param));//배열을 전달하면 movie에 담긴 상태로 jsp 파일로 이동한다. (jsp 파일에서 for each문을 돌려 배열의 값을 꺼내면 된다.)
 		return "movie/search";
 	}
 	
-	@GetMapping("/credit")
-	public String getCredit(@RequestParam("movieId") String movieId, Model m) {
-		m.addAttribute("credit", movieService.getCredit(movieId)); //배열을 전달하면 movie에 담긴 상태로 jsp 파일로 이동한다. (jsp 파일에서 for each문을 돌려 배열의 값을 꺼내면 된다.)
-		return "movie/search";
-	}
+//	@GetMapping("/credit")
+//	public String getCredit(@RequestParam("movieId") String movieId, Model m) {
+//		m.addAttribute("credit", movieService.getCredit(movieId)); //배열을 전달하면 movie에 담긴 상태로 jsp 파일로 이동한다. (jsp 파일에서 for each문을 돌려 배열의 값을 꺼내면 된다.)
+//		return "movie/search";
+//	}
 //배우와 감독을 출력하기 위해서 만들었으나 현재 영화 검색 페이지(=search)에서 조회 가능하기 때문에 삭제 보류(필요 없으면 삭제 하3~)
 	
+	
+	//detail 페이지
+	//MovieDetailService에 getCast()메소드에 movieId를 넣는 다음 값을 movie/detail에 출력
 	@GetMapping("/detail")
-	public String getDetail() {
-		return "movie/detai";
+	public String getCast(@RequestParam("movieId") String movieId, Model m) {
+		m.addAttribute("cast", movieDetailService.getCast(movieId));
+		return "movie/detail"; //값 이후에 detail로 변경하기
 	}
 	
 	
