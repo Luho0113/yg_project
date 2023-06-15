@@ -6,8 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="search.css" />
+<script src="search.jsp"></script>
 </head>
 <body>
+
 <h2>Search</h2>
 
 <form action="/search" method="get">
