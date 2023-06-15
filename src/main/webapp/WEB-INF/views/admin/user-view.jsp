@@ -27,7 +27,7 @@
 			<c:if test="${user.uiFilePath == null}">
 			</c:if>
 			<c:if test="${user.uiFilePath != null}">
-			<img src="${user.uiFilePath}">
+			<img src="${user.uiFilePath}" width="150">
 			</c:if>
 			</td>
 		</tr>

@@ -155,6 +155,6 @@ function add_row(table_id){
 
 		<button>영화 수정</button>
 		<input type="reset" value="다시 작성">
-	</form>
+</form>
 </body>
 </html>

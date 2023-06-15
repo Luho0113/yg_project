@@ -1,5 +1,6 @@
 package com.younggam.app.mapper;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.younggam.app.vo.UserInfoVO;
@@ -26,6 +27,7 @@ public interface UserInfoMapper {
 	//스프링 시큐리티
 	Optional<UserInfoVO> findUserInfoByUiId(String uiId); 
 
+	//관리자 회원 관리
 	
 	
 }

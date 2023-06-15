@@ -8,39 +8,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.younggam.app.service.MovieInfoService;
 import com.younggam.app.vo.AdminInfoVO;
-import com.younggam.app.vo.Criteria;
 import com.younggam.app.vo.MovieInfoVO;
-import com.younggam.app.vo.Paging;
 
 @Controller
 public class MovieInfoController {
 	@Autowired
 	private MovieInfoService miService;
 
-//	//영화 목록
-//	@GetMapping("/admin/movies")
-//	   public String getMovieInfos(MovieInfoVO movie, Model m) {
-//	      List<MovieInfoVO> movies = miService.getBoardInfos(movie);
-//	      m.addAttribute("movies", movies);
-//	      return "admin/movie-list"; 
-//	   }
-	//페이징
+	//영화 목록 + 페이징 + 검색
 	@GetMapping("/admin/movies")
-	public String searchMovie(Criteria cri, Model m) {
-		int movieListCnt = miService.getMovieCnt(); //전체 글 갯수
-		
-		Paging paging = new Paging(); //페이징 객체
-		paging.setCri(cri);
-		paging.setTotalCount(movieListCnt);
-		
-		List<MovieInfoVO> movies = miService.getMovieInfos(cri);
-		m.addAttribute("movies", movies);
-		m.addAttribute("paging", paging);
+	public String getMovies(@ModelAttribute MovieInfoVO movie, Model m) {
+		m.addAttribute("page", miService.getMovieInfos(movie));
 		return "admin/movie-list";
 	}
 

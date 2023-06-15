@@ -2,40 +2,39 @@ package com.younggam.app.service;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.github.pagehelper.PageHelper;
 import com.younggam.app.mapper.MovieInfoMapper;
-import com.younggam.app.vo.Criteria;
 import com.younggam.app.vo.MovieInfoVO;
 
 import lombok.extern.slf4j.Slf4j;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 @Service
 @Slf4j
 public class MovieInfoService {
 	
-	private final String pjPath = "C:\\Users\\User\\eclipse-workspace7\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
+	private final String pjPath = "C:\\Users\\User\\eclipse-workspace_current\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
 	@Autowired
 	private MovieInfoMapper miMapper;
 	
-	//영화 페이징
-	public int getMovieCnt(){
-		return miMapper.countMovieInfo();
-	}
-	
-	//영화 검색
-	public List<MovieInfoVO> getMovieInfos(Criteria cri){
-		return miMapper.selectMovieInfos(cri);
-	}
-
+	//영화 목록 + 페이징 + 검색
+		public PageInfo<MovieInfoVO> getMovieInfos(MovieInfoVO movie){
+			PageHelper.startPage(movie.getPage(), movie.getRows());
+			return new PageInfo<>(miMapper.selectMovieInfos(movie));
+		}
+		
 	//영화 상세 정보
 	public MovieInfoVO getMovieInfo(int miCode) {
 		return miMapper.selectMovieInfo(miCode);
 	}
+	
 	//영화 등록
 	public boolean addMovieInfo(MovieInfoVO movie) throws IllegalStateException, IOException{
 		String saveName = movie.getMiFile().getOriginalFilename();

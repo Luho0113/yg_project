@@ -3,16 +3,18 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.younggam.app.mapper.MovieInfoMapper">
+<!-- 영화 검색 -->
 <select id="selectMovieInfos" resultType="com.younggam.app.vo.MovieInfoVO">
-	<![CDATA[
 	select * from Movie_info
-	order by mi_code desc
-	limit #{pageStart}, #{perPageNum}
-	]]>
-</select>
-
-<select id="countMovieInfo" resultType="int">
-	select count(*) from Movie_info
+	<where>
+		<if test='miTitle != null and miTitle != ""'>
+		mi_title like concat('%', #{miTitle}, '%')
+		</if>
+		<if test='miOverview != null and miOverview != ""'>
+		and mi_overview like concat('%', #{miOverview}, '%')
+		</if> 
+	</where>
+		order by mi_code desc
 </select>
 
 <select id="selectMovieInfo" resultType="com.younggam.app.vo.MovieInfoVO">

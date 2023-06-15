@@ -117,4 +117,9 @@ public class UserInfoController {
 		
 		return "index";
 	}
+	
+	//관리자 회원 관리
+	
+	
+	
 }

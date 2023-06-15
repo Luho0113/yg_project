@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 import com.younggam.app.mapper.UserInfoMapper;
 import com.younggam.app.vo.UserInfoVO;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+
 @Service
 public class UserInfoService {
 	
@@ -97,5 +100,6 @@ public class UserInfoService {
 //        return false;
 //    }
 	
-	
+	//관리자 회원 관리
+
 }

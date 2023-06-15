@@ -24,8 +24,8 @@ function uploadImg(obj){
 	<label for="uiNickname">닉네임</label> 
 	<input type="text" id="uiNickname" name="uiNickname" value="${user.uiNickname}"><br>
 
-	<label for="uiPwd">비밀번호</label> 
-	<input type="text" id="uiPwd" name="uiPwd" value="${user.uiPwd}"><br>
+	<label for="uiPassword">비밀번호</label> 
+	<input type="text" id="uiPassword" name="uiPassword" value="${user.uiPassword}"><br>
 
 	<div id="img_div" style="display: none">
 			<img src="${user.uiFilePath}" width="200">

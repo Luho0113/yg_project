@@ -21,4 +21,6 @@ public class MovieInfoVO {
 	private String miOverview;
 	private String miAdult;
 	
+	private int page=1; //page 초기값
+	private int rows=10; //한 페이지 당 정보 갯수
 }

@@ -8,7 +8,12 @@
 <title>영화 목록 페이지</title>
 </head>
 <body>
-<table border="1">
+<form action="/admin/movies" method="GET">
+	<input type="text" name="miTitle" placeholder="영화 제목" value="${param.miTitle}">
+	<input type="text" name="miOverview" placeholder="영화 내용" value="${param.miOverview}">
+	<button>영화 검색</button>
+</form>
+<table class="movieTable" border="1">
    <tr>
       <th>제목</th>
       <th>원제</th>
@@ -23,10 +28,10 @@
       <th>포스터</th>
       <th>줄거리</th>
    </tr>
-   <c:if test="${empty movies}">
-      <th colspan="4">영화 목록이 없습니다.</th>
+   <c:if test="${empty page.list}">
+      <th colspan="7">영화 목록이 없습니다.</th>
    </c:if>
-   <c:forEach items="${movies}" var="movie">
+   <c:forEach items="${page.list}" var="movie">
    <tr>
       <td><a href="/admin/movie?miCode=${movie.miCode}">${movie.miTitle}</a></td>
       <td>${movie.miOrgTitle}</td>
@@ -45,20 +50,42 @@
    </tr>
    </c:forEach>
    <tr>
-      <td colspan="4" align="right">
+      <td colspan="11" align="right">
          <a href="/admin/movie-add">영화 등록</a>   
    </tr>
 </table>
-<ul class="paging">
-    <c:if test="${paging.prev}">
-       <span><a href='<c:url value="/boardList?page=${paging.startPage-1}"/>'>이전</a></span>
-    </c:if>
-    <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-       <span><a href='<c:url value="/boardList?page=${num}"/>'>${num}</a></span>
-    </c:forEach>
-    <c:if test="${paging.next && paging.endPage>0}">
-       <span><a href='<c:url value="/boardList?page=${paging.endPage+1}"/>'>다음</a></span>
-    </c:if>
-</ul>
+<div id="pageDiv"></div>
+<c:if test="${!(empty page.list)}">
+<script>
+   const pages = ${page.pages}; 
+   const page = ${page.pageNum}; //현재 페이지
+   const start = Math.floor((page-1)/10)*10+1;
+   const end = (start + 9) > pages ? pages : (start + 9);
+   let html = '';
+   if(start!=1){
+      html += '<a href="/admin/movies?page=' + (start-1);
+      if('${param.miTitle}'){
+         html += '&miTitle=${param.miTitle}';
+      }
+        html += '"></a>';
+     }
+   
+   for(let i = start; i<=end; i++){
+      if(i==page){
+         html += ' [' + i + '] '; 
+      }else{
+         if(i == 1){
+            html += ' <a href="/admin/movies?&miTitle=${param.miTitle}">[' + i + ']</a> ';
+         }else{
+            html += ' <a href="/admin/movies?page=' + i + '&miTitle=${param.miTitle}">[' + i + ']</a> ';
+         }
+      }
+   }
+   if(end != pages){
+      html += '<a href="/admin/movies?page=' + (end + 1) + '&miTitle=${param.miTitle}"></a>';
+   }
+   document.querySelector('#pageDiv').innerHTML = html;
+</script>
+</c:if>
 </body>
 </html>

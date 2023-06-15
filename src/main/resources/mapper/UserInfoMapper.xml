@@ -37,10 +37,17 @@
 		WHERE ui_id = #{uiId}
 	</update>
 	
-	<!-- 시큐리티 -->
+	<!-- 시큐리티 + 회원 상세 정보 페이지 -->
 	<select id="findUserInfoByUiId" resultType="com.younggam.app.vo.UserInfoVO">
 		SELECT * FROM user_info
 		WHERE ui_id = #{uiId}
 	</select>
 	
+	<!-- 관리자 -->
+
+
+
+
+
+
 </mapper>
