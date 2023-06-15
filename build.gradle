@@ -30,6 +30,9 @@ dependencies {
   	
   	implementation 'com.squareup.okhttp3:okhttp:4.9.1' //TMDB 검색 기능 자바로 사용 시 필요?
   	
+
+  	
+  	
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.mysql:mysql-connector-j'
