@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>Search</h2>
+
 <form action="/search" method="get">
 	<input id="search" name="search" value="${param.search}" 
 			placeholder="영화, 감독, 배우를 검색해보세요.">
@@ -16,10 +18,14 @@
 
 <h3>검색어: ${param.search}</h3> <%-- input의 value --%>
 
-<c:if test="${empty movie}">
+<c:choose>
+<c:when test="${empty param.search}">
+	<p>검색 고고 </p>
+</c:when>
+<c:when test="${empty movie}">
 	<p>검색 결과가 없어요 :( </p>
-</c:if>
-
+</c:when>
+<c:otherwise>
 <c:forEach items="${movie}" var="movie">
 	<h3><a href="detail?movieId=${movie.id}">${movie.title}</a></h3> <%-- action 보내고 돌려 받은 값 --> --%>
 	<p>개봉연도: ${movie.releaseDate}</p> <%-- action 보내고 돌려 받은 값 --%>
@@ -29,11 +35,12 @@
 	<p>제작국가: ${movie.productionConturies}</p>
 	<p><img id="poster" src="https://image.tmdb.org/t/p/w300${movie.posterPath}" width="50" height="100" /></p>
 </c:forEach>
+</c:otherwise>
+</c:choose>
 
-
-</body>
 <script>
 
-
 </script>
+</body>
+
 </html>

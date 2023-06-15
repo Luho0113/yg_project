@@ -22,10 +22,9 @@ import okhttp3.Response;
 public class MovieDetailService {
 
 	//배우 정보 추출 : 배우명, 배역명, 포스터
-	//!!!감독도 추출해볼까?
-	public List<CastVO> getCast(String movieId) {
+	public List<CastVO> getCast(String movieId) { 
 		//데이터를 파싱해서 VO객체에 저장한 뒤 List에 저장
-		List<CastVO> castList=new ArrayList<>();
+		List<CastVO> castList=new ArrayList<>(); //credits에 movieId를 검색한 내용
 		
 		try {
 			OkHttpClient client = new OkHttpClient();
@@ -72,7 +71,7 @@ public class MovieDetailService {
 	//영화 정보
 	//나라,장르 등 때문에 이것도 map 사용
 	public List<MovieVO> getMovieDetail(String movieId) {
-		List<MovieVO> movieDataList = new ArrayList<>();
+		List<MovieVO> movieDataList = new ArrayList<>(); //detail에 MovieId를 검색한 내용
 		try { 
 		
 			OkHttpClient client = new OkHttpClient();
@@ -96,8 +95,17 @@ public class MovieDetailService {
 				
 		
 			movieVO.setTitle(jsonObject.getString("title"));
-			movieVO.setOriginalTitle(jsonObject.getString("original_title"));
-			movieVO.setDirectors(movieService.getCredit(movieVO.getId()));
+			movieVO.setPosterPath(jsonObject.getString("poster_path"));//영화포스터
+			movieVO.setReleaseDate(jsonObject.getString("release_date"));//개봉일
+			movieVO.setGenreIds(movieService.getCredit(movieId));//장르 !!!감독이 저장되는데..?
+			movieVO.setProductionConturies(movieService.getConturies(movieId));//국가
+			movieVO.setRuntime(jsonObject.getString("runtime"));//상영시간
+			movieVO.setOriginalTitle(jsonObject.getString("original_title")); //원제
+			movieVO.setAdult(jsonObject.getString("adult"));//등급
+			movieVO.setOverview(jsonObject.getString("overview"));//오버뷰
+			
+			/*감독명이 안나왔었는데 MovieService 생성 후 무비서비스틔 겟크레딧메소드에 movieId를 담아 감독명을 저장함*/
+			movieVO.setDirectors(movieService.getCredit(movieId));
 			
 			movieDataList.add(movieVO);
 			

@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>영화 상세</title>
+
 </head>
 <body>
 <h1>영화 상세</h1>
@@ -27,6 +28,18 @@
 	<p>제목: ${movieData.title}</p>
 	<p>원제: ${movieData.originalTitle}</p>
 	<p>감독: ${movieData.directors}</p>
+	<!-- 포스터 -->
+		
+	<p>개봉일: ${movieData.releaseDate}</p>
+	<p>장르: ${movieData.genreIds}</p>
+	<p>국가: ${movieData.productionConturies}</p> 
+	<p>등급: ${movieData.adult}</p>
+	<p>상영시간: ${movieData.runtime}</p>
+	
+	<h3>내용</h3>
+	<p>${movieData.overview}</p>
+	
+	
 </c:forEach>
 
 
@@ -38,6 +51,7 @@
 <p>배역명 : ${cast.character} </p>
 <p><img id="poster" src="https://image.tmdb.org/t/p/w300${cast.profilePath}" width="50" height="100" /></p>
 </c:forEach>
+
 
 
 </body>

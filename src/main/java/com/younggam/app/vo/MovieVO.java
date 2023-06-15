@@ -19,7 +19,12 @@ public class MovieVO {
 	private List<String> productionConturies; //제작 국가
 	
 	private List<String> directors; //감독(한 명 or 여러 명)
+	
+	//이거 지워도 될 듯
 	//private Map<String, String> cast; //출연진(최대 몇 명을 담을지 상의 필요함)
+	
+	//상영시간
+	private String runtime;
 	
 
 	
