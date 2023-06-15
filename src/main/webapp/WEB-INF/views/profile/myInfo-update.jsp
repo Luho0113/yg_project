@@ -20,12 +20,19 @@
 
 	<h3>회원정보수정</h3>
 	<form method="POST" action="/myInfo-update" onsubmit="return checkValue()" enctype="multipart/form-data">
-		<div id="imgDiv" style="display: none">
-			<!-- 프로필 이미지 미리보기 -->
-			<img src="" width="300" onerror="noImage()">  
+		
+		<!-- 기존 프로필 사진 -->
+		<div>
+			<img src="${user.uiFilePath}" style="border-radius: 40px" width="80px" height="80px" 
+			onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+		</div>
+		<!-- 선택한 프로필 사진 미리보기 -->
+		<div id="imgPreview" style="display: none">
+			<img src="" width="300" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">  
 		</div>
 		<label for="uiFilePath">프로필 이미지 : </label>
-		<input type="file" name="uiFile" id="uiFile" onchange="loadImg(this)" value="${user.uiFile}">
+		<input type="file" name="uiFile" id="uiFile" onchange="imgPreview(this)" value="${user.uiFile}">
+		
 		<div>
 			<label> 이름 : <input type="text" name="uiName" id="uiName" value="${user.uiName}">
 			</label>
@@ -38,7 +45,7 @@
 			</label>
 		</div>
 		<div>
-			<label> 비밀번호 확인 : <input type="password" name="uiPasswordCheck" id="uiPasswordCheck" value="${user.uiPasswordCheck}">
+			<label> 비밀번호 확인 : <input type="password" name="uiPasswordCheck" id="uiPasswordCheck" >
 			</label>
 		</div>
 
@@ -77,11 +84,11 @@
 			} 
 		}
 		
-		function loadImg(obj) {
+		function imgPreview(obj) {
 			let file = obj.files[0];
-			let imgObj = document.querySelector('#imgDiv>img');
+			let imgObj = document.querySelector('#imgPreview>img');
 			imgObj.src = URL.createObjectURL(file); //이미지 src의 url 생성
-			document.querySelector('#imgDiv').style.display = '';
+			document.querySelector('#imgPreview').style.display = '';
 		}
 		
 		//유효성 검사
