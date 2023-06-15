@@ -21,7 +21,8 @@
         <input type="submit">
     </form>
 	
-    <form action="#" method="POST">
+    <form action="review-insert" method="POST">
+    	<input type="hidden" id="miCode" name="miCode" value="">
         <table>
             <tr>
                 <th>감독</th><td id="director"></td>
@@ -60,7 +61,7 @@
             </tr>
         </table>
         <div>
-            <textarea placeholder="리뷰를 작성하세요." style="height: 300px; width: 600px;"></textarea>
+            <textarea placeholder="리뷰를 작성하세요." style="height: 300px; width: 600px;" name="riContent" id="riContent"></textarea>
         </div>
         <div>
             <input type="checkbox" id="spoiler" name="spoiler">
@@ -68,22 +69,23 @@
         </div>
         <div>
             <button type="submit">등록</button>
-            <button onclick="">취소</button>
+            <button type="button" onclick="location.href='review/reviews'">취소</button>
         </div>
     </form>
 </body>
 
-
 <script>
+var movieId = new Array();
 var movieReleaseDate = new Array();
 var movieDirectors = new Array();
 var movieTitle = new Array();
 	<c:forEach items="${movie}" var="movie">
-		movieReleaseDate.push("${movie['releaseDate']}");
+		movieId.push("${movie['id']}")
+		movieReleaseDate.push("${movie['releaseDate']}")
 		movieDirectors.push("${movie['directors']}");
 		movieTitle.push("${movie['title']}");
     </c:forEach>
-    autocomplete(document.getElementById("myInput"), movieTitle, movieReleaseDate, movieDirectors);
+autocomplete(document.getElementById("myInput"), movieTitle, movieDirectors, movieReleaseDate, movieId);
 </script>
 
 </html>

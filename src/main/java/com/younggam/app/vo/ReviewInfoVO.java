@@ -14,7 +14,7 @@ public class ReviewInfoVO {
 	  	private int riDislikeCnt; //리뷰에 대한 싫어요 수
 	  	private String riUpdateDate; //리뷰 수정일
 	  	private String uiId; //참조키: 유저 아이디
-	  	private String miTitle; //참조키: 영화 코드
+	  	private String miCode; //참조키: 영화 코드
 	  	
 
 }

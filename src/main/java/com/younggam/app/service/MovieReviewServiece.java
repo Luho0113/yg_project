@@ -8,7 +8,6 @@ import org.springframework.boot.configurationprocessor.json.JSONArray;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Service;
 
-import com.younggam.app.vo.CastVO;
 import com.younggam.app.vo.MovieVO;
 
 import lombok.extern.slf4j.Slf4j;
@@ -18,10 +17,10 @@ import okhttp3.Response;
 
 @Service
 @Slf4j
-public class MovieService {
+public class MovieReviewServiece {
 	
 	//TMDB API 요청 Method (기본)
-	public List<MovieVO> getMovie(Map<String, String> param) {
+	public List<MovieVO> getMovieInfo(Map<String, String> param) {
 		List<MovieVO> movieList = new ArrayList<>();
 		try {
 
@@ -82,13 +81,8 @@ public class MovieService {
 						
 						movieVO.setId(known.getString("id"));
 						movieVO.setTitle(known.getString("title"));
-						movieVO.setOriginalTitle(known.getString("original_title"));
-						movieVO.setPosterPath(known.getString("poster_path"));
-						movieVO.setOverview(known.getString("overview"));
 						movieVO.setReleaseDate(known.getString("release_date"));
-						movieVO.setAdult(known.getString("adult"));
 						movieVO.setDirectors(getCredit(movieVO.getId()));
-						movieVO.setProductionConturies(getConturies(movieVO.getId()));
 						
 						JSONArray genreIdArray = known.getJSONArray("genre_ids");
 						List<String> genreIds = new ArrayList<>();
@@ -106,13 +100,8 @@ public class MovieService {
 					
 					movieVO.setId(object.getString("id"));
 					movieVO.setTitle(object.getString("title"));
-					movieVO.setOriginalTitle(object.getString("original_title"));
-					movieVO.setPosterPath(object.getString("poster_path"));
-					movieVO.setOverview(object.getString("overview"));
 					movieVO.setReleaseDate(object.getString("release_date"));
-					movieVO.setAdult(object.getString("adult"));
 					movieVO.setDirectors(getCredit(movieVO.getId()));
-					movieVO.setProductionConturies(getConturies(movieVO.getId()));
 					
 					JSONArray genreIdArray = object.getJSONArray("genre_ids");
 					List<String> genreIds = new ArrayList<>();
@@ -216,3 +205,4 @@ public class MovieService {
 	
 
 }//end of class
+

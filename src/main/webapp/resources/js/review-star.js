@@ -2,72 +2,63 @@ const drawStar = (target) => {
     document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
   }
 
+/* 검색한 후 input에 focus 하기(그러면 검색결과 생성과 동시에 연관검색어가 보여진다.) */
 /* onload 말고 submit 했을 때만,,, 으로 하고싶은데,, */
 onload =  function(){
 	document.form.search.focus();
 }
 
+/* 추천검색어에서 특정 검색어를 선택하면 input에 focus out 하기 */
 function changetoblur(){
 	document.form.search.blur();
 }
 
-/* 맨 밑에 있는데 이 함수 전체가 input를 클릭했을 때 실행되는 것임 */
-  function autocomplete(inp, arr, date, directors) {
-    /*the autocomplete function takes two arguments,
-    the text field element and an array of possible autocompleted values:*/
-    /* 자동 완성 함수는 두 개의 인수를 사용합니다,
-    텍스트 필드 요소 및 가능한 자동 완성 값 배열 */
+/* 추천검색어 함수 시작! */
+function autocomplete(inp, arr, directors, movieReleaseDate, movieId) {
     var currentFocus;
-    /*execute a function when someone writes in the text field:*/
-    /* 텍스트 필드가 focus 되었을 때 기능을 실행합니다 */
-
+    
+    /* 텍스트 필드가 focus 되었을 때 기능을 실행한다 */
     inp.addEventListener("focus", function() {
-        var a, b, i, val = this.value;
-        /*close any already open lists of autocompleted values*/
-        /* 이미 열려 있는 자동 완성 값 목록 닫기 */
-        /*closeAllLists();*/ /* 옆에 주석처리한 거 아직은 문제가 없는데 이후에 생길수도 있음 */
+        var a, b, i, val = this.value; /* this = input */
         
-        if (!val) { return false;}
+        if (!val) { 
+			return false;
+		}/* 검색어가 없으면 아래의 항목은 실행되지 않는다. */
 
         currentFocus = -1; /* -1 대입 */
 
-        /*create a DIV element that will contain the items (values):*/
         /* 항목(값)을 포함하는 DIV 요소 생성 */
-        a = document.createElement("DIV");
-        a.setAttribute("id", this.id + "autocomplete-list");
-        a.setAttribute("class", "autocomplete-items");
-        /*append the DIV element as a child of the autocomplete container:*/
-        /* DIV 요소를 자동 완성 용기의 자식으로 추가 */
+        a = document.createElement("DIV"); /* 이 div는 목록을 묶는 div이다. (여기서는 값이 없음) */
+        a.setAttribute("id", this.id + "autocomplete-list"); /* 새로 만들어진 div에 id 부여하기 */
+        a.setAttribute("class", "autocomplete-items"); /* 새로 만들어진 div에 class 부여하기 */
+        
+        /* 새로 만들어진 div를 div#autocomplete의 자식으로 넣는다.*/
         this.parentNode.appendChild(a);
+        /* this = input */
         /* 여기서 만들어진 것이 myInputautocomplete라는 이름을 가진 <div> */
 
-
-        /*for each item in the array...*/
-        /* 배열의 각 항목에 대해 */
+		/* 배열 길이 만큼 for문 돌리기 */
         for (i = 0; i < arr.length; i++) {
-            b = document.createElement("DIV");
-            b.innerHTML = arr[i];
+            b = document.createElement("DIV"); /* 새로 만들어진 div */
+            b.innerHTML = arr[i]; /* input은 value를 보내기 위해서 있는거라 hidden 처리되어 있어서 안 보임 그래서 일반 텍스트로 값을 넣어서 보여준다. */
             b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-            
-            
-            /*execute a function when someone clicks on the item value (DIV element):*/
-            /* 항목 값(DIV 요소)을 클릭하면 다음과 같은 기능이 실행됩니다: */
+            /* 해당 div를 누르면 arr[i]의 값이 기존에 있던 input#myInput에 들어갈 수 있도록 input으로 태그 생성한다. */
+            b.innerHTML += "<input type='hidden' value='" + directors[i] + "'>";
+            b.innerHTML += "<input type='hidden' value='" + movieReleaseDate[i] + "'>";
+            b.innerHTML += "<input type='hidden' value='" + movieId[i] + "'>";
+           	
+            /* 위에서 만들어진 변수 b(값을 포함한 div)를 클릭하면 다음과 같은 기능을 실행한다. */
                 b.addEventListener("click", function() {
-                /*insert the value for the autocomplete text field:*/
-                /* 자동 완성 텍스트 필드 값 삽입 */
-                inp.value = this.getElementsByTagName("input")[0].value;
+                inp.value = this.getElementsByTagName("input")[0].value; /* 클릭한 input의 값을 input#myInput에 넣어준다. */
+                document.getElementById("director").innerHTML = this.getElementsByTagName("input")[1].value;
+                document.getElementById("releaseDate").innerHTML = this.getElementsByTagName("input")[2].value;
+                document.getElementById("miCode").value = this.getElementsByTagName("input")[3].value;
+                /* 감독이 들어는가는데 아직 배열 상태이고 방식이 조금 구린듯 */
                 
-                /* 바로 아래줄 수정 필요 */
-                document.getElementById('.director').text = '브래들리 쿠퍼';
-                /*close the list of autocompleted values,
-                (or any other open lists of autocompleted values:*/
-                /* 자동 완성 값 리스트를 닫습니다,
-                (또는 자동 완성된 값의 열려 있는 다른 목록) */
-                /*closeAllLists();*/
-            });
+            }); /* 추천검색어 중에서 영화를 선택했을 때 실행되는 함수 끝 */ 
             a.appendChild(b);
-          
-        }
+        }/* for문 끝 */
+        
     });
     /* input 했을 때 실행되는 함수 끝나는 부분 */
 
@@ -137,6 +128,10 @@ function changetoblur(){
         x[i].parentNode.removeChild(x[i]);
       }
     }
+  }
+/* 함수로 가져올 수 있는 방법이 없을가,,? */ 
+  function selectDirector(arr){
+	  
   }
   /*execute a function when someone clicks in the document:*/
   /* 문서를 클릭하면 기능을 실행합니다 */
