@@ -82,7 +82,7 @@ public class UserInfoController {
  			return "index";
  		}
  		
- 		m.addAttribute("msg", "아이디나 비밀번호가 잘못되었습니다.");
+ 		//m.addAttribute("msg", "아이디나 비밀번호가 잘못되었습니다.");
  		
  		return "user/login";
  	}

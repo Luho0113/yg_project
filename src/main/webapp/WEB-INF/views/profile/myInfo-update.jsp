@@ -31,12 +31,8 @@
 			<img src="" width="300" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">  
 		</div>
 		<label for="uiFilePath">프로필 이미지 : </label>
-		<input type="file" name="uiFile" id="uiFile" onchange="imgPreview(this)" value="${user.uiFile}">
+		<input type="file" name="uiFile" id="uiFile" onchange="imgPreview(this)" value="${user.uiFilePath}">
 		
-		<div>
-			<label> 이름 : <input type="text" name="uiName" id="uiName" value="${user.uiName}">
-			</label>
-		</div>
 		<div>
 			<label> 닉네임 : <input type="text" name="uiNickname" id="uiNickname" value="${user.uiNickname}"> </label>
 		</div>

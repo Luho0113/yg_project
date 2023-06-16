@@ -6,8 +6,8 @@
 	
 	<!-- 회원 가입 -->
 	<insert id="insertUserInfo">
-		INSERT INTO user_info(ui_id, ui_name, ui_nickname, ui_password, ui_file_path, ui_email)
-		VALUES(#{uiId}, #{uiName}, #{uiNickname}, #{uiPassword}, #{uiFilePath}, #{uiEmail})
+		INSERT INTO user_info(ui_id, ui_nickname, ui_password, ui_file_path, ui_email)
+		VALUES(#{uiId}, #{uiNickname}, #{uiPassword}, #{uiFilePath}, #{uiEmail})
 	</insert>
 	
 	<!-- 아이디 중복 조회 -->
@@ -32,7 +32,7 @@
 	<!-- 정보수정 -->
 	<update id="updateUserInfo">
 		UPDATE user_info
-		SET ui_password = #{uiPassword}, ui_name = #{uiName}, ui_nickname = #{uiNickname}, 
+		SET ui_password = #{uiPassword}, ui_nickname = #{uiNickname}, 
 			ui_file_path = #{uiFilePath}, ui_email = #{uiEmail}
 		WHERE ui_id = #{uiId}
 	</update>
