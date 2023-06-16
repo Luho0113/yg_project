@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+/*스타일 공통 부분*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+ul, ol, li {
+	list-style: none;
+}
+
+a, a:visited {
+	text-decoration: none;
+}

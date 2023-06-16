@@ -23,6 +23,7 @@ public class UserInfoService {
 	private UserInfoMapper uiMapper;
 	
 	private final String uploadFilePath = "C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
+	//저장 경로 : C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload
 	
 	//1) 회원가입
 	public boolean join(UserInfoVO userInfo) throws IllegalStateException, IOException {

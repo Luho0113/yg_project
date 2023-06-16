@@ -1,1 +1,18 @@
 @charset "UTF-8";
+
+.nav{
+	background-color: #FF7C00;
+	width: 100%;
+}
+.nav li{
+	display: inline-block;
+}
+.nav li>a {
+	display: block;
+	padding: 5px 20px;
+	color: #2A2725;
+}
+
+.header{
+	width: 100%;
+}

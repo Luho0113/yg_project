@@ -9,21 +9,26 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+
+<!-- 스타일 -->
+<link rel="stylesheet" href="${path}/resources/css/common/page.css">
+<link rel="stylesheet" href="${path}/resources/css/common/header.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 </head>
 <body>
-
+	<!-- header area -->
+	<jsp:include page="../common/header.jsp"></jsp:include>
 	<h3>회원가입</h3>
 
 	<form method="POST" action="/join" name="join_form" onsubmit="return isThereValue()"
 		enctype="multipart/form-data">
 		
-		<div id="imgDiv" style="display: none">
+		<div id="imgPreview" style="display: none">
 			<!-- 프로필 이미지 미리보기 -->
 			<img src="" style="border-radius: 40px" width="80px" height="80px">  
 		</div>
 		<label for="uiFilePath">프로필 이미지 : </label>
-		<input type="file" name="uiFile" id="uiFile" onchange="loadImg(this)">
+		<input type="file" name="uiFile" id="uiFile" onchange="imgPreview(this)">
 		
 		<!-- 아이디 입력 -->
 		<div>
@@ -87,14 +92,19 @@
 		<button>가입하기</button>
 	</form>
 	
+	<!-- footer area -->
+	<jsp:include page="../common/footer.jsp"></jsp:include>
+	
+	
+	<!-- javascript -->
 	<script src="${path}/resources/js/user/formCheck.js"></script>
 	<script>
 		
-		function loadImg(obj) {
+		function imgPreview(obj) {
 			let file = obj.files[0];
-			let imgObj = document.querySelector('#imgDiv>img');
+			let imgObj = document.querySelector('#imgPreview>img');
 			imgObj.src = URL.createObjectURL(file); //이미지 src의 url 생성
-			document.querySelector('#imgDiv').style.display = '';
+			document.querySelector('#imgPreview').style.display = '';
 		}
 
 	</script>
