@@ -5,8 +5,6 @@ import java.io.IOException;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -82,19 +80,10 @@ public class UserInfoController {
  			return "index";
  		}
  		
- 		//m.addAttribute("msg", "아이디나 비밀번호가 잘못되었습니다.");
+ 		m.addAttribute("msg", "error");
  		
  		return "user/login";
  	}
-	
-	
-//	@PostMapping("/login")
-//    public String login(@ModelAttribute UserInfoVO user) {
-//        boolean isValidMember = uiService.isValidMember(user.getUiId(), user.getUiPassword());
-//        if (isValidMember)
-//            return "/";
-//        return "user/login";
-//    }
 	
 	
 	//3) 로그아웃

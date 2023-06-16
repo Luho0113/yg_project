@@ -15,7 +15,7 @@
 
 	<h3>회원가입</h3>
 
-	<form method="POST" action="/join" name="join_form" onsubmit="return checkValue()"
+	<form method="POST" action="/join" name="join_form" onsubmit="return isThereValue()"
 		enctype="multipart/form-data">
 		
 		<div id="imgDiv" style="display: none">
@@ -27,30 +27,43 @@
 		
 		<!-- 아이디 입력 -->
 		<div>
-			<label> <input type="text" name="uiId" id="uiId" onkeyup="checkId(this)" placeholder="아이디">
+			<label> 
+				<input type="text" name="uiId" id="uiId" onkeyup="checkId(this)" placeholder="아이디">
 			</label>
-				<span class="uiId_ok" style="display: none">사용 가능한 아이디입니다.</span>
-				<span class="uiId_already" style="display: none">이미 사용 중인 아이디입니다.</span>
+			<span class="uiId_ok" style="display: none">사용 가능한 아이디입니다.</span>
+			<span class="uiId_already" style="display: none">이미 사용 중인 아이디입니다.</span>
+			<div id="error_checkId">
+				<!-- 경고 텍스트 -->
+				<div class="checkId_false" style="display: none">틀림요</div>
+			</div>
+		</div>
+		
+		
+		<!-- 비밀번호 입력 -->
+		<div>
+			<label> <input type="password" name="uiPassword" id="uiPassword" onkeyup="checkPwd()" placeholder="비밀번호">
+			</label>
+			<div id="error_checkPwd">
+				<!-- 경고 텍스트 -->
+			</div>
+			
+		</div>
+		<!-- 비밀번호 확인 입력 -->
+		<div>
+			<label> <input type="password" name="uiPasswordSame" id="uiPasswordSame" onkeyup="checkPwdSame()" placeholder="비밀번호 확인">
+			</label>
+			<div id="error_checkPwdSame">
+				<!-- 경고 텍스트 -->
+			</div>
 		</div>
 		
 		<!-- 닉네임 입력 -->
 		<div>
 			<label> <input type="text" name="uiNickname" id="uiNickname" onkeyup="checkNickName()" placeholder="닉네임"> 
-			<span id="alert_checkNickName"></span>
 			</label>
-		</div>
-		
-		<!-- 비밀번호 입력 -->
-		<div>
-			<label> <input type="password" name="uiPassword" id="uiPassword" onkeyup="checkPwd()" placeholder="비밀번호">
-			<span id="alert_checkPwd"></span>
-			</label>
-		</div>
-		<!-- 비밀번호 확인 입력 -->
-		<div>
-			<label> <input type="password" name="uiPasswordSame" id="uiPasswordSame" onkeyup="checkPwdSame()" placeholder="비밀번호 확인">
-			<span id="alert_checkPwdSame"></span>
-			</label>
+			<div id="error_checkNickName">
+				<!-- 경고 텍스트 -->
+			</div>
 		</div>
 		
 		
@@ -65,6 +78,9 @@
 				<option value="@nate.com">네이트</option>
 				<option value="@daum.net">다음</option>
 			</select>
+			<div id="error_checkEmail">
+				<!-- 경고 텍스트 -->
+			</div>
 		</div>
 
 		<button type="button" onclick="history.back();">이전페이지로</button>
