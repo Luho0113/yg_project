@@ -1,6 +1,31 @@
 const drawStar = (target) => {
     document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
-  }
+    console.log(target.value);
+    const starPoint = target.value/2.0;    
+    document.getElementById("riStar").value = +starPoint;
+}
+
+//영감포인트 value 변경
+function younggamPointCheck(checkbox){
+	
+	//unChecked일 때
+	if(!checkbox.checked){
+		checkbox.value = 0;
+	}else{
+		checkbox.value = 1;
+	}
+	
+}
+
+function spoilCheck(checkbox){
+	if(checkbox.checked){
+		document.getElementById("riSpoil_hidden").disabled = true;
+	}else{
+		document.getElementById("riSpoil_hidden").disabled = false;
+	}
+}
+
+
 
 /* 검색한 후 input에 focus 하기(그러면 검색결과 생성과 동시에 연관검색어가 보여진다.) */
 /* onload 말고 submit 했을 때만,,, 으로 하고싶은데,, */
@@ -14,7 +39,7 @@ function changetoblur(){
 }
 
 /* 추천검색어 함수 시작! */
-function autocomplete(inp, arr, directors, movieReleaseDate, movieId) {
+function autocomplete(inp, arr, directors, movieReleaseDate, movieId, movieGenreId) {
     var currentFocus;
     
     /* 텍스트 필드가 focus 되었을 때 기능을 실행한다 */
@@ -46,13 +71,15 @@ function autocomplete(inp, arr, directors, movieReleaseDate, movieId) {
             b.innerHTML += "<input type='hidden' value='" + directors[i] + "'>";
             b.innerHTML += "<input type='hidden' value='" + movieReleaseDate[i] + "'>";
             b.innerHTML += "<input type='hidden' value='" + movieId[i] + "'>";
+            b.innerHTML += "<input type='hidden' value='" + movieGenreId[i] + "'>";
            	
             /* 위에서 만들어진 변수 b(값을 포함한 div)를 클릭하면 다음과 같은 기능을 실행한다. */
                 b.addEventListener("click", function() {
                 inp.value = this.getElementsByTagName("input")[0].value; /* 클릭한 input의 값을 input#myInput에 넣어준다. */
-                document.getElementById("director").innerHTML = this.getElementsByTagName("input")[1].value;
-                document.getElementById("releaseDate").innerHTML = this.getElementsByTagName("input")[2].value;
-                document.getElementById("miCode").value = this.getElementsByTagName("input")[3].value;
+                document.getElementById("director").innerHTML = this.getElementsByTagName("input")[1].value.substring(1, (this.getElementsByTagName("input")[1].value.length) -1); /* 감독 */
+                document.getElementById("releaseDate").innerHTML = this.getElementsByTagName("input")[2].value.substring(0, 4); /* 개봉일 */
+                document.getElementById("riMovieId").value = this.getElementsByTagName("input")[3].value; /* 영화 아이디 */
+                document.getElementById("riGenre").value = this.getElementsByTagName("input")[4].value; /* 장르 */
                 /* 감독이 들어는가는데 아직 배열 상태이고 방식이 조금 구린듯 */
                 
             }); /* 추천검색어 중에서 영화를 선택했을 때 실행되는 함수 끝 */ 
@@ -129,10 +156,7 @@ function autocomplete(inp, arr, directors, movieReleaseDate, movieId) {
       }
     }
   }
-/* 함수로 가져올 수 있는 방법이 없을가,,? */ 
-  function selectDirector(arr){
-	  
-  }
+  
   /*execute a function when someone clicks in the document:*/
   /* 문서를 클릭하면 기능을 실행합니다 */
   document.addEventListener("click", function (e) {

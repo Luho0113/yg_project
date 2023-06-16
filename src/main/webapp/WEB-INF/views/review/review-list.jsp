@@ -40,11 +40,13 @@
             <li>서부</li>
         </ul>
     </div>
-
-
-
-
     <div class="riListContainer" id="riListContainer">
+    	<c:forEach items="${reviewList}" var="review">
+  			<tr>
+  				<th>내용</th>
+  				<td>${review.riContent}</td>
+  			</tr>  	
+    	</c:forEach>
         <!-- <img id="poster" src="https://image.tmdb.org/t/p/w300"> -->
     </div>
 

@@ -22,7 +22,8 @@
     </form>
 	
     <form action="review-insert" method="POST">
-    	<input type="hidden" id="miCode" name="miCode" value="">
+    	<input type="hidden" id="riMovieId" name="riMovieId" value="">
+    	<input type="hidden" id="riGenre" name="riGenre" value="">
         <table>
             <tr>
                 <th>감독</th><td id="director"></td>
@@ -33,43 +34,45 @@
             <tr>
                 <th>영감 포인트</th>
                 <td>
-                    <input type="checkbox" id="dirction" name="dirction" value="1">
+                    <input type="checkbox" id="riDirectionPoint" name="riDirectionPoint" value="0" onchange="younggamPointCheck(this)">
                     <label for="dirction">연출</label>
 
-                    <input type="checkbox" id="acting" name="acting" value="1">
+                    <input type="checkbox" id="riActingPoint" name="riActingPoint" value="0" onchange="younggamPointCheck(this)">
                     <label for="acting">연기</label>
 
-                    <input type="checkbox" id="story" name="story" value="1">
+                    <input type="checkbox" id="riStoryPoint" name="riStoryPoint" value="0" onchange="younggamPointCheck(this)">
                     <label for="story">스토리</label>
-
-                    <input type="checkbox" id="visual" name="visual" value="1">
-                    <label for="visual">영상미</label>
-
-                    <input type="checkbox" id="ost" name="ost" value="1">
-                    <label for="ost">OST</label><br>
+                    
+					<input type="checkbox" id="riOstPoint" name="riOstPoint" value="0" onchange="younggamPointCheck(this)">
+                    <label for="ost">OST</label>
+                    
+                    <input type="checkbox" id="riVisualPointl" name="riVisualPoint" value="0" onchange="younggamPointCheck(this)">
+                    <label for="visual">영상미</label><br>
                 </td>
             </tr>
             <tr>
                 <th>별점</th>
-                    <td>	
-                        <span class="star">
-                            ★★★★★
-                            <span>★★★★★</span>
-                            <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                        </span>
-                </td>
+               		<td>	
+                       <span class="star">
+                           ★★★★★
+                           <span>★★★★★</span>
+                           <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                           <input type="hidden" name="riStar" id="riStar" value="">
+                       </span>
+               		</td>
             </tr>
         </table>
         <div>
             <textarea placeholder="리뷰를 작성하세요." style="height: 300px; width: 600px;" name="riContent" id="riContent"></textarea>
         </div>
         <div>
-            <input type="checkbox" id="spoiler" name="spoiler">
-            <label for="spoiler">해당 리뷰는 스포일러를 포함하고 있습니다.</label>
+            <input type="checkbox" id="riSpoil" name="riSpoil" value="1" onchange="spoilCheck(this)">
+            <input type="hidden" id="riSpoil_hidden" name="riSpoil" value="0">
+            <label for="riSpoil">해당 리뷰는 스포일러를 포함하고 있습니다.</label>
         </div>
         <div>
             <button type="submit">등록</button>
-            <button type="button" onclick="location.href='review/reviews'">취소</button>
+            <button type="button" onclick="location.href='reviews'">취소</button>
         </div>
     </form>
 </body>
@@ -79,13 +82,15 @@ var movieId = new Array();
 var movieReleaseDate = new Array();
 var movieDirectors = new Array();
 var movieTitle = new Array();
+var movieGenreId = new Array();
 	<c:forEach items="${movie}" var="movie">
 		movieId.push("${movie['id']}")
 		movieReleaseDate.push("${movie['releaseDate']}")
 		movieDirectors.push("${movie['directors']}");
 		movieTitle.push("${movie['title']}");
+		movieGenreId.push("${movie['genreIds']}");
     </c:forEach>
-autocomplete(document.getElementById("myInput"), movieTitle, movieDirectors, movieReleaseDate, movieId);
+autocomplete(document.getElementById("myInput"), movieTitle, movieDirectors, movieReleaseDate, movieId, movieGenreId);
 </script>
 
 </html>
