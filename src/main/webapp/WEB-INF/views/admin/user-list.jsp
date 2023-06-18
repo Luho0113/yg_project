@@ -7,19 +7,30 @@
 <meta charset="UTF-8">
 <title>회원 목록 페이지</title>
 </head>
+<script>
+function deleteCheck(){
+	if(!confirm('삭제하시면 복구할 수 없습니다. \n정말로 삭제하시겠습니까?')){
+		return false;
+	}else{
+		location.href="/admin/user-delete?uiId=${user.uiId}";
+	}
+}
+</script>
+<body>
 <form action="/admin/users" method="GET">
 	<input type="text" name="uiId" placeholder="유저 아이디" value="${param.uiId}">
-	<input type="text" name="uiName" placeholder="유저 이름" value="${param.uiName}">
+	<input type="text" name="uiNickname" placeholder="유저 닉네임" value="${param.uiNickname}">
 	<button>회원 검색</button>
 </form>
+	<h2>회원 관리</h2>
 	<table class="userTable" border="1">
 		<tr>
 			<th>아이디</th>
-			<th>이름</th>
 			<th>닉네임</th>
 			<th>프로필 이미지</th>
 			<th>이메일</th>
-			<th>휴면 여부</th>
+			<th>포인트</th>
+			<th>상태</th>
 			<th>수정 / 삭제</th>
 		</tr>
 		<c:if test="${empty page.list}">
@@ -28,20 +39,18 @@
 		<c:forEach items="${page.list}" var="user">
 		<tr>
 			<td>${user.uiId}</td>
-			<td><a href="/admin/user?uiId=${user.uiId}">${user.uiName}</a></td>
-			<td>${user.uiNickname}</td>
+			<td><a href="/admin/user?uiId=${user.uiId}">${user.uiNickname}</a></td>
 			<td><img src="${user.uiFilePath}" width="150"></td>
 			<td>${user.uiEmail}</td>
+			<td>${user.uiReviewPoint}</td>
 			<td>
-				<div>
-				<button onclick="location.href='/admin/user-update?uiId=${user.uiId}'">
-					<c:if test="${user.uiActive==1}">활성</c:if>
-					<c:if test="${user.uiActive==0}">비활성</c:if>
-				</button>
-				</div>
-			</td>
-			<td><a href="/admin/user-update?uiId=${user.uiId}">수정</a>
-			<a href="/admin/user-delete?uiId=${user.uiId}">삭제</a></td>
+			  <button onclick="location.href='/admin/user-update?uiId=${user.uiId}'">
+            	<c:if test="${user.uiActive==1}">활성</c:if>
+            	<c:if test="${user.uiActive==0}">비활성</c:if>
+         		</button>
+            </td>
+			<td><button onclick="location.href='/admin/user-update?uiId=${user.uiId}'">수정</button>
+			<button onclick="deleteCheck()">삭제</button></td>
 		</tr>
 		</c:forEach>
 	</table>
@@ -56,7 +65,7 @@
 	if(start!=1){
 		html += '<a href="/admin/users?page=' + (start-1);
 		if('${param.uiId}'){
-			htl += '&uiId=${param.uiId}';	
+			html += '&uiId=${param.uiId}';	
 		}
 		html += '"></a>';
 	}
@@ -68,12 +77,12 @@
 			if(i==1){
 				html += '<a href="/admin/users?&uiId=${param.uiId}">[' + i + ']</a>';	
 			}else{
-				html += '<a href="/admin/users?page=' + i + '&uiId=${param.uiId}">[' + i + ']</a>';
+				html += '<a href="/admin/users?page=' + i + '&uiId=${param.uiId}&uiNickname=${param.uiNickname}">[' + i + ']</a>';
 			}
 		}
 	}
 		if(end!=pages){
-			html += '<a href="/admin/users?page=' + (end + 1) + '&uiId=${param.uiId}"></a>';
+			html += '<a href="/admin/users?page=' + (end + 1) + '&uiId=${param.uiId}&uiNickname=${param.uiNickname}"></a>';
 		}
 	document.querySelector('#pageDiv').innerHTML = html;
 </script>

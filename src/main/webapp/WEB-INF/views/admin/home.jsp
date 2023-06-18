@@ -13,6 +13,7 @@
 	<button onclick="location.href='/admin/logout'">로그아웃</button>
 	<button onclick="location.href='/admin/movies'">영화 관리</button>
 	<button onclick="location.href='/admin/users'">회원 관리</button>
+	<button onclick="location.href='/admin/reports'">신고 게시판 관리</button>
 </c:if>	
 </body>
 </html>

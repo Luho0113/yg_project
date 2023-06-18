@@ -7,6 +7,15 @@
 <meta charset="UTF-8">
 <title>영화 목록 페이지</title>
 </head>
+<script>
+function deleteCheck(){
+	if(!confirm('삭제하시면 복구할 수 없습니다. \n정말로 삭제하시겠습니까?')){
+		return false;
+	}else{
+		location.href="/admin/movie-delete?miCode=${movie.miCode}";
+	}
+}
+</script>
 <body>
 <form action="/admin/movies" method="GET">
 	<input type="text" name="miTitle" placeholder="영화 제목" value="${param.miTitle}">
@@ -27,9 +36,10 @@
       <th>등급</th>
       <th>포스터</th>
       <th>줄거리</th>
+      <th>수정 / 삭제</th>
    </tr>
    <c:if test="${empty page.list}">
-      <th colspan="7">영화 목록이 없습니다.</th>
+      <th colspan="12">영화 목록이 없습니다.</th>
    </c:if>
    <c:forEach items="${page.list}" var="movie">
    <tr>
@@ -45,12 +55,12 @@
       <td>${movie.miAdult}</td>
       <td><img src= "${movie.miImage}" width="150"></td>
       <td>${movie.miOverview}</td>
-      <td><a href="/admin/movie-update?miCode=${movie.miCode}">수정</a></td>
-      <td><a href="/admin/movie-delete?miCode=${movie.miCode}">삭제</a></td>
+      <td><button onclick="location.href='/admin/movie-update?miCode=${movie.miCode}'">수정</button>
+      <button onclick="deleteCheck()">삭제</button></td>
    </tr>
    </c:forEach>
    <tr>
-      <td colspan="11" align="right">
+      <td colspan="12" align="right">
          <a href="/admin/movie-add">영화 등록</a>   
    </tr>
 </table>
@@ -77,12 +87,12 @@
          if(i == 1){
             html += ' <a href="/admin/movies?&miTitle=${param.miTitle}">[' + i + ']</a> ';
          }else{
-            html += ' <a href="/admin/movies?page=' + i + '&miTitle=${param.miTitle}">[' + i + ']</a> ';
+            html += ' <a href="/admin/movies?page=' + i + '&miTitle=${param.miTitle}&miOverview=${param.miOverview}">[' + i + ']</a> ';
          }
       }
    }
    if(end != pages){
-      html += '<a href="/admin/movies?page=' + (end + 1) + '&miTitle=${param.miTitle}"></a>';
+      html += '<a href="/admin/movies?page=' + (end + 1) + '&miTitle=${param.miTitle}&miOverview=${param.miOverview}"></a>';
    }
    document.querySelector('#pageDiv').innerHTML = html;
 </script>

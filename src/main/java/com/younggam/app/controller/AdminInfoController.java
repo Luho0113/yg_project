@@ -1,5 +1,6 @@
 package com.younggam.app.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -10,16 +11,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.younggam.app.service.AdminInfoService;
 import com.younggam.app.vo.AdminInfoVO;
 
-
 @Controller
 public class AdminInfoController {
 	@Autowired
-	AdminInfoService aiService;
+	private AdminInfoService aiService;
 	
+	//관리자 홈
+	@GetMapping("/admin/home")
+	public String admHome() {
+		return "admin/home";
+	}
+
 	//관리자 로그인
 	@PostMapping("/admin/login")
 	public String login(@ModelAttribute AdminInfoVO admin, HttpSession session, Model m) {
@@ -41,13 +48,55 @@ public class AdminInfoController {
 		session.invalidate();
 		return "admin/login";
 	}
-
+	
+	//관리자 상세 정보
+	@GetMapping("/admin/admin")
+	public String getAdminInfo(Model m, AdminInfoVO admin) {
+		admin = aiService.getAdminInfo(admin);
+		m.addAttribute("admin", admin);
+		return "admin/view";
+	}
+	
+	//관리자 수정
+		@GetMapping("/admin/update")
+		public String updateAdmin(Model m, AdminInfoVO admin) {
+			admin = aiService.getAdminInfo(admin);
+			m.addAttribute("admin", admin);
+			return "admin/update";
+		}
+		@PostMapping("/admin/update")
+		public String adminUpdate(AdminInfoVO admin, Model m) throws IllegalStateException, IOException {
+			String msg = "관리자 정보 수정에 실패하였습니다.";
+			String url = "/admin/update?adminId=" + admin.getAdminId();
+			if(aiService.updateAdminInfo(admin)) {
+				msg = "관리자 정보 수정에 성공하였습니다.";
+				url = "/admin/view";
+			}
+			m.addAttribute("msg", msg);
+			m.addAttribute("url", url);
+			return "common/msg";
+		}
+		
+	//관리자 삭제
+		@GetMapping("/admin/delete")
+		public String deleteAdmin(Model m, @RequestParam("adminId") String adminId) {
+			String msg = "관리자 삭제가 실패하였습니다.";
+			String url = "/admin/view?adminId=" + adminId;
+			if(aiService.deleteAdminInfo(adminId)) {
+				msg = "관리자 삭제가 성공하였습니다.";
+				url = "/admin/home";
+			}
+			m.addAttribute("msg", msg);
+			m.addAttribute("url", url);
+			return "common/msg";
+		}
+	
 	//관리자 목록
 	@GetMapping("/admin/admins")
 	public String getAdminList(@ModelAttribute AdminInfoVO adminInfo, HttpSession session, Model m) {
-		List<AdminInfoVO> adminList = aiService.getAdminInfo(adminInfo);
+		List<AdminInfoVO> adminList = aiService.getAdminInfos(adminInfo);
 		m.addAttribute("adminList", adminList);
 		return "admin/list";
 	}
-		
 }
+

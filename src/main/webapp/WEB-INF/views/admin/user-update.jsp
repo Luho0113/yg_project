@@ -18,8 +18,6 @@ function uploadImg(obj){
 	<h2>회원 정보 수정</h2>
 	<label for="uiId">아이디</label>
 	<input type="text" name="uiId" value="${user.uiId}" readonly><br>
-	<label for="uiName">이름</label> 
-	<input type="text" id="uiName" name="uiName" value="${user.uiName}"><br>
 
 	<label for="uiNickname">닉네임</label> 
 	<input type="text" id="uiNickname" name="uiNickname" value="${user.uiNickname}"><br>
@@ -35,6 +33,9 @@ function uploadImg(obj){
 	
 	<label for="uiEmail">이메일</label> 
 	<input type="text" id="uiEmail" name="uiEmail" value="${user.uiEmail}"><br>
+	
+	<label for="uiReviewPoint">포인트</label> 
+	<input type="text" id="uiReviewPoint" name="uiReviewPoint" value="${user.uiReviewPoint}"><br>
 	
 	<label for="uiActive">상태</label>
 	<input type="text" id="uiActive" name="uiActive" value="${user.uiActive}"><br>

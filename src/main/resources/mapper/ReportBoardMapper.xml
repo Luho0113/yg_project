@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.younggam.app.mapper.ReportBoardMapper">
+<!-- 신고 목록 + 페이징 + 검색 -->
+<select id="selectReports" resultType="com.younggam.app.vo.ReportBoardVO">
+	select pi.*, ui.ui_nickname from Report_info pi
+	inner join User_info ui on pi.ui_id = ui.ui_id
+	<where>
+		<if test='piTitle != null and piTitle != ""'>
+			and pi_title like concat('%', #{piTitle}, '%')
+		</if>
+		<if test='uiNickname != null and uiNickname != ""'>
+			and ui_nickname like concat('%', #{uiNickname}, '%')
+		</if> 
+	</where>
+		order by pi_num desc, pi_credat desc
+</select>
+
+<!-- 신고 글 보기 -->
+<select id="selectReport" resultType="com.younggam.app.vo.ReportBoardVO">
+	select pi.*, ui.ui_nickname from Report_info pi
+	inner join User_info ui on pi.ui_id = ui.ui_id
+	where pi.pi_num = #{piNum}
+</select>
+
+<!-- 신고 글 등록 -->
+<insert id="fileReport">
+	insert into Report_info
+	(pi_title, pi_category, pi_file_path, pi_content, ui_id) values(
+	#{piTitle}, #{piCategory}, #{piFilePath}, #{piContent}, #{uiId})
+</insert>
+
+<!-- 신고 글 수정 -->
+<update id="updateReport">
+	update Report_info
+	set pi_title = #{piTitle}, pi_category = #{piCategory}
+	<if test='piFilePath != null and piFilePath != ""'>
+	, pi_file_path = #{piFilePath}
+	</if>
+	, pi_content = #{piContent}
+	where pi_num = #{piNum}
+</update>
+
+<!-- 신고 글 삭제 -->
+<delete id="deleteReport">
+	delete from Report_info where pi_num = #{piNum}
+</delete>
+
+</mapper>

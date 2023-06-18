@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class AdminInfoVO {
-	private MultipartFile miFile; //관리자 프로필 이미지
+	private MultipartFile aiFile; //관리자 프로필 이미지
 	private String adminId; //관리자 아이디
 	private String adminName; //관리자 이름
 	private String adminNickName; //관리자 닉네임
