@@ -19,7 +19,7 @@
 	<button>검색</button>
 </form>
 
-<h3>검색어: ${param.search}</h3> <%-- input의 value --%>
+<h3>${param.search}</h3> <%-- input의 value --%>
 
 <c:choose>
 <c:when test="${empty param.search}">

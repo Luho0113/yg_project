@@ -8,6 +8,7 @@ import org.springframework.boot.configurationprocessor.json.JSONArray;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Service;
 
+import com.mysql.cj.xdevapi.JsonArray;
 import com.younggam.app.vo.CastVO;
 import com.younggam.app.vo.MovieVO;
 
@@ -115,5 +116,57 @@ public class MovieDetailService {
 		}
 		return movieDataList;
 		}
+	
+	
+	//영화 등급
+	//java.lang.NumberFormatException: For input string: "certification" 너무 마음이 아프다..
+	/*
+	public List<MovieVO> getMovieCertification(String movieId) {
+		List<MovieVO> movieCertificationList = new ArrayList<>(); //detail에 MovieId를 검색한 내용
+		try { 
+		
+			OkHttpClient client = new OkHttpClient();
+
+			Request request = new Request.Builder()
+			  .url("https://api.themoviedb.org/3/movie/" + movieId + "/release_dates")
+			  .get()
+			  .addHeader("accept", "application/json")
+			  .addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZGE0NzZkY2EyOTk4Y2MwYWNiN2U2MzU5NjMzMDhhNSIsInN1YiI6IjY0NzM2ZTJkOTQwOGVjMDBlMTRjZGVhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rmNtSzDfgUgipyAKkyWki-Jrae8kipwRPI9ISiHdpzM")
+			  .build();
+
+			Response response = client.newCall(request).execute();
+
+			//요청 결과를 JSON 형식으로 변경 
+			JSONObject jsonObject = new JSONObject(response.body().string()); //String 형식을 JSON 형식으로 변환한다.
+			JSONArray results = jsonObject.getJSONArray("results");
+			MovieVO movieVO = new MovieVO();
+			
+			for(int i = 0; i<results.length(); i++) {
+				JSONObject object = results.getJSONObject(i);
+				
+				if(object.getString("iso_3166_1").equalsIgnoreCase("KR")) {
+					JSONArray releaseDates = object.getJSONArray("release_dates");
+					
+					
+					for(int j=0; j<releaseDates.length(); j++) {
+						JSONObject object2 = releaseDates.getJSONObject(j);
+						
+						if(object2.has("certification")) {
+							movieVO.setCertification(object2.optString("certification"));
+							} 
+					}
+					
+				}
+				movieCertificationList.add(movieVO);
+			}
+
+			
+			
+		}catch (Exception e) {
+			log.error("error=>{}", e);
+		}
+		return movieCertificationList;
+		}
+		*/
 
 }

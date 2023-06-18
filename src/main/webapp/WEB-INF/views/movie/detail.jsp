@@ -33,7 +33,7 @@
 	<p>개봉일: ${movieData.releaseDate}</p>
 	<p>장르: ${movieData.genreIds}</p>
 	<p>국가: ${movieData.productionConturies}</p> 
-	<p>등급: ${movieData.adult}</p>
+	<p>등급: ${movieRate.certification}</p>
 	<p>상영시간: ${movieData.runtime}</p>
 	
 	<h3>내용</h3>

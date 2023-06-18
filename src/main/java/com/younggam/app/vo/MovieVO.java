@@ -26,6 +26,9 @@ public class MovieVO {
 	//상영시간
 	private String runtime;
 	
+	//등급
+	private String certification;
+
 
 	
 	
