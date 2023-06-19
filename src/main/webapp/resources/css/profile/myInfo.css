@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/* 탭 메뉴 */
+.tap-wrap {
+  padding: 15px;
+}
+.tab-menu {
+  position: relative;
+  width: 100%;
+}
+.tab-menu .tab-list {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #ff7c00;
+  text-align: center;
+}
+.tab-menu .tab-list li {
+  /* float: left; */
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+}
+.tab-menu .tab-list li.tab-active .tab-button {
+  font-weight: bold;
+  color: #ff7c00;
+}
+.tab-menu .tab-list .tab-button {
+  font-size: 20px;
+}
+.tab-menu .cont_area {
+  margin-top: 10px;
+}
+.tab-menu .cont_area .cont {
+  display: none;
+  color: #fff;
+  border: 1px solid green;
+  text-align: center;
+  width: 100%;
+  height: 50%;
+  line-height: 100px;
+}

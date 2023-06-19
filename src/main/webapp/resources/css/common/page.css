@@ -18,7 +18,7 @@ body {
   min-width: 1000px;
   width: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 ul,
@@ -30,6 +30,7 @@ li {
 a,
 a:visited {
   text-decoration: none;
+  color: #fffaf6;
 }
 
 .content {
