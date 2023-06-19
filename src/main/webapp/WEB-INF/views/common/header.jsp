@@ -10,6 +10,7 @@
 		<li><a href="/review-insert">후기작성</a></li>
 		<li><a href="/search">영화검색</a></li>
 		<li><a href="/reviews">후기게시판</a></li>
+		<li><a href="/reports">신고게시판</a></li>
 	</ul>
 </div>
 <c:if test="${user.uiId == null}">
@@ -21,6 +22,7 @@
 <c:if test="${admin.adminId != null}">
 
 </c:if>
+
 <c:if test="${user.uiId != null}">
 	${user.uiNickname}님 안녕하세요! <br>
 	<div>

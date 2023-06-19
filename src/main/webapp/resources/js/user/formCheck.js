@@ -109,24 +109,49 @@ function change_email() {
 
 //아이디 중복 체크 메세지 표시
 function checkId(obj) {
-	
+
 	if (obj.value.length < 6) {
+		if (!REG_ID.test(uiId.value)) {
+				uiId.focus();
+				document.getElementById("error_checkId").innerHTML = ('<span style="color:red;"> 6글자 이상의 영문자, 숫자, 특수기호(_)만 사용가능합니다.</span>');
+				return;
+		}else {
+			document.getElementById("error_checkId").innerHTML = ('');
+		}
 		return;
 	}
 	$.get({
 		url: '/check-id',
 		data: { uiId: obj.value },
 		success: function(res) {
+
+			if (!REG_ID.test(uiId.value)) {
+				uiId.focus();
+				document.getElementById("error_checkId").innerHTML = ('<span style="color:red;"> 6글자 이상의 영문자, 숫자, 특수기호(_)만 사용가능합니다.</span>');
+				return false;
+			} else if (uiId.value.length > 20) {
+				uiId.focus();
+				document.getElementById("error_checkId").innerHTML = ('<span style="color:red;"> 20자 이내로 입력해주세요.</span>');
+				return false;
+			} else {
+				document.getElementById("error_checkId").innerHTML = ('');
+			}
+			
 			if (res) {
 				$('.uiId_already').css('display', '');
 				$('.uiId_ok').css('display', 'none');
+				document.getElementById("error_checkId").innerHTML = ('');
 			} else {
 				$('.uiId_already').css('display', 'none');
 				$('.uiId_ok').css('display', '');
+				document.getElementById("error_checkId").innerHTML = ('');
 			}
-			console.log(res);
+			
+			return true;
 		}
 	})
+
+
 };
 
 

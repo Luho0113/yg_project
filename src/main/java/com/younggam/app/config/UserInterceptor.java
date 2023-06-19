@@ -16,11 +16,21 @@ public class UserInterceptor implements HandlerInterceptor{
 			throws Exception {
 			HttpSession session = request.getSession();
 			UserInfoVO user = (UserInfoVO)session.getAttribute("user");
+			
+			String requestUrl = request.getRequestURL().toString(); 
+			
+			
+			
 			if(user==null) { //비회원
 				response.sendRedirect("/login"); //회원 로그인 화면으로 redirect
 				return false;
-			}else { //회원
+			}else if(requestUrl.contains("/")){
+				return true;
+			}else if(requestUrl.contains("/resources/**")){
+				return true;
+			}else{ //회원
 				return true;
 			}
+			
 	}
 }

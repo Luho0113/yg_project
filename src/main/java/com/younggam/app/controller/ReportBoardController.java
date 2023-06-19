@@ -51,7 +51,7 @@ public class ReportBoardController {
 				String url="/reports";
 				m.addAttribute("msg", msg);
 				m.addAttribute("url", url);
-				return "common/msg";
+				return "user/report-list";
 			}
 		}
 	//신고 글 보기(관리자)
@@ -69,7 +69,7 @@ public class ReportBoardController {
 				String url="/admin/reports";
 				m.addAttribute("msg", msg);
 				m.addAttribute("url", url);
-				return "common/msg";
+				return "user/report-list";
 			}
 		}
 	
@@ -102,7 +102,7 @@ public class ReportBoardController {
 		}
 		m.addAttribute("msg", msg);
 		m.addAttribute("url", url);
-		return "common/msg";
+		return "user/report-list";
 	}
 	
 	//신고 글 수정
@@ -117,13 +117,14 @@ public class ReportBoardController {
 	public String reportUpdate(ReportBoardVO report, Model m) throws Exception {
 		String msg = "신고 글 수정에 실패하였습니다.";
 		String url = "/report-update?piNum=" + report.getPiNum();
+		int piNum = report.getPiNum();
 		if (piService.updateReport(report)) {
 			msg = "신고 글 수정이 완료되었습니다.";
 			url = "/reports";
 		}
 		m.addAttribute("msg", msg);
 		m.addAttribute("url", url);
-		return "common/msg";
+		return "user/report?piNum="+piNum; //다시 체크 필요
 	}
 	
 	//신고 글 삭제
