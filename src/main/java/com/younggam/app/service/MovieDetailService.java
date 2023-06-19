@@ -120,7 +120,7 @@ public class MovieDetailService {
 	
 	//영화 등급
 	//java.lang.NumberFormatException: For input string: "certification" 너무 마음이 아프다..
-	/*
+	
 	public List<MovieVO> getMovieCertification(String movieId) {
 		List<MovieVO> movieCertificationList = new ArrayList<>(); //detail에 MovieId를 검색한 내용
 		try { 
@@ -145,19 +145,21 @@ public class MovieDetailService {
 				JSONObject object = results.getJSONObject(i);
 				
 				if(object.getString("iso_3166_1").equalsIgnoreCase("KR")) {
+					
 					JSONArray releaseDates = object.getJSONArray("release_dates");
+					//
 					
 					
 					for(int j=0; j<releaseDates.length(); j++) {
 						JSONObject object2 = releaseDates.getJSONObject(j);
 						
-						if(object2.has("certification")) {
+						if(object2.has("certification") && object2.getString("type").equalsIgnoreCase("3")) {
 							movieVO.setCertification(object2.optString("certification"));
 							} 
 					}
-					
+					movieCertificationList.add(movieVO); break;
 				}
-				movieCertificationList.add(movieVO);
+				
 			}
 
 			
@@ -167,6 +169,6 @@ public class MovieDetailService {
 		}
 		return movieCertificationList;
 		}
-		*/
+		
 
 }

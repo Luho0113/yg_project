@@ -9,8 +9,8 @@
 <div class="navbar">
 	<!-- 로고 부분 -->
 	<div class="nav-logo">
-		<a href="/">
-			<img alt="navlogo" src="../../../resources/images/yg_logo_black.png" >
+		<a href="/"> <img alt="navlogo"
+			src="../../../resources/images/yg_logo_black.png">
 		</a>
 	</div>
 
@@ -24,7 +24,13 @@
 				<li><a href="/reports">신고게시판</a></li>
 				<li>
 					<div>
-						<input type="text" placeholder="검색어를 입력해주세요.">
+						<!--  <input type="text" placeholder="검색어를 입력해주세요."> -->
+						<form action="/search" method="get">
+							<input id="search" name="search" value="${param.search}"
+								placeholder="영화, 감독, 배우를 검색해보세요.">
+							<button>검색</button>
+						</form>
+
 					</div>
 				</li>
 			</ul>
@@ -38,12 +44,14 @@
 						<li><a href="/logout">로그아웃</a></li>
 						<li>
 							<div class="myInfo-icon">
-								<a href="/myInfo"> <img id="myInfo-Img" alt="내프로필" src="${user.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+								<a href="/myInfo"> <img id="myInfo-Img" alt="내프로필"
+									src="${user.uiFilePath}"
+									onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
 								</a> ${user.uiNickname}님
 							</div>
 						</li>
 					</ul>
-					
+
 				</c:if>
 				<!-- 로그아웃한 경우 -->
 				<c:if test="${user.uiId == null}">
@@ -53,7 +61,9 @@
 						<li><a href="/join">회원가입</a></li>
 						<li>
 							<div class="myInfo-icon">
-								<a href="/myInfo"> <img id="myInfo-Img" alt="내프로필" src="${user.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+								<a href="/myInfo"> <img id="myInfo-Img" alt="내프로필"
+									src="${user.uiFilePath}"
+									onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
 								</a> ${user.uiNickname}님
 							</div>
 						</li>
