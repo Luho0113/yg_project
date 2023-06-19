@@ -57,7 +57,7 @@ public class UserInfoController {
 		return "user/login";
 	}
 
-	
+	// 중복 아이디 확인
 	@GetMapping("/check-id")
 	@ResponseBody
 	public boolean checkId(@ModelAttribute UserInfoVO user, Model m) throws IllegalStateException, IOException {		

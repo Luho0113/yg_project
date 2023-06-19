@@ -27,13 +27,13 @@ public class InterceptorConfig implements WebMvcConfigurer {
 				.excludePathPatterns("/login") //로그인 화면 제외
 				.excludePathPatterns("/join") //회원가입 화면 제외
 				.excludePathPatterns("/") //홈 화면? 제외
-				.excludePathPatterns("/admin/login") //잠시 제외
 				.excludePathPatterns("/**/*.css")
 				.excludePathPatterns("/**/*.js")
 				.excludePathPatterns("/**/*.png")
 				;
 		
 		registry.addInterceptor(adminInterceptor)
-				.addPathPatterns("/admin/**"); //회원
+				.addPathPatterns("/admin/**")
+				.excludePathPatterns("/admin/login"); //잠시 제외
 	}
 }

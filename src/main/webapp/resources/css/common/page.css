@@ -1,15 +1,40 @@
 @charset "UTF-8";
 
 /*스타일 공통 부분*/
-*{
-	margin: 0px;
-	padding: 0px;
+* {
+  /* 기본적인 body 요소 여백 제거 */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-ul, ol, li {
-	list-style: none;
+html {
+  background-color: #2a2725;
+  color: #fffaf6;
 }
 
-a, a:visited {
-	text-decoration: none;
+body {
+  min-height: 100vh;
+  min-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+.content {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid blue;
 }

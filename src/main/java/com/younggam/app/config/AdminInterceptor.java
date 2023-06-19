@@ -20,7 +20,7 @@ public class AdminInterceptor implements HandlerInterceptor {
 		if(admin == null) {
 			response.sendRedirect("/login"); //회원 로그인 화면으로 redirect
 			return false;
-		}else if(!admin.getAdminId().equals("younggam_official")){
+		}else if(!(admin.getAdminId().equals("younggam_official"))){
 			response.sendRedirect("/login");
 			return false;
 		} else {
