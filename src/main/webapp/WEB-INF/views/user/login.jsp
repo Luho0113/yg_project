@@ -30,7 +30,7 @@
         <!-- 경고 메세지 -->
         <div>
           <span class="error_message" style="display: none"> 아이디와 비밀번호를 입력해주세요. </span>
-          <c:if test="${user.msg == 'error'}">
+          <c:if test="${param.msg == 'error'}">
             <span class="error_fail"> 아이디나 비밀번호가 틀렸습니다. </span>
           </c:if>
         </div>
