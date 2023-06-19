@@ -7,11 +7,18 @@
 <head>
 <meta charset="UTF-8">
 <title>리뷰 작성 페이지</title>
+<link rel="stylesheet" href="${path}/resources/css/common/header.css">
+<link rel="stylesheet" href="${path}/resources/css/common/footer.css">
+<link rel="stylesheet" href="${path}/resources/css/common/page.css">
 <link rel="stylesheet" href="${path}/resources/css/review/review-star.css">
 <script src="${path}/resources/js/review-star.js"></script>
 </head>
 
 <body>
+<!-- header area -->
+<jsp:include page="../common/header.jsp"></jsp:include>
+
+<!-- content area -->
 <h3>리뷰 작성 페이지</h3><%-- 이후 페이지 정리 필요함 --%>
     
 	<form autocomplete="off" action="/review-insert" method="GET" name="form">
@@ -75,6 +82,9 @@
             <button type="button" onclick="location.href='reviews'">취소</button>
         </div>
     </form>
+    
+<!-- footer area -->
+<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 
 <script>

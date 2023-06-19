@@ -1,36 +1,139 @@
 @charset "UTF-8";
 
 /* li, ul 태그 초기화(프론트할 때 공통으로 사용하는 css에 넣어서 초기화한 후 사용하면 좋을 것 같음) */
-li, ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
+#posterPath{
+    width: 200px;
+    height: 300px;
+    border-radius: 4px;
 }
 
-/* 정렬 기준 select 박스가 담긴 div */
+/*  */
 .riShorSelect{
-    height: 200px;
+    height: 100px;
     border: 1px solid red;
 }
 
-/* 정렬 기준 select 박스가 담긴 div */
+/*  */
 .riGenreBar{
-    margin: 0px 0px 0px 100px;
+    width: 200px; /* 값 변경 하지마라 */
+    margin: 0px 50px 0px 100px; /* 값 변경 하지마라 */
     padding: 30px;
-    width: 200px;
     float: left;
+
     border: 1px solid blue;
 }
 
 .riGenreBar li{
-    padding: 8px;
+    padding: 10px;
 }
 
-/* 정렬 기준 select 박스가 담긴 div */
+/* 리뷰 목록 전체를 묶는 div */
 .riListContainer{
-    margin: 0px 100px 0px 0px;
-    height: 500px;
-    width: 1000px;
+    width: calc(100% - 450px); /* 값 변경 하지마라 */
+    margin: 0px 100px 0px 350px; /* 값 변경 하지마라 */
+
+    height: 1000px; /* 상황 봐서 적당한 값으로 변경하기!!! */
+}
+
+.riListElement{
+    width: 100%;
+    height: 320px;
+    margin-bottom: 20px;
+    border-top: 1px solid #FF7C00;
+    padding-top: 10px;
+}
+
+/* poster를 담는 div 태그*/
+.riListPoster{
+    width: 220px; /* padding(20px) + content(200px) = 220px */
+    height: 320px; /* padding(20px) + content(300px) = 320px */
+    padding: 10px; /* poster가 가운데에 쏙 들어갔으면 좋겠어서,, 넣음 */
+    display: inline-block; /* 옆에 다른 div 요소 배치해야 해서 넣음 */
+}
+
+
+/* riListMovieInfo: 영화 제목 및 연도를 표시하는 div  */
+.riListMovieInfo{
+    display: inline-block;
+    width: calc(100% - 672px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    min-width: 328px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    height: 50px;
+    position: absolute; /* 부모를 기준으로 배치한다. */
+    padding: 10px 0px 0px 10px;
+}
+
+/* 영화 제목과 개봉연도 span */
+.riMovieTitle {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+
+/*  */
+.riListUserInfo{
+    display: inline-block;
+    width: calc(100% - 672px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    min-width: 328px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    height: 50px;
+    position: absolute; /* 부모를 기준으로 배치한다. */
+    margin-top: 50px; /* .riListMovieInfo 만큼 떨어뜨리기 */
+    padding: 5px 0px 5px 10px;
+}
+
+.profileBox{
+    width: 40px;
+    height: 40px; 
+    border-radius: 70%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#profile{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.starPoint{
     float: right;
-    border: 1px solid green;
+    margin-right: 10px;
+}
+
+.nickName{
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    margin: 10px 0px 0px 10px;
+    color: #FF7C00;
+}
+
+.riListReviewContent{
+    display: inline-block;
+    width: calc(100% - 672px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    min-width: 328px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    height: 160px;
+    position: absolute; /* 부모를 기준으로 배치한다. */
+    margin-top: 100px; /* .riListMovieInfo 만큼 떨어뜨리기 */
+    padding: 20px 10px 20px 10px;
+}
+
+.riListComment{
+    display: inline-block;
+    width: calc(100% - 672px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    min-width: 328px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    height: 30px;
+    position: absolute; /* 부모를 기준으로 배치한다. */
+    margin-top: 260px; /* .riListMovieInfo 만큼 떨어뜨리기 */
+    padding: 5px 10px 5px 10px;
+}
+
+.riListDate{
+    display: inline-block;
+    width: calc(100% - 672px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    min-width: 328px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    height: 30px;
+    position: absolute; /* 부모를 기준으로 배치한다. */
+    margin-top: 290px; /* .riListMovieInfo 만큼 떨어뜨리기 */
+    padding: 0px 10px 10px 10px;
+    text-align: right;
 }

@@ -46,7 +46,7 @@ public class ReviewInfoController {
 		return "review/review-insert";
 	}
 	
-	//글 작성 응답(구현됨)
+	//글 작성 응답(구현됨) - return 값 수정 필요함
 	@PostMapping("/review-insert")
 	public String insertReview(ReviewInfoVO review, Model m, HttpSession session) {
 		UserInfoVO user = (UserInfoVO) session.getAttribute("user");
