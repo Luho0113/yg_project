@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-.nav{
+.navbar{
 	background-color: #FF7C00;
 	width: 100%;
 }
-.nav li{
+.navbar li{
 	display: inline-block;
 }
-.nav li>a {
+.navbar li>a {
 	display: block;
 	padding: 5px 20px;
 	color: #2A2725;
