@@ -114,7 +114,7 @@ function checkId(obj) {
 		if (!REG_ID.test(uiId.value)) {
 				uiId.focus();
 				document.getElementById("error_checkId").innerHTML = ('<span style="color:red;"> 6글자 이상의 영문자, 숫자, 특수기호(_)만 사용가능합니다.</span>');
-				return;
+				return false;
 		}else {
 			document.getElementById("error_checkId").innerHTML = ('');
 		}

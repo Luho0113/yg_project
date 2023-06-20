@@ -2,40 +2,39 @@
 
 /*스타일 공통 부분*/
 * {
-  /* 기본적인 body 요소 여백 제거 */
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	/* 기본적인 body 요소 여백 제거 */
+	margin: 0;
+	padding: 0;
+	/* box-sizing: border-box; */
 }
 
 html {
-  background-color: #2a2725;
-  color: #fffaf6;
+	background-color: #2a2725;
+	color: #fffaf6;
 }
 
 body {
-  min-height: 100vh;
-  min-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  /* overflow: hidden; */
+	min-height: 100vh;
+	min-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
 }
 
-ul,
-ol,
-li {
-  list-style: none;
+ul, ol, li {
+	list-style: none;
 }
 
-a,
-a:visited {
-  text-decoration: none;
-  color: #fffaf6;
+a, a:visited {
+	text-decoration: none;
+	color: #fffaf6;
 }
 
 .content {
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid blue;
+	height: auto;
+	min-height: 100%;
+	padding-bottom: 50px; /* = footer 높이*/
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid blue;
 }

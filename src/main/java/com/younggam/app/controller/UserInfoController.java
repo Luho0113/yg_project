@@ -44,17 +44,17 @@ public class UserInfoController {
 	@PostMapping("/join")
 	public String join(@ModelAttribute UserInfoVO user, Model m) throws IllegalStateException, IOException {
 		
-		m.addAttribute("msg", "회원가입에 실패했습니다.");
+		m.addAttribute("msg", "join fail");
 		
 		if(uiService.getUserInfoVOByUiId(user) != null) {
 			m.addAttribute("msg", "존재하는 아이디입니다.");
 			
 			return "user/join";
 		} else if(uiService.join(user)) {
-			m.addAttribute("msg", "회원 가입되었습니다.");
+			m.addAttribute("joinMessage", "회원가입에 성공했습니다.");
 		}
 		
-		return "user/login";
+		return "user/joinSuccess";
 	}
 
 	// 중복 아이디 확인
@@ -62,6 +62,12 @@ public class UserInfoController {
 	@ResponseBody
 	public boolean checkId(@ModelAttribute UserInfoVO user, Model m) throws IllegalStateException, IOException {		
 		return uiService.getUserInfoVOByUiId(user) != null;
+	}
+	
+	@GetMapping("/joinSuccess")
+	public String joinSuccess() {
+		
+		return "user/joinSuccess";
 	}
 	
 	//2) 로그인
