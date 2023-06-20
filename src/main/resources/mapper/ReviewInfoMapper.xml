@@ -5,8 +5,9 @@
 <mapper namespace="com.younggam.app.mapper.ReviewInfoMapper">
 
 	<select id="selectReviewInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
-		select * 
-		from review_info
+		select r.ri_num, r.ri_content, r.ri_credate, r.ri_star, r.ri_like_cnt, r.ri_update_date, r.ri_movie_id, r.ri_spoil, u.ui_id, u.ui_nickname, u.ui_file_path
+		from review_info r, user_info u
+		where r.ui_id = u.ui_id
 	</select>
 	
 	<insert id="insertReviewInfo">

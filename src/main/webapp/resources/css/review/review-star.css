@@ -55,13 +55,13 @@
   
   input[type=submit] {
     background-color: DodgerBlue;
-    color: #fff;
+    color: #FFFAF6;
     cursor: pointer;
   }
   
   .autocomplete-items {
     position: absolute;
-    border: 1px solid #d4d4d4;
+    border: 1px solid #2A2725;
     border-bottom: none;
     border-top: none;
     z-index: 99;
