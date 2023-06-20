@@ -19,8 +19,18 @@
 <jsp:include page="../common/header.jsp"></jsp:include>
 
 <!-- content area -->
-     <div class="riShorSelect" id="riShorSelect">
+<div class="content">
 
+        <div class="riShorSelect" id="riShorSelect">
+            <div class="genreSort" id="genreSort">
+                장르별
+            </div>
+            <div class="createDateSort" id="createDateSort">
+            <select  class="" id="">
+                <option value="new">최신순</option>
+                <option value="old">오래된순</option>
+            </select>
+        </div>
     </div>
 
 
@@ -55,11 +65,12 @@
 
     <div class="riListContainer" id="riListContainer"><!-- riListContainer: 리뷰 목록 전체를 묶는 div -->
     
-<c:forEach items="${reviewList}" var="reivew">
+<c:forEach items="${reviewList}" var="reivew" varStatus="status">
         <div class="riListElement" id="riListElement"><!-- riListElement: 리뷰 하나의 내용을 묶는 div  --><!-- 이걸 반복 생성하면 되지 않을까  -->
 		<input type="hidden" id="riMovieId" class="riMovieId" value="${reivew.riMovieId}">
+		<input type="hidden" id="index" class="index" value="${status.index}">
             <div class="riListPoster" id="riListPoster"><!-- riListPoster: riListElement에 들어갈 포스터를 묶는 div  -->
-                <img id="posterPath" ><!-- posterPath: 포스터 img  -->
+                <img id="posterPath" class="posterPath"><!-- posterPath: 포스터 img  -->
             </div>
 
             <div class="riListMovieInfo" id="riListMovieInfo"><!-- riListMovieInfo: 영화 제목 및 연도를 표시하는 div  -->
@@ -93,7 +104,7 @@
             </div>
 
             <div class="riListComment" id="riListComment"><!-- riListComment: 해당 리뷰의 댓글과 좋아요 수 div  -->
-                ♥10 🗨2
+                ♥ ${review.riLikeCnt} 🗨2
             </div>
 
             <div class="riListDate" id="riListDate"><!-- riListDate: 리뷰 작성 일자 div  -->
@@ -103,7 +114,7 @@
 </c:forEach>
     </div>
 
-
+</div>
 <!-- footer area -->
 <jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
