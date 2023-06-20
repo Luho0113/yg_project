@@ -21,13 +21,7 @@ public class UserInfoController {
 	
 	@GetMapping("/")
 	public String home() {
-		//@AuthenticationPrincipal User user, Model model ->매개값
-		//백엔드에서 유저 정보 알아내기 (@AuthenticationPrincipal을 사용해서)
-		//로그인한 유저를 유지하는 부분 = 세션과 쿠키를 사용해야 함
-		//지금 사용하면 오류있음 주석처리해서 테스트하기..
-		//model.addAttribute("loginId", user.getUsername());
-		//model.addAttribute("loginRoles", user.getAuthorities());
-		
+
 		return "index";
 	}
 	
@@ -48,7 +42,6 @@ public class UserInfoController {
 		
 		if(uiService.getUserInfoVOByUiId(user) != null) {
 			m.addAttribute("msg", "존재하는 아이디입니다.");
-			
 			return "user/join";
 		} else if(uiService.join(user)) {
 			m.addAttribute("joinMessage", "회원가입에 성공했습니다.");

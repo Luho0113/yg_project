@@ -21,6 +21,7 @@ public class MyInfoController {
 	
 	@Autowired
 	private UserInfoService uiService;
+	
 
 	// 1)내 프로필
 	@GetMapping("/myInfo")
