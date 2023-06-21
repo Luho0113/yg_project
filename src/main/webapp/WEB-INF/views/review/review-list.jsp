@@ -79,15 +79,14 @@
 
 					<div class="riListMovieInfo" id="riListMovieInfo">
 						<!-- riListMovieInfo: 영화 제목 및 연도를 표시하는 div  -->
-						<span class="riMovieTitle" id="riMovieTitle"></span> <span
-							id="riListReleaseDate" class="riListReleaseDate"></span>
+						<span class="riMovieTitle" id="riMovieTitle"></span>
+						<span id="riListReleaseDate" class="riListReleaseDate"></span>
 					</div>
 
 					<div class="riListUserInfo" id="riListUserInfo">
 						<!-- riListUserInfo: 작성자 프로필 이미지, 닉네임, 별점을 표시하는 div  -->
 						<div class="profileBox" id="profileBox">
-							<img id="profile" src="${reivew.uiFilePath}"
-								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+							<img id="profile" src="${reivew.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
 						</div>
 
 						<div class="nickName" id="nickName">${reivew.uiNickname}</div>
@@ -104,15 +103,15 @@
 								value="${reivew.riStar}">
 							</span>
 						</div>
-
-
 					</div>
-
+					
 					<div class="riListReviewContent" id="riListReviewContent">
-						<!-- riListReviewContent: 리뷰 그 자체,, div  -->
-						${reivew.riContent}
+						<a href="/review?riNum=${reivew.riNum}">
+							<!-- riListReviewContent: 리뷰 그 자체,, div  -->
+							${reivew.riContent}
+						</a>
 					</div>
-
+					
 					<div class="riListComment" id="riListComment">
 						<!-- riListComment: 해당 리뷰의 댓글과 좋아요 수 div  -->
 						♥ ${review.riLikeCnt} 🗨2

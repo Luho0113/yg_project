@@ -11,6 +11,12 @@
 		order by r.ri_credate desc
 	</select>
 	
+	<select id="selectReviewInfo" resultType="com.younggam.app.vo.ReviewInfoVO">
+		select * 
+		from review_info
+		where ri_num = #{riNum}
+	</select>
+	
 	<insert id="insertReviewInfo">
 		insert into review_info(ri_content, ui_id, ri_movie_id, ri_star, ri_direction_point, ri_acting_point, ri_story_point, ri_visual_point, ri_ost_point, ri_genre, ri_spoil) 
 		values (#{riContent}, #{uiId}, #{riMovieId}, #{riStar}, #{riDirectionPoint}, #{riActingPoint}, #{riStoryPoint}, #{riVisualPoint}, #{riOstPoint}, #{riGenre}, #{riSpoil})

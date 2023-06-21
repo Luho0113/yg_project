@@ -26,6 +26,8 @@ public class ReviewService {
 		return false;
 	}
 	
-	
+	public ReviewInfoVO selectReviewInfo (int riNum) {
+		return riMapper.selectReviewInfo(riNum);
+	}
 
 }

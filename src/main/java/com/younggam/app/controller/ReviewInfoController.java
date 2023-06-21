@@ -39,6 +39,14 @@ public class ReviewInfoController {
 		return "review/review-list";
 	}
 	
+	//글 상세보기
+	@GetMapping("/review")
+	public String getReview(@RequestParam("riNum") int riNum, Model m) {
+		ReviewInfoVO review = riServie.selectReviewInfo(riNum);
+		m.addAttribute("review", review);
+		return "review/review-detail";
+	}
+	
 	//글 작성 요청(구현됨)
 	@GetMapping("/review-insert")
 	public String goInsertReviewInfo(@RequestParam Map<String, String> param, Model m) {
@@ -57,6 +65,9 @@ public class ReviewInfoController {
 		return "review/review-list";
 	}
 	
+
+	
+	// 삭제!!!
 	@GetMapping("/movie")
 	public String goMovieInfo() {
 		return "review/movie";

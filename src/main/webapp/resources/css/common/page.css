@@ -28,6 +28,7 @@ ul, ol, li {
 a, a:visited {
 	text-decoration: none;
 	color: #fffaf6;
+	cursor: pointer;
 }
 
 .content {

@@ -9,6 +9,7 @@ import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 import com.younggam.app.vo.MovieVO;
+import com.younggam.app.vo.ReviewInfoVO;
 
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
@@ -201,7 +202,6 @@ public class MovieReviewServiece {
 		return countries;
 
 	}//end of getConturies
-	
 	
 
 }//end of class
