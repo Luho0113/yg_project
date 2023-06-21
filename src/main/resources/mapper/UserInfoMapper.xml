@@ -37,10 +37,14 @@
 		WHERE ui_id = #{uiId}
 	</update>
 	
-	<!-- 시큐리티 + 회원 상세 정보 페이지 -->
-	<select id="findUserInfoByUiId" resultType="com.younggam.app.vo.UserInfoVO">
-		SELECT * FROM user_info
-		WHERE ui_id = #{uiId}
+	
+	
+	<!-- 내 리뷰 목록 -->
+	<select id="selectMyreviewInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
+		SELECT ri.ri_num, ri.ri_content, ri.ri_credate
+		FROM review_info ri, user_info ui
+		WHERE ui.ui_id = ri.ui_id
+		ORDER BY ri.ri_credate DESC
 	</select>
 	
 	<!-- 관리자 -->

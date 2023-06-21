@@ -3,6 +3,7 @@ package com.younggam.app.mapper;
 import java.util.List;
 import java.util.Optional;
 
+import com.younggam.app.vo.ReviewInfoVO;
 import com.younggam.app.vo.UserInfoVO;
 
 public interface UserInfoMapper {
@@ -24,8 +25,9 @@ public interface UserInfoMapper {
 	//탈퇴
 	int deleteUserInfo(UserInfoVO userInfo);
 	
-	//스프링 시큐리티
-	Optional<UserInfoVO> findUserInfoByUiId(String uiId); 
+	//내 리뷰 목록
+	List<ReviewInfoVO> selectMyreviewInfos(ReviewInfoVO reviewInfo);
+	
 
 	//관리자 회원 관리
 	

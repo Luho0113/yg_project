@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.younggam.app.mapper.UserInfoMapper;
+import com.younggam.app.vo.ReviewInfoVO;
 import com.younggam.app.vo.UserInfoVO;
 
 import com.github.pagehelper.PageHelper;
@@ -88,9 +89,10 @@ public class UserInfoService {
 	}
 	
 	
-	//스프링 시큐리티
-	public Optional<UserInfoVO> findOne(String uiId){
-		return uiMapper.findUserInfoByUiId(uiId);
+	//6) 내 리뷰 목록
+	public PageInfo<ReviewInfoVO> selectMyreviewInfos(ReviewInfoVO reviewInfo){
+		
+		return new PageInfo<>(uiMapper.selectMyreviewInfos(reviewInfo));
 	}
 	
 	

@@ -44,9 +44,7 @@ function formValidation() {
 		document.getElementById("error_checkId").innerHTML = ('');
 	}
 	
-	if(!checkId()){
-		return false;
-	}
+
 	
 	//비밀번호
 	if (uiPassword.value.trim() == '') {
@@ -165,6 +163,7 @@ function checkId(obj) {
 			if (res) {
 				$('.uiId_already').css('display', '');
 				$('.uiId_ok').css('display', 'none');
+				return false;
 			} else {
 				$('.uiId_already').css('display', 'none');
 				$('.uiId_ok').css('display', '');
