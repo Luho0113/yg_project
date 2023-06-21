@@ -47,7 +47,12 @@ file="/WEB-INF/views/common/msg.jsp" %>
 
           <div class="cont_area">
             <div id="tab1" class="cont" style="display: block">
-              Tab Content1
+              <c:if test="${empty myReviewList}">
+              	<div>게시물이 없습니다.</div>
+              </c:if>
+              <c:forEach items="${myReviewList}" var="myReview">
+              	<div>${myReview.riContent}</div>
+              </c:forEach>
             </div>
             <div id="tab2" class="cont">Tab Content2</div>
             <div id="tab3" class="cont">Tab Content3</div>

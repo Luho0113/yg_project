@@ -40,12 +40,17 @@
 	
 	
 	<!-- 내 리뷰 목록 -->
-	<select id="selectMyreviewInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
+	<select id="selectMyreviewInfos" resultType="com.younggam.app.vo.UserInfoVO">
 		SELECT ri.ri_num, ri.ri_content, ri.ri_credate
-		FROM review_info ri, user_info ui
-		WHERE ui.ui_id = ri.ui_id
+		FROM user_info ui
+		LEFT OUTER JOIN review_info ri
+		ON ui.ui_id = ri.ui_id
+		WHERE ui.ui_id = #{uiId}
 		ORDER BY ri.ri_credate DESC
 	</select>
+	
+
+	
 	
 	<!-- 관리자 -->
 

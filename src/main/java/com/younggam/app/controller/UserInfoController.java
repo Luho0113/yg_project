@@ -56,6 +56,7 @@ public class UserInfoController {
 	public boolean checkId(@ModelAttribute UserInfoVO user, Model m) throws IllegalStateException, IOException {		
 		return uiService.getUserInfoVOByUiId(user) != null;
 	}
+
 	
 	@GetMapping("/joinSuccess")
 	public String joinSuccess() {

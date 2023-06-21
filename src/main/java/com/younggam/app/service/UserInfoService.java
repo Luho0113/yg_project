@@ -2,6 +2,7 @@ package com.younggam.app.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.younggam.app.mapper.ReviewInfoMapper;
 import com.younggam.app.mapper.UserInfoMapper;
 import com.younggam.app.vo.ReviewInfoVO;
 import com.younggam.app.vo.UserInfoVO;
@@ -90,9 +92,9 @@ public class UserInfoService {
 	
 	
 	//6) 내 리뷰 목록
-	public PageInfo<ReviewInfoVO> selectMyreviewInfos(ReviewInfoVO reviewInfo){
+	public List<UserInfoVO> selectMyreviewInfos(UserInfoVO userInfo){
 		
-		return new PageInfo<>(uiMapper.selectMyreviewInfos(reviewInfo));
+		return uiMapper.selectMyreviewInfos(userInfo);
 	}
 	
 	

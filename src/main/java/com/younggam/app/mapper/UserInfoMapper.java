@@ -26,7 +26,7 @@ public interface UserInfoMapper {
 	int deleteUserInfo(UserInfoVO userInfo);
 	
 	//내 리뷰 목록
-	List<ReviewInfoVO> selectMyreviewInfos(ReviewInfoVO reviewInfo);
+	List<UserInfoVO> selectMyreviewInfos(UserInfoVO userInfo);
 	
 
 	//관리자 회원 관리
