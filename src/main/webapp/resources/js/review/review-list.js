@@ -12,10 +12,10 @@ onload = function() {
 
 	for (i = 0; i < index.length; i++) {
 
-		const elementArray = document.getElementsByClassName("riListElement"); /* 여러 개의 element 중에서 i번째를 찾는다. */
-		const element = elementArray[i];
+		const elementArray = document.getElementsByClassName("riListElement"); /* 여러 개의 element를 배열로 가져온다. */
+		const element = elementArray[i]; /* element 배열 중에서 i번째를 element에 담는다. */
 
-		const val = element.getElementsByClassName("riMovieId")[0].value;
+		const val = element.getElementsByClassName("riMovieId")[0].value; /* i번째 element에서 hidden type으로 담아둔 movieId를 찾는다. */
 
 
 		fetch('https://api.themoviedb.org/3/movie/' + val + '?language=ko-KR', options)
@@ -32,6 +32,15 @@ onload = function() {
 
 			})
 			.catch(err => console.error(err));
+
+	const starPointArray = document.getElementsByClassName("starPoint");
+	const starPoint = starPointArray[i];
+	
+	const star = starPoint.getElementsByClassName("riStar")[0].value;
+	
+	const starCalc = ((star * 2)*10);
+	
+	starPoint.getElementsByClassName("starRange")[0].style.width = `${starCalc}%`;
 
 	}
 }

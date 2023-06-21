@@ -19,7 +19,7 @@
     width: 0;
     position: absolute; 
     left: 0;
-    color: orange;
+    color: #FF7C00;
     overflow: hidden;
     pointer-events: none;
   }

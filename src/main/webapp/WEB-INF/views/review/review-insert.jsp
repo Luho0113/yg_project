@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="${path}/resources/css/common/header.css">
 <link rel="stylesheet" href="${path}/resources/css/common/footer.css">
 <link rel="stylesheet" href="${path}/resources/css/common/page.css">
-<link rel="stylesheet" href="${path}/resources/css/review/review-star.css">
+<link rel="stylesheet" href="${path}/resources/css/review/review-insert-star.css">
 <script src="${path}/resources/js/review/review-star.js"></script>
 </head>
 

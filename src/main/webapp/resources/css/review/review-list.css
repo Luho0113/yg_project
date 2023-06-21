@@ -87,7 +87,7 @@
 /* riListMovieInfo: 영화 제목 및 연도를 표시하는 div  */
 .riListMovieInfo{
     display: inline-block;
-    width: calc(100% - 815px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    width: calc(100% - 970px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     min-width: 400px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     height: 30px;
     position: absolute; /* 부모를 기준으로 배치한다. */
@@ -101,13 +101,13 @@
 }
 
 .riListReleaseDate{
-    font-size: 10px;
+    font-size: 12px;
 }
 
 /*  */
 .riListUserInfo{
     display: inline-block;
-    width: calc(100% - 815px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    width: calc(100% - 970px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     min-width: 400px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     height: 30px;
     position: absolute; /* 부모를 기준으로 배치한다. */
@@ -129,10 +129,16 @@
     object-fit: cover;
 }
 
+.starPointText{
+	float: right;
+    margin: 10px 0px 0px 0px;
+    font-size: 12px;
+	letter-spacing: 2px;
+}
+
 .starPoint{
     float: right;
-    margin-right: 10px;
-    font-size: 13px;
+    margin-right: 5px;
 }
 
 .nickName{
@@ -146,7 +152,7 @@
 
 .riListReviewContent{
     display: inline-block;
-    width: calc(100% - 825px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    width: calc(100% - 970px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     min-width: 400px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     height: 80px;
     position: absolute; /* 부모를 기준으로 배치한다. */
@@ -158,7 +164,7 @@
 
 .riListComment{
     display: inline-block;
-    width: calc(100% - 825px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    width: calc(100% - 970px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     min-width: 400px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     height: 15px;
     position: absolute; /* 부모를 기준으로 배치한다. */
@@ -169,7 +175,7 @@
 
 .riListDate{
     display: inline-block;
-    width: calc(100% - 825px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    width: calc(100% - 970px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     min-width: 400px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     height: 20px;
     position: absolute; /* 부모를 기준으로 배치한다. */
