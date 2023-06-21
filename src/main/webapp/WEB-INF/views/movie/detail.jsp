@@ -7,7 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>영화 상세</title>
-
+<link rel="stylesheet" href="${path}/resources/css/common/header.css">
+<link rel="stylesheet" href="${path}/resources/css/common/footer.css">
+<link rel="stylesheet" href="${path}/resources/css/common/page.css">
 </head>
 
 <style>
@@ -18,6 +20,11 @@ table, th, td {
 </style>
 
 <body>
+<!-- header area -->
+<jsp:include page="../common/header.jsp"></jsp:include>
+
+
+<!-- content area -->
 <h1>영화 상세</h1>
 <!-- 검색페이지 처음에 null 값 나오는 이유가 페이지 시작이 jsp의 form 이기 때문이다. 이게 초기에는 null이기 때문에 페이지를 열면 null로 시작하는 것 -->
  <form action="/detail" method="get"></form> 
@@ -60,7 +67,7 @@ table, th, td {
 <td colspan="2">${movieRate[0].certification}</td>
 </tr>
 <tr>
-<td colspan="3"><button>평가하기</button></td>
+<td colspan="3"><button type="button" onclick="location.href='review-insert'">평가하기</button></td>
 </tr>
 </table>
 <br>
@@ -109,6 +116,8 @@ ${movieData[0].directors}
 </c:forEach>
 
 
+<!-- footer area -->
+<jsp:include page="../common/footer.jsp"></jsp:include>
 
 </body>
 <script type="text/javascript">

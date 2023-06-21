@@ -1,63 +1,193 @@
 @charset "UTF-8";
 
-  * {
-    box-sizing: border-box;
+
+/*적용 안됨...*/
+/*영감의 검색결과 글씨 조정*/
+.content h2 {
+	color : white;
+}
+
+.content h2::after {
+  content: " 의 검색결과";
+  color: white;
+  font-size: 18px;
+}
+
+
+
+.movie-list {
+  border: 1px solid chartreuse;
+  margin-top: 3%;
+}
+
+/*영화 글자*/
+.movie-list h3 {
+  margin-bottom: 10px;
+}
+
+.movies {
+  border: 1px solid red;
+  height: 100%;
+  width: 100%;
+}
+
+/*movie-box float 문제 해결*/
+.movies::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.movie-box {
+  border: 1px solid cornflowerblue;
+  width: 17%;
+  margin: 1% 1% 1% 1.5%;
+  float: left;
   }
-  
-  body {
-    font: 16px Arial;  
-  }
-  
-  /*the container must be positioned relative:*/
-  .autocomplete {
-    position: relative;
-    display: inline-block;
-  }
-  
-  input {
-    border: 1px solid transparent;
-    background-color: #f1f1f1;
-    padding: 10px;
-    font-size: 16px;
-  }
-  
-  input[type=text] {
-    background-color: #f1f1f1;
-    width: 100%;
-  }
-  
-  input[type=submit] {
-    background-color: DodgerBlue;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .autocomplete-items {
-    position: absolute;
-    border: 1px solid #d4d4d4;
-    border-bottom: none;
-    border-top: none;
-    z-index: 99;
-    /*position the autocomplete items to be the same width as the container:*/
-    top: 100%;
-    left: 0;
-    right: 0;
-  }
-  
-  .autocomplete-items div {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #fff; 
-    border-bottom: 1px solid #d4d4d4; 
-  }
-  
-  /*when hovering an item:*/
-  .autocomplete-items div:hover {
-    background-color: #e9e9e9; 
-  }
-  
-  /*when navigating through the items using the arrow keys:*/
-  .autocomplete-active {
-    background-color: DodgerBlue !important; 
-    color: #ffffff; 
-  }
+
+.movie-box img {
+   width: 100%;
+   height: auto;
+    /* rgba(0, 0, 0, 0.2) 그림자 효과*/
+    box-shadow: 0 8px 8px 0 rgba(238, 233, 233, 0.2), 0 6px 20px 0 rgba(238, 234, 234, 0);
+
+}
+
+/*movie-box 링크 - 포스터, 제목*/
+.movie-box a {
+  display: block;
+  height: auto;
+  border: 1px solid khaki;
+}
+
+/*영화 제목, 개봉일, 감독*/
+.movie-box .cont-detail {
+  margin: 10px 10px 50px 0px;
+  font-size: 0.8rem;
+  border: 1px solid salmon;
+}
+
+.movie-box .title {
+  border: 1px solid yellowgreen;
+  font-size: 1rem;
+}
+.movie-box .title a:hover {
+  color: #ff7c00;
+}
+.movie-box .release-date {
+  border: 1px solid green;
+}
+.movie-box .director {
+  border: 1px solid yellow;
+}
+
+
+
+/*리뷰어*/
+.reviewer-list {
+  border: 1px solid chartreuse;
+  margin-top: 3%;
+}
+
+/*영화 글자*/
+.reviewer-list h3 {
+  margin-bottom: 10px;
+}
+
+.reviewer-list::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.reviewers {
+  border: 1px solid red;
+  height: 100%;
+  width: 48%;
+  margin: 0.5% 0.5% 0.5% 1%;
+  float: left;
+}
+
+/*reviewer-box float 문제 해결*/
+.reviewers::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.reviewer-box {
+  border: 1px solid cornflowerblue;
+  width: 80%;
+  height: 20%;
+  margin: 1% 1% 1% 10%;
+  float: left;
+}
+
+.reviewer-box div {
+  float: left;
+}
+
+.reviewer {
+  border: 1px solid hotpink;
+  width: 50%;
+  height: 53px;
+  float: left;
+  margin: 1% 1%;
+}
+
+.reviewer .reviewer-name a {
+  display: block;
+  height: 30px;
+  border: 1px solid khaki;
+ 
+}
+
+.reviewer .img a {
+  display: block;
+  height: 50px;
+  border: 1px solid khaki;
+}
+
+.reviewer .img {
+  border: 1px solid #fffaf6;
+  position: absolute;
+  overflow: hidden;
+}
+
+.reviewer .img img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  /* border: 1px solid #fffaf6; */
+  margin: 1%;
+  object-position: center;
+
+}
+
+.reviewer .reviewer-name {
+  float: right;
+  border: 1px solid #fffaf6;
+  width: 120px;
+  height: 30px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 5% 1%;
+}
+
+
+
+
+.reviewer-box .review-like {
+  border: 1px solid #ff7c00;
+  float: right;
+  width: 10%;
+  font-size: 1rem;
+  margin: 5% 1%;
+}
+
+.reviewer-box .review-written {
+  border: 1px solid #ff7c00;
+  float: right;
+  width: 10%;
+  font-size: 1rem;
+  margin: 5% 1%;
+}
