@@ -31,9 +31,9 @@ public class MyInfoController {
 
 	// 1)내 프로필
 	@GetMapping("/myInfo")
-	public String myInfo(@RequestParam("uiId") String uiId, Model m) {
+	public String myInfo(@RequestParam("uiNickname") String uiNickname, Model m) {
 		
-		List<ReviewInfoVO> myReviews = riService.selectUserReviewInfos(uiId);
+		List<ReviewInfoVO> myReviews = riService.selectUserReviewInfos(uiNickname);
 		m.addAttribute("myReviews", myReviews);
 		
 		return "profile/myInfo";
@@ -65,9 +65,9 @@ public class MyInfoController {
 	
 	// 리뷰 조회 (리뷰서비스사용하는거!!!!)
 	@GetMapping("/userReview")
-	public String getReview(@RequestParam("uiId") String uiId, Model m) {
+	public String getReview(@RequestParam("uiNickname") String uiNickname, Model m) {
 		
-		List<ReviewInfoVO> myReviews = riService.selectUserReviewInfos(uiId);
+		List<ReviewInfoVO> myReviews = riService.selectUserReviewInfos(uiNickname);
 		m.addAttribute("myReviews", myReviews);
 		
 		return "profile/userReviewList";

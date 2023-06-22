@@ -7,9 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${path}/resources/css/common/header.css">
-<link rel="stylesheet" href="${path}/resources/css/common/footer.css">
-<link rel="stylesheet" href="${path}/resources/css/common/page.css">
+
 <link rel="stylesheet"
 	href="${path}/resources/css/movie/movie-search.css">
 <script src="${path}/resources/js/movie-search.js"></script>
@@ -85,6 +83,69 @@
 
 
 		</article>
+		
+		
+<article class="reviewer-list">
+<h3>리뷰어</h3>
+<ul class="reviewers">
+    <li class="reviewer-box">
+        <div class="reviewer">
+        <div class="img"><a href="myInfo?uiId=00000000"><img src="./강아지.jpg" alt="이미지없음"></a></div>
+        <div class="reviewer-name"><a href="myInfo?uiId=00000000"><h4>0000</h4></a></div>
+    </div>
+    <div class="review-written">10</div>
+        <div class="review-like">200</div>
+       
+    </li>
+    <li class="reviewer-box">
+        <div class="reviewer">
+        <div class="img"><a href="누르면 상세페이지로 이동"><img src="./common.jpg" alt="이미지없음"></a></div>
+        <div class="reviewer-name"><a href="reviewer-detail link">닉네임</a></div>
+    </div>
+    <div class="review-written">10</div>
+        <div class="review-like">200</div>
+    </li>
+    <li class="reviewer-box">
+        <div class="reviewer">
+        <div class="img"><a href="누르면 상세페이지로 이동"><img src="./강아지2.jpg" alt="이미지없음"></a></div>
+        <div class="reviewer-name"><a href="reviewer-detail link">닉네임</a></div>
+    </div>
+    <div class="review-written">10</div>
+        <div class="review-like">200</div>
+    </li>
+</ul>
+<ul class="reviewers">
+    <li class="reviewer-box">
+        <div class="reviewer">
+        <div class="img">
+            <a href="누르면 상세페이지로 이동"><img src="./강아지.jpg" alt="작성자프로필사진" onerror="this.src='https://ifh.cc/g/cDROLZ.png';"></a>
+        </div>
+        <div class="reviewer-name"><a href="reviewer-detail link">닉네임</a></div>
+    </div>
+    <div class="review-written">10</div>
+        <div class="review-like">200</div>
+    </li>
+    <li class="reviewer-box">
+        <div class="reviewer">
+        <div class="img"><a href="누르면 상세페이지로 이동"><img src="./강지.jpg" alt="작성자프로필사진" onerror="this.src='https://ifh.cc/g/cDROLZ.png';"></a></div>
+        <div class="reviewer-name"><a href="reviewer-detail link">닉네임</a></div>
+    </div>
+    <div class="review-written">10</div>
+        <div class="review-like">200</div>
+    </li>
+    <li class="reviewer-box">
+        <div class="reviewer">
+        <div class="img"><a href="누르면 상세페이지로 이동"><img src="./강아지.jpg" alt="이미지없음"></a></div>
+        <div class="reviewer-name"><a href="reviewer-detail link">닉네임</a></div>
+    </div>
+    <div class="review-written">10</div>
+        <div class="review-like">200</div>
+    </li>
+</ul>
+
+</article>
+		
+		
 	</section>
 
 
@@ -97,24 +158,7 @@
 	<!-- footer area -->
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 
-	<script>
-		var movieId = new Array();
-		var movieTitle = new Array();
-
-		var movieDirectors = new Array();
-		var movieProductionConturies = new Array();
-
-		<c:forEach items="${movie}" var="movie">
-		movieId.push("${movie['id']}");
-		movieTitle.push("${movie['title']}");
-
-		movieDirectors.push("${movie['directors']}");
-		movieProductionConturies.push("${movie['productionConturies']}");
-		</c:forEach>
-
-		autocomplete(document.getElementById("myInput"), movieId, movieTitle,
-				movieDirectors, movieProductionConturies);
-	</script>
+	
 </body>
 
 </html>

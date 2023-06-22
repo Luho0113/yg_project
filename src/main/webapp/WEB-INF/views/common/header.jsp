@@ -40,11 +40,11 @@
 				<!-- 로그인한 경우 (세션에서 사용자 정보를 가져옴)-->
 				<c:if test="${user.uiId != null}">
 					<ul>
-						<li><a href="/myInfo?uiId=${user.uiId}">내 프로필</a></li>
+						<li><a href="/myInfo?uiNickname=${user.uiNickname}">내 프로필</a></li>
 						<li><a href="/logout">로그아웃</a></li>
 						<li>
 							<div class="myInfo-icon">
-								<a href="/myInfo?uiId=${user.uiId}"> <img id="myInfo-Img" alt="내프로필"
+								<a href="/myInfo?uiNickname=${user.uiNickname}"> <img id="myInfo-Img" alt="내프로필"
 									src="${user.uiFilePath}"
 									onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
 								</a> ${user.uiNickname}님

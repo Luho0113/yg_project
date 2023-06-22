@@ -13,7 +13,6 @@ public class MovieVO {
 	private String posterPath; //포스터 경로
 	private String overview; //줄거리
 	private String releaseDate; //개봉일(년-월-일)
-	private String adult; //성인(?)
 	private List<String> genreIds; //장르 번호(TMDB API 기준)
 	
 	private List<String> productionConturies; //제작 국가

@@ -40,7 +40,7 @@
 				<div class="cont_area">
 					<div id="tab1" class="cont" style="display: block">
 						<!-- 작성한 후기가 없는 경우 -->
-						<c:if test="${empty user}">
+						<c:if test="${empty myReviews}">
 							작성한 후기가 없습니다.
 						</c:if>
 						

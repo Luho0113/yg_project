@@ -7,9 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>영화 상세</title>
-<link rel="stylesheet" href="${path}/resources/css/common/header.css">
-<link rel="stylesheet" href="${path}/resources/css/common/footer.css">
-<link rel="stylesheet" href="${path}/resources/css/common/page.css">
+
+<link rel="stylesheet" href="${path}/resources/css/movie/movie-detail.css">
 </head>
 
 <style>
@@ -32,9 +31,11 @@ table, th, td {
 
 <section class="content">
         <article class="movie-content">
-
+<h2>장르 ${movieData[0].genreIds[0]}</h2>
+${movieData[0].genreIds}
             <div class="movie-info">
-                <div class="movie-details"><img id="poster" src="https://image.tmdb.org/t/p/original/${movieData[0].posterPath}" alt="대체이미지"></div>
+                <div class="movie-details">
+                   <img id="poster" src="https://image.tmdb.org/t/p/original/${movieData[0].posterPath}" alt="대체이미지"></div>
                 <div class="movie-details">
                     <h3>${movieData[0].title}</h3>
                     <div class="rd-g-n">
@@ -48,7 +49,7 @@ table, th, td {
                         <div>${movieData[0].originalTitle}</div>
                         <div>${movieRate[0].certification}</div>
                     </div>
-                    <button>리뷰쓰기</button>
+                    <button type="button" onclick="location.href='review-insert?search=${movieData[0].title}'">리뷰쓰기</button>
                 </div>
             </div>
 
@@ -70,8 +71,8 @@ table, th, td {
                     <div>${cast.character}</div>
                 </div>
             </div>
-	</c:forEach>
-	
+   </c:forEach>
+   
         </article>
         <article class="point">
             포인트
@@ -79,8 +80,10 @@ table, th, td {
         <article class="review-list">
             <ul class="review-card">
                 <li class="review-header">
-                    <div><img src="./common.jpg" alt="대체이미지"></div>
-                    <div>리뷰어 닉네임</div>
+                    <div>
+                    <a href="myInfo?uiId=00000000"><img src="./common.jpg" alt="대체이미지"></a>
+                    </div>
+                    <div>0000</div>
                 </li>
                 <li class="review-body">리뷰어 글 내용</li>
                 <li class="review-like">
@@ -129,7 +132,7 @@ table, th, td {
 <tr>
 <td>${movieData[0].releaseDate}</td>
 <td>장르</td>
-<td>${movieData[0].productionConturies}</td>
+<td>${movieData[0].genreIds}</td>
 </tr>
 <tr>
 <td colspan="3">별점</td>
@@ -182,7 +185,7 @@ ${movieData[0].directors}
 
 <!-- 영화정보 -->
 
-	<p>등급: ${movieRate[0].certification}</p>
+   <p>등급: ${movieRate[0].certification}</p>
 
 
 
@@ -208,12 +211,12 @@ var movieDirectors = new Array();
 var movieProductionConturies = new Array();
 
 
-	<c:forEach items="${movie}" var="movie">
-		movieId.push("${movie['id']}")
-		movieTitle.push("${movie['title']}");
+   <c:forEach items="${movie}" var="movie">
+      movieId.push("${movie['id']}")
+      movieTitle.push("${movie['title']}");
 
-		movieDirectors.push("${movie['directors']}");
-		movieProductionConturies.push("${movie['productionConturies']}");
+      movieDirectors.push("${movie['directors']}");
+      movieProductionConturies.push("${movie['productionConturies']}");
     </c:forEach>
     
 autocomplete(document.getElementById("myInput"), movieId, movieTitle, movieDirectors, movieProductionConturies);
