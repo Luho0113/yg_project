@@ -20,7 +20,7 @@ import com.younggam.app.vo.UserInfoVO;
 @Controller
 public class ReportBoardController {
 	@Autowired
-	private ReportBoardService piService;
+	ReportBoardService piService;
 	
 	//신고 글 목록 + 페이징 + 검색(유저)
 	@GetMapping("/reports")
@@ -69,7 +69,7 @@ public class ReportBoardController {
 				String url="/admin/reports";
 				m.addAttribute("msg", msg);
 				m.addAttribute("url", url);
-				return "user/report-list";
+				return "admin/report-list";
 			}
 		}
 	
@@ -95,7 +95,7 @@ public class ReportBoardController {
 		List<String> categories = piCategory;
 		m.addAttribute("categories", categories);
 		String msg = "신고 글 등록을 실패하였습니다.";
-		String url = "/report-update?piNum=" + report.getPiNum();
+		String url = "/report-file";
 		if (piService.fileReport(report)) {
 			msg = "신고 글을 등록하였습니다.";
 			url = "/reports";
@@ -123,7 +123,7 @@ public class ReportBoardController {
 		}
 		m.addAttribute("msg", msg);
 		m.addAttribute("url", url);
-		return "user/report-list"; //다시 체크 필요
+		return "user/report-list";
 	}
 	
 	//신고 글 삭제

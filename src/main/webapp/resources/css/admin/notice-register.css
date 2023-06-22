@@ -1,0 +1,32 @@
+@charset "UTF-8";
+body{
+    font-weight: 300;
+    line-height: 1.42em;
+    color:#A8A39D;
+}
+.noticeRegi-area{
+    padding: 50px;
+}
+input[type="text"], textarea{
+    padding: .4em .4em;
+} 
+input[type="text"]{
+    width: 350px;
+}
+#niTitle, #niFilePath, #niContent{
+    margin: .6em .6em;
+    border: 1px solid #FF7C00;
+}
+h2{
+    margin-bottom: 20px;
+}
+.regiBtn, .resetBtn{
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 0.5rem 0.5rem;
+    color: #FFFAF6;
+    background-color: #43403B;
+}
+.regiBtn{
+    margin-right: 5px;
+}

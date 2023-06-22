@@ -7,6 +7,15 @@
 <meta charset="UTF-8">
 <title>신고 게시판 페이지</title>
 </head>
+<script>
+function deleteCheck(){
+	if(!confirm('삭제하시면 복구할 수 없습니다. \n정말로 삭제하시겠습니까?')){
+		return false;
+	}else{
+		location.href="/report-delete?piNum=${report.piNum}";
+	}
+}
+</script>
 <body>
 <h2>신고 게시판</h2>
 <form action="/reports" method="GET">

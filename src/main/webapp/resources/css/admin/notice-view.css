@@ -1,0 +1,35 @@
+@charset "UTF-8";
+.notiView-area{
+    padding: 50px;
+}
+th, td{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+h2 {
+    font-weight: bold;
+    color: #A8A39D;
+    padding-bottom: 20px;
+  }
+.noticeView-table th h4{
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFAF6; 
+}
+.noticeView-table{
+    width: 600px;
+}
+.noticeView-table td{
+    font-weight: normal;
+    font-size: 14px;
+}
+.noticeUpdate, .noticeDelete{
+    border-radius: 5px;
+    padding: .3rem .3rem;
+    background-color: #43403B;
+    color: #FFFAF6;
+    text-align: center;
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.younggam.app.mapper.NoticeBoardMapper">
+<!-- 공지사항 목록 + 페이징 + 검색 -->
+<select id="selectNotices" resultType="com.younggam.app.vo.NoticeBoardVO">
+	select ni.*, ai.admin_nickname from Notice_info ni
+	inner join Admin_info ai on ni.admin_id = ai.admin_id
+	<where>
+		<if test='niTitle != null and niTitle != ""'>
+			and ni_title like concat('%', #{niTitle}, '%')
+		</if>
+		<if test='niContent != null and niContent != ""'>
+			and ni_content like concat('%', #{niContent}, '%')
+		</if> 
+	</where>
+		order by ni_num desc, ni_credat desc
+</select>
+
+<!-- 공지사항 글 보기 -->
+<select id="selectNotice" resultType="com.younggam.app.vo.NoticeBoardVO">
+	select ni.*, ai.admin_nickname from Notice_info ni
+	inner join Admin_info ai on ni.admin_id = ai.admin_id
+	where ni.ni_num = #{niNum}
+</select>
+
+<!-- 공지사항 등록 -->
+<insert id="registerNotice">
+	insert into Notice_info
+	(ni_title, ni_file_path, ni_content, admin_id) values(
+	#{niTitle}, #{niFilePath}, #{niContent}, #{adminId})
+</insert>
+
+<!-- 공지사항 수정 -->
+<update id="updateNotice">
+	update Notice_info
+	set ni_title = #{niTitle}
+	<if test='niFilePath != null and niFilePath != ""'>
+	, ni_file_path = #{niFilePath}
+	</if>
+	, ni_content = #{niContent}
+	where ni_num = #{niNum}
+</update>
+
+<!-- 공지사항 삭제 -->
+<delete id="deleteNotice">
+	delete from Notice_info where ni_num = #{niNum}
+</delete>
+
+<!-- 공지사항 조회수 -->
+ <update id="updateNoticeBoardCnt" parameterType="int">
+	update Notice_info
+	set ni_cnt = ni_cnt + 1
+	where ni_num = #{niNum}
+</update>
+
+</mapper>

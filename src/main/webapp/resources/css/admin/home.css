@@ -1,0 +1,459 @@
+/* 관리자 홈 페이지 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background-color: rgb(42, 40, 37);
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(42, 40, 37);
+}
+::-webkit-scrollbar-thumb {
+  background: #ff7c00;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7c00;
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding: 10px 14px;
+  background-color: rgb(42, 40, 37);
+  border-right: 4px solid #fffaf6;
+  transition: all 0.5s ease;
+}
+nav.close {
+  width: 73px;
+}
+nav .younggam-logo {
+  display: flex;
+  align-items: center;
+}
+nav .younggam-img {
+  display: flex;
+  justify-content: center;
+  min-width: 45px;
+}
+nav .younggam-img img {
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+nav .younggam-logo .younggam-logo {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ff7c00;
+  margin-left: 14px;
+  transition: all 0.5s ease;
+}
+nav.close .younggam-logo {
+  opacity: 0;
+  pointer-events: none;
+}
+nav .menu-items {
+  margin-top: 40px;
+  height: calc(100% - 90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu-items li {
+  list-style: none;
+}
+.menu-items li a {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  text-decoration: none;
+  position: relative;
+  color: #fffaf6;
+}
+.nav-links li a:hover:before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: #a8a39d;
+}
+.menu-items li a i {
+  font-size: 24px;
+  min-width: 45px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff7c00;
+}
+.menu-items li a .admin-home .admin-user .admin-report .admin-logout {
+  font-size: 18px;
+  font-weight: 400;
+  color: #a8a39d;
+  transition: all 0.5s ease;
+}
+nav.close li a .admin-home .admin-user .admin-report .admin-logout {
+  opacity: 0;
+  pointer-events: none;
+}
+.nav-links li a:hover i,
+.nav-links li a:hover .admin-home .admin-user .admin-report .admin-logout {
+  color: #a8a39d;
+}
+.menu-items .logout {
+  padding-top: 10px;
+  border-top: 1px solid #a8a39d;
+}
+.dashboard {
+  position: relative;
+  left: 250px;
+  background-color: rgb(42, 40, 37);
+  min-height: 100vh;
+  width: calc(100% - 250px);
+  padding: 10px 14px;
+  transition: all 0.5s ease;
+}
+nav.close ~ .dashboard {
+  left: 73px;
+  width: calc(100% - 73px);
+}
+.dashboard .dash-top{
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  left: 250px;
+  padding: 10px 14px;
+  transition: var(--tran-05);
+  z-index: 10;
+}
+.dashboard .dash-top .fa-bars{
+  font-size: 26px;
+  color: #FF7C00;
+  cursor: pointer;
+}
+.dash-top img{
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 1050px;
+}
+.dash-content .title {
+  display: flex;
+  align-items: center;
+  margin: 60px 0 30px 0;
+}
+.dash-content .title i {
+  position: relative;
+  height: 35px;
+  width: 35px;
+  background-color: #ff7c00;
+  border-radius: 6px;
+  color: rgb(42, 40, 37);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+.dash-content .title .text {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fffaf6;
+  margin-left: 10px;
+}
+.dash-content .boxes {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.dash-content .boxes .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  width: 25%;
+  padding: 15px 20px;
+  background-color: #ff7c00;
+  transition: all 0.5s ease;
+}
+.boxes .box i {
+  font-size: 35px;
+  color: #ff7c00;
+}
+.boxes .box a {
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fffaf6;
+}
+.boxes .box.box1 {
+  background-color: #a8a39d;
+}
+.boxes .box.box2 {
+  background-color: #a8a39d;
+}
+.boxes .box.box3 {
+  background-color: #a8a39d;
+}
+@media (max-width: 1000px) {
+  nav {
+    width: 73px;
+  }
+  nav.close {
+    width: 250px;
+  }
+  nav .younggam-logo {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav.close .younggam-logo {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  nav li a .admin-home .admin-logout .admin-report .admin-user {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav.close li a .admin-home .admin-logout .admin-report .admin-user {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  nav ~ .dashboard {
+    left: 73px;
+    width: calc(100% - 73px);
+  }
+  nav.close ~ .dashboard {
+    left: 250px;
+    width: calc(100% - 250px);
+  }
+}
+@media (max-width: 780px) {
+  .dash-content .boxes .box {
+    width: calc(100% / 2 - 15px);
+    margin-top: 15px;
+  }
+}
+@media (max-width: 560px) {
+  .dash-content .boxes .box {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  nav {
+    width: 0px;
+  }
+  nav.close {
+    width: 73px;
+  }
+  nav .younggam-logo {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav li a .admin-home .admin-logout .admin-report .admin-user {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav.close li a .admin-home .admin-logout .admin-report .admin-user {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav ~ .dashboard {
+    left: 0;
+    width: 100%;
+  }
+  nav.close ~ .dashboard {
+    left: 73px;
+    width: calc(100% - 73px);
+  }
+}
+
+/* To-Do List */
+* {
+  border-radius: 10px;
+}
+.todo-top {
+  display: inline-block;
+}
+
+h4 {
+  font-size: 20px;
+  margin: 5px;
+  padding-top: 10px;
+  color: #fffaf6;
+}
+
+.todo-top,
+h4 {
+  text-align: center;
+  background-color: #a8a39d;
+  width: 90%;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.middle {
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+input {
+  border-radius: 30px;
+  width: 72%;
+  padding: 10px;
+  font-size: 15px;
+  color: #ff7c00;
+}
+
+button {
+  background-color: #ff7c00;
+  color: #fffaf6;
+  padding: 10px 20px;
+  font-size: 15px;
+  margin: 4px 2px;
+  border-radius: 30px;
+}
+
+input,
+button {
+  border: none;
+}
+
+button:hover {
+  color: #fffaf6;
+}
+
+span {
+  font-size: 15px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 5px;
+  width: 88%;
+  color: #fffaf6;
+}
+
+span:hover,
+button:hover {
+  background-color: #a8a39d;
+}
+
+#done span {
+  width: 93.5%;
+}
+
+span,
+button {
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+#list,
+#done {
+  animation: open 0.5s ease-in-out;
+  width: 45%;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+    margin-top: -20px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+
+@media all and (min-width: 720px) and (max-width: 1024px) {
+  span {
+    width: 75%;
+  }
+
+  #done span {
+    width: 85%;
+  }
+}
+@media all and (max-width: 720px) {
+  span {
+    width: 55%;
+  }
+  #done span {
+    width: 70%;
+  }
+}
+
+/* 캘린더 */
+td {
+  width: 45px;
+  height: 45px;
+}
+
+.Calendar {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.Calendar > thead > tr:first-child > td {
+  font-weight: bold;
+  color: #fffaf6;
+}
+
+.Calendar > thead > tr:last-child > td {
+  background-color: #43403b;
+  color: #fffaf6;
+}
+
+.pastDay {
+  background-color: #a8a39d;
+}
+
+.today {
+  background-color: #ff7c00;
+  cursor: pointer;
+}
+
+.futureDay {
+  background-color: #fffaf6;
+  cursor: pointer;
+}
+
+.futureDay.choiceDay,
+.today.choiceDay {
+  background-color: #ff7c00;
+  color: #fffaf6;
+  cursor: pointer;
+}
+
+/* To-Do List, 캘린더 정렬 */
+.main {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-evenly;
+ }
+
+/* .main-todo {
+  float: left;
+  margin: auto;
+  width: 500px;
+}
+
+.main-calendar {
+  float: left;
+  margin: auto;
+} */
+

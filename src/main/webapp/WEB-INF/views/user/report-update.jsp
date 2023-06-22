@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ include file="/WEB-INF/views/common/msg.jsp"%>
-    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +16,7 @@ function uploadImg(obj){
 	   document.querySelector('#img_div').style.display='';
 	}
 </script>
-	<form method="POST" name="frmUpdate" action="/report-update" enctype="multipart/form-data">
+	<form method="POST" action="/report-update" enctype="multipart/form-data">
 	<h2>신고 글 수정</h2>
 	<input type="hidden" name="piNum" value="${report.piNum}">
 	
@@ -48,7 +46,7 @@ function uploadImg(obj){
 		>기타
 		
 	<div id="img_div" style="display: none">
-			<img src="${movie.miImage}" width="200">
+			<img src="${report.piFilePath}" width="200">
 	</div>
 	<br><label for="piFilePath">첨부</label>
 	<input type="file" id="piFilePath" name="piFile" onchange="uploadImg(this)"><br>
