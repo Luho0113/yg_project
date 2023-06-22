@@ -47,8 +47,11 @@
 						<!-- 작성한 후기가 있는 경우 -->
 						<c:forEach items="${myReviews}" var="myReview">
 							<div class="user-review">
-								<a href="/review?riNum=${myReview.riNum}">
-									${myReview.riContent} </a>
+								<div class="user-review-text">
+									<a href="/review?riNum=${myReview.riNum}">
+										${myReview.riContent} 
+									</a>
+								</div>
 							</div>
 						</c:forEach>
 					</div>

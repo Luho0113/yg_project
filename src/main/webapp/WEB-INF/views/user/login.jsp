@@ -15,6 +15,7 @@
 
     <!-- content area -->
     <div class="content">
+    	<h3>회원 로그인</h3>
       <!-- 로그인 -->
       <form method="POST" action="/login" name="login_form">
         <!-- 아이디 입력 -->
@@ -34,9 +35,17 @@
             <span class="error_fail"> 아이디나 비밀번호가 틀렸습니다. </span>
           </c:if>
         </div>
-
-        <button onclick="loginCheck()">로그인</button> <br />
-        <button onclick="location.href='/join'" type="button">가입하기</button>
+		
+		<!-- 로그인 버튼 -->
+		<div>
+			<button onclick="loginCheck()">로그인</button>
+		</div>
+        
+        <!-- 회원가입 링크 -->
+        <div>
+        	<a href="/join" >아직 영감이 아니신가요? 가입하기</a>
+        </div>
+        
       </form>
     </div>
 

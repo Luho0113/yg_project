@@ -41,7 +41,10 @@ public class UserInfoController {
 		m.addAttribute("msg", "join fail");
 		
 		if(uiService.getUserInfoVOByUiId(user) != null) {
-			m.addAttribute("msg", "존재하는 아이디입니다.");
+			m.addAttribute("msg", "uiId exist");
+			return "user/join";
+		} else if(uiService.selectUserInfoByUiNickname(user) != null) {
+			m.addAttribute("msg", "uiNickname exist");
 			return "user/join";
 		} else if(uiService.join(user)) {
 			m.addAttribute("joinMessage", "회원가입에 성공했습니다.");
@@ -57,6 +60,7 @@ public class UserInfoController {
 		return uiService.getUserInfoVOByUiId(user) != null;
 	}
 
+	
 	
 	@GetMapping("/joinSuccess")
 	public String joinSuccess() {

@@ -25,10 +25,12 @@ public class UserInfoService {
 	@Autowired
 	private UserInfoMapper uiMapper;
 	
+	
+	//프로필 사진 저장 경로 설정
 	private final String uploadFilePath = "C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
 	//저장 경로 : C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload
 	
-	//1) 회원가입
+	//회원 가입
 	public boolean join(UserInfoVO userInfo) throws IllegalStateException, IOException {
 		
 		String extName = userInfo.getUiFile().getOriginalFilename();
@@ -46,14 +48,20 @@ public class UserInfoService {
 		return uiMapper.insertUserInfo(userInfo)==1;
 	}
 	
-	//2) 중복아이디조회
+	//중복 아이디 조회
 	public UserInfoVO getUserInfoVOByUiId(UserInfoVO userInfo) {
 		
 		return uiMapper.selectUserInfoByUiId(userInfo);
 	}
 
+	// 중복 닉네임 조회
+	public UserInfoVO selectUserInfoByUiNickname(UserInfoVO userInfo) {
+		
+		return uiMapper.selectUserInfoByUiNickname(userInfo);
+	}
 	
-	//3) 로그인
+	
+	//회원 로그인
 	public boolean login(UserInfoVO userInfo, HttpSession session) {
 		
 		userInfo = uiMapper.selectUserInfo(userInfo);
@@ -67,7 +75,7 @@ public class UserInfoService {
 	}
 	
 	
-	//4) 정보수정
+	//회원 정보 수정
 	public boolean updateUserInfo(UserInfoVO userInfo) throws IllegalStateException, IOException {
 		String extName = userInfo.getUiFile().getOriginalFilename();
 
@@ -84,7 +92,7 @@ public class UserInfoService {
 		return uiMapper.updateUserInfo(userInfo) == 1;
 	}
 	
-	//5) 탈퇴
+	//회원 탈퇴
 	public boolean deleteUserInfo(UserInfoVO userInfo) {
 		
 		return uiMapper.deleteUserInfo(userInfo) == 1;

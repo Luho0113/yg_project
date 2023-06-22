@@ -3,7 +3,10 @@
 	맞으면 경고 텍스트가 생기지 않음, 틀리면 경고 텍스트가 생김
 */
 
-
+/* 페이지 로딩을 막아줌 */
+function onJoinSubmit(event) {
+	event.preventDefault();
+}
 
 //정규 표현식
 //^[a-zA-Z0-9] : 또는
@@ -26,7 +29,7 @@ const uiEmail = document.querySelector('#uiEmail');
 //가입 유효성 검사
 //필수 입력값이 비어있으면 제출 X
 function formValidation() {
-
+	
 	//아이디
 	if (uiId.value.trim() == '') {
 		uiId.focus();
@@ -44,7 +47,15 @@ function formValidation() {
 		document.getElementById("error_checkId").innerHTML = ('');
 	}
 	
-
+	//닉네임 확인
+	if (uiNickname.value.trim() == '') {
+		uiNickname.focus();
+		document.getElementById("error_checkNickName").innerHTML = ('<span style="color:red;"> 닉네임을 입력해주세요.</span>');
+		return false;
+	} else if (!checkNickName()) {
+		uiNickname.focus();
+		return false;
+	}
 	
 	//비밀번호
 	if (uiPassword.value.trim() == '') {
@@ -67,15 +78,7 @@ function formValidation() {
 	}
 
 
-	//닉네임 확인
-	if (uiNickname.value.trim() == '') {
-		uiNickname.focus();
-		document.getElementById("error_checkNickName").innerHTML = ('<span style="color:red;"> 닉네임을 입력해주세요.</span>');
-		return false;
-	} else if (!checkNickName()) {
-		uiNickname.focus();
-		return false;
-	}
+	
 
 	//이메일 확인
 	if (uiEmail.value.trim() == '') {
@@ -86,7 +89,7 @@ function formValidation() {
 		uiEmail.focus();
 		return false;
 	}
-
+	
 	return true;
 };
 
@@ -152,7 +155,7 @@ function checkEmail() {
 };
 
 //아이디 중복 체크 메세지 표시
-function checkId(obj) {
+/* function checkId(obj) {
 	if (obj.value.length < 6) {
 		return;
 	}
@@ -172,7 +175,11 @@ function checkId(obj) {
 		}
 	})
 	return true;
-};
+}; */
+
+
+
+
 
 /*이메일 옵션 선택후 주소 자동 완성
 function change_email() {

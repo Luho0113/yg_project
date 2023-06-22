@@ -14,7 +14,10 @@ public interface UserInfoMapper {
 	int insertUserInfo(UserInfoVO userInfo);
 	
 	//중복아이디조회
-	UserInfoVO selectUserInfoByUiId(UserInfoVO userInfo); //
+	UserInfoVO selectUserInfoByUiId(UserInfoVO userInfo); 
+	
+	//중복닉네임조회
+	UserInfoVO selectUserInfoByUiNickname(UserInfoVO userInfo);
 	
 	//로그인
 	UserInfoVO selectUserInfo(UserInfoVO userInfo);

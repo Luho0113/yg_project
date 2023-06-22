@@ -16,6 +16,13 @@
 		WHERE ui_id = #{uiId}
 	</select>
 	
+	<!-- 닉네임 중복 조회 -->
+	<select id="selectUserInfoByUiNickname" resultType="com.younggam.app.vo.UserInfoVO">
+		SELECT * FROM user_info
+		WHERE ui_nickname = #{uiNickname}
+	</select>
+	
+	
 	<!-- 로그인 -->
 	<select id="selectUserInfo" resultType="com.younggam.app.vo.UserInfoVO">
 		SELECT * FROM user_info
@@ -40,7 +47,6 @@
 	
 	
 	<!-- 내 리뷰 목록 -->
-	
 	<select id="selectMyreviews" resultType="com.younggam.app.vo.UserInfoVO">
 		SELECT ui.*, ri.*
 		FROM user_info ui, review_info ri

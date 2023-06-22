@@ -56,7 +56,9 @@
 					<c:forEach items="${myReviews}" var="myReview">
 						<div class="user-review">
 							<div class="user-review-text">
-								${myReview.riContent}
+								<a href="/review?riNum=${myReview.riNum}">
+									${myReview.riContent}
+								</a>
 							</div>
 						</div>
 					</c:forEach>
