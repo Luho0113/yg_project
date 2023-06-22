@@ -14,8 +14,8 @@ public class ReviewService {
 	@Autowired
 	private ReviewInfoMapper riMapper;
 	
-	public List<ReviewInfoVO> selectReviewInfos(ReviewInfoVO reivews){
-		return riMapper.selectReviewInfos(reivews);
+	public List<ReviewInfoVO> selectReviewInfos(ReviewInfoVO reviews){
+		return riMapper.selectReviewInfos(reviews);
 	}
 	
 	public boolean insertReviewInfo(ReviewInfoVO review) {

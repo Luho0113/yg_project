@@ -14,19 +14,21 @@
 <script src="${path}/resources/js/review/review-detail.js"></script>
 </head>
 <body>
-	<!-- header area -->
-	<jsp:include page="../common/header.jsp"></jsp:include>
 
+<%-- header area --%>
+<jsp:include page="../common/header.jsp"></jsp:include>
+
+
+<%-- content area --%>
 	<div class="content">
 		<div class="space" id="space"></div>
 
 		<div class="reivewContainer" id="reivewContainer">
 			<div class="movieInfo" id="movieInfo">
-				<input type="hidden" class="movieId" value="${review.riMovieId}">
-				<span class="movieTitle" id="movieTitle"></span>
-				<span class="releaseDate" id="releaseDate"></span>
-				<span class="genre" id="genre">장르 | </span>
-				<span class="country" id="country">국가</span>
+				<span class="movieTitle" id="movieTitle">${movie[0].title}</span>
+				<span class="releaseDate" id="releaseDate">${movie[0].releaseDate} | </span>
+				<span class="genre" id="genre">${movie[0].genreIds[0]} | </span>
+				<span class="country" id="country">${movie[0].productionConturies[0]}</span>
 			</div>
 
 			<hr>
@@ -36,16 +38,20 @@
 			</div>
 
 			<div class="posterContainer" id="posterContainer">
-				<img class="posetPath" id="posterPath">
+				<img class="posetPath" id="posterPath" src="https://image.tmdb.org/t/p/original${movie[0].posterPath}">
 			</div>
 
 			<div class="profileBox" id="profileBox">
-				<a href="userReview?uiId=${review.uiId}">
+				<a href="userReview?uiNickname=${review.uiNickname}">
 					<img id="profile" src="${review.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
 				</a>
 			</div>
 
-			<div class="nickName" id="nickName">${review.uiNickname}</div>
+			<div class="nickName" id="nickName">
+				<a href="userReview?uiNickname=${review.uiNickname}">
+					${review.uiNickname}
+				</a>
+			</div>
 
 			<div class="buttonContainer" id="buttonContainer">
 				<input type="button" class="follow" id="follow" value="구독">
@@ -111,7 +117,8 @@
 
 
 	</div>
-	<!-- footer area -->
-	<jsp:include page="../common/footer.jsp"></jsp:include>
+	
+<%-- footer area --%>
+<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>

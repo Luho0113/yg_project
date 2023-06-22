@@ -28,7 +28,7 @@
         <input type="submit">
     </form>
 	
-    <form action="review-insert" method="POST">
+    <form action="/review-insert" method="POST">
     	<input type="hidden" id="riMovieId" name="riMovieId" value="">
     	<input type="hidden" id="riGenre" name="riGenre" value="">
         <table>

@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.younggam.app.service.MovieDetailService;
 import com.younggam.app.service.MovieReviewServiece;
-import com.younggam.app.service.MovieService;
 import com.younggam.app.service.ReviewService;
 import com.younggam.app.vo.ReviewInfoVO;
 import com.younggam.app.vo.UserInfoVO;
@@ -26,10 +26,10 @@ public class ReviewInfoController {
 	private ReviewService riServie;
 	
 	@Autowired
-	private MovieService movieService;
+	private MovieReviewServiece movieReivewServiece;
 	
 	@Autowired
-	private MovieReviewServiece movieReivewServiece;
+	private MovieDetailService movieDetailService;
 	
 	//전체 글 조회
 	@GetMapping("/reviews")
@@ -43,7 +43,7 @@ public class ReviewInfoController {
 	@GetMapping("/review")
 	public String getReview(@RequestParam("riNum") int riNum, @RequestParam("movieId") String movieId, Model m) {
 		ReviewInfoVO review = riServie.selectReviewInfo(riNum);
-		
+		m.addAttribute("movie", movieDetailService.getMovieDetail(movieId));
 		m.addAttribute("review", review);
 		return "review/review-detail";
 	}
@@ -61,9 +61,9 @@ public class ReviewInfoController {
 		UserInfoVO user = (UserInfoVO) session.getAttribute("user");
 		review.setUiId(user.getUiId());
 		if(riServie.insertReviewInfo(review)) {
-			return "review/review-list";
+			return "redirect:/reviews";
 		}
-		return "review/review-list";
+		return "redirect:/reviews";
 	}
 	
 
