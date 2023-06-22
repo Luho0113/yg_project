@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>영감</title>
 <!-- 스타일 -->
     <link rel="stylesheet" href="${path}/resources/css/profile/myInfo.css" />
 </head>
@@ -19,17 +19,20 @@
     <jsp:include page="../common/header.jsp"></jsp:include>
 
     <div class="content">
-      <h3>내 프로필</h3>
-      <img
-        src="${myReviews[0].uiFilePath}"
-        style="border-radius: 100px"
-        width="200px"
-        height="200px"
-        onerror="this.src='https://ifh.cc/g/cDROLZ.png';"
-      />
-      <br />
-      닉네임 : ${myReviews[0].uiNickname} <br />
-      <button onclick="location.href='/myInfo-update'">수정하기</button>
+    	<div class="profile-wrap">
+    		<div class="profile-img">
+    			<img
+			        src="${myReviews[0].uiFilePath}"
+			        style="border-radius: 100px"
+			        width="200px"
+			        height="200px"
+			        onerror="this.src='https://ifh.cc/g/cDROLZ.png';"
+	      		/>
+    		</div>
+    		<div>
+    			닉네임 : ${myReviews[0].uiNickname}
+    		</div>
+    	</div>
 
       <div class="tap-wrap">
         <div class="tab-menu">
@@ -51,7 +54,11 @@
 						리뷰없음
 					</c:if>
 					<c:forEach items="${myReviews}" var="myReview">
-						<div>${myReview.riContent}</div>
+						<div class="user-review">
+							<div class="user-review-text">
+								${myReview.riContent}
+							</div>
+						</div>
 					</c:forEach>
 					
 				

@@ -35,8 +35,19 @@
   display: none;
   color: #fff;
   border: 1px solid green;
-  text-align: center;
+  text-align: left;
   width: 100%;
   height: 50%;
   line-height: 100px;
+}
+
+
+/* 리뷰 내용 */
+.user-review{
+	border: 1px solid #ff7c00;
+	margin: 10px;
+}
+
+.user-review-text {
+	margin: 0 10px;
 }

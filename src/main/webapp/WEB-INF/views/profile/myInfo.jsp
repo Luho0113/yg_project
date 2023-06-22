@@ -28,29 +28,29 @@
 		${user.uiReviewPoint} <br />
 		<button onclick="location.href='/myInfo-update'">수정하기</button>
 
-		<!-- 작성한 리뷰 정보는 ReviewInfoVO에서 가져옴 -->
+		<!-- 작성한 후기 정보는 ReviewInfoVO에서 가져옴 -->
 		<div class="tap-wrap">
 			<div class="tab-menu">
 				<ul class="tab-list">
-					<li class="tab-active"><a href="#tab1" class="tab-button">후기</a>
-					</li>
+					<li class="tab-active"><a href="#tab1" class="tab-button">후기</a></li>
 					<li><a href="#tab2" class="tab-button">댓글</a></li>
 					<li><a href="#tab3" class="tab-button">좋아요</a></li>
 				</ul>
 
 				<div class="cont_area">
 					<div id="tab1" class="cont" style="display: block">
+						<!-- 작성한 후기가 없는 경우 -->
 						<c:if test="${empty user}">
-					리뷰없음
-				</c:if>
+							작성한 후기가 없습니다.
+						</c:if>
+						
+						<!-- 작성한 후기가 있는 경우 -->
 						<c:forEach items="${myReviews}" var="myReview">
-							<div>
+							<div class="user-review">
 								<a href="/review?riNum=${myReview.riNum}">
 									${myReview.riContent} </a>
 							</div>
 						</c:forEach>
-
-
 					</div>
 					<div id="tab2" class="cont">Tab Content2</div>
 					<div id="tab3" class="cont">Tab Content3</div>
