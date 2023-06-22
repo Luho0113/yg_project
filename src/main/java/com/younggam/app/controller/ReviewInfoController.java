@@ -41,8 +41,9 @@ public class ReviewInfoController {
 	
 	//글 상세보기
 	@GetMapping("/review")
-	public String getReview(@RequestParam("riNum") int riNum, Model m) {
+	public String getReview(@RequestParam("riNum") int riNum, @RequestParam("movieId") String movieId, Model m) {
 		ReviewInfoVO review = riServie.selectReviewInfo(riNum);
+		
 		m.addAttribute("review", review);
 		return "review/review-detail";
 	}

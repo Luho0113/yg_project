@@ -1,0 +1,246 @@
+@charset "UTF-8";
+
+.space{
+    height: 100px;
+
+}
+
+.reivewContainer{
+    position: relative;
+    width: 100%; /* %로 하니까 돌아버릴 것 같음 */
+}
+
+.movieInfo{
+
+
+    height: 45px;
+    padding: 0px 0px 5px 10px;
+    display: inline-block;
+}
+
+hr{
+    width: 81%;
+    border: 1px solid #FF7C00;
+}
+
+#posterPath{
+    width: 180px;
+    height: 270px;
+}
+
+.posterContainer{
+    width: 180px; /* padding(20px) + content(130px) = 220px */
+    height: 270px; /* padding(20px) + content(300px) = 320px */ /* poster가 가운데에 쏙 들어갔으면 좋겠어서,, 넣음 */
+    display: inline-block; /* 옆에 다른 div 요소 배치해야 해서 넣음 */
+    position: absolute;
+    right: 1%;
+    top: 0px;
+}
+
+.movieTitle {
+    font-size: 30px;
+    font-weight: bolder;
+    padding-right: 5px;
+}
+
+.releaseDate, .genre, .country{
+    font-size: 13px;
+}
+
+.profileBox{
+    width: 50px;
+    height: 50px; 
+    border-radius: 70%;
+    overflow: hidden;
+    display: inline-block;
+    margin: 20px 0px 10px 10px;
+}
+
+#profile{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nickName{
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    margin: 35px 0px 0px 15px;
+    color: #FF7C00;
+    font-weight: bold;
+    font-size: 15px; /* 폰트 사이즈 정해지면 수정 하기 */
+}
+
+.buttonContainer{
+    display: inline-block;
+    position: absolute;
+    left: 75%;
+    margin-top: 30px;
+}
+
+.follow{
+    width: 70px;
+    height: 30px;
+
+    background-color: #FF7C00;
+    border: none;
+    border-radius: 4px;
+
+    font-weight: bold;
+    color: #2A2725;
+}
+
+.follow:hover{
+    width: 70px;
+    height: 30px;
+
+    background-color: #2A2725;
+    border: 1px solid #FF7C00;
+    border-radius: 4px;
+
+    font-weight: bold;
+    color: #FF7C00;
+    cursor: pointer;
+}
+
+.starPoint{
+    margin: 75px 0px 0px 8px;
+    display: inline-block;
+
+    position: absolute;
+    left: 0px;
+}
+
+.riListDate{
+    margin: 80px 0px 0px 15px;
+
+    font-size: 13px;
+    color: #A8A39D;
+}
+
+.reviewComment{
+    margin: 10px 0px 0px 15px;
+
+    font-size: 13px;
+    color: #A8A39D;
+}
+
+
+.riListReviewContent{
+    margin: 40px auto; 
+    width: 90%;
+    padding: 40px 60px;
+
+    background-color: #43403B;
+    border: 1px solid #FF7C00;
+    border-radius: 20px;
+
+    letter-spacing: 1px;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+.buttonGroup{
+    text-align: center;
+    text-justify: auto;
+}
+
+.buttonGroup>input{
+    width: 32%;
+    height: 70px;
+
+    background-color: #43403B;
+    border: 1px solid #FF7C00;
+    border-radius: 12px;
+
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.buttonGroup>input:hover{
+    background-color: #FF7C00;
+    color: #43403B;
+    cursor: pointer;
+}
+
+#dislikeButton{
+    margin: 0px 1% 50px 1%;
+}
+
+
+.commentContainer{
+    position: relative;
+    min-height: 200px;
+
+    border-bottom: 1px solid #A8A39D;
+}
+
+.commentProfileBox{
+    width: 30px;
+    height: 30px; 
+    border-radius: 70%;
+    overflow: hidden;
+    display: inline-block;
+    margin: 20px 0px 10px 10px;
+}
+
+.commentNickName{
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    margin: 25px 0px 0px 10px;
+    color: #FF7C00;
+    font-weight: bold;
+    font-size: 13px; /* 폰트 사이즈 정해지면 수정 하기 */
+}
+
+.commentDate{
+    display: inline-block;
+    position: absolute;
+    right: 1%;
+    margin-top: 25px;
+
+    font-size: 13px;
+    color: #A8A39D;
+}
+
+.commentContent{
+    display: inline-block;
+    position: absolute;
+    margin: 0px 50px 0px 50px;
+    
+
+    font-size: 13px;
+    color: #A8A39D;
+
+    letter-spacing: 1px;
+    line-height: 20px;
+}
+
+.commentLike{
+    display: inline-block;
+    position: absolute;
+    margin: 0px 0px 10px 10px;
+    bottom: 0px;
+}
+
+.commentLikeButton{
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+
+    border: 0;
+    background-color: transparent;
+    
+
+    text-align: center;
+    font-size: 13px;
+    color: #FF7C00;
+}
+
+.commentLikeButton:hover{
+    background-color: #A8A39D;
+    opacity: 50%;   
+    cursor: pointer;
+}

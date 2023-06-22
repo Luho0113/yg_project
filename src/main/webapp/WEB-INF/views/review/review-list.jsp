@@ -68,9 +68,8 @@
 				<div class="riListElement" id="riListElement">
 					<!-- riListElement: 리뷰 하나의 내용을 묶는 div  -->
 					<!-- 이걸 반복 생성하면 되지 않을까  -->
-					<input type="hidden" id="riMovieId" class="riMovieId"
-						value="${reivew.riMovieId}"> <input type="hidden"
-						id="index" class="index" value="${status.index}">
+					<input type="hidden" id="riMovieId" class="riMovieId" value="${reivew.riMovieId}"> 
+					<input type="hidden" id="index" class="index" value="${status.index}">
 					<div class="riListPoster" id="riListPoster">
 						<!-- riListPoster: riListElement에 들어갈 포스터를 묶는 div  -->
 						<img id="posterPath" class="posterPath">
@@ -86,7 +85,7 @@
 					<div class="riListUserInfo" id="riListUserInfo">
 						<!-- riListUserInfo: 작성자 프로필 이미지, 닉네임, 별점을 표시하는 div  -->
 						<div class="profileBox" id="profileBox">
-							<a href="userReview?uiId=${reivew.uiId}">
+							<a href="userReview?uiNickname=${reivew.uiNickname}">
 								<img id="profile" src="${reivew.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
 							</a>
 						</div>
@@ -108,7 +107,7 @@
 					</div>
 					
 					<div class="riListReviewContent" id="riListReviewContent">
-						<a href="/review?riNum=${reivew.riNum}">
+						<a href="/review?riNum=${reivew.riNum}&movieId=${reivew.riMovieId}">
 							<!-- riListReviewContent: 리뷰 그 자체,, div  -->
 							${reivew.riContent}
 						</a>
@@ -116,7 +115,7 @@
 					
 					<div class="riListComment" id="riListComment">
 						<!-- riListComment: 해당 리뷰의 댓글과 좋아요 수 div  -->
-						♥ ${review.riLikeCnt} 🗨2
+						좋아요 ${review.riLikeCnt}  댓글 2
 					</div>
 
 					<div class="riListDate" id="riListDate">
@@ -128,7 +127,7 @@
 		</div>
 
 	</div>
-	<!-- footer area -->
-	<jsp:include page="../common/footer.jsp"></jsp:include>
+<!-- footer area -->
+<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>

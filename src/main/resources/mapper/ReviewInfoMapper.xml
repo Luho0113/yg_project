@@ -12,9 +12,9 @@
 	</select>
 	
 	<select id="selectReviewInfo" resultType="com.younggam.app.vo.ReviewInfoVO">
-		select * 
-		from review_info
-		where ri_num = #{riNum}
+		select r.*, u.* 
+		from review_info r, user_info u
+		where r.ui_id = u.ui_id and ri_num = #{riNum}
 	</select>
 	
 	<insert id="insertReviewInfo">
