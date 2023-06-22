@@ -27,7 +27,7 @@
 	<select id="selectUserReviewInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
 		SELECT ri.*, ui.*
 		FROM user_info ui, review_info ri
-		WHERE ui.ui_id = ri.ui_id AND ui.ui_id = #{uiId}
+		WHERE ui.ui_id = ri.ui_id AND ui.ui_nickname = #{uiNickname}
 		ORDER BY ri.ri_credate DESC
 	</select>
 

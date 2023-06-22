@@ -25,7 +25,7 @@ public class UserInfoService {
 	@Autowired
 	private UserInfoMapper uiMapper;
 	
-	private final String uploadFilePath = "C:\\Users\\USER\\git\\yg_project\\src\\main\\webapp\\resources\\upload";
+	private final String uploadFilePath = "C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
 	//저장 경로 : C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload
 	
 	//1) 회원가입
