@@ -91,11 +91,7 @@ public class UserInfoService {
 	}
 	
 	
-	//6) 내 리뷰 목록
-	public List<UserInfoVO> selectMyreviewInfos(UserInfoVO userInfo){
-		
-		return uiMapper.selectMyreviewInfos(userInfo);
-	}
+	
 	
 	
 	//관리자 회원 관리

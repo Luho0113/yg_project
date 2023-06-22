@@ -22,6 +22,13 @@
 		values (#{riContent}, #{uiId}, #{riMovieId}, #{riStar}, #{riDirectionPoint}, #{riActingPoint}, #{riStoryPoint}, #{riVisualPoint}, #{riOstPoint}, #{riGenre}, #{riSpoil})
 	</insert>
 
-
+	
+	<!-- 해당 사용자의 리뷰 정보를 조회 -->
+	<select id="selectUserReviewInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
+		SELECT ri.*, ui.*
+		FROM user_info ui, review_info ri
+		WHERE ui.ui_id = ri.ui_id AND ui.ui_id = #{uiId}
+		ORDER BY ri.ri_credate DESC
+	</select>
 
 </mapper>

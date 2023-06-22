@@ -11,7 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.younggam.app.service.ReviewService;
 import com.younggam.app.service.UserInfoService;
 import com.younggam.app.vo.ReviewInfoVO;
 import com.younggam.app.vo.UserInfoVO;
@@ -24,20 +26,15 @@ public class MyInfoController {
 	@Autowired
 	private UserInfoService uiService;
 	
+	@Autowired
+	private ReviewService riService;
 
 	// 1)내 프로필
 	@GetMapping("/myInfo")
-	public String myInfo(@ModelAttribute UserInfoVO userInfo, HttpSession session, Model m) {
+	public String myInfo(@RequestParam("uiId") String uiId, Model m) {
 		
-		UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user");
-		//UserInfoVO userId = uiService.getUserInfoVOByUiId(sessionUserInfo);
-		
-		List<UserInfoVO> myReviewList = uiService.selectMyreviewInfos(sessionUserInfo);
-		
-		
-		m.addAttribute("userInfo", sessionUserInfo);
-		m.addAttribute("myReviewList", myReviewList);
-		
+		List<ReviewInfoVO> myReviews = riService.selectUserReviewInfos(uiId);
+		m.addAttribute("myReviews", myReviews);
 		
 		return "profile/myInfo";
 	}
@@ -64,14 +61,16 @@ public class MyInfoController {
 	}
 	
 	
-	// 3) 내 리뷰 목록
-	@GetMapping("/myInfo-reviewList")
-	public String getReviewList(@ModelAttribute ReviewInfoVO reviewInfo, HttpSession session, Model m) {
+	
+	
+	// 리뷰 조회 (리뷰서비스사용하는거!!!!)
+	@GetMapping("/userReview")
+	public String getReview(@RequestParam("uiId") String uiId, Model m) {
 		
-		//List<ReviewInfoVO> myReviewList = uiService.selectMyreviewInfos(reviewInfo);
-		//m.addAttribute("myReviewList", myReviewList);
+		List<ReviewInfoVO> myReviews = riService.selectUserReviewInfos(uiId);
+		m.addAttribute("myReviews", myReviews);
 		
-		return "profile/myInfo";
+		return "profile/userReviewList";
 	}
 
 }

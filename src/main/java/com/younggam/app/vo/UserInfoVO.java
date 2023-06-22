@@ -17,11 +17,11 @@ public class UserInfoVO {
 	private String uiReviewPoint; //ui_review_point 리뷰포인트
 	private String uiActive; //ui_active 회원 상태
 	
-	
-	//리뷰 목록 1:N관계
-	private List<ReviewInfoVO> myReviewList;
-	
-	
 	private MultipartFile uiFile;
 	
+	//리뷰 목록 1:N관계
+	// private List<UserInfoVO> myReviewList;
+	
+	
+	//private List<String> riContent; //리뷰내용 (조회 결과가 담기는 그릇)
 }
