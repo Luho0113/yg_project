@@ -1,0 +1,10 @@
+/* 로그인 성공 화면 */
+
+.success-message {
+  text-align: center;
+}
+
+.button-login {
+  text-align: center;
+  margin: 10px;
+}

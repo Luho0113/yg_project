@@ -1,0 +1,113 @@
+/* 버튼 꾸미기 */
+
+.button-custom {
+  display: inline-block;
+  padding: 0;
+  text-align: center;
+  outline: none;
+  border-radius: 5px;
+  background: transparent;
+  transition: all 0.7s ease; /* all 0.2s; */
+  padding: 10px 25px;
+  width: 240px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* 주황색 버튼 */
+.btnOrange {
+  background-color: #ff7c00;
+  background-image: linear-gradient(315deg, #ff7c00 0%, #f17827 74%);
+  line-height: 50px;
+  padding: 0;
+  border: none;
+}
+.btnOrange:hover {
+  background-color: #fd8f28;
+  background-image: linear-gradient(315deg, #fd8f28 0%, #ffa754 74%);
+}
+.btnOrange span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btnOrange:before,
+.btnOrange:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+  transition: all 0.3s ease;
+}
+.btnOrange:before {
+  height: 0%;
+  width: 0.1px;
+}
+.btnOrange:after {
+  width: 0%;
+  height: 0.1px;
+}
+.btnOrange:hover:before {
+  height: 100%;
+}
+.btnOrange:hover:after {
+  width: 100%;
+}
+.btnOrange span:before,
+.btnOrange span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+  transition: all 0.3s ease;
+}
+.btnOrange span:before {
+  width: 0.1px;
+  height: 0%;
+}
+.btnOrange span:after {
+  width: 0%;
+  height: 0.1px;
+}
+.btnOrange span:hover:before {
+  height: 100%;
+}
+.btnOrange span:hover:after {
+  width: 100%;
+}
+
+/* input 상자 */
+
+.input {
+  width: 240px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  margin: 5px;
+  font-size: 16px;
+  padding-left: 10px; /* placeholder의 글자 조절 */
+}
+
+.input-wrap {
+  text-align: center;
+}
+
+.error_message-wrap {
+  text-align: center;
+}
+
+.to-join {
+  text-align: center;
+}
