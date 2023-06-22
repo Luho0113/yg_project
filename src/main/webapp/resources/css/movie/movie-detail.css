@@ -2,7 +2,7 @@
 
 .movie-content{
   border: 1px solid cornflowerblue;
-  
+  width:100%;
 }
 
 .movie-info{
@@ -13,16 +13,20 @@
 .movie-details  {
   display: inline-block; 
   border: 1px solid cornflowerblue;
+  width: 100px;
 }
+
+
 /*
 .movie-info h3 {
 
 }
 */
 
+
 .movie-info img{
-  width: 50px;
-   height: auto;
+  width: 80%;
+  height: auto;
 
 }
 

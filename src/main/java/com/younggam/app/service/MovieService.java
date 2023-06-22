@@ -86,7 +86,6 @@ public class MovieService {
 						movieVO.setPosterPath(known.getString("poster_path"));
 						movieVO.setOverview(known.getString("overview"));
 						movieVO.setReleaseDate(known.getString("release_date"));
-						movieVO.setAdult(known.getString("adult"));
 						movieVO.setDirectors(getCredit(movieVO.getId()));
 						movieVO.setProductionConturies(getConturies(movieVO.getId()));
 						
@@ -110,7 +109,6 @@ public class MovieService {
 					movieVO.setPosterPath(object.getString("poster_path"));
 					movieVO.setOverview(object.getString("overview"));
 					movieVO.setReleaseDate(object.getString("release_date"));
-					movieVO.setAdult(object.getString("adult"));
 					movieVO.setDirectors(getCredit(movieVO.getId()));
 					movieVO.setProductionConturies(getConturies(movieVO.getId()));
 					
@@ -210,6 +208,40 @@ public class MovieService {
 			log.error("error=>{}", e);
 		}//end of catch
 		return countries;
+
+	}//end of getConturies
+	
+	
+	//TMDB API 요청 Method (제작 국가)
+	public List<String> getGenres(String movieId) {
+		List<String> genres = new ArrayList<>();
+		try {
+
+			OkHttpClient client = new OkHttpClient();
+
+			Request request = new Request.Builder()
+			  .url("https://api.themoviedb.org/3/movie/" + movieId + "?language=ko-KR")
+			  .get()
+			  .addHeader("accept", "application/json")
+			  .addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZGE0NzZkY2EyOTk4Y2MwYWNiN2U2MzU5NjMzMDhhNSIsInN1YiI6IjY0NzM2ZTJkOTQwOGVjMDBlMTRjZGVhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rmNtSzDfgUgipyAKkyWki-Jrae8kipwRPI9ISiHdpzM")
+			  .build();
+
+			Response response = client.newCall(request).execute();
+
+			//요청 결과를 JSON 형식으로 변경 
+			JSONObject jsonObject = new JSONObject(response.body().string()); //String 형식을 JSON 형식으로 변환한다.
+			JSONArray genresJson = jsonObject.getJSONArray("genres"); //JSON 형식으로 만들어진 jsonObject에서 cast[]를 뽑아서 cast에 담는다.     
+
+			for(int i = 0; i < genresJson.length(); i++) {
+				JSONObject object = genresJson.getJSONObject(i); //JSONArray를 하나씩(i) 꺼내서 JSONObject로 변경해서 object에서 Key로 value를 뽑는 방식이다.
+				genres.add(object.optString("name")); 			
+			}//end of for
+
+
+		} catch (Exception e) {
+			log.error("error=>{}", e);
+		}//end of catch
+		return genres;
 
 	}//end of getConturies
 	
