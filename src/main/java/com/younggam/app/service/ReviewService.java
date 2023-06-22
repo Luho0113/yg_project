@@ -29,5 +29,10 @@ public class ReviewService {
 	public ReviewInfoVO selectReviewInfo (int riNum) {
 		return riMapper.selectReviewInfo(riNum);
 	}
-
+	
+	
+	//내리뷰
+	public List<ReviewInfoVO> selectUserReviewInfos(String uiId){
+		return riMapper.selectUserReviewInfos(uiId);
+	}
 }

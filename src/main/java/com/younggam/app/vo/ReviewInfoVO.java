@@ -31,5 +31,9 @@ public class ReviewInfoVO {
 	  	
 	  	private String uiNickname; //참조키: 영화 코드
 	  	private String uiFilePath; //참조키: 유저 아이디
+	  	
+	  	
+	  	
+	  	
 
 }

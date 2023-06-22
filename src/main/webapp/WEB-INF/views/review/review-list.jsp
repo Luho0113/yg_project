@@ -86,7 +86,9 @@
 					<div class="riListUserInfo" id="riListUserInfo">
 						<!-- riListUserInfo: 작성자 프로필 이미지, 닉네임, 별점을 표시하는 div  -->
 						<div class="profileBox" id="profileBox">
-							<img id="profile" src="${reivew.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+							<a href="userReview?uiId=${reivew.uiId}">
+								<img id="profile" src="${reivew.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+							</a>
 						</div>
 
 						<div class="nickName" id="nickName">${reivew.uiNickname}</div>

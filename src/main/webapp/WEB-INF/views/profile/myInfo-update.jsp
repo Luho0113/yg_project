@@ -37,7 +37,8 @@
 				<!-- 프로필 이미지 미리보기 -->
 				<img src="" style="border-radius: 40px" width="80px" height="80px" />
 			</div>
-			<label for="uiFilePath">프로필 이미지 : </label> <input type="file"
+			<label for="uiFilePath">프로필 이미지 : </label> 
+			<input type="file"
 				name="uiFile" id="uiFile" onchange="imgPreview(this)"
 				value="${user.uiFile}" />
 

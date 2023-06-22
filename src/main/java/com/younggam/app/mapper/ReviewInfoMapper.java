@@ -15,5 +15,6 @@ public interface ReviewInfoMapper {
 	//리뷰 작성
 	int insertReviewInfo(ReviewInfoVO review);
 	
-
+	//내 리뷰 조회
+	List<ReviewInfoVO> selectUserReviewInfos(String uiId);
 }
