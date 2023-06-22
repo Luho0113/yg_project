@@ -27,8 +27,7 @@
 
 .movies {
   border: 1px solid red;
-  height: 100%;
-  width: 100%;
+
 }
 
 /*movie-box float 문제 해결*/
@@ -40,14 +39,16 @@
 
 .movie-box {
   border: 1px solid cornflowerblue;
-  width: 17%;
-  margin: 1% 1% 1% 1.5%;
-  float: left;
+  display : inline-block;
+  width: 18%;
+  height: 20.8% ;
+  margin: 0.5%;
+
   }
 
 .movie-box img {
    width: 100%;
-   height: auto;
+   height: 100%;
     /* rgba(0, 0, 0, 0.2) 그림자 효과*/
     box-shadow: 0 8px 8px 0 rgba(238, 233, 233, 0.2), 0 6px 20px 0 rgba(238, 234, 234, 0);
 
@@ -56,20 +57,27 @@
 /*movie-box 링크 - 포스터, 제목*/
 .movie-box a {
   display: block;
-  height: auto;
+  height: 100%;
   border: 1px solid khaki;
 }
 
 /*영화 제목, 개봉일, 감독*/
 .movie-box .cont-detail {
-  margin: 10px 10px 50px 0px;
+  margin: 10px 0px 20px 2px;
   font-size: 0.8rem;
   border: 1px solid salmon;
+  width: 98%;
+
+
 }
 
 .movie-box .title {
   border: 1px solid yellowgreen;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  font-style: bold;
+  height: 45px;
+  
+
 }
 .movie-box .title a:hover {
   color: #ff7c00;
@@ -79,6 +87,7 @@
 }
 .movie-box .director {
   border: 1px solid yellow;
+
 }
 
 

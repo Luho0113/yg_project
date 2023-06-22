@@ -1,1 +1,111 @@
 @charset "UTF-8";
+
+.movie-content{
+  border: 1px solid cornflowerblue;
+  
+}
+
+.movie-info{
+  border: 1px solid red;
+  
+}
+
+.movie-details  {
+  display: inline-block; 
+  border: 1px solid cornflowerblue;
+}
+.movie-info h3 {
+
+}
+
+.movie-info img{
+  width: 50px;
+   height: auto;
+
+}
+
+.rd-g-n{
+
+border: 1px solid rosybrown;
+}
+.rd-g-n div{
+  display: inline-block; 
+  border: 1px solid rosybrown;
+}
+
+.star{
+
+}
+
+.rt-ot-r{
+
+}
+
+.rt-ot-r div{
+  border: 1px solid yellow;
+}
+
+.overview{
+  border: 1px solid green;
+}
+
+.cast-list{
+  border: 1px solid orange;
+}
+
+.cast-card {
+  display: inline-block; 
+  border: 1px solid magenta
+  
+}
+
+.cast-card img{
+    width: 50px;
+   height: auto;
+}
+
+
+.cast-card .cast-name{
+  display: inline-block; 
+}
+
+
+.point {
+  border: 1px solid aqua
+}
+
+.review-list{
+  border: 1px solid yellow;
+}
+
+.review-card{
+  display: inline-block; 
+ border: 1px solid magenta;
+}
+
+.review-header{
+ 
+  border: 1px solid gold;
+}
+
+.review-header div{
+  display: inline-block; 
+}
+
+.review-header img {
+  width: 50px;
+  height: auto;
+}
+
+.review-body{
+  border: 1px solid firebrick;
+}
+
+.review-like{
+  display: inline-block; 
+  border: 1px solid teal;
+}
+
+.review-like div{
+  display: inline-block; 
+}
