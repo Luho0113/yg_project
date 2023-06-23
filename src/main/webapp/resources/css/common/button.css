@@ -7,27 +7,29 @@
   outline: none;
   border-radius: 5px;
   background: transparent;
-  transition: all 0.7s ease; /* all 0.2s; */
+  transition: all 0.3s ease; /* all 0.2s; */
   padding: 10px 25px;
   width: 240px;
   height: 50px;
   cursor: pointer;
   font-size: 16px;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 2px 2px 2px 0px rgba(32, 32, 32, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1); */
 }
 
 /* 주황색 버튼 */
 .btnOrange {
   background-color: #ff7c00;
-  background-image: linear-gradient(315deg, #ff7c00 0%, #f17827 74%);
+  border: 1px solid #ff7c00;
+  color: #2a2725;
+  /* background-image: linear-gradient(315deg, #ff7c00 0%, #f17827 74%); */
   line-height: 50px;
   padding: 0;
-  border: none;
 }
 .btnOrange:hover {
-  background-color: #fd8f28;
-  background-image: linear-gradient(315deg, #fd8f28 0%, #ffa754 74%);
+  background-color: #ff7c00;
+  border: 1px solid #ff7c00;
+  color: #2a2725;
+  /* background-image: linear-gradient(315deg, #fd8f28 0%, #ffa754 74%); */
 }
 .btnOrange span {
   position: relative;
@@ -41,11 +43,11 @@
   content: "";
   right: 0;
   top: 0;
-  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
+  /* box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
     -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
     inset -4px -4px 6px 0 rgba(255, 255, 255, 0.9),
     inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; */
 }
 .btnOrange:before {
   height: 0%;
@@ -67,11 +69,11 @@
   content: "";
   left: 0;
   bottom: 0;
-  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
+  /* box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
     -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
     inset -4px -4px 6px 0 rgba(255, 255, 255, 0.9),
     inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; */
 }
 .btnOrange span:before {
   width: 0.1px;
@@ -85,6 +87,154 @@
   height: 100%;
 }
 .btnOrange span:hover:after {
+  width: 100%;
+}
+
+/* 회색->주황 버튼 */
+.btnToOrange {
+  background-color: #a8a39d;
+  border: 1px solid #ff7c00;
+  color: #fffaf6;
+  /* background-image: linear-gradient(315deg, #ff7c00 0%, #f17827 74%); */
+  line-height: 50px;
+  padding: 0;
+}
+.btnToOrange:hover {
+  background-color: #ff7c00;
+  border: 1px solid #ff7c00;
+  color: #2a2725;
+  /* background-image: linear-gradient(315deg, #fd8f28 0%, #ffa754 74%); */
+}
+.btnToOrange span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btnToOrange:before,
+.btnToOrange:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  /* box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+  transition: all 0.3s ease; */
+}
+.btnToOrange:before {
+  height: 0%;
+  width: 0.1px;
+}
+.btnToOrange:after {
+  width: 0%;
+  height: 0.1px;
+}
+.btnToOrange:hover:before {
+  height: 100%;
+}
+.btnToOrange:hover:after {
+  width: 100%;
+}
+.btnToOrange span:before,
+.btnToOrange span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  /* box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+  transition: all 0.3s ease; */
+}
+.btnToOrange span:before {
+  width: 0.1px;
+  height: 0%;
+}
+.btnToOrange span:after {
+  width: 0%;
+  height: 0.1px;
+}
+.btnToOrange span:hover:before {
+  height: 100%;
+}
+.btnToOrange span:hover:after {
+  width: 100%;
+}
+
+/* 주황->회색 버튼 */
+.btnToGray {
+  background-color: #ff7c00;
+  border: 1px solid #ff7c00;
+  color: #2a2725;
+  /* background-image: linear-gradient(315deg, #ff7c00 0%, #f17827 74%); */
+  line-height: 50px;
+  padding: 0;
+}
+.btnToGray:hover {
+  background-color: #a8a39d;
+  border: 1px solid #ff7c00;
+  color: #fffaf6;
+  /* background-image: linear-gradient(315deg, #fd8f28 0%, #ffa754 74%); */
+}
+.btnToGray span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btnToGray:before,
+.btnToGray:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  /* box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+  transition: all 0.3s ease; */
+}
+.btnToGray:before {
+  height: 0%;
+  width: 0.1px;
+}
+.btnToGray:after {
+  width: 0%;
+  height: 0.1px;
+}
+.btnToGray:hover:before {
+  height: 100%;
+}
+.btnToGray:hover:after {
+  width: 100%;
+}
+.btnToGray span:before,
+.btnToGray span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  /* box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+  transition: all 0.3s ease; */
+}
+.btnToGray span:before {
+  width: 0.1px;
+  height: 0%;
+}
+.btnToGray span:after {
+  width: 0%;
+  height: 0.1px;
+}
+.btnToGray span:hover:before {
+  height: 100%;
+}
+.btnToGray span:hover:after {
   width: 100%;
 }
 
