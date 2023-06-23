@@ -68,6 +68,7 @@ public class UserInfoService {
 		
 		if(userInfo != null) {
 			session.setAttribute("user", userInfo); //세션에 유저정보 저장
+			
 			return true;
 		}
 		

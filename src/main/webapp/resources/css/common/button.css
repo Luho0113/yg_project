@@ -9,8 +9,8 @@
   background: transparent;
   transition: all 0.3s ease; /* all 0.2s; */
   padding: 10px 25px;
-  width: 240px;
-  height: 50px;
+  /* width: 240px; */
+  /* height: 50px; */
   cursor: pointer;
   font-size: 16px;
   /* box-shadow: 2px 2px 2px 0px rgba(32, 32, 32, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1); */
@@ -240,6 +240,14 @@
 
 /* input 상자 */
 
+input {
+  caret-color: #ff7c00;
+}
+
+input:focus {
+  outline: 2px solid #ff7c00;
+}
+
 .input {
   width: 240px;
   height: 50px;
@@ -248,16 +256,4 @@
   margin: 5px;
   font-size: 16px;
   padding-left: 10px; /* placeholder의 글자 조절 */
-}
-
-.input-wrap {
-  text-align: center;
-}
-
-.error_message-wrap {
-  text-align: center;
-}
-
-.to-join {
-  text-align: center;
 }
