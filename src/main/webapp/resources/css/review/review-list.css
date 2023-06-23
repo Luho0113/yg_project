@@ -85,7 +85,7 @@
 /* riListMovieInfo: 영화 제목 및 연도를 표시하는 div  */
 .riListMovieInfo{
     display: inline-block;
-    width: calc(100% - 970px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    width: 815px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     min-width: 400px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     height: 30px;
     position: absolute; /* 부모를 기준으로 배치한다. */
@@ -105,7 +105,7 @@
 /*  */
 .riListUserInfo{
     display: inline-block;
-    width: calc(100% - 970px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    width: 815px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     min-width: 400px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     height: 30px;
     position: absolute; /* 부모를 기준으로 배치한다. */
@@ -150,7 +150,7 @@
 
 .riListReviewContent{
     display: inline-block;
-    width: calc(100% - 970px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    width: 815px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     min-width: 400px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     height: 80px;
     position: absolute; /* 부모를 기준으로 배치한다. */
@@ -160,9 +160,13 @@
     line-height: 20px;
 }
 
+.riListReviewContent>a{
+	color: #fffaf6;
+}
+
 .riListComment{
     display: inline-block;
-    width: calc(100% - 970px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    width: 815px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     min-width: 400px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     height: 15px;
     position: absolute; /* 부모를 기준으로 배치한다. */
@@ -173,7 +177,7 @@
 
 .riListDate{
     display: inline-block;
-    width: calc(100% - 970px); /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    width: 815px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     min-width: 400px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     height: 20px;
     position: absolute; /* 부모를 기준으로 배치한다. */

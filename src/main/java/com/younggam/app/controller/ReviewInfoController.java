@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.younggam.app.service.MovieDetailService;
 import com.younggam.app.service.MovieReviewServiece;
+import com.younggam.app.service.MovieService;
 import com.younggam.app.service.ReviewService;
 import com.younggam.app.vo.ReviewInfoVO;
 import com.younggam.app.vo.UserInfoVO;
@@ -27,6 +28,9 @@ public class ReviewInfoController {
 	
 	@Autowired
 	private MovieReviewServiece movieReivewServiece;
+	
+	@Autowired
+	private MovieService movieServiece;
 	
 	@Autowired
 	private MovieDetailService movieDetailService;
@@ -51,7 +55,7 @@ public class ReviewInfoController {
 	//글 작성 요청(구현됨)
 	@GetMapping("/review-insert")
 	public String goInsertReviewInfo(@RequestParam Map<String, String> param, Model m) {
-		m.addAttribute("movie", movieReivewServiece.getMovieInfo(param));
+		m.addAttribute("movie", movieServiece.getMovie(param));
 		return "review/review-insert";
 	}
 	

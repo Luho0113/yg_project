@@ -15,8 +15,8 @@
 <script src="${path}/resources/js/review/review-list.js"></script>
 </head>
 <body>
-	<!-- header area -->
-	<jsp:include page="../common/header.jsp"></jsp:include>
+<!-- header area -->
+<jsp:include page="../common/header.jsp"></jsp:include>
 
 	<!-- content area -->
 	<div class="content">
@@ -24,7 +24,7 @@
 		<div class="riShorSelect" id="riShorSelect">
 			<div class="genreSort" id="genreSort">장르별</div>
 			<div class="createDateSort" id="createDateSort">
-				<select class="" id="">
+				<select class="sort" id="sort">
 					<option value="new">최신순</option>
 					<option value="old">오래된순</option>
 				</select>
