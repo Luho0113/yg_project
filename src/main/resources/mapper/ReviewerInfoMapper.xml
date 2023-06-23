@@ -10,13 +10,22 @@
 	where u.ui_nickname like '%' #{uiNickname} '%'
 </select>
 
-<!-- resultType 수정해야할 수 도 -->
+
 <select id="selectDetailReviewersInfos" resultType="com.younggam.app.vo.ReviewInfoVO"> 
 	select u.ui_nickname, u.ui_file_path,
 		   r.ri_movie_id, r.ri_content
 	from user_info u, review_info r 
 	where u.ui_id = r.ui_id and ri_movie_id = #{riMovieId}
 </select>
+
+<!--소수점 삭제 -->
+<select id="selectStarInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
+select round(avg(ri_star),1) 
+from review_info 
+where ri_movie_id = #{riMovieId}
+</select>
+
+<!-- 영감포인트 -->
 
 
 </mapper>

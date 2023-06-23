@@ -46,16 +46,23 @@ public class MovieController {
 	//detail 페이지
 	//MovieDetailService에 getCast()메소드에 movieId를 넣는 다음 값을 movie/detail에 출력
 	@GetMapping("/detail")
-	public String getCast(@RequestParam("movieId") String movieId, @RequestParam("riMovieId") String riMovieId, Model m) {
-		m.addAttribute("cast", movieDetailService.getCast(movieId));
-		m.addAttribute("movieData",movieDetailService.getMovieDetail(movieId));
-		m.addAttribute("movieRate",movieDetailService.getMovieCertification(movieId));
-		List<ReviewInfoVO> detailReviewerList = reviewerInfoService.selectDetailReviewersInfo(riMovieId);
+	public String getCast(@RequestParam("movieId") String movieId, 
+						  @RequestParam("riMovieId") String riMovieId, 
+						  @RequestParam("riStar")  String riStar,  Model m) {
+		m.addAttribute("cast", movieDetailService.getCast(movieId)); //은진 수지가 만든 메소드
+		m.addAttribute("movieData",movieDetailService.getMovieDetail(movieId)); //은진 수지가 만든 메소드
+		m.addAttribute("movieRate",movieDetailService.getMovieCertification(movieId)); //은진 수지가 만든 메소드
+		
+		List<ReviewInfoVO> detailReviewerList = reviewerInfoService.selectDetailReviewersInfo(riMovieId); 
 		m.addAttribute("reviewer",detailReviewerList);
+		
+		ReviewInfoVO star = reviewerInfoService.selectStarInfo(riStar);
+		m.addAttribute("star", star);
+		
 		return "movie/detail"; 
 	}
 	
-	
+	//위에 별점, 포인트 추가
 	
 
 

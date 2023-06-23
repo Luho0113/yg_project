@@ -44,7 +44,7 @@ table, th, td {
                         <div>${movieData[0].productionConturies[0]}</div>
                        
                     </div>
-                    <div class="star">작은 별점</div>
+                    <div class="star"><h3>별점 ${star}</h3></div>
                     <div class="rt-ot-r">
                         <div>${movieData[0].runtime}</div>
                         <div>${movieData[0].originalTitle}</div>
@@ -76,7 +76,7 @@ table, th, td {
    
         </article>
         <article class="point">
-            포인트
+            <h2>포인트</h2>
         </article>
         <article class="review-list">
         <c:forEach items="${reviewer}" var="reviewer" varStatus="status">
@@ -99,29 +99,7 @@ table, th, td {
             </div>
             </c:forEach>
             
-            
-            <ul class="review-card">
-                <li class="review-header">
-                    <div><img src="./common.jpg" alt="대체이미지"></div>
-                    <div>리뷰어 닉네임</div>
-                </li>
-                <li class="review-body">리뷰어 글 내용</li>
-                <li class="review-like">
-                    <div>좋아요</div>
-                    <div>댓글</div>
-                </li>
-            </ul>
-            <ul class="review-card">
-                <li class="review-header">
-                    <div><img src="./common.jpg" alt="대체이미지"></div>
-                    <div>리뷰어 닉네임</div>
-                </li>
-                <li class="review-body">리뷰어 글 내용</li>
-                <li class="review-like">
-                    <div>좋아요</div>
-                    <div>댓글</div>
-                </li>
-            </ul>
+
         </article>
     </section>
 

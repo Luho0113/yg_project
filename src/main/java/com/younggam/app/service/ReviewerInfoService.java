@@ -24,4 +24,13 @@ public class ReviewerInfoService {
 	public List<ReviewInfoVO> selectDetailReviewersInfo (String riMovieId) {
 		return riMapper.selectDetailReviewersInfos(riMovieId);
 	}
+	
+	//별점
+	public ReviewInfoVO selectStarInfo (String riStar) {
+		return riMapper.selectStarInfos(riStar);
+	}
+	
+	//포인트
+	
+	
 }

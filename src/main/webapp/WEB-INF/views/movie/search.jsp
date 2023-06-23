@@ -28,7 +28,7 @@
 			<c:forEach items="${movie}" var="movie">
 				<li class="movie-box">
 					<div>
-						<a href="detail?movieId=${movie.id}"><img id="poster" src="https://image.tmdb.org/t/p/w300${movie.posterPath}" alt="영화포스터"></a>
+						<a href="detail?movieId=${movie.id}&riMovieId=${movie.id}"><img id="poster" src="https://image.tmdb.org/t/p/w300${movie.posterPath}" alt="영화포스터"></a>
 						<div class="cont-detail">
 							<div class="title">
 								<a href="detail?movieId=${movie.id}">${movie.title}</a>
