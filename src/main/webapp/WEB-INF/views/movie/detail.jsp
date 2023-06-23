@@ -57,8 +57,8 @@ table, th, td {
         </article>
 
         <article class="overview">
-            <h3>내용</h3>
-            <div></div>
+            <h3>줄거리</h3>
+            <div>${movieData[0].overview}</div>
         </article>
         <article class="cast-list">
             <h3>출연진</h3>
@@ -79,19 +79,27 @@ table, th, td {
             포인트
         </article>
         <article class="review-list">
-            <ul class="review-card">
-                <li class="review-header">
+        <c:forEach items="${reviewer}" var="reviewer" varStatus="status">
+            <div class="review-card">
+                <div class="review-header">
+                
                     <div>
-                    <a href="myInfo?uiId=00000000"><img src="./common.jpg" alt="대체이미지"></a>
+                    <a href="userReview?uiNickname=${reviewer.uiNickname}"> </a>
+                    <img src="${reviewer.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+                    <div>${reviewer.uiNickname}</div>
+                   
                     </div>
-                    <div>0000</div>
-                </li>
-                <li class="review-body">리뷰어 글 내용</li>
-                <li class="review-like">
+                    
+                </div>
+                <div class="review-body">${reviewer.riContent}></div>
+                <div class="review-like">
                     <div>좋아요</div>
                     <div>댓글</div>
-                </li>
-            </ul>
+                </div>
+            </div>
+            </c:forEach>
+            
+            
             <ul class="review-card">
                 <li class="review-header">
                     <div><img src="./common.jpg" alt="대체이미지"></div>

@@ -77,14 +77,15 @@
         
         <div class="img">
         <a href="userReview?uiNickname=${reviewerList.uiNickname}">
-		<img src="${reviewerList.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
-	</a>
+		<img src="${reviewerList.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';"></a>
         </div>
        
         <div class="reviewer-name">
         <a href="userReview?uiNickname=${reviewerList.uiNickname}">${reviewerList.uiNickname}</a>
         </div>
+        
    </div>
+   
     <div class="review-written">10</div>	
         <div class="review-like">200</div>
        

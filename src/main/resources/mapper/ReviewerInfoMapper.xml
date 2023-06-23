@@ -4,10 +4,19 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.younggam.app.mapper.ReviewerInfoMapper">
 
-<select id="selectReviewersInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
+<select id="selectReviewersInfos" resultType="com.younggam.app.vo.UserInfoVO">
 	select u.ui_nickname, u.ui_file_path   
 	from user_info u
-	where u.ui_nickname like #{uiNickname}
+	where u.ui_nickname like '%' #{uiNickname} '%'
 </select>
+
+<!-- resultType 수정해야할 수 도 -->
+<select id="selectDetailReviewersInfos" resultType="com.younggam.app.vo.ReviewInfoVO"> 
+	select u.ui_nickname, u.ui_file_path,
+		   r.ri_movie_id, r.ri_content
+	from user_info u, review_info r 
+	where u.ui_id = r.ui_id and ri_movie_id = #{riMovieId}
+</select>
+
 
 </mapper>

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.younggam.app.service.MovieDetailService;
 import com.younggam.app.service.MovieService;
 import com.younggam.app.service.ReviewerInfoService;
+import com.younggam.app.vo.ReviewInfoVO;
 import com.younggam.app.vo.UserInfoVO;
 
 @Controller
@@ -45,11 +46,13 @@ public class MovieController {
 	//detail 페이지
 	//MovieDetailService에 getCast()메소드에 movieId를 넣는 다음 값을 movie/detail에 출력
 	@GetMapping("/detail")
-	public String getCast(@RequestParam("movieId") String movieId, Model m) {
+	public String getCast(@RequestParam("movieId") String movieId, @RequestParam("riMovieId") String riMovieId, Model m) {
 		m.addAttribute("cast", movieDetailService.getCast(movieId));
 		m.addAttribute("movieData",movieDetailService.getMovieDetail(movieId));
 		m.addAttribute("movieRate",movieDetailService.getMovieCertification(movieId));
-		return "movie/detail"; //값 이후에 detail로 변경하기
+		List<ReviewInfoVO> detailReviewerList = reviewerInfoService.selectDetailReviewersInfo(riMovieId);
+		m.addAttribute("reviewer",detailReviewerList);
+		return "movie/detail"; 
 	}
 	
 	
