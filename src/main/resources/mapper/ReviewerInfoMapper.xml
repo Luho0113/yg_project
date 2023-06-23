@@ -4,5 +4,10 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.younggam.app.mapper.ReviewerInfoMapper">
 
+<select id="selectReviewersInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
+	select ui_nickname, ui_file_path   
+	from user_info u
+	where u.ui_nickname like '%#{uiNickname}%'
+</select>
 
 </mapper>

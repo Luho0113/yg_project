@@ -6,6 +6,6 @@ import com.younggam.app.vo.UserInfoVO;
 
 public interface ReviewerInfoMapper {
 
-	//전체 유저 조회
-	List<UserInfoVO> selectReviewersInfos(UserInfoVO users);
+	//검색어가 포함된 유저 조회
+	List<UserInfoVO> selectReviewersInfos(String uiNickname);
 }

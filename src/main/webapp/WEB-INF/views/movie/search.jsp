@@ -58,26 +58,7 @@
 				<c:otherwise>
 
 
-					<div>
-						<c:forEach items="${movie}" var="movie">
-							<h3>
-								<a href="detail?movieId=${movie.id}">${movie.title}</a>
-							</h3>
-							<%-- action 보내고 돌려 받은 값 --> --%>
-							<p>개봉연도: ${movie.releaseDate}</p>
-							<%-- action 보내고 돌려 받은 값 --%>
-							<p>줄거리: ${movie.overview}</p>
-							<%-- action 보내고 돌려 받은 값 --%>
-							<p>원제: ${movie.originalTitle}</p>
-							<p>감독: ${movie.directors}</p>
-							<p>제작국가: ${movie.productionConturies}</p>
-							<p>
-								<img id="poster"
-									src="https://image.tmdb.org/t/p/w300${movie.posterPath}"
-									width="50" height="100" />
-							</p>
-						</c:forEach>
-					</div>
+					
 				</c:otherwise>
 			</c:choose>
 
@@ -88,18 +69,39 @@
 <article class="reviewer-list">
 <h3>리뷰어</h3>
 <ul class="reviewers">
+
+	<c:forEach items="${reviewerList}" var="reivew" varStatus="status">
     <li class="reviewer-box">
         <div class="reviewer">
-        <div class="img"><a href="myInfo?uiId=00000000"><img src="./강아지.jpg" alt="이미지없음"></a></div>
-        <div class="reviewer-name"><a href="myInfo?uiId=00000000"><h4>0000</h4></a></div>
-    </div>
+        <div class="img">
+        <a href="userReview?uiNickname=${reviewerList.uiNickname}">
+		<img src="${reviewerList.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+	</a>
+        </div>
+       
+        <div class="reviewer-name">
+        <a href="userReview?uiNickname=${reivewer.uiNickname}">${reivewer.uiNickname}</a>
+        </div>
+   
     <div class="review-written">10</div>
         <div class="review-like">200</div>
        
     </li>
+    </c:forEach>
+    
+    
+    
+    
+    
+    
+ 
     <li class="reviewer-box">
         <div class="reviewer">
-        <div class="img"><a href="누르면 상세페이지로 이동"><img src="./common.jpg" alt="이미지없음"></a></div>
+        <div class="img">
+        <a href="누르면 상세페이지로 이동">
+        <img src="./common.jpg" alt="이미지없음">
+        </a>
+        </div>
         <div class="reviewer-name"><a href="reviewer-detail link">닉네임</a></div>
     </div>
     <div class="review-written">10</div>
