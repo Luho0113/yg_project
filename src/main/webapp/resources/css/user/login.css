@@ -1,14 +1,20 @@
 /* 로그인 화면 */
 
+/* 로그인 */
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 /* 로그인 버튼 */
 .button-login {
   text-align: center;
   margin: 10px;
 }
 
-.button-custom{
-	width: 250px;
-  	height: 50px;
+.button-custom {
+  width: 250px;
+  height: 50px;
 }
 
 /* 로그인 input */
@@ -21,7 +27,11 @@
   text-align: center;
 }
 
-.error_massage {
+.error-massage {
+  color: #ff7c00;
+}
+
+.error-fail {
   color: #ff7c00;
 }
 

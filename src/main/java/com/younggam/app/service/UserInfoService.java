@@ -93,6 +93,21 @@ public class UserInfoService {
 		return uiMapper.updateUserInfo(userInfo) == 1;
 	}
 	
+	public boolean updateUserNickname(UserInfoVO userInfo) {
+		
+		return uiMapper.updateUserNickname(userInfo) == 1;
+	}
+	
+	public boolean updateUserPassword(UserInfoVO userInfo) {
+		
+		return uiMapper.updateUserPassword(userInfo) == 1;
+	}
+	
+	public boolean updateUserEmail(UserInfoVO userInfo) {
+		
+		return uiMapper.updateUserEmail(userInfo) == 1;
+	}
+	
 	//회원 탈퇴
 	public boolean deleteUserInfo(UserInfoVO userInfo) {
 		

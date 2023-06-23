@@ -1,10 +1,5 @@
-/*
-	회원가입 유효성 검사
-	맞으면 경고 텍스트가 생기지 않음, 틀리면 경고 텍스트가 생김
-*/
-
 /* 페이지 로딩을 막아줌 */
-function onJoinSubmit(event) {
+function onUpdateSubmit(event) {
   event.preventDefault();
 }
 
@@ -23,50 +18,45 @@ const uiPassword = document.querySelector("#uiPassword");
 const uiPasswordSame = document.querySelector("#uiPasswordSame");
 const uiEmail = document.querySelector("#uiEmail");
 
-//가입 유효성 검사
-//필수 입력값이 비어있으면 제출 X
-function formValidation() {
-  //아이디
-  if (uiId.value.trim() == "") {
-    uiId.focus();
-    document.getElementById("error-checkId").innerHTML = '<span style="color:red;"> 아이디를 입력해주세요.</span>';
-    join_form.addEventListener("submit", onJoinSubmit);
-    return false;
-  } else if (!REG_ID.test(uiId.value)) {
-    uiId.focus();
-    document.getElementById("error-checkId").innerHTML = '<span style="color:red;"> 6글자 이상의 영문자, 숫자, 특수기호(_)만 사용가능합니다.</span>';
-    join_form.addEventListener("submit", onJoinSubmit);
-    return false;
-  } else if (uiId.value.length > 20) {
-    uiId.focus();
-    document.getElementById("error-checkId").innerHTML = '<span style="color:red;"> 20자 이내로 입력해주세요.</span>';
-    join_form.addEventListener("submit", onJoinSubmit);
-    return false;
-  } else {
-    document.getElementById("error-checkId").innerHTML = "";
-  }
+const uiNicknameSame = document.querySelector("#uiNicknameSame");
 
+//수정 유효성 검사
+//필수 입력값이 비어있으면 제출 X
+function updateValidation() {
+  join_form.submit(); /* 수정이 성공하면 submit 실행 */
+
+  /* location.href = '/myInfo'; */
+  return true;
+}
+
+//수정하기
+//닉네임 변경
+function updateNickname() {
   //닉네임 확인
   if (uiNickname.value.trim() == "") {
     uiNickname.focus();
     document.getElementById("error-checkNickName").innerHTML = '<span style="color:red;"> 닉네임을 입력해주세요.</span>';
-    join_form.addEventListener("submit", onJoinSubmit);
+    update_form.addEventListener("submit", onUpdateSubmit);
     return false;
   } else if (!checkNickName()) {
     uiNickname.focus();
     join_form.addEventListener("submit", onJoinSubmit);
     return false;
   }
+  return true;
+}
 
+//비밀번호 변경
+function updatePassword() {
   //비밀번호
   if (uiPassword.value.trim() == "") {
     uiPassword.focus();
-    document.getElementById("error-checkPwd").innerHTML = '<span style="color:red;"> 비밀번호를 입력해주세요.</span>';
-    join_form.addEventListener("submit", onJoinSubmit);
+    document.getElementById("error-checkPwd").innerHTML = '<span style="color:red;"> 새 비밀번호를 입력해주세요.</span>';
+    update_form.addEventListener("submit", onUpdateSubmit);
     return false;
   } else if (!checkPwd()) {
     uiPassword.focus();
-    join_form.addEventListener("submit", onJoinSubmit);
+    update_form.addEventListener("submit", onUpdateSubmit);
     return false;
   }
 
@@ -74,30 +64,31 @@ function formValidation() {
   if (uiPasswordSame.value.trim() == "") {
     uiPasswordSame.focus();
     document.getElementById("error-checkPwdSame").innerHTML = '<span style="color:red;"> 비밀번호를 한 번 더 확인해주세요.</span>';
-    join_form.addEventListener("submit", onJoinSubmit);
+    update_form.addEventListener("submit", onUpdateSubmit);
     return false;
   } else if (!checkPwdSame()) {
     uiPasswordSame.focus();
-    join_form.addEventListener("submit", onJoinSubmit);
+    update_form.addEventListener("submit", onUpdateSubmit);
     return false;
   }
+}
 
+//이메일 변경
+function updateEmail() {
   //이메일 확인
   if (uiEmail.value.trim() == "") {
     uiEmail.focus();
     document.getElementById("error-checkEmail").innerHTML = '<span style="color:red;"> 이메일을 입력해주세요.</span>';
-    join_form.addEventListener("submit", onJoinSubmit);
+    update_form.addEventListener("submit", onUpdateSubmit);
     return false;
   } else if (!checkEmail) {
     uiEmail.focus();
-    join_form.addEventListener("submit", onJoinSubmit);
+    update_form.addEventListener("submit", onUpdateSubmit);
     return false;
   }
-
-  join_form.submit(); /* 가입이 성공하면 submit 실행 */
-  return true;
 }
 
+//메소드 목록
 //비밀번호 유효성 검사
 function checkPwd() {
   if (!REG_ID.test(uiPassword.value)) {
@@ -155,44 +146,3 @@ function checkEmail() {
   }
   return true;
 }
-
-//아이디 중복 체크 메세지 표시
-/* function checkId(obj) {
-	if (obj.value.length < 6) {
-		return;
-	}
-	$.get({
-		url: '/check-id',
-		data: { uiId: obj.value },
-		success: function(res) {
-			if (res) {
-				$('.uiId_already').css('display', '');
-				$('.uiId_ok').css('display', 'none');
-				return false;
-			} else {
-				$('.uiId_already').css('display', 'none');
-				$('.uiId_ok').css('display', '');
-			}
-			console.log(res);
-		}
-	})
-	return true;
-}; */
-
-/*이메일 옵션 선택후 주소 자동 완성
-function change_email() {
-
-	var uiEmail = document.getElementById("uiEmail");
-	var uiEmail_sel = document.getElementById("uiEmail_sel"); //도메인 선택
-
-	//지금 골라진 옵션의 순서와 value 구하기
-	var idx = uiEmail_sel.options.selectedIndex;
-	var val = uiEmail_sel.options[idx].value;
-
-	if (val == '1') {
-		uiEmail.value = ''; //초기화
-	} else {
-		uiEmail.value = '';
-		uiEmail.value = uiEmail.value + val;
-	}
-} */

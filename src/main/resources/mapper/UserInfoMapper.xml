@@ -44,6 +44,24 @@
 		WHERE ui_id = #{uiId}
 	</update>
 	
+	<!-- 닉네임 -->
+	<update id="updateUserNickname">
+		UPDATE user_info
+		SET ui_nickname = #{uiNickname}
+		WHERE ui_id = #{uiId}
+	</update>
+	<!-- 비밀번호 -->
+	<update id="updateUserPassword">
+		UPDATE user_info
+		SET ui_password = #{uiPassword}
+		WHERE ui_id = #{uiId}
+	</update>
+	<!-- 이메일 -->
+	<update id="updateUserEmail">
+		UPDATE user_info
+		SET ui_email = #{uiEmail}
+		WHERE ui_id = #{uiId}
+	</update>
 	
 	
 	<!-- 내 리뷰 목록 -->
