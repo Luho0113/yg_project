@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="${path}/resources/css/common/page.css" />
 <link rel="stylesheet" href="${path}/resources/css/common/header.css" />
+<link rel="stylesheet" href="${path}/resources/css/common/button.css" />
 
 <div class="navbar">
 	<!-- 로고 부분 -->
@@ -28,7 +29,7 @@
 						<form action="/search" method="get">
 							<input id="search" name="search" value="${param.search}"
 								placeholder="영화, 감독, 배우를 검색해보세요.">
-							<button>검색</button>
+							<button class="button-custom btnOrange">검색</button>
 						</form>
 
 					</div>

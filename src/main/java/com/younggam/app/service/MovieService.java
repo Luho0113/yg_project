@@ -233,8 +233,10 @@ public class MovieService {
 			JSONArray genresJson = jsonObject.getJSONArray("genres"); //JSON 형식으로 만들어진 jsonObject에서 cast[]를 뽑아서 cast에 담는다.     
 
 			for(int i = 0; i < genresJson.length(); i++) {
+			
 				JSONObject object = genresJson.getJSONObject(i); //JSONArray를 하나씩(i) 꺼내서 JSONObject로 변경해서 object에서 Key로 value를 뽑는 방식이다.
-				genres.add(object.optString("name")); 			
+				genres.add(object.optString("name")); 		
+				
 			}//end of for
 
 

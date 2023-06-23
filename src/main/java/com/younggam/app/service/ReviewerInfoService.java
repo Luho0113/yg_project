@@ -3,10 +3,12 @@ package com.younggam.app.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.younggam.app.mapper.ReviewerInfoMapper;
 import com.younggam.app.vo.UserInfoVO;
 
+@Service
 public class ReviewerInfoService {
 	
 	@Autowired

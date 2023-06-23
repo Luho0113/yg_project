@@ -68,11 +68,13 @@
 		
 <article class="reviewer-list">
 <h3>리뷰어</h3>
-<ul class="reviewers">
 
-	<c:forEach items="${reviewerList}" var="reivew" varStatus="status">
-    <li class="reviewer-box">
+<div class="reviewers">
+
+	<c:forEach items="${reviewerList}" var="reviewerList" varStatus="status">
+    <div class="reviewer-box">
         <div class="reviewer">
+        
         <div class="img">
         <a href="userReview?uiNickname=${reviewerList.uiNickname}">
 		<img src="${reviewerList.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
@@ -80,71 +82,21 @@
         </div>
        
         <div class="reviewer-name">
-        <a href="userReview?uiNickname=${reivewer.uiNickname}">${reivewer.uiNickname}</a>
+        <a href="userReview?uiNickname=${reviewerList.uiNickname}">${reviewerList.uiNickname}</a>
         </div>
-   
-    <div class="review-written">10</div>
+   </div>
+    <div class="review-written">10</div>	
         <div class="review-like">200</div>
        
-    </li>
+    </div>
     </c:forEach>
     
     
-    
+   </div>
     
     
     
  
-    <li class="reviewer-box">
-        <div class="reviewer">
-        <div class="img">
-        <a href="누르면 상세페이지로 이동">
-        <img src="./common.jpg" alt="이미지없음">
-        </a>
-        </div>
-        <div class="reviewer-name"><a href="reviewer-detail link">닉네임</a></div>
-    </div>
-    <div class="review-written">10</div>
-        <div class="review-like">200</div>
-    </li>
-    <li class="reviewer-box">
-        <div class="reviewer">
-        <div class="img"><a href="누르면 상세페이지로 이동"><img src="./강아지2.jpg" alt="이미지없음"></a></div>
-        <div class="reviewer-name"><a href="reviewer-detail link">닉네임</a></div>
-    </div>
-    <div class="review-written">10</div>
-        <div class="review-like">200</div>
-    </li>
-</ul>
-<ul class="reviewers">
-    <li class="reviewer-box">
-        <div class="reviewer">
-        <div class="img">
-            <a href="누르면 상세페이지로 이동"><img src="./강아지.jpg" alt="작성자프로필사진" onerror="this.src='https://ifh.cc/g/cDROLZ.png';"></a>
-        </div>
-        <div class="reviewer-name"><a href="reviewer-detail link">닉네임</a></div>
-    </div>
-    <div class="review-written">10</div>
-        <div class="review-like">200</div>
-    </li>
-    <li class="reviewer-box">
-        <div class="reviewer">
-        <div class="img"><a href="누르면 상세페이지로 이동"><img src="./강지.jpg" alt="작성자프로필사진" onerror="this.src='https://ifh.cc/g/cDROLZ.png';"></a></div>
-        <div class="reviewer-name"><a href="reviewer-detail link">닉네임</a></div>
-    </div>
-    <div class="review-written">10</div>
-        <div class="review-like">200</div>
-    </li>
-    <li class="reviewer-box">
-        <div class="reviewer">
-        <div class="img"><a href="누르면 상세페이지로 이동"><img src="./강아지.jpg" alt="이미지없음"></a></div>
-        <div class="reviewer-name"><a href="reviewer-detail link">닉네임</a></div>
-    </div>
-    <div class="review-written">10</div>
-        <div class="review-like">200</div>
-    </li>
-</ul>
-
 </article>
 		
 		
