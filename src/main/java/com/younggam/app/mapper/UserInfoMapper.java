@@ -25,6 +25,17 @@ public interface UserInfoMapper {
 	//정보수정
 	int updateUserInfo(UserInfoVO userInfo);
 	
+	//정보수정 - 닉네임
+	int updateUserNickname(UserInfoVO userInfo);
+	
+	//정보수정 - 비밀번호
+	int updateUserPassword(UserInfoVO userInfo);
+	
+	
+	//정보수정 - 이메일
+	int updateUserEmail(UserInfoVO userInfo);
+	
+	
 	//탈퇴
 	int deleteUserInfo(UserInfoVO userInfo);
 	

@@ -38,8 +38,13 @@
 }
 
 /* 전체 페이지 로고 */
-.logo > img {
+.logo {
   display: block;
+  text-align: center;
+}
+
+.logo > a > img {
+  margin: 10px;
   margin-left: auto;
   margin-right: auto;
   width: 180px;

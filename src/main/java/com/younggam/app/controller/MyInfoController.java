@@ -66,6 +66,73 @@ public class MyInfoController {
 	}
 	
 	
+	@PostMapping("/myInfo-updateN")
+	public String updateNickname(@ModelAttribute UserInfoVO userInfo, HttpSession session, Model m) {
+		UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user");
+		userInfo.setUiId(sessionUserInfo.getUiId());
+		
+		userInfo.setUiPassword(sessionUserInfo.getUiPassword());
+		userInfo.setUiEmail(sessionUserInfo.getUiEmail());
+		
+		if(uiService.selectUserInfoByUiNickname(userInfo) != null) {
+			m.addAttribute("msg", "uiNickname exist");
+			return "profile/myInfo-update";
+		} else if (uiService.updateUserNickname(userInfo)) { // 사용자가 입력한 값을 userInfo에 담아서 서비스에게 전달
+			m.addAttribute("msg", "정보가 수정되었습니다.");
+			session.setAttribute("user", userInfo); // 수정이 완료되면(return값이 1이면) 세션의 정보도 업데이트
+			return "profile/myInfo";
+		}
+
+		return "profile/myInfo";
+	}
+	
+	@GetMapping("/myInfo-updateN")
+	public String updateNickname() {
+
+		return "profile/myInfo-update";
+	}
+	
+	
+	
+	@PostMapping("/myInfo-updateP")
+	public String updatePassword(@ModelAttribute UserInfoVO userInfo, HttpSession session, Model m) {
+		UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user");
+		userInfo.setUiId(sessionUserInfo.getUiId());
+		userInfo.setUiNickname(sessionUserInfo.getUiNickname());
+		userInfo.setUiEmail(sessionUserInfo.getUiEmail());
+		
+		if(uiService.updateUserPassword(userInfo)) {
+			m.addAttribute("msg", "정보가 수정되었습니다.");
+			session.setAttribute("user", userInfo);
+		}
+		return "profile/myInfo";
+	}
+	
+	@GetMapping("/myInfo-updateP")
+	public String updatePassword() {
+
+		return "profile/myInfo-update";
+	}
+	
+	@PostMapping()
+	public String updateEmail(@ModelAttribute UserInfoVO userInfo, HttpSession session, Model m) {
+		UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user");
+		userInfo.setUiId(sessionUserInfo.getUiId());
+		userInfo.setUiNickname(sessionUserInfo.getUiNickname());
+		userInfo.setUiPassword(sessionUserInfo.getUiPassword());
+		
+		if(uiService.updateUserEmail(userInfo)) {
+			m.addAttribute("msg", "정보가 수정되었습니다.");
+			session.setAttribute("user", userInfo);
+		}
+		return "profile/myInfo";
+	}
+	
+	@GetMapping("/myInfo-updateE")
+	public String updateEmail() {
+
+		return "profile/myInfo-update";
+	}
 	
 	
 	// 리뷰 조회 (리뷰서비스사용하는거!!!!)

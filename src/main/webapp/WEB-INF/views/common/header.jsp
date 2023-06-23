@@ -87,6 +87,8 @@
 
 <div class="header">
 	<div class="logo">
-		<img src="../../../resources/images/yg_logo_orange.png" width="100px" />
+		<a href="/">
+			<img src="../../../resources/images/yg_logo_orange.png" />
+		</a>
 	</div>
 </div>

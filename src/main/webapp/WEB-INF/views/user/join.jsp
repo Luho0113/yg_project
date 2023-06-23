@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
@@ -25,46 +23,25 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <!-- content area -->
     <div class="content">
       <h3>회원가입</h3>
-      <form
-        method="POST"
-        action="/join"
-        onsubmit="return formValidation()"
-        name="join_form"
-        enctype="multipart/form-data"
-      >
+      <form method="POST" action="/join" onsubmit="return formValidation()" name="join_form" enctype="multipart/form-data">
         <div id="imgPreview" style="display: none">
           <!-- 프로필 이미지 미리보기 -->
           <img src="" style="border-radius: 40px" width="80px" height="80px" />
         </div>
         <label for="uiFilePath">프로필 이미지 : </label>
-        <input
-          type="file"
-          name="uiFile"
-          id="uiFile"
-          onchange="imgPreview(this)"
-        />
+        <input type="file" name="uiFile" id="uiFile" onchange="imgPreview(this)" />
 
         <!-- 아이디 입력 -->
         <div>
           <label>
-            <input
-              type="text"
-              name="uiId"
-              id="uiId"
-              onkeyup="checkId(this)"
-              placeholder="아이디"
-            />
+            <input type="text" name="uiId" id="uiId" onkeyup="checkId(this)" placeholder="아이디" />
           </label>
-          <span class="uiId_ok" style="display: none"
-            >사용 가능한 아이디입니다.</span
-          >
-          <span class="uiId_already" style="display: none"
-            >이미 사용 중인 아이디입니다.</span
-          >
+          <span class="uiId_ok" style="display: none">사용 가능한 아이디입니다.</span>
+          <span class="uiId_already" style="display: none">이미 사용 중인 아이디입니다.</span>
           <c:if test="${msg == 'uiId exist'}">
-            <span class="error_fail"> 이미 사용 중인 아이디입니다. </span>
+            <span class="error-fail"> 이미 사용 중인 아이디입니다. </span>
           </c:if>
-          <div id="error_checkId">
+          <div id="error-checkId">
             <!-- 경고 텍스트 -->
           </div>
         </div>
@@ -72,18 +49,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
         <!-- 닉네임 입력 -->
         <div>
           <label>
-            <input
-              type="text"
-              name="uiNickname"
-              id="uiNickname"
-              onkeyup="return checkNickName()"
-              placeholder="닉네임"
-            />
+            <input type="text" name="uiNickname" id="uiNickname" onkeyup="return checkNickName()" placeholder="닉네임" />
           </label>
           <c:if test="${msg == 'uiNickname exist'}">
-            <span class="error_fail"> 이미 사용 중인 닉네임입니다. </span>
+            <span class="error-fail"> 이미 사용 중인 닉네임입니다. </span>
           </c:if>
-          <div id="error_checkNickName">
+          <div id="error-checkNickName">
             <!-- 경고 텍스트 -->
           </div>
         </div>
@@ -91,30 +62,18 @@ uri="http://java.sun.com/jsp/jstl/core"%>
         <!-- 비밀번호 입력 -->
         <div>
           <label>
-            <input
-              type="password"
-              name="uiPassword"
-              id="uiPassword"
-              onkeyup="return checkPwd()"
-              placeholder="비밀번호"
-            />
+            <input type="password" name="uiPassword" id="uiPassword" onkeyup="return checkPwd()" placeholder="비밀번호" />
           </label>
-          <div id="error_checkPwd">
+          <div id="error-checkPwd">
             <!-- 경고 텍스트 -->
           </div>
         </div>
         <!-- 비밀번호 확인 입력 -->
         <div>
           <label>
-            <input
-              type="password"
-              name="uiPasswordSame"
-              id="uiPasswordSame"
-              onkeyup="return checkPwdSame()"
-              placeholder="비밀번호 확인"
-            />
+            <input type="password" name="uiPasswordSame" id="uiPasswordSame" onkeyup="return checkPwdSame()" placeholder="비밀번호 확인" />
           </label>
-          <div id="error_checkPwdSame">
+          <div id="error-checkPwdSame">
             <!-- 경고 텍스트 -->
           </div>
         </div>
@@ -122,15 +81,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
         <!-- 이메일 입력 -->
         <div>
           <label>
-            <input
-              type="email"
-              name="uiEmail"
-              id="uiEmail"
-              onkeyup="return checkEmail()"
-              placeholder="이메일"
-            />
+            <input type="email" name="uiEmail" id="uiEmail" onkeyup="return checkEmail()" placeholder="이메일" />
           </label>
-          <div id="error_checkEmail">
+          <div id="error-checkEmail">
             <!-- 경고 텍스트 -->
           </div>
         </div>
