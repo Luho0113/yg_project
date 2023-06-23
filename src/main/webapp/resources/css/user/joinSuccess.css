@@ -1,4 +1,8 @@
 /* 로그인 성공 화면 */
+.button-custom{
+	width: 240px;
+  	height: 50px;
+}
 
 .success-message {
   text-align: center;

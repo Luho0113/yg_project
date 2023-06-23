@@ -17,8 +17,8 @@
 	<div class="content">
 		<h3>프로필 수정</h3>
 
-		<form method="POST" action="/myInfo-update" name="update_form"
-			onsubmit="return formValidation()" enctype="multipart/form-data">
+		<form method="POST" action="/myInfo-update" name="join_form"
+			onsubmit="return updateValidation()" enctype="multipart/form-data">
 			<!-- 기존 프로필 사진 -->
 			<div>
 				<img src="${user.uiFilePath}" style="border-radius: 40px"
@@ -49,9 +49,6 @@
 					value="${user.uiNickname}" onkeyup="return checkNickName()"
 					placeholder="닉네임" />
 				</label>
-				<c:if test="${msg == user.uiNickname}">
-            		<span class="error_fail"> 동일한 닉네임 입니다. </span>
-          		</c:if>
 				<c:if test="${msg == 'uiNickname exist'}">
             		<span class="error_fail"> 이미 사용 중인 닉네임입니다. </span>
           		</c:if>
@@ -102,7 +99,7 @@
 			<button>수정하기</button>
 		</form>
 
-		<button onclick="location.href='/user/delete'">탈퇴하기</button>
+		<button onclick="deleteCheck()">탈퇴하기</button>
 	</div>
 
 	<!-- footer area -->
@@ -110,13 +107,21 @@
 
 
 	<!-- javascript -->
-	<script src="${path}/resources/js/user/formCheck.js"></script>
+    <script src="${path}/resources/js/user/formCheck.js"></script>
 	<script>
 		function imgPreview(obj) {
 			let file = obj.files[0];
 			let imgObj = document.querySelector("#imgPreview>img");
 			imgObj.src = URL.createObjectURL(file); //이미지 src의 url 생성
 			document.querySelector("#imgPreview").style.display = "";
+		}
+		
+		function deleteCheck(){
+			if(!confirm("정말 탈퇴하시겠습니까?")){
+				return false;
+			} else {
+				location.href='/user/delete';
+			}
 		}
 	</script>
 </body>

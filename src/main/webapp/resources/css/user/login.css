@@ -1,6 +1,32 @@
 /* 로그인 화면 */
 
+/* 로그인 버튼 */
 .button-login {
   text-align: center;
   margin: 10px;
+}
+
+.button-custom{
+	width: 250px;
+  	height: 50px;
+}
+
+/* 로그인 input */
+.input-wrap {
+  text-align: center;
+}
+
+/* 경고 메세지 */
+.error_message-wrap {
+  text-align: center;
+}
+
+.error_massage {
+  color: #ff7c00;
+}
+
+/* 가입 안내 메세지 */
+.to-join {
+  text-align: center;
+  color: #ff7c00;
 }

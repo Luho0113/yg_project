@@ -86,18 +86,14 @@ public class MovieService {
 						movieVO.setPosterPath(known.getString("poster_path"));
 						movieVO.setOverview(known.getString("overview"));
 						movieVO.setReleaseDate(known.getString("release_date"));
+						
+						movieVO.setGenreIds(getGenres(movieVO.getId()));
 						movieVO.setDirectors(getCredit(movieVO.getId()));
 						movieVO.setProductionConturies(getConturies(movieVO.getId()));
-						
-						JSONArray genreIdArray = known.getJSONArray("genre_ids");
-						List<String> genreIds = new ArrayList<>();
-						
-						for(int k = 0; k < genreIdArray.length(); k++) {
-							genreIds.add(genreIdArray.getString(k));
-							movieVO.setGenreIds(genreIds);
-						}
+
 						
 						movieList.add(movieVO);
+						
 					}//end of inner for
 
 					//영화 이름을 검색했을 경우 실행   
@@ -109,16 +105,11 @@ public class MovieService {
 					movieVO.setPosterPath(object.getString("poster_path"));
 					movieVO.setOverview(object.getString("overview"));
 					movieVO.setReleaseDate(object.getString("release_date"));
+					
+					movieVO.setGenreIds(getGenres(movieVO.getId()));
 					movieVO.setDirectors(getCredit(movieVO.getId()));
 					movieVO.setProductionConturies(getConturies(movieVO.getId()));
-					
-					JSONArray genreIdArray = object.getJSONArray("genre_ids");
-					List<String> genreIds = new ArrayList<>();
-					
-					for(int k = 0; k < genreIdArray.length(); k++) {
-						genreIds.add(genreIdArray.getString(k));
-						movieVO.setGenreIds(genreIds);
-					}
+
 					
 					movieList.add(movieVO);
 					
@@ -212,7 +203,7 @@ public class MovieService {
 	}//end of getConturies
 	
 	
-	//TMDB API 요청 Method (제작 국가)
+	//TMDB API 요청 Method (장르)
 	public List<String> getGenres(String movieId) {
 		List<String> genres = new ArrayList<>();
 		try {

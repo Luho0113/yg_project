@@ -28,7 +28,7 @@ public class UserInfoController {
 	@Autowired
 	private UserInfoService uiService;
 	
-	//1) 회원가입
+	//회원가입
 	@GetMapping("/join")
 	public String join() {
 
@@ -40,17 +40,22 @@ public class UserInfoController {
 		
 		m.addAttribute("msg", "join fail");
 		
-		if(uiService.getUserInfoVOByUiId(user) != null) {
+		if(uiService.getUserInfoVOByUiId(user) != null) { //사용자 아이디가 이미 있는 경우(null이 아니라면)
+			
 			m.addAttribute("msg", "uiId exist");
 			return "user/join";
-		} else if(uiService.selectUserInfoByUiNickname(user) != null) {
+			
+		} else if(uiService.selectUserInfoByUiNickname(user) != null) { //사용자 닉네임이 이미 있는 경우
+			
 			m.addAttribute("msg", "uiNickname exist");
 			return "user/join";
+			
 		} else if(uiService.join(user)) {
+			
 			m.addAttribute("joinMessage", "회원가입에 성공했습니다.");
 		}
 		
-		return "user/joinSuccess";
+		return "user/joinSuccess"; //회원 가입 성공 안내 화면으로 이동
 	}
 
 	// 중복 아이디 확인
@@ -71,7 +76,7 @@ public class UserInfoController {
 	//2) 로그인
 	@GetMapping("/login")
 	public String login() {
-
+		
 		return "user/login";
 	}
 
@@ -79,11 +84,23 @@ public class UserInfoController {
  	@PostMapping("/login")
  	public String login(@ModelAttribute UserInfoVO user, HttpSession session, Model m) {
  		
- 		if(uiService.login(user, session)) {
-	 		
+ 		//로그인에 성공한 경우
+ 		if(uiService.login(user, session)) { 
+ 			
+ 			user = (UserInfoVO) session.getAttribute("user"); //세션에 저장되어 있는 사용자의 정보를 user에 담음
+ 			
+ 			//사용자의 uiActive에 따라 로그인 처리
+ 			if(user.getUiActive().equals("0")) { //정지된 계정인 경우
+ 				session.invalidate();  //세션 초기화
+ 				//m.addAttribute("msg", "error");
+				return "user/loginSuspended"; //안내 페이지로 이동
+			} 
+ 			
+ 			//사용자의 default uiActive = 1, 자동으로 로그인 성공 처리
  			return "index";
  		}
  		
+ 		//로그인에 실패한 경우 (없는 계정이거나 아이디 or 비밀번호가 틀렸을 때)
  		m.addAttribute("msg", "error");
  		
  		return "user/login";
@@ -93,8 +110,10 @@ public class UserInfoController {
 	//3) 로그아웃
 	@GetMapping("/logout")
 	public String userLogout(HttpSession session) {
-		session.invalidate();
+		
+		session.invalidate(); //세션 초기화
 		return "index";
+		
 	}
 	
 	
@@ -102,10 +121,14 @@ public class UserInfoController {
 	//4) 탈퇴
 	@GetMapping("/user/delete")
 	public String userDelete(HttpSession session, Model m) {
+		
 		UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user");
+		
 		if(uiService.deleteUserInfo(sessionUserInfo)) {
+			
 			m.addAttribute("msg", "정상적으로 탈퇴되었습니다.");
 			session.invalidate(); //세션도 초기화
+			
 		}
 		
 		return "index";

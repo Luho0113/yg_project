@@ -48,7 +48,7 @@
 								<a href="/myInfo?uiNickname=${user.uiNickname}"> <img id="myInfo-Img" alt="내프로필"
 									src="${user.uiFilePath}"
 									onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
-								</a> ${user.uiNickname}님
+								</a> ${user.uiNickname}
 							</div>
 						</li>
 					</ul>

@@ -34,14 +34,17 @@ function formValidation() {
 	if (uiId.value.trim() == '') {
 		uiId.focus();
 		document.getElementById("error_checkId").innerHTML = ('<span style="color:red;"> 아이디를 입력해주세요.</span>');
+		join_form.addEventListener('submit', onJoinSubmit);
 		return false;
 	} else if (!REG_ID.test(uiId.value)) {
 		uiId.focus();
 		document.getElementById("error_checkId").innerHTML = ('<span style="color:red;"> 6글자 이상의 영문자, 숫자, 특수기호(_)만 사용가능합니다.</span>');
+		join_form.addEventListener('submit', onJoinSubmit);
 		return false;
 	} else if (uiId.value.length > 20) {
 		uiId.focus();
 		document.getElementById("error_checkId").innerHTML = ('<span style="color:red;"> 20자 이내로 입력해주세요.</span>');
+		join_form.addEventListener('submit', onJoinSubmit);
 		return false;
 	} else {
 		document.getElementById("error_checkId").innerHTML = ('');
@@ -51,9 +54,11 @@ function formValidation() {
 	if (uiNickname.value.trim() == '') {
 		uiNickname.focus();
 		document.getElementById("error_checkNickName").innerHTML = ('<span style="color:red;"> 닉네임을 입력해주세요.</span>');
+		join_form.addEventListener('submit', onJoinSubmit);
 		return false;
 	} else if (!checkNickName()) {
 		uiNickname.focus();
+		join_form.addEventListener('submit', onJoinSubmit);
 		return false;
 	}
 	
@@ -61,9 +66,11 @@ function formValidation() {
 	if (uiPassword.value.trim() == '') {
 		uiPassword.focus();
 		document.getElementById("error_checkPwd").innerHTML = ('<span style="color:red;"> 비밀번호를 입력해주세요.</span>');
+		join_form.addEventListener('submit', onJoinSubmit);
 		return false;
 	} else if (!checkPwd()) {
 		uiPassword.focus();
+		join_form.addEventListener('submit', onJoinSubmit);
 		return false;
 	}
 
@@ -71,9 +78,11 @@ function formValidation() {
 	if (uiPasswordSame.value.trim() == '') {
 		uiPasswordSame.focus();
 		document.getElementById("error_checkPwdSame").innerHTML = ('<span style="color:red;"> 비밀번호를 한 번 더 확인해주세요.</span>');
+		join_form.addEventListener('submit', onJoinSubmit);
 		return false;
 	} else if (!checkPwdSame()) {
 		uiPasswordSame.focus();
+		join_form.addEventListener('submit', onJoinSubmit);
 		return false;
 	}
 
@@ -84,12 +93,15 @@ function formValidation() {
 	if (uiEmail.value.trim() == '') {
 		uiEmail.focus();
 		document.getElementById("error_checkEmail").innerHTML = ('<span style="color:red;"> 이메일을 입력해주세요.</span>');
+		join_form.addEventListener('submit', onJoinSubmit);
 		return false;
 	} else if (!checkEmail) {
 		uiEmail.focus();
+		join_form.addEventListener('submit', onJoinSubmit);
 		return false;
 	}
 	
+	join_form.submit(); /* 가입이 성공하면 submit 실행 */
 	return true;
 };
 
@@ -198,3 +210,66 @@ function change_email() {
 		uiEmail.value = uiEmail.value + val;
 	}
 } */
+
+
+
+
+//수정 유효성 검사
+//필수 입력값이 비어있으면 제출 X
+function updateValidation() {
+	
+	
+	//닉네임 확인
+	if (uiNickname.value.trim() == '') {
+		uiNickname.focus();
+		document.getElementById("error_checkNickName").innerHTML = ('<span style="color:red;"> 닉네임을 입력해주세요.</span>');
+		join_form.addEventListener('submit', onJoinSubmit);
+		return false;
+	} else if (!checkNickName()) {
+		uiNickname.focus();
+		join_form.addEventListener('submit', onJoinSubmit);
+		return false;
+	}
+	
+	//비밀번호
+	if (uiPassword.value.trim() == '') {
+		uiPassword.focus();
+		document.getElementById("error_checkPwd").innerHTML = ('<span style="color:red;"> 새 비밀번호를 입력해주세요.</span>');
+		join_form.addEventListener('submit', onJoinSubmit);
+		return false;
+	} else if (!checkPwd()) {
+		uiPassword.focus();
+		join_form.addEventListener('submit', onJoinSubmit);
+		return false;
+	}
+
+	//비밀번호 확인
+	if (uiPasswordSame.value.trim() == '') {
+		uiPasswordSame.focus();
+		document.getElementById("error_checkPwdSame").innerHTML = ('<span style="color:red;"> 비밀번호를 한 번 더 확인해주세요.</span>');
+		join_form.addEventListener('submit', onJoinSubmit);
+		return false;
+	} else if (!checkPwdSame()) {
+		uiPasswordSame.focus();
+		join_form.addEventListener('submit', onJoinSubmit);
+		return false;
+	}
+
+
+	//이메일 확인
+	if (uiEmail.value.trim() == '') {
+		uiEmail.focus();
+		document.getElementById("error_checkEmail").innerHTML = ('<span style="color:red;"> 이메일을 입력해주세요.</span>');
+		join_form.addEventListener('submit', onJoinSubmit);
+		return false;
+	} else if (!checkEmail) {
+		uiEmail.focus();
+		join_form.addEventListener('submit', onJoinSubmit);
+		return false;
+	}
+	
+	join_form.submit(); /* 수정이 성공하면 submit 실행 */
+	
+	/* location.href = '/myInfo'; */
+	return true;
+};
