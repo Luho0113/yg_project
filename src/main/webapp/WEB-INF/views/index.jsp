@@ -7,15 +7,144 @@
     <meta charset="UTF-8" />
     <title>영감</title>
     <!-- 스타일 -->
+    <link rel="stylesheet"
+	href="${path}/resources/css/main/main.css">
   </head>
   <body>
     <!-- header area -->
     <jsp:include page="./common/header.jsp"></jsp:include>
 
-    <!-- content area -->
-    <div class="content">
-      <p>본문 영역</p>
-    </div>
+
+
+
+
+
+
+
+ <section class="content">
+    
+    <article class="box-office">
+    <h3>박스오피스/상영중인 영화?</h3>
+<div class="box-office-list">
+
+</div>
+    </article>
+
+
+    
+    <article class="highest-rated-movies">
+        <h3>별점 높은 순</h3>
+			<ul class="movies">
+                <!-- 
+			<c:forEach items="${____}" var="_____">
+				<li class="movie-box">
+					
+                        <div>
+						<a href="detail?movieId=${_______}&riMovieId=${______}"><img id="poster" src="https://image.tmdb.org/t/p/w300${________}" alt="영화포스터"></a>
+						<div class="cont-detail">
+							<div class="title">
+								<a href="detail?movieId=${movie.id}">${________}</a>
+							</div>
+							<div class="release-date">${______}</div>
+							<div class="star-rate">${_______}</div>
+						</div>
+					</div>
+               
+				</li>
+			</c:forEach>
+			 -->
+
+             
+				<li class="movie-box">
+                        <div>
+						<a href="detail?movieId=${_______}&riMovieId=${______}"><img id="poster" src="https://ifh.cc/g/zNb0Wd.jpg" alt="영화포스터"></a>
+						<div class="cont-detail">
+							<div class="title">
+								<a href="detail?movieId=${movie.id}">영화 제목:길게했을때 대비000</a>
+							</div>
+							<div class="release-date">0000년</div>
+							<div class="star-rate">★★★★★</div>
+						</div>
+					</div>
+				</li>
+                				<li class="movie-box">
+                        <div>
+						<a href="detail?movieId=${_______}&riMovieId=${______}"><img id="poster" src="https://ifh.cc/g/zNb0Wd.jpg" alt="영화포스터"></a>
+						<div class="cont-detail">
+							<div class="title">
+								<a href="detail?movieId=${movie.id}">영화 제목:길게했을때 대비000</a>
+							</div>
+							<div class="release-date">0000년</div>
+							<div class="star-rate">★★★★★</div>
+						</div>
+					</div>
+				</li>
+                				<li class="movie-box">
+                        <div>
+						<a href="detail?movieId=${_______}&riMovieId=${______}"><img id="poster" src="https://ifh.cc/g/zNb0Wd.jpg" alt="영화포스터"></a>
+						<div class="cont-detail">
+							<div class="title">
+								<a href="detail?movieId=${movie.id}">영화 제목:길게했을때 대비000</a>
+							</div>
+							<div class="release-date">0000년</div>
+							<div class="star-rate">★★★★★</div>
+						</div>
+					</div>
+				</li>
+                				<li class="movie-box">
+                        <div>
+						<a href="detail?movieId=${_______}&riMovieId=${______}"><img id="poster" src="https://ifh.cc/g/zNb0Wd.jpg" alt="영화포스터"></a>
+						<div class="cont-detail">
+							<div class="title">
+								<a href="detail?movieId=${movie.id}">영화 제목:길게했을때 대비000</a>
+							</div>
+							<div class="release-date">0000년</div>
+							<div class="star-rate">★★★★★</div>
+						</div>
+					</div>
+				</li>
+                				<li class="movie-box">
+                        <div>
+						<a href="detail?movieId=${_______}&riMovieId=${______}"><img id="poster" src="https://ifh.cc/g/zNb0Wd.jpg" alt="영화포스터"></a>
+						<div class="cont-detail">
+							<div class="title">
+								<a href="detail?movieId=${movie.id}">영화 제목:길게했을때 대비000</a>
+							</div>
+							<div class="release-date">0000년</div>
+							<div class="star-rate">★★★★★</div>
+						</div>
+					</div>
+				</li>
+                
+                
+
+			</ul>
+    </article>
+
+
+    <h3>최근리뷰///좋아요 많은 리뷰</h3>
+    <article class="new-reviews">
+
+    </article>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- footer area -->
     <jsp:include page="./common/footer.jsp"></jsp:include>
