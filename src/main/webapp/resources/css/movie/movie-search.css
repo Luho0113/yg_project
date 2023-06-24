@@ -10,7 +10,7 @@
 .content h2::after {
   content: " 의 검색결과";
   color: white;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 
@@ -43,16 +43,14 @@
   width: 18%;
   height: 20.8% ;
   margin: 0.5% 0% 0.5% 1.2%;
+  }
   
 
-  }
-
 .movie-box img {
-   width: 100%;
-   height: 100%;
+	width: 100%;
     /* rgba(0, 0, 0, 0.2) 그림자 효과*/
     box-shadow: 0 8px 8px 0 rgba(238, 233, 233, 0.2), 0 6px 20px 0 rgba(238, 234, 234, 0);
-
+border-radius: 3%;
 }
 
 /*movie-box 링크 - 포스터, 제목*/
@@ -60,12 +58,13 @@
   display: block;
   height: 100%;
   border: 1px solid khaki;
+ color:#FFFAF6; 
 }
 
 /*영화 제목, 개봉일, 감독*/
 .movie-box .cont-detail {
   margin: 10px 0px 20px 2px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   border: 1px solid salmon;
   width: 98%;
 
@@ -148,6 +147,7 @@
   display: block;
   height: 30px;
   border: 1px solid khaki;
+  color: white;
  
 }
 

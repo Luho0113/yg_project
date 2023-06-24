@@ -26,8 +26,8 @@ public class ReviewerInfoService {
 	}
 	
 	//별점
-	public ReviewInfoVO selectStarInfo (String riStar) {
-		return riMapper.selectStarInfos(riStar);
+	public ReviewInfoVO selectStarInfo (String riMovieId) {
+		return riMapper.selectStarInfos(riMovieId);
 	}
 	
 	//포인트

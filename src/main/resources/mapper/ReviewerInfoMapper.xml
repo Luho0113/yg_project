@@ -20,9 +20,9 @@
 
 <!--소수점 삭제 -->
 <select id="selectStarInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
-select round(avg(ri_star),1) 
-from review_info 
-where ri_movie_id = #{riMovieId}
+  SELECT ROUND(AVG(ri_star), 1)
+  FROM review_info
+  WHERE ri_movie_id = #{riMovieId}
 </select>
 
 <!-- 영감포인트 -->
