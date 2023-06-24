@@ -10,6 +10,15 @@
   font-size: 14px;
 }
 
+/* 프로필 사진 */
+.profile-image{
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+}
+
+
+
 /* 닉네임 변경하기 */
 .form-nickname-wrap {
   display: block;

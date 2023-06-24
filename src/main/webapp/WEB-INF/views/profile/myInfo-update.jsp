@@ -20,28 +20,27 @@
 	<div class="content">
 		<h3>프로필 수정</h3>
 
-		<!-- 아이디 입력 -->
+		<!-- 아이디 -->
 		<div>
 			<p>아이디 : ${user.uiId}</p>
 		</div>
 
-		<form method="POST" action="/myInfo-update" name="update_form"
-			onsubmit="return updateValidation()" enctype="multipart/form-data">
-			<!-- 기존 프로필 사진 -->
+		<!-- 프로필 사진 변경-->
+		<form method="POST" action="/myInfo-update" name="update_form" enctype="multipart/form-data">
 			<div>
-				<img src="${user.uiFilePath}" style="border-radius: 40px"
-					width="80px" height="80px"
-					onerror="this.src='https://ifh.cc/g/cDROLZ.png';" />
-			</div>
-			<!-- 선택한 프로필 사진 미리보기 -->
-			<div id="imgPreview" style="display: none">
-				<!-- 프로필 이미지 미리보기 -->
-				<img src="" style="border-radius: 40px" width="80px" height="80px" />
+				<img id="profile-image" src="${user.uiFilePath}"
+					class="profile-image" width="80px"
+					onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+
+				<!-- 선택한 프로필 사진 미리보기 -->
+				<div id="imgPreview" style="display: none">
+					<!-- 프로필 이미지 미리보기 -->
+					<img src="" class="profile-image" />
+				</div>
 			</div>
 			<label for="uiFilePath">프로필 이미지 : </label> <input type="file"
 				name="uiFile" id="uiFile" onchange="imgPreview(this)"
 				value="${user.uiFile}" />
-
 			<button>수정하기</button>
 		</form>
 
@@ -152,6 +151,7 @@
 			let imgObj = document.querySelector("#imgPreview>img");
 			imgObj.src = URL.createObjectURL(file); //이미지 src의 url 생성
 			document.querySelector("#imgPreview").style.display = "";
+			document.querySelector("#profile-image").style.display = "none";
 		}
 
 		function deleteCheck() {

@@ -39,8 +39,7 @@
 	<!-- 정보수정 -->
 	<update id="updateUserInfo">
 		UPDATE user_info
-		SET ui_password = #{uiPassword}, ui_nickname = #{uiNickname}, 
-			ui_file_path = #{uiFilePath}, ui_email = #{uiEmail}
+		SET ui_file_path = #{uiFilePath}
 		WHERE ui_id = #{uiId}
 	</update>
 	
