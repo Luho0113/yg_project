@@ -1,5 +1,9 @@
 /* 버튼 스타일 , input 스타일 */
 
+/* 
+적용할 버튼에 class="button-custom btn색상" 처럼 설정하면 끝!
+버튼의 위치나 크기는 각 페이지의 css 파일에서 설정해줘야함
+*/
 .button-custom {
   display: inline-block;
   padding: 0;
@@ -246,6 +250,7 @@ input {
 
 input:focus {
   outline: 2px solid #ff7c00;
+  transition: all 0.1s ease;
 }
 
 .input {

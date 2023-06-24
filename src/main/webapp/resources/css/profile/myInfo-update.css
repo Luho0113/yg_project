@@ -1,0 +1,62 @@
+/* 프로필 수정 페이지 */
+
+.button-custom {
+  width: 100px;
+  height: 50px;
+}
+
+.update-error-text {
+  color: #ff7c00;
+  font-size: 14px;
+}
+
+/* 닉네임 변경하기 */
+.form-nickname-wrap {
+  display: block;
+}
+
+.form-nickname {
+  display: inline-block;
+}
+
+.button-nickname-update {
+  display: inline-block;
+}
+
+.form-nickname-wrap span {
+  color: #ff7c00;
+  font-size: 14px;
+}
+
+/* 비밀번호 변경하기 */
+.form-password-wrap {
+  display: block;
+}
+
+.form-password {
+  display: inline-block;
+}
+.button-pwd-update {
+  display: inline-block;
+}
+
+.form-password-wrap span {
+  color: #ff7c00;
+  font-size: 14px;
+}
+
+/* 이메일 변경하기 */
+.form-email-wrap {
+  display: block;
+}
+.form-email {
+  display: inline-block;
+}
+.button-email-update {
+  display: inline-block;
+}
+
+.form-email-wrap span {
+  color: #ff7c00;
+  font-size: 14px;
+}

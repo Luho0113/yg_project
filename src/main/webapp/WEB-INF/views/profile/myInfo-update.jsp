@@ -9,6 +9,9 @@
 <meta charset="UTF-8" />
 <title>프로필 수정</title>
 <!-- 스타일 -->
+<link rel="stylesheet" href="${path}/resources/css/common/button.css" />
+<link rel="stylesheet"
+	href="${path}/resources/css/profile/myInfo-update.css" />
 </head>
 <body>
 	<!-- header area -->
@@ -19,7 +22,7 @@
 
 		<!-- 아이디 입력 -->
 		<div>
-				<p> 아이디 : ${user.uiId} </p>
+			<p>아이디 : ${user.uiId}</p>
 		</div>
 
 		<form method="POST" action="/myInfo-update" name="update_form"
@@ -39,87 +42,104 @@
 				name="uiFile" id="uiFile" onchange="imgPreview(this)"
 				value="${user.uiFile}" />
 
-
 			<button>수정하기</button>
 		</form>
-		<div>
-			<button type="button" onclick="history.back();">취소</button>
-			<button onclick="deleteCheck()">탈퇴하기</button>
-		</div>
-
 
 		<!-- 수정 변경중~~~~~~~~ -->
-
-		<form method="POST" action="/myInfo-updateN" name="update_form"
-			onsubmit="return updateNickname()">
-			<!-- 닉네임 입력 -->
-			<div>
-				<!-- 기존 닉네임 -->
-				<p>닉네임 : ${user.uiNickname} </p>
-				<label> <input type="text" name="uiNickname"
-					id="uiNickname" onkeyup="return checkNickName()"
-					placeholder="새 닉네임" />
-				</label>
-				<c:if test="${msg == 'uiNickname exist'}">
-					<span class="error_fail"> 이미 사용 중인 닉네임입니다. </span>
-				</c:if>
-				<div id="error-checkNickName">
-					<!-- 경고 텍스트 -->
-				</div>
+		<!-- 닉네임 변경하기 -->
+		<div class="form-nickname-wrap">
+			<!-- 기존 닉네임 -->
+			<p>닉네임 : ${user.uiNickname}</p>
+			<div class="form-nickname">
+				<form method="POST" action="/myInfo-updateN" name="update_form"
+					onsubmit="return updateNickname()">
+					<!-- 닉네임 입력 -->
+					<label> <input class="input" type="text" name="uiNickname"
+						id="uiNickname" onkeyup="return checkNickName()"
+						placeholder="새 닉네임" />
+					</label>
+					<div class="button-nickname-update">
+						<button class="button-custom btnToOrange">수정하기</button>
+					</div>
+				</form>
 			</div>
-			<button>수정하기</button>
-		</form>
+			<c:if test="${msg == 'uiNickname exist'}">
+				<span class="error_fail"> 이미 사용 중인 닉네임입니다. </span>
+			</c:if>
+			<div class="update-error-text" id="error-checkNickName">
+				<!-- 경고 텍스트 -->
+			</div>
+		</div>
 
-		<form method="POST" action="/myInfo-updateP" name="update_form"
-			onsubmit="return updatePassword()">
+		<!-- 비밀번호 변경하기 -->
+		<div class="form-password-wrap">
 			<!-- 기존비밀번호 -->
 			<div>
 				<p>기존 비밀번호 : ${user.uiPassword}</p>
 			</div>
-			<!-- 비밀번호 입력 -->
-			<div>
-				<label> <input type="password" name="uiPassword"
-					id="uiPassword" onkeyup="return checkPwd()" placeholder="새 비밀번호" />
-				</label>
-				<div id="error-checkPwd">
+			<div class="form-password">
+				<form method="POST" action="/myInfo-updateP" name="update_form"
+					onsubmit="return updatePassword()">
+					<!-- 비밀번호 입력 -->
+
+					<label> <input class="input" type="password"
+						name="uiPassword" id="uiPassword" onkeyup="return checkPwd()"
+						placeholder="새 비밀번호" />
+					</label>
+
+					<!-- 비밀번호 확인 입력 -->
+
+					<label> <input class="input" type="password"
+						name="uiPasswordSame" id="uiPasswordSame"
+						onkeyup="return checkPwdSame()" placeholder="비밀번호 확인" />
+					</label>
+
+					<div class="button-pwd-update">
+						<button class="button-custom btnToOrange">수정하기</button>
+					</div>
+				</form>
+				<div class="update-error-text" id="error-checkPwd">
+					<!-- 경고 텍스트 -->
+				</div>
+				<div class="update-error-text" id="error-checkPwdSame">
 					<!-- 경고 텍스트 -->
 				</div>
 			</div>
-			<!-- 비밀번호 확인 입력 -->
-			<div>
-				<label> <input type="password" name="uiPasswordSame"
-					id="uiPasswordSame" onkeyup="return checkPwdSame()"
-					placeholder="비밀번호 확인" />
-				</label>
-				<div id="error-checkPwdSame">
-					<!-- 경고 텍스트 -->
-				</div>
+		</div>
+
+		<!-- 이메일 변경하기 -->
+		<div class="form-email-wrap">
+			<div class="form-email">
+				<form method="POST" action="/myInfo-updateE" name="update_form"
+					onsubmit="return updateEmail()">
+					<!-- 이메일 입력 -->
+
+					<label> <input class="input" type="email" name="uiEmail"
+						id="uiEmail" value="${user.uiEmail}" onkeyup="return checkEmail()"
+						placeholder="이메일" />
+					</label>
+
+					<div class="button-email-update">
+						<button class="button-custom btnToOrange">수정하기</button>
+					</div>
+				</form>
 			</div>
-			<button>수정하기</button>
-		</form>
-
-
-		<form method="POST" action="/myInfo-updateE" name="update_form"
-			onsubmit="return updateEmail()">
-			<!-- 이메일 입력 -->
-			<div>
-				<label> <input type="email" name="uiEmail" id="uiEmail"
-					value="${user.uiEmail}" onkeyup="return checkEmail()"
-					placeholder="이메일" />
-				</label>
-				<div id="error-checkEmail">
-					<!-- 경고 텍스트 -->
-				</div>
+			<div class="update-error-text" id="error-checkEmail">
+				<!-- 경고 텍스트 -->
 			</div>
-			<button>수정하기</button>
-		</form>
+		</div>
 
+		<div>
+			<div>
+				<button class="button-custom btnOrange" type="button"
+					onclick="history.back();">취소</button>
+			</div>
+			<div class="button-delete">
+				<button class="button-custom btnToOrange" onclick="deleteCheck()">
+					탈퇴하기</button>
+			</div>
+		</div>
 	</div>
-
-
-
-
-
 
 	<!-- footer area -->
 	<jsp:include page="../common/footer.jsp"></jsp:include>
