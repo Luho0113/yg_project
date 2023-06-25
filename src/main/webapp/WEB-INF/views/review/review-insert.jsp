@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="${path}/resources/css/review/review-insert-star.css">
 <link rel="stylesheet" href="${path}/resources/css/review/review-insert.css">
 <script src="${path}/resources/js/review/review-star.js"></script>
+<script src="${path}/resources/js/review/review-insert.js"></script>
 </head>
 
 <body>
@@ -34,7 +35,7 @@
         </div>
     </form>
 	
-    <form action="/review-insert" method="POST">
+    <form action="/review-insert" method="POST" onsubmit="return checkNull()">
     	<input type="hidden" id="riMovieId" name="riMovieId" value="">
     	<input type="hidden" id="riGenre" name="riGenre" value="">
         <table class="reviewInfo">
