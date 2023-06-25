@@ -164,11 +164,21 @@
     margin-top: 80px; /* .riListMovieInfo 만큼 떨어뜨리기 */
     padding: 10px 10px 10px 10px;
     font-size: 13px; /* 최대 3줄로 하고 자간을 넓혔으면 좋겠다.  수정 필요*/
-    line-height: 20px;
 }
 
 .riListReviewContent>a{
 	color: #fffaf6;
+	
+	/* 글 내용이 많을 때 더보기 처리하는 로직 */
+	overflow: hidden;
+    text-overflow: ellipsis;
+	
+	display: -webkit-box;
+    -webkit-line-clamp: 4; /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap:break-word; 
+    line-height: 1.3em;
+    height: 5.2em; /* line-height 곱하기 -webkit-line-clamp */
 }
 
 .riListReviewContent>a:hover{
