@@ -20,7 +20,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <nav>
       <div class="younggam-logo">
         <div class="younggam-img">
-          <img src="${path}/resources/images/yg_logo_orange.png" alt="영감" />
+          <img src="${path}/resources/images/yg_logo_orange.png" alt="영감 관리자" />
         </div>
         <span class="younggam-logo">YoungGam</span>
       </div>
@@ -50,6 +50,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <span class="admin-report">신고 게시판 관리</span>
             </a>
           </li>
+          <li>
+            <a href="/admin/profile">
+              <i class="fa-solid fa-pen"></i>
+              <span class="admin-profile">관리자 정보</span>
+            </a>
+          </li>
         </ul>
 
         <ul class="logout">
@@ -65,8 +71,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
     <section class="dashboard">
       <div class="dash-top">
-        <i class="fa-solid fa-bars"></i>
-        <img src="${path}/resources/images/영감 관리자 프로필 사진.png" alt="영감">
+        <a href="/admin/profile"><img src="${admin.adminFilePath}" alt="영감 관리자">
+        </a>&nbsp;<a class="admin-nickname" href="/admin/profile">${admin.adminNickName} 님</a>
       </div>
       <div class="dash-content">
         <div class="overview">
@@ -90,6 +96,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           </div>
         </div>
 
+        <div class="title">
+          <i class="fa-solid fa-list"></i>
+          <span class="text">TO-DO List</span>
+          <i class="fa-solid fa-calendar"></i>
+          </span><span class="text">Calendar</span>
+        </div>
         <div class="main">
           <div class="main-todo">
             <!-- To-Do List -->
@@ -152,16 +164,5 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       </div>
     </section>
 
-    <!--
-    <c:if test="${admin.adminId != null}">
-      <h2>
-        ${admin.adminName} 님 반갑습니다. 영감 관리자 페이지에 접속하셨습니다.
-      </h2>
-      <button onclick="location.href='/admin/logout'">로그아웃</button>
-      <button onclick="location.href='/admin/movies'">영화 관리</button>
-      <button onclick="location.href='/admin/users'">회원 관리</button>
-      <button onclick="location.href='/admin/reports'">신고 게시판 관리</button>
-    </c:if>
--->
   </body>
 </html>

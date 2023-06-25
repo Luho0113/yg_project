@@ -1,28 +1,23 @@
 @charset "UTF-8";
-.updateNoti-area{
+.updateUser-area{
     padding: 50px;
 }
 h2{
     margin-bottom: 20px;
 }
-input[type="text"], textarea{
+input[type="text"]{
     padding: .4em .4em;
 }
-#niTitle{
-    width: 350px;
-}
-#niCredat{
-    width: 80px;
-}
-#niNum, #niCnt{
-    width: 30px;
-}
-#niNum{
-    text-align: center;
-}
-#niNum, #niCredat, #niCnt, #niTitle, #niFilePath, #niContent{
+#uiId, #uiNickname, #uiPassword, #uiFilePath, #uiEmail,
+#uiReviewPoint, #uiActive, #uiReportCnt{
     margin: .6em .6em;
     border: 1px solid #FF7C00;
+}
+#uiReviewPoint{
+    width: 70px;    
+}
+#uiActive, #uiReportCnt{
+    width: 30px;
 }
 .updateBtn, .resetBtn{
     margin-top: 20px;
@@ -34,3 +29,4 @@ input[type="text"], textarea{
 .updateBtn{
     margin-right: 5px;
 }
+

@@ -5,26 +5,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>신고 작성 글 페이지</title>
-<link rel="stylesheet" href="${path}/resources/css/common/header.css">
+<title>신고 글 보기</title>
+<link rel="stylesheet" href="${path}/resources/css/admin/header.css">
 <link rel="stylesheet" href="${path}/resources/css/common/footer.css">
 <link rel="stylesheet" href="${path}/resources/css/common/page.css">
 <link rel="stylesheet" href="${path}/resources/css/admin/report-view.css">
 </head>
 <script>
-function deleteCheck(){
+<!-- 삭제 버튼 -->
+function deleteCheck() {
 	if(!confirm('삭제하시면 복구할 수 없습니다. \n정말로 삭제하시겠습니까?')){
+		alert("삭제가 취소되었습니다.");
 		return false;
 	}else{
-		location.href="/report-delete?piNum=${report.piNum}";
+		location.href="/admin/report-delete?piNum=${report.piNum}";
 	}
 }
 </script>
 <body>
 	<!-- header area -->
-	<jsp:include page="../common/header.jsp"></jsp:include>
+	<jsp:include page="../header/header.jsp"></jsp:include>
+
 <div class="content reportView-area">
-	<h2>신고사항</h2>	
+	<h2>신고사항</h2>
 <table class="reportView-table">
 	<tr>
 		<th><h4>번호</h4></th>
@@ -62,13 +65,13 @@ function deleteCheck(){
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-			<button class="reportUpdate" onclick="location.href='/report-update?piNum=${report.piNum}'">수정</button>
-			<button class="reportUpdate" onclick="deleteCheck()">삭제</button>
+			<button class="reportUpdate" onclick="location.href='/admin/report-update?piNum=${report.piNum}'">수정</button>
+			<button class="reportDelete" onclick="deleteCheck()">삭제</button>
 		</td>
 	</tr>
 </table>
 </div>
 	<!-- footer area -->
-	<jsp:include page="../common/footer.jsp"></jsp:include>
+	<jsp:include page="../../common/footer.jsp"></jsp:include>
 </body>
 </html>

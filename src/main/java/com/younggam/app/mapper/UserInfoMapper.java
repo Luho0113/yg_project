@@ -13,7 +13,7 @@ public interface UserInfoMapper {
 	//회원가입
 	int insertUserInfo(UserInfoVO userInfo);
 	
-	//중복아이디조회
+	//중복아이디조회 + 회원 상세 정보
 	UserInfoVO selectUserInfoByUiId(UserInfoVO userInfo); 
 	
 	//중복닉네임조회
@@ -45,7 +45,13 @@ public interface UserInfoMapper {
 	
 	//
 	List<UserInfoVO> selectMyreviews(UserInfoVO userInfo);
-	//관리자 회원 관리
 	
+	
+	//관리자 회원 관리
+	List<UserInfoVO> selectUserInfosByAdmin(UserInfoVO user); //회원 목록 + 페이징 + 검색
+	
+	int updateUserByAdmin(UserInfoVO user); //회원 수정
+	
+	List<UserInfoVO> selectInactiveUsers(UserInfoVO user); //비활성화 회원 목록 + 페이징 + 검색
 	
 }

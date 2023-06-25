@@ -118,7 +118,7 @@ public class UserInfoController {
 	
 	
 	
-	//4) 탈퇴
+	//4) 탈퇴 + 회원 삭제
 	@GetMapping("/user/delete")
 	public String userDelete(HttpSession session, Model m) {
 		
@@ -135,6 +135,64 @@ public class UserInfoController {
 	}
 	
 	//관리자 회원 관리
+	//회원 목록 + 페이징 + 검색
+		@GetMapping("/admin/users")
+		public String getUserInfos(@ModelAttribute UserInfoVO user, Model m) {
+			m.addAttribute("page", uiService.getUserInfos(user));
+			return "admin/user/user-list";	
+		}
+		
+	//비활성 회원 목록 + 페이징 + 검색
+		@GetMapping("/admin/inactive-users")
+		public String getInactiveUsers(@ModelAttribute UserInfoVO user, Model m) {
+			m.addAttribute("page", uiService.getInactiveUsers(user));
+			return "admin/user/users-inactive";
+		}
+		
+	//회원 상세 정보
+		@GetMapping("/admin/user")
+		public String getUserInfoByAdmin(Model m, UserInfoVO user) {
+			user = uiService.getUserInfoVOByUiId(user);
+			m.addAttribute("user", user);
+			return "admin/user/user-view";
+		}
+		
+	//회원 수정
+		@GetMapping("/admin/user-update")
+		public String updateUserByAdmin(Model m, UserInfoVO user) {
+			user = uiService.getUserInfoVOByUiId(user);
+			m.addAttribute("user", user);
+			return "admin/user/user-update";
+		}
+		
+		@PostMapping("/admin/user-update")
+		public String userUpdate(UserInfoVO user, Model m) throws IllegalStateException, IOException {
+			String msg = "회원 정보 수정에 실패하였습니다.";
+			String url = "/admin/user-update?uiId=" + user.getUiId();
+			if(uiService.updateUserByAdmin(user)) {
+				msg = "회원 정보가 수정되었습니다.";
+				url = "/admin/users";
+			}
+			m.addAttribute("msg", msg);
+			m.addAttribute("url", url);
+			return "common/msg";
+		}
+		
+	//회원 삭제
+		@GetMapping("/admin/user-delete")
+		public String deleteUserByAdmin(Model m, UserInfoVO user) {
+			String msg = "회원 정보 삭제가 실패하였습니다.";
+			String url = "/admin/user?uiId=" + user.getUiId();
+			if(uiService.deleteUserInfo(user)) {
+				msg = "회원 정보가 삭제되었습니다.";
+				url = "/admin/users";
+			}
+			m.addAttribute("msg", msg);
+			m.addAttribute("url", url);
+			return "common/msg";
+		}	
+		
+		
 	
 	
 	

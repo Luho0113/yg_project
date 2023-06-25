@@ -7,14 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항 수정</title>
-<link rel="stylesheet" href="${path}/resources/css/common/header.css">
+<link rel="stylesheet" href="${path}/resources/css/admin/header.css">
 <link rel="stylesheet" href="${path}/resources/css/common/footer.css">
 <link rel="stylesheet" href="${path}/resources/css/common/page.css">
 <link rel="stylesheet" href="${path}/resources/css/admin/notice-update.css">
 </head>
 <body>
-<!-- header area -->
-	<jsp:include page="../common/header.jsp"></jsp:include>
+	<!-- header area -->
+	<jsp:include page="../header/header.jsp"></jsp:include>
 <script>
 function uploadImg(obj){
 	   let file = obj.files[0];
@@ -22,11 +22,11 @@ function uploadImg(obj){
 	   document.querySelector('#img_div').style.display='';
 	}
 </script>
-<div class="updateNoti-area">
+<div class="content updateNoti-area">
 	<form method="POST" action="/admin/notice-update" enctype="multipart/form-data">
 	<h2>공지사항 수정</h2>
 	<label for="niNum">번호</label>
-	<input type="text" id="niNum" name="niNum" value="${notice.niNum}" readonly><br>
+	<input type="number" id="niNum" name="niNum" value="${notice.niNum}" readonly><br>
 	
 	<label for="niCredat">작성일</label>
 	<input type="text" id="niCredat" name="niCredat" value="${notice.niCredat}" readonly><br>
@@ -35,7 +35,7 @@ function uploadImg(obj){
 	<input type="text" id="niCnt" name="niCnt" value="${notice.niCnt}" readonly><br>
 	
 	<label for="niTitle">제목</label>
-	<input type="text" id="niTitle" name="niTitle" value="${notice.niTitle}" maxlength="8"><br>
+	<input type="text" id="niTitle" name="niTitle" value="${notice.niTitle}"><br>
 	
 	<div id="img_div" style="display: none">
 			<img src="${notice.niFilePath}" width="200">
@@ -47,10 +47,10 @@ function uploadImg(obj){
 	<textarea rows="10" cols="80" id="niContent" name="niContent">${notice.niContent}</textarea><br>
 
 	<button class="updateBtn">공지사항 수정</button>
-	<input type="reset" class="resetBtn"value="다시 작성">
+	<input type="reset" class="resetBtn" value="다시 작성">
 	</form>
 </div>
-<!-- footer area -->
-<!-- <jsp:include page="../common/footer.jsp"></jsp:include> -->
+	<!-- footer area -->
+	<jsp:include page="../../common/footer.jsp"></jsp:include>
 </body>
 </html>

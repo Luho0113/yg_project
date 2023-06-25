@@ -7,14 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>신고 글 수정</title>
-<link rel="stylesheet" href="${path}/resources/css/common/header.css">
+<link rel="stylesheet" href="${path}/resources/css/admin/header.css">
 <link rel="stylesheet" href="${path}/resources/css/common/footer.css">
 <link rel="stylesheet" href="${path}/resources/css/common/page.css">
 <link rel="stylesheet" href="${path}/resources/css/admin/report-update.css">
 </head>
 <body>
 	<!-- header area -->
-	<jsp:include page="../common/header.jsp"></jsp:include>
+	<jsp:include page="../header/header.jsp"></jsp:include>
 <script>
 function uploadImg(obj){
 	   let file = obj.files[0];
@@ -23,7 +23,7 @@ function uploadImg(obj){
 	}
 </script>
 <div class="content updateReport-area">
-	<form method="POST" action="/report-update" enctype="multipart/form-data">
+	<form method="POST" action="/admin/report-update" enctype="multipart/form-data">
 	<h2>신고 글 수정</h2>
 	<label for="piNum">번호</label>
 	<input type="number" id="piNum" name="piNum" value="${report.piNum}" readonly><br>
@@ -67,6 +67,6 @@ function uploadImg(obj){
 	</form>
 </div>
 	<!-- footer area -->
-	<jsp:include page="../common/footer.jsp"></jsp:include>
+	<jsp:include page="../../common/footer.jsp"></jsp:include>
 </body>
 </html>

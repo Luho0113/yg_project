@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.notiView-area{
+.reportView-area{
     padding: 50px;
 }
 th, td{
@@ -13,31 +13,31 @@ h2 {
     color: #A8A39D;
     padding-bottom: 20px;
   }
-.noticeView-table, th, td{
+.reportView-table, th, td{
     border: 1px solid #A8A39D;
     border-collapse: collapse;
 }
-.noticeView-table th h4{
+.reportView-table th h4{
     font-weight: bold;
     font-size: 16px;
     text-align: center;
     color: #FFFAF6; 
 }
-.noticeView-table th{
+.reportView-table th{
     width: 70px;
 }
-.noticeView-table td{
+.reportView-table td{
     font-weight: normal;
     font-size: 14px;
     width: 550px;
 }
-.noticeUpdate, .noticeDelete{
+.reportUpdate, .reportDelete{
     border-radius: 5px;
     padding: .4rem .4rem;
     background-color: #43403B;
     color: #FFFAF6;
     text-align: center;
 }
-.noticeUpdate{
+.reportUpdate{
     margin-right: 6px;
 }

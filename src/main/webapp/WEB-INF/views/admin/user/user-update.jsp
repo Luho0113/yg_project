@@ -5,8 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>회원 수정 페이지</title>
+<link rel="stylesheet" href="${path}/resources/css/admin/header.css">
+<link rel="stylesheet" href="${path}/resources/css/common/footer.css">
+<link rel="stylesheet" href="${path}/resources/css/common/page.css">
+<link rel="stylesheet" href="${path}/resources/css/admin/user-update.css">
 </head>
 <body>
+	<!-- header area -->
+	<jsp:include page="../header/header.jsp"></jsp:include>
 <script>
 function uploadImg(obj){
 	   let file = obj.files[0];
@@ -14,10 +20,11 @@ function uploadImg(obj){
 	   document.querySelector('#img_div').style.display='';
 	}
 </script>
+<div class="content updateUser-area">
 <form method="POST" action="/admin/user-update" enctype="multipart/form-data">
 	<h2>회원 정보 수정</h2>
 	<label for="uiId">아이디</label>
-	<input type="text" name="uiId" value="${user.uiId}" readonly><br>
+	<input type="text" id="uiId" name="uiId" value="${user.uiId}" readonly><br>
 
 	<label for="uiNickname">닉네임</label> 
 	<input type="text" id="uiNickname" name="uiNickname" value="${user.uiNickname}"><br>
@@ -38,10 +45,16 @@ function uploadImg(obj){
 	<input type="text" id="uiReviewPoint" name="uiReviewPoint" value="${user.uiReviewPoint}"><br>
 	
 	<label for="uiActive">상태</label>
-	<input type="text" id="uiActive" name="uiActive" value="${user.uiActive}"><br>
+	<input type="text" id="uiActive" name="uiActive" value="${user.uiActive}">* 1: 활성 0: 비활성<br>
 	
-	<button>회원 정보 수정</button>
-	<input type="reset" value="다시 작성">
+	<label for="uiReportCnt">신고 횟수</label>
+	<input type="text" id="uiReportCnt" name="uiReportCnt" value="${user.uiReportCnt}"><br>
+	
+	<button class="updateBtn">회원 정보 수정</button>
+	<input type="reset" class="resetBtn" value="다시 작성">
 	</form>
+</div>
+	<!-- footer area -->
+	<jsp:include page="../../common/footer.jsp"></jsp:include>
 </body>
 </html>

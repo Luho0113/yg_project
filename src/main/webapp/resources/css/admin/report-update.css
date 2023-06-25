@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.updateNoti-area{
+.updateReport-area{
     padding: 50px;
 }
 h2{
@@ -8,19 +8,17 @@ h2{
 input[type="text"], textarea{
     padding: .4em .4em;
 }
-#niTitle{
+#piTitle{
     width: 350px;
 }
-#niCredat{
+#piCredat{
     width: 80px;
 }
-#niNum, #niCnt{
+#piNum{
     width: 30px;
-}
-#niNum{
     text-align: center;
 }
-#niNum, #niCredat, #niCnt, #niTitle, #niFilePath, #niContent{
+#piNum, #piCredat, #piTitle, #piCategory, #piFilePath, #piContent{
     margin: .6em .6em;
     border: 1px solid #FF7C00;
 }
@@ -34,3 +32,4 @@ input[type="text"], textarea{
 .updateBtn{
     margin-right: 5px;
 }
+
