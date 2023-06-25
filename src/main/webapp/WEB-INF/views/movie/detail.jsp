@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
+<c:set var = "string1" value = "${movieData[0].releaseDate}"/>
+      <c:set var = "string2" value = "${fn:substring(string1, 0, 4)}" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,12 +34,13 @@
 				<div class="movie-details1">
 					<img id="poster"
 						src="https://image.tmdb.org/t/p/original/${movieData[0].posterPath}"
-						alt="대체이미지">
+						onerror="this.src='https://ifh.cc/g/zNb0Wd.jpg';">
 				</div>
 				<div class="movie-details2">
 					<h2>${movieData[0].title}</h2>
 					<div class="rd-g-n">
-						<div>${movieData[0].releaseDate}</div>
+					     
+						<div>${string2}</div>
 						<div>${movieData[0].genreIds[0]}</div>
 						<div>${movieData[0].productionConturies[0]}</div>
 
@@ -48,8 +53,8 @@
 						<div>원제 ${movieData[0].originalTitle}</div>
 						<div>연령 등급 ${movieRate[0].certification} 세</div>
 					</div>
-					<button class="button-custom btnOrange" type="button"
-						onclick="location.href='review-insert?search=${movieData[0].title}'">리뷰쓰기</button>
+					<button class="button-custom btnOrange" class="review-button" type="button"
+						onclick="location.href='review-insert?search=${movieData[0].title}'">🖋평가하기</button>
 				</div>
 			</div>
 		</article>

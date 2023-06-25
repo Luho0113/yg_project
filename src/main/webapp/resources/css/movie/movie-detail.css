@@ -68,7 +68,11 @@ margin: 1%
   margin: 1%
 }
 
-
+.review-button{
+width: 200px;
+height: 50px;	
+border: 2px solid white;
+}
 
 .overview{
   border: 4px solid #FF7C00;

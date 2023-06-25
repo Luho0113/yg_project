@@ -73,3 +73,46 @@
 .star-rate{
     border: 1px solid rebeccapurple;
 }
+
+
+
+.review-list{
+  border: 1px solid yellow;
+}
+
+.review-card{
+  display: inline-block; 
+border: 4px solid #FF7C00;
+  border-radius: 15px;
+  height: 300px;
+  width: 250px;
+  margin: 0px 3px;
+}
+
+.review-header{
+ 
+  border: 1px solid gold;
+}
+
+.review-header div{
+  display: inline-block; 
+}
+
+.review-header img {
+  width: 50px;
+  height: auto;
+}
+
+.review-body{
+  border: 1px solid firebrick;
+  height: 70%;
+}
+
+.review-like{
+  display: inline-block; 
+  border: 1px solid teal;
+}
+
+.review-like div{
+  display: inline-block; 
+}

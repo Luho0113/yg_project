@@ -26,6 +26,8 @@
     <article class="box-office">
     <h3>박스오피스/상영중인 영화?</h3>
 <div class="box-office-list">
+<img id="poster"
+	src="https://image.tmdb.org/t/p/original/${nowPlaying.posterPath}">
 
 </div>
     </article>
@@ -122,10 +124,101 @@
     </article>
 
 
-    <h3>최근리뷰///좋아요 많은 리뷰</h3>
+    
     <article class="new-reviews">
+    <h3>최근리뷰///좋아요 많은 리뷰</h3>
+    <!--  
+	 		<c:forEach items="${reviewList}" var="review" varStatus="status"> 
+				<div class="review-card">
+					<div class="review-header">
+						<div>
+							<a href="userReview?uiNickname=${review.uiNickname}"> <img
+								src="${review.uiFilePath}"
+								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+							</a>
+							<div>리뷰어이름${review.uiNickname}</div>
+						</div>
+					</div>
+					<div class="review-body">내용${review.riContent}></div>
+					<div class="review-like">
+						<div>좋아요</div>
+						<div>댓글</div>
+					</div>
+				</div>
+		 	</c:forEach>
+		 	-->
+		 	
+		 	<div class="review-card">
+					<div class="review-header">
+						<div>
+							<a href="userReview?uiNickname=${_____}"> 
+							<img
+								src="${______}"
+								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+							</a>
+							<div>리뷰어이름${______}</div>
+						</div>
+					</div>
+					<div class="review-body">내용${_______}></div>
+					<div class="review-like">
+						<div>좋아요</div>
+						<div>댓글</div>
+					</div>
+				</div>
+				<div class="review-card">
+					<div class="review-header">
+						<div>
+							<a href="userReview?uiNickname=${_____}"> 
+							<img
+								src="${______}"
+								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+							</a>
+							<div>리뷰어이름${______}</div>
+						</div>
+					</div>
+					<div class="review-body">내용${_______}></div>
+					<div class="review-like">
+						<div>좋아요</div>
+						<div>댓글</div>
+					</div>
+				</div>
+				<div class="review-card">
+					<div class="review-header">
+						<div>
+							<a href="userReview?uiNickname=${_____}"> 
+							<img
+								src="${______}"
+								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+							</a>
+							<div>리뷰어이름${______}</div>
+						</div>
+					</div>
+					<div class="review-body">내용${_______}></div>
+					<div class="review-like">
+						<div>좋아요</div>
+						<div>댓글</div>
+					</div>
+				</div>
+				<div class="review-card">
+					<div class="review-header">
+						<div>
+							<a href="userReview?uiNickname=${_____}"> 
+							<img
+								src="${______}"
+								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+							</a>
+							<div>리뷰어이름${______}</div>
+						</div>
+					</div>
+					<div class="review-body">내용${_______}></div>
+					<div class="review-like">
+						<div>좋아요</div>
+						<div>댓글</div>
+					</div>
+				</div>
+		 	
+		</article>
 
-    </article>
 
 
 

@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,8 +38,21 @@
 							<div class="title">
 								<a href="detail?movieId=${movie.id}">${movie.title}</a>
 							</div>
-							<div class="release-date">${movie.releaseDate}</div>
-							<div class="director">${movie.directors}</div>
+
+	<c:set var = "string1" value = "${movie.releaseDate}"/>
+      <c:set var = "string2" value = "${fn:substring(string1, 0, 4)}" />
+							<div class="release-date">${string2}</div>
+							
+						
+
+
+     <c:set var="str1" value="${movie.directors}"/>
+       <c:set var="str2" value="${fn:replace(str1, '[', '')}"/> 
+<c:set var="str3" value="${fn:replace(str2, ']', '')}"/> 
+
+
+
+							<div class="director">${str3}</div>
 						</div>
 					</div>
 				</li>

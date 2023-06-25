@@ -63,8 +63,14 @@ public class MovieController {
 		return "movie/detail"; 
 	}
 	
-	//위에 별점, 포인트 추가
 	
+	//현재 상영 영화/리뷰어
+//	@GetMapping("/")
+	public String getNowPlaying(@RequestParam("movieId") String movieId, Model m) {
+		m.addAttribute("nowPlaying", movieDetailService.getNowPlaying(movieId));
+		
+		return "index";
+	}
 
 
 	

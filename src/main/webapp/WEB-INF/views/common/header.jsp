@@ -28,7 +28,9 @@
 						<!--  <input type="text" placeholder="검색어를 입력해주세요."> -->
 						<form action="/search" method="get">
 							<input id="search" name="search" value="${param.search}"
-								placeholder="영화, 감독, 배우를 검색해보세요.">
+								placeholder="영화, 감독, 배우를 검색해보세요."
+								onfocus="this.placeholder=''"
+								onblur="this.placeholder='영화, 감독, 배우를 검색해보세요.'" >
 							<button class="button-custom btnOrange">검색</button>
 						</form>
 
