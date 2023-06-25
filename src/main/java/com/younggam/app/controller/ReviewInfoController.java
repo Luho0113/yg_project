@@ -39,6 +39,7 @@ public class ReviewInfoController {
       return "review/review-list";
    }
    
+   //전체 글 조회 (장르별) 이름 바꾸고 싶음
    @GetMapping("/review-sort")
    public String getReviewList(@RequestParam("genre") String genre, @ModelAttribute ReviewInfoVO reviewInfo, Model m) {
       List<ReviewInfoVO> reviewList = riServie.selectReviewInfoSortGenre(reviewInfo);
@@ -72,8 +73,6 @@ public class ReviewInfoController {
       }
       return "redirect:/reviews";
    }
-   
-
    
    // 삭제!!!
    @GetMapping("/movie")

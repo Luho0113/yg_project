@@ -62,8 +62,6 @@ console.log(${reviewList[0].riLikeCnt});
       </div>
 
 
-
-
       <div class="riListContainer" id="riListContainer">
          <!-- riListContainer: 리뷰 목록 전체를 묶는 div -->
 
@@ -95,7 +93,11 @@ console.log(${reviewList[0].riLikeCnt});
                      </a>
                   </div>
 
-                  <div class="nickName" id="nickName">${reivew.uiNickname}</div>
+                  <div class="nickName" id="nickName">
+                  	<a href="userReview?uiNickname=${reivew.uiNickname}">
+                  		${reivew.uiNickname}
+                  	</a>
+                  </div>
 
                   <%-- 별점 숫자로 표시 --%>
                   <div class="starPointText" id="starPointText">
