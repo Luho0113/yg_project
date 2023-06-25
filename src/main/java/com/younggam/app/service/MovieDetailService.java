@@ -6,8 +6,10 @@ import java.util.Map;
 
 import org.springframework.boot.configurationprocessor.json.JSONArray;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.github.pagehelper.PageHelper;
 import com.mysql.cj.xdevapi.JsonArray;
 import com.younggam.app.vo.CastVO;
 import com.younggam.app.vo.MovieVO;
@@ -23,6 +25,7 @@ import okhttp3.Response;
 public class MovieDetailService {
 
 	// 배우 정보 추출 : 배우명, 배역명, 포스터
+	
 	public List<CastVO> getCast(String movieId) {
 		// 데이터를 파싱해서 VO객체에 저장한 뒤 List에 저장
 		List<CastVO> castList = new ArrayList<>(); // credits에 movieId를 검색한 내용
@@ -56,14 +59,11 @@ public class MovieDetailService {
 				castvo.setProfilePath(object.getString("profile_path"));
 
 				castList.add(castvo);
+			
 			} // end of for
 				// castVO에 저장된 값을 castList에 담는다.
+			
 
-			/*
-			 * 10번째 배우만 계속 나온다 castList.add(castvo);를 for 안에 넣으면 10번째 배우가 한번 나온다 CastVO
-			 * castvo = new CastVO();와 castList.add(castvo); 위치 수정 참고 :
-			 * https://its21c.net/248
-			 */
 
 		} catch (Exception e) {
 			System.err.println(e.toString());
