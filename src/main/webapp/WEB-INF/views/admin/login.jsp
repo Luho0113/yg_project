@@ -13,6 +13,8 @@
       referrerpolicy="no-referrer"
 />
 <link rel="stylesheet" href="${path}/resources/css/admin/login.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
+
 <title>영감 관리자 로그인 페이지</title>
 </head>
 <body>

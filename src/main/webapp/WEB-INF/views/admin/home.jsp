@@ -14,7 +14,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="${path}/resources/css/admin/home.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
     <script src="${path}/resources/js/admin/home.js"></script>
+    
     <title>영감 관리자 페이지</title>
   </head>
   <body>

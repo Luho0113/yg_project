@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="${path}/resources/css/common/page.css" />
 <link rel="stylesheet" href="${path}/resources/css/common/header.css" />
 <link rel="stylesheet" href="${path}/resources/css/common/button.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
 
 <div class="navbar">
 	<!-- 로고 부분 -->
