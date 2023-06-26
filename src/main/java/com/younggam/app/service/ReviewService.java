@@ -36,6 +36,10 @@ public class ReviewService {
       return riMapper.selectReviewInfo(riNum);
    }
    
+   public boolean deleteReviewInfo(int riNum) {
+	   return riMapper.deleteReviewInfo(riNum) == 1;
+   }
+   
    
    //작성한 리뷰 조회하기
    public List<ReviewInfoVO> selectUserReviewInfos(String uiNickname){

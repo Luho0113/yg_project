@@ -74,15 +74,13 @@ public class ReviewInfoController {
       return "redirect:/reviews";
    }
    
-   // 삭제!!!
-   @GetMapping("/movie")
-   public String goMovieInfo() {
-      return "review/movie";
-   }
-   
-   @GetMapping("/movie-search")
-   public String goMovieSearch() {
-      return "review/movie-search";
+   //글 삭제
+   @GetMapping("/review-delete")
+   public String deleteReview(@RequestParam("riNum") int riNum, Model m) {
+	   if(riServie.deleteReviewInfo(riNum)) {
+		   return "redirect:/reviews";
+	   }
+	   return "redirect:/reviews";
    }
    
 }
