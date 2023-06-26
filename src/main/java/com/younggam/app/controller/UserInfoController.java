@@ -19,12 +19,6 @@ import com.younggam.app.vo.UserInfoVO;
 public class UserInfoController {
 	//회원 관리 컨트롤러 (가입, 로그인, 로그아웃, 탈퇴)
 	
-	@GetMapping("/")
-	public String home() {
-
-		return "index";
-	}
-	
 	@Autowired
 	private UserInfoService uiService;
 	

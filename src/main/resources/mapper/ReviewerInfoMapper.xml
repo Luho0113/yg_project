@@ -13,7 +13,7 @@
 
 <select id="selectDetailReviewersInfos" resultType="com.younggam.app.vo.ReviewInfoVO"> 
 	select u.ui_nickname, u.ui_file_path,
-		   r.ri_movie_id, r.ri_content
+		   r.ri_movie_id, r.ri_content, r.ri_num
 	from user_info u, review_info r 
 	where u.ui_id = r.ui_id and ri_movie_id = #{riMovieId}
 </select>

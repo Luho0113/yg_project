@@ -50,7 +50,7 @@ public class MovieDetailService {
 
 			// for문으로 "name" 키에 맞는 값 "사람이름"을 가져와서 (JSONObject)object를 이용해서 castVO의 actor에 값을
 			// 저장한다.
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < 6; i++) {
 				CastVO castvo = new CastVO();
 				JSONObject object = castsJson.getJSONObject(i); // JSONArray를 하나씩(i) 꺼내서 JSONObject로 변경해서 object에서 Key로
 																// value를 뽑는 방식이다.
@@ -118,8 +118,7 @@ public class MovieDetailService {
 	}
 
 	// 영화 등급
-	// java.lang.NumberFormatException: For input string: "certification" 너무 마음이
-	// 아프다..
+	// java.lang.NumberFormatException: For input string: "certification" 
 
 	public List<MovieVO> getMovieCertification(String movieId) {
 		List<MovieVO> movieCertificationList = new ArrayList<>(); // detail에 MovieId를 검색한 내용

@@ -53,8 +53,11 @@
 						<div>원제 ${movieData[0].originalTitle}</div>
 						<div>연령 등급 ${movieRate[0].certification} 세</div>
 					</div>
-					<button class="button-custom btnOrange" class="review-button" type="button"
+					<div class="review-button">
+						<button class="button-custom btnOrange" type="button"
 						onclick="location.href='review-insert?search=${movieData[0].title}'">🖋평가하기</button>
+					</div>
+					
 				</div>
 			</div>
 		</article>
@@ -89,14 +92,21 @@
 				<div class="review-card">
 					<div class="review-header">
 						<div>
-							<a href="userReview?uiNickname=${reviewer.uiNickname}"> <img
-								src="${reviewer.uiFilePath}"
+							<a href="userReview?uiNickname=${reviewer.uiNickname}"> 
+							<img src="${reviewer.uiFilePath}"
 								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
-							</a>
-							<div>${reviewer.uiNickname}</div>
+								</a>
+							<div>
+							
+							${reviewer.uiNickname}</div>	
 						</div>
 					</div>
-					<div class="review-body">${reviewer.riContent}></div>
+					
+					<div class="review-body">
+					<a href="/review?riNum=${reviewer.riNum}&movieId=${movieData[0].id}">${reviewer.riContent}
+					</a>
+					</div>
+					
 					<div class="review-like">
 						<div>좋아요</div>
 						<div>댓글</div>
