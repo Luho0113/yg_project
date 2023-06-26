@@ -136,10 +136,10 @@
 				<div class="review-card">
 					<div class="review-header">
 						<div>
-							<a href="userReview?uiNickname=${review.uiNickname}"> <img
-								src="${review.uiFilePath}"
+							<a href="userReview?uiNickname=${review.uiNickname}"> 
+							<img src="${review.uiFilePath}"
 								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
-							</a>
+							</a> 
 							<div>리뷰어이름 ${review.uiNickname}</div>
 						</div>
 					</div>
@@ -170,7 +170,7 @@
 					</div>
 				</div>
 				 -->
-				<div class="review-card">
+			<!-- 	<div class="review-card">
 					<div class="review-header">
 						<div>
 							<a href="userReview?uiNickname=${_____}"> 
@@ -187,41 +187,8 @@
 						<div>댓글</div>
 					</div>
 				</div>
-				<div class="review-card">
-					<div class="review-header">
-						<div>
-							<a href="userReview?uiNickname=${_____}"> 
-							<img
-								src="${______}"
-								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
-							</a>
-							<div>리뷰어이름${______}</div>
-						</div>
-					</div>
-					<div class="review-body">내용${_______}></div>
-					<div class="review-like">
-						<div>좋아요</div>
-						<div>댓글</div>
-					</div>
-				</div>
-				<div class="review-card">
-					<div class="review-header">
-						<div>
-							<a href="userReview?uiNickname=${_____}"> 
-							<img
-								src="${______}"
-								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
-							</a>
-							<div>리뷰어이름${______}</div>
-						</div>
-					</div>
-					<div class="review-body">내용${_______}></div>
-					<div class="review-like">
-						<div>좋아요</div>
-						<div>댓글</div>
-					</div>
-				</div>
-		 	
+				-->
+			
 		</article>
 
 

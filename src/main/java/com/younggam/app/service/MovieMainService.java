@@ -3,11 +3,14 @@ package com.younggam.app.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.configurationprocessor.json.JSONArray;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Service;
 
+import com.younggam.app.mapper.ReviewerInfoMapper;
 import com.younggam.app.vo.MovieVO;
+import com.younggam.app.vo.ReviewInfoVO;
 
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
@@ -17,6 +20,9 @@ import okhttp3.Response;
 @Service
 @Slf4j
 public class MovieMainService {
+	
+	@Autowired
+	private ReviewerInfoMapper riMapper;
 
 	//현재 상영 영화
 	public List<MovieVO> getNowPlaying() {
@@ -61,5 +67,10 @@ public class MovieMainService {
 			log.error("error=>{}", e);
 		}
 		return movieList;
+	}
+	
+	//최근 리뷰어 리스트
+	public List<ReviewInfoVO> selectNewReviewersInfo(ReviewInfoVO reviews){
+		return riMapper.selectNewReviewersInfos(reviews);
 	}
 }

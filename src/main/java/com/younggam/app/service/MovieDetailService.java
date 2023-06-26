@@ -167,66 +167,6 @@ public class MovieDetailService {
 		return movieCertificationList;
 	}
 
-	// 박스오피스
-	public List<MovieVO> getNowPlaying(String s) {
-		List<MovieVO> nowPlayingList = new ArrayList<>();
 
-		try {
-
-			OkHttpClient client = new OkHttpClient();
-
-			Request request = new Request.Builder()
-					.url("https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1").get()
-					.addHeader("accept", "application/json")
-					.addHeader("Authorization",
-							"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZGE0NzZkY2EyOTk4Y2MwYWNiN2U2MzU5NjMzMDhhNSIsInN1YiI6IjY0NzM2ZTJkOTQwOGVjMDBlMTRjZGVhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rmNtSzDfgUgipyAKkyWki-Jrae8kipwRPI9ISiHdpzM")
-					.build();
-
-			Response response = client.newCall(request).execute();
-
-			JSONObject jsonObject = new JSONObject(response.body().string());
-			JSONArray jsonArray = jsonObject.getJSONArray("results");
-
-			for (int i = 0; i < jsonArray.length(); i++) {
-				JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-
-				MovieVO movieVO = new MovieVO();
-				movieVO.setTitle(jsonObject1.getString("title"));
-				movieVO.setPosterPath(jsonObject1.getString("poster_path"));
-
-				nowPlayingList.add(movieVO);
-			}
-
-//	         OkHttpClient client = new OkHttpClient();
-//
-//	         Request request = new Request.Builder()
-//	           .url("https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1")
-//	           .get()
-//	           .addHeader("accept", "application/json")
-//	           .addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZGE0NzZkY2EyOTk4Y2MwYWNiN2U2MzU5NjMzMDhhNSIsInN1YiI6IjY0NzM2ZTJkOTQwOGVjMDBlMTRjZGVhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rmNtSzDfgUgipyAKkyWki-Jrae8kipwRPI9ISiHdpzM")
-//	           .build();
-//
-//	         Response response = client.newCall(request).execute();
-//
-//	         //요청 결과를 JSON 형식으로 변경 
-//	         JSONObject jsonObject = new JSONObject(response.body().string()); //String 형식을 JSON 형식으로 변환한다.
-//	         JSONArray results = jsonObject.getJSONArray("results"); 
-//	         
-//	     
-//	         for(int i = 0; i <results.length(); i++) {
-//	            MovieVO movieVO = new MovieVO();
-//	            //JSONObject object = results.getJSONObject(i); //JSONArray를 하나씩(i) 꺼내서 JSONObject로 변경해서 object에서 Key로 value를 뽑는 방식이다.
-//	            
-//	            movieVO.setTitle(movieId);
-//	            movieVO.setPosterPath(movieId);
-//	       
-//	            nowPlayingList.add(movieVO);
-//	         }//end of for
-
-		} catch (Exception e) {
-			System.err.println(e.toString());
-		}
-		return nowPlayingList;
-	}
 
 }

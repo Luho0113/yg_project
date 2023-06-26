@@ -32,10 +32,6 @@ public class ReviewerInfoService {
 	
 	//포인트
 	
-	//최근 리뷰어 리스트
-	public List<ReviewInfoVO> selectNewReviewersInfo(ReviewInfoVO reviews){
-		return riMapper.selectNewReviewersInfos(reviews);
-	}
-	
+
 	
 }

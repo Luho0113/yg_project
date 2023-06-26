@@ -49,8 +49,8 @@
 						<h3>별점 ${star.riStar}</h3>
 					</div>
 					<div class="rt-ot-r">
-						<div>상영시간 ${movieData[0].runtime} 분</div>
-						<div>원제 ${movieData[0].originalTitle}</div>
+						<div>상영시간  ${movieData[0].runtime} 분</div>
+						<div>원제     ${movieData[0].originalTitle}</div>
 						<div>연령 등급 ${movieRate[0].certification} 세</div>
 					</div>
 					<div class="review-button">

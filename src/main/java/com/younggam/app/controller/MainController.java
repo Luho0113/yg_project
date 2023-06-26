@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 
 import com.younggam.app.service.MovieMainService;
-import com.younggam.app.service.ReviewerInfoService;
+
 import com.younggam.app.vo.ReviewInfoVO;
 
 @Controller
@@ -20,8 +20,7 @@ public class MainController {
 	@Autowired
 	private MovieMainService movieMainService;
 	
-	@Autowired
-	private ReviewerInfoService reviewerInfoService; 
+
 	
 	//현재 상영 영화/
 	@GetMapping("/")
@@ -33,9 +32,8 @@ public class MainController {
 						Model m) {
 		m.addAttribute("nowPlaying", movieMainService.getNowPlaying());
 		
-		
-		
-		List<ReviewInfoVO> newReviewList = reviewerInfoService.selectNewReviewersInfo(reviews);
+
+		List<ReviewInfoVO> newReviewList = movieMainService.selectNewReviewersInfo(reviews);
 		m.addAttribute("newReviewList",newReviewList);
 		return "index";
 	}

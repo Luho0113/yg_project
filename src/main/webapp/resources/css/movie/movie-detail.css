@@ -1,19 +1,19 @@
 @charset "UTF-8";
 
 .movie-content{
-  border: 1px solid cornflowerblue;
+
   width:100%;
 
 }
 
 .movie-info{
-  border: 5px solid red;
+ 
     text-align:center;
 }
 
 .movie-details1  {
   display: inline-block; 
-  border: 1px solid cornflowerblue;
+
     width: auto;
   height: 400px;
 
@@ -25,10 +25,16 @@
 
 .movie-details2{
 	display: inline-block; 
-	border: 3px solid cornflowerblue;
+
 	height: 400px ;
+	 width: 300px;
 	text-align:left;
 	vertical-align: top;
+}
+
+.movie-details2 h2{
+	font-size: 2em;
+	margin: 4%;
 }
 
 /*
@@ -40,24 +46,25 @@
 
 .movie-info img{
    width: 100%;
-   height: 100%;
+   height: 400px;
 
 }
 
 .rd-g-n{
 
-border: 1px solid rosybrown;
+
 
 }
 .rd-g-n div{
   display: inline-block; 
-  border: 1px solid rosybrown;
-  margin: 2%
+
+  margin: 4%;
+  font-size: 20px;
 }
 
 .star{
-margin: 2%
-
+margin: 4%;
+font-size: 20px;
 }
 
 .rt-ot-r{
@@ -65,18 +72,25 @@ margin: 2%
 }
 
 .rt-ot-r div{
-  border: 1px solid yellow;
-  margin: 2%
+
+  margin: 4%;
+  font-size: 20px;
 }
 
 .review-button{
-	border: 2px solid white;
+
+	border-radius: 15px;
+	font-size: 30px;
+	width: 150px;
+	margin: 5% 0% 5% 4%;
+
 }
 
 .button-custom{
-	width: 200px;
+	width: 150px;
 	height: 50px;	
-	
+
+
 }
 
 .overview{
@@ -87,11 +101,11 @@ margin: 2%
 }
 
 .overview h3{
-	margin: 10px 5px;
+	margin: 10px 10px;
 }
 
 .overview div{
-	margin: 5px;
+	margin: 10px;
 	word-spacing: 3px;
 }
 
@@ -104,11 +118,11 @@ border: 4px solid #FF7C00;
 }
 
 .cast-list h3{
-	margin: 10px 5px;
+	margin: 10px 10px;
 }
 
 .cast-cards{
-	border: 3px solid blue;
+
 	margin: 1% 10%;
 	 text-align: center;
 	 
@@ -116,7 +130,7 @@ border: 4px solid #FF7C00;
 .cast-card {
   display: inline-block; 
   text-align: left;
-  border: 1px solid #A8A39D;
+
   margin: 1% 2%;
   width: 28%;
 
@@ -130,10 +144,13 @@ border: 4px solid #FF7C00;
 
 
 .cast-card .cast-name{
+
 	display: inline-block; 
   vertical-align: top;
-  margin-top: 35px;
+  margin-top: 18px; 
+  margin-left:3px;
 word-break:break-all;
+width: 180px;
 
 }
 
@@ -146,25 +163,31 @@ border: 4px solid #FF7C00;
 }
 
 .review-list{
-  border: 1px solid yellow;
+
+
 }
 
 .review-card{
   display: inline-block; 
 border: 4px solid #FF7C00;
   border-radius: 15px;
-  height: 150px;
+  height: 160px;
   width: 250px;
-  margin: 0px 3px;
+  padding: 19px;
+
+  
+  
 }
 
 .review-header{
  
-  border: 1px solid gold;
+
+  margin: 5px;
 }
 
 .review-header div{
   display: inline-block; 
+  vertical-align: middle;
 }
 
 .review-header img {
@@ -174,18 +197,26 @@ border: 4px solid #FF7C00;
 }
 
 .review-body{
-  border: 1px solid firebrick;
+
   height: 60px;
    overflow: hidden;  		
   text-overflow: ellipsis;  
   white-space: nowrap; 		
   word-break:break-all;
+  margin: 2px;
+  border-top: 1px solid #A8A39D;
+  
 
 }
 
+.review-body a{
+	color: #FFFAF6;
+	margin: 5px;
+}
+
 .review-like{
-  display: inline-block; 
-  border: 1px solid teal;
+  text-align: right;
+  margin: 5px;
 }
 
 .review-like div{

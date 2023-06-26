@@ -16,7 +16,7 @@
 
 
 .movie-list {
-  border: 1px solid chartreuse;
+  
   margin-top: 3%;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .movies {
-  border: 1px solid red;
+
 
 }
 
@@ -38,18 +38,20 @@
 }
 
 .movie-box {
-  border: 1px solid cornflowerblue;
+
   display : inline-block;
   width: 18%;
   height: 20.8% ;
   margin: 0.5% 0% 0.5% 1.2%;
+  vertical-align: top;
   }
   
 
 .movie-box img {
 	width: 100%;
+height:300px;
     /* rgba(0, 0, 0, 0.2) 그림자 효과*/
-    box-shadow: 0 8px 8px 0 rgba(238, 233, 233, 0.2), 0 6px 20px 0 rgba(238, 234, 234, 0);
+    box-shadow: 0 8px 15px 0 rgba(238, 233, 233, 0.2);
 border-radius: 3%;
 }
 
@@ -57,7 +59,7 @@ border-radius: 3%;
 .movie-box a {
   display: block;
   height: 100%;
-  border: 1px solid khaki;
+ 
  color:#FFFAF6; 
 }
 
@@ -65,14 +67,14 @@ border-radius: 3%;
 .movie-box .cont-detail {
   margin: 10px 0px 20px 2px;
   font-size: 0.9rem;
-  border: 1px solid salmon;
+
   width: 98%;
 
 
 }
 
 .movie-box .title {
-  border: 1px solid yellowgreen;
+ 
   font-size: 1.05rem;
   font-style: bold;
   height: 45px;
@@ -83,10 +85,10 @@ border-radius: 3%;
   color: #ff7c00;
 }
 .movie-box .release-date {
-  border: 1px solid green;
+  
 }
 .movie-box .director {
-  border: 1px solid yellow;
+
 
 }
 
@@ -94,7 +96,7 @@ border-radius: 3%;
 
 /*리뷰어*/
 .reviewer-list {
-  border: 1px solid chartreuse;
+
   margin-top: 3%;
 }
 
@@ -109,7 +111,7 @@ border-radius: 3%;
   display: block;
 }
 .reviewers {
-  border: 1px solid red;
+
   height: 100%;
   width: 48%;
   margin: 0.5% 0.5% 0.5% 1%;
@@ -124,11 +126,13 @@ border-radius: 3%;
 }
 
 .reviewer-box {
-  border: 1px solid cornflowerblue;
+   
   width: 80%;
   height: 20%;
   margin: 1% 1% 1% 10%;
   float: left;
+  border-top: 2px solid #43403B ;
+  border-bottom: 2px solid #43403B ;
 }
 
 .reviewer-box div {
@@ -136,7 +140,7 @@ border-radius: 3%;
 }
 
 .reviewer {
-  border: 1px solid hotpink;
+ 
   width: 50%;
   height: 53px;
   float: left;
@@ -146,7 +150,7 @@ border-radius: 3%;
 .reviewer .reviewer-name a {
   display: block;
   height: 30px;
-  border: 1px solid khaki;
+  
   color: white;
  
 }
@@ -154,11 +158,11 @@ border-radius: 3%;
 .reviewer .img a {
   display: block;
   height: 50px;
-  border: 1px solid khaki;
+ 
 }
 
 .reviewer .img {
-  border: 1px solid #fffaf6;
+  
   position: absolute;
   overflow: hidden;
 }
@@ -175,7 +179,7 @@ border-radius: 3%;
 
 .reviewer .reviewer-name {
   float: right;
-  border: 1px solid #fffaf6;
+ 
   width: 120px;
   height: 30px;
   font-size: 1.2rem;
@@ -187,7 +191,7 @@ border-radius: 3%;
 
 
 .reviewer-box .review-like {
-  border: 1px solid #ff7c00;
+
   float: right;
   width: 10%;
   font-size: 1rem;
@@ -195,7 +199,7 @@ border-radius: 3%;
 }
 
 .reviewer-box .review-written {
-  border: 1px solid #ff7c00;
+
   float: right;
   width: 10%;
   font-size: 1rem;
