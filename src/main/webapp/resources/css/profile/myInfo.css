@@ -1,5 +1,16 @@
 /* 내 페이지 */
 
+
+/* 프로필 사진 */
+/* 프로필 사진 모양 */
+.profile-image{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	object-fit: cover; /*이미지 비율 조절*/
+}
+
+
 /* 수정하기 버튼 */
 .button-update {
   margin: 10px;
