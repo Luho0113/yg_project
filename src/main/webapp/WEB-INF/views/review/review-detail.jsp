@@ -79,9 +79,9 @@
 			</div>
 
 			<div class="buttonGroup" id="buttonGroup">
-				<input type="button" name="likeButton" id="likeButton" value="좋아요">
-				<input type="button" name="dislikeButton" id="dislikeButton" value="싫어요"> <input type="button" name="commentButton"
-					id="commentButton" value="댓글">
+				<button name="likeButton" id="likeButton" value="">좋아요</button>
+				<button name="dislikeButton" id="dislikeButton" value="">싫어요</button> 
+				<button name="commentButton" id="commentButton" value="">댓글</button>
 			</div>
 		</div>
 

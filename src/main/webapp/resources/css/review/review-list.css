@@ -132,7 +132,7 @@
 
 .starPointText{
 	float: right;
-    margin: 10px 0px 0px 0px;
+    margin: 5px 0px 0px 0px;
     font-size: 12px;
 	letter-spacing: 2px;
 }
@@ -157,7 +157,7 @@
 
 .riListReviewContent{
     display: inline-block;
-    width: 815px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
+    width: 805px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     min-width: 400px; /* 딱 맞기는 하는데,, 수치 계산 다시 해야함 수정 필요 */
     height: 80px;
     position: absolute; /* 부모를 기준으로 배치한다. */

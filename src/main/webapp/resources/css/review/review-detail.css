@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 .space{
-    height: 100px;
+    height: 50px;
 
 }
 
@@ -11,8 +11,6 @@
 }
 
 .movieInfo{
-
-
     height: 45px;
     padding: 0px 0px 5px 10px;
     display: inline-block;
@@ -131,7 +129,7 @@ hr{
 
 
 .riListReviewContent{
-    margin: 40px auto; 
+    margin: 40px auto 20px auto; 
     width: 90%;
     padding: 40px 60px;
 
@@ -146,11 +144,10 @@ hr{
 
 .buttonGroup{
     text-align: center;
-    text-justify: auto;
 }
 
-.buttonGroup>input{
-    width: 32%;
+.buttonGroup>button{
+    width: 388px;
     height: 70px;
 
     background-color: #43403B;
@@ -162,7 +159,7 @@ hr{
     font-family: 'NanumSquare', sans-serif;
 }
 
-.buttonGroup>input:hover{
+.buttonGroup>button:hover{
     background-color: #FF7C00;
     color: #43403B;
     cursor: pointer;
