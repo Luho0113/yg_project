@@ -31,7 +31,7 @@ public class ReviewInfoController {
    @Autowired
    private MovieDetailService movieDetailService;
    
-   //전체 글 조회
+   //전체 리뷰 조회
    @GetMapping("/reviews")
    public String getReviewList(@ModelAttribute ReviewInfoVO reviewInfo, Model m) {
       List<ReviewInfoVO> reviewList = riServie.selectReviewInfos(reviewInfo);
@@ -39,7 +39,7 @@ public class ReviewInfoController {
       return "review/review-list";
    }
    
-   //전체 글 조회 (장르별) 이름 바꾸고 싶음
+   //전체 리뷰 조회 (장르별) 이름 바꾸고 싶음
    @GetMapping("/review-sort")
    public String getReviewList(@RequestParam("genre") String genre, @ModelAttribute ReviewInfoVO reviewInfo, Model m) {
       List<ReviewInfoVO> reviewList = riServie.selectReviewInfoSortGenre(reviewInfo);
@@ -47,7 +47,7 @@ public class ReviewInfoController {
       return "review/review-list";
    }
    
-   //글 상세보기
+   //리뷰 상세보기
    @GetMapping("/review")
    public String getReview(@RequestParam("riNum") int riNum, @RequestParam("movieId") String movieId, Model m) {
       ReviewInfoVO review = riServie.selectReviewInfo(riNum);
@@ -56,14 +56,14 @@ public class ReviewInfoController {
       return "review/review-detail";
    }
    
-   //글 작성 요청(구현됨)
+   //리뷰 작성 요청(구현됨)
    @GetMapping("/review-insert")
    public String goInsertReviewInfo(@RequestParam Map<String, String> param, Model m) {
       m.addAttribute("movie", movieServiece.getMovie(param));
       return "review/review-insert";
    }
    
-   //글 작성 응답(구현됨) - return 값 수정 필요함
+   //리뷰 작성 응답(구현됨) - return 값 수정 필요함
    @PostMapping("/review-insert")
    public String insertReview(ReviewInfoVO review, Model m, HttpSession session) {
       UserInfoVO user = (UserInfoVO) session.getAttribute("user");
@@ -74,10 +74,15 @@ public class ReviewInfoController {
       return "redirect:/reviews";
    }
    
-   //글 삭제
+   //리뷰 삭제
    @GetMapping("/review-delete")
-   public String deleteReview(@RequestParam("riNum") int riNum, Model m) {
+   public String deleteReview(@RequestParam("riNum") int riNum, Model m, @ModelAttribute UserInfoVO userInfo, HttpSession session) {
+		
+	   UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user"); // 세션에 저장된 정보를 가져옴, user의 데이터타입=object
+	   userInfo.setUiId(sessionUserInfo.getUiId());
+	   
 	   if(riServie.deleteReviewInfo(riNum)) {
+		   m.addAttribute("user", userInfo);
 		   return "redirect:/reviews";
 	   }
 	   return "redirect:/reviews";

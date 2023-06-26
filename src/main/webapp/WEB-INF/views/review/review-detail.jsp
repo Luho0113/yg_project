@@ -54,8 +54,15 @@
 			</div>
 
 			<div class="buttonContainer" id="buttonContainer">
-				<button class="delete" onclick="location.href='/review-delete?riNum=${review.riNum}'">삭제</button>
-				<button class="update">수정</button>
+				<c:choose>
+					<c:when test="${user.uiId == review.uiId}">
+						<button class="delete" onclick="deleteReview(${review.riNum})">삭제</button>
+						<button class="update">수정</button>
+					</c:when>
+					<c:otherwise>
+						<button class="follow">구독</button>
+					</c:otherwise>
+				</c:choose>
 			</div>
 
 			<div class="starPoint" id="starPoint">
@@ -79,9 +86,9 @@
 			</div>
 
 			<div class="buttonGroup" id="buttonGroup">
-				<button name="likeButton" id="likeButton" value="">좋아요</button>
-				<button name="dislikeButton" id="dislikeButton" value="">싫어요</button> 
-				<button name="commentButton" id="commentButton" value="">댓글</button>
+					<button name="likeButton" id="likeButton" value="">좋아요</button>
+					<button name="dislikeButton" id="dislikeButton" value="">싫어요</button> 
+					<button name="commentButton" id="commentButton" value="">댓글</button>
 			</div>
 		</div>
 
