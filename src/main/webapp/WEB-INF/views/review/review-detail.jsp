@@ -57,7 +57,7 @@
 				<c:choose>
 					<c:when test="${user.uiId == review.uiId}">
 						<button class="delete" onclick="deleteReview(${review.riNum})">삭제</button>
-						<button class="update">수정</button>
+						<button class="update" onclick="location.href='/review-update?riNum=${review.riNum}'">수정</button>
 					</c:when>
 					<c:otherwise>
 						<button class="follow">구독</button>

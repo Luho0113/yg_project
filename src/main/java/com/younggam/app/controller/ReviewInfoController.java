@@ -74,6 +74,25 @@ public class ReviewInfoController {
       return "redirect:/reviews";
    }
    
+   //리뷰 수정 요청
+   @GetMapping("/review-update")
+   public String goUpdateReviewInfo(@RequestParam("riNum") int riNum, Model m) {
+	   ReviewInfoVO review = riServie.selectReviewInfo(riNum);
+	   m.addAttribute("review", review);
+	   m.addAttribute("movie", movieDetailService.getMovieDetail(review.getRiMovieId()));
+	   return "review/review-update";
+   }
+   
+   //리뷰 수정 응답
+   @PostMapping("/review-update")
+   public String updateReviewInfo(ReviewInfoVO review, Model m, HttpSession session) {
+	   if(riServie.updateReviewInfo(review)) {
+		   return "redirect:/reviews";
+	   }
+	   return "redirect:/reviews";
+   }
+   
+   
    //리뷰 삭제
    @GetMapping("/review-delete")
    public String deleteReview(@RequestParam("riNum") int riNum, Model m, @ModelAttribute UserInfoVO userInfo, HttpSession session) {

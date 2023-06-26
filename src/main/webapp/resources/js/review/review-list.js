@@ -1,4 +1,3 @@
-/* riListElement에서 함수 호출,,? */
 onload = function() {
 	const options = {
 		method: 'GET',

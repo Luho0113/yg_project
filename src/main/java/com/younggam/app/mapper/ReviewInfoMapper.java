@@ -18,6 +18,9 @@ public interface ReviewInfoMapper {
    //리뷰 작성
    int insertReviewInfo(ReviewInfoVO review);
    
+   //리뷰 수정
+   int updateReviewInfo(ReviewInfoVO review);
+   
    //리뷰 삭제
    int deleteReviewInfo (int riNum);
    

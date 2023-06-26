@@ -32,10 +32,22 @@ public class ReviewService {
       return false;
    }
    
+   //리류 상세
    public ReviewInfoVO selectReviewInfo (int riNum) {
       return riMapper.selectReviewInfo(riNum);
    }
    
+   //리뷰 수정
+   public boolean updateReviewInfo(ReviewInfoVO review) {
+	  int result = riMapper.updateReviewInfo(review);
+	  if(result == 1) {
+          return true;
+       }
+       return false;
+    }
+   
+   
+   //리뷰 삭제
    public boolean deleteReviewInfo(int riNum) {
 	   return riMapper.deleteReviewInfo(riNum) == 1;
    }
