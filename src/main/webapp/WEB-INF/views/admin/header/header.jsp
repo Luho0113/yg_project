@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
 
 <div class="navbar">
-	<!-- 로고 부분 -->
+	<!-- 로고 부분 -- ㅇ ㅑ 이것은 로고 부분>
 	<div class="nav-logo">
 		<a href="/"> <img alt="navlogo"
 			src="../../../resources/images/yg_logo_black.png">
