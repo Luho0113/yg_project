@@ -54,7 +54,8 @@
 			</div>
 
 			<div class="buttonContainer" id="buttonContainer">
-				<input type="button" class="follow" id="follow" value="구독">
+				<button class="delete" onclick="location.href='/review-delete?riNum=${review.riNum}'">삭제</button>
+				<button class="update">수정</button>
 			</div>
 
 			<div class="starPoint" id="starPoint">

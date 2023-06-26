@@ -78,11 +78,11 @@ hr{
 .buttonContainer{
     display: inline-block;
     position: absolute;
-    left: 75%;
+    left: 820px;
     margin-top: 30px;
 }
 
-.follow{
+.update, .delete{
     width: 70px;
     height: 30px;
 
@@ -94,7 +94,7 @@ hr{
     color: #2A2725;
 }
 
-.follow:hover{
+.update:hover, .delete:hover{
     width: 70px;
     height: 30px;
 
@@ -159,6 +159,7 @@ hr{
 
     font-size: 20px;
     color: #FFFFFF;
+    font-family: 'NanumSquare', sans-serif;
 }
 
 .buttonGroup>input:hover{
