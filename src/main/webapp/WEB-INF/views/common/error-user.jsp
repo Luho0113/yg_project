@@ -19,7 +19,7 @@
 	</script>
 <%
 	return;
-	}
+	} 
 %>
 </body>
 </html>
