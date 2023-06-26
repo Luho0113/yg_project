@@ -71,7 +71,7 @@
                            ★★★★★
                            <span>★★★★★</span>
                            <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                           <input type="hidden" name="riStar" id="riStar" value="">
+                           <input type="hidden" name="riStar" id="riStar" value="0">
                        </span>
                		</td>
             </tr>
