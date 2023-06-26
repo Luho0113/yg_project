@@ -34,7 +34,7 @@ a, a:visited {
 .content {
 	height: auto;
 	min-height: 100%;
-	padding-bottom: 50px; /* = footer 높이*/
+	padding-bottom: 100px; /* = footer 높이*/
 	width: 1200px;
 	margin-left: auto;
 	margin-right: auto;

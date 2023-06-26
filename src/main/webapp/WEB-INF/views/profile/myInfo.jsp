@@ -39,8 +39,8 @@
 			</div>
 
 			<div class="button-update">
-				<button class="button-custom btnOrange"
-					onclick="location.href='/myInfo-update'">수정하기</button>
+				<button class="button-custom btnToOrange"
+					onclick="location.href='/myInfo-update'">정보수정</button>
 			</div>
 		</div>
 

@@ -152,11 +152,6 @@
 	content: "";
 	right: 0;
 	top: 0;
-	/* box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
-    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
-    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.9),
-    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
-  transition: all 0.3s ease; */
 }
 
 .btnToOrange:before {
@@ -182,11 +177,6 @@
 	content: "";
 	left: 0;
 	bottom: 0;
-	/* box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
-    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
-    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.9),
-    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
-  transition: all 0.3s ease; */
 }
 
 .btnToOrange span:before {
@@ -236,11 +226,6 @@
 	content: "";
 	right: 0;
 	top: 0;
-	/* box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
-    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
-    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.9),
-    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
-  transition: all 0.3s ease; */
 }
 
 .btnToGray:before {
@@ -266,11 +251,6 @@
 	content: "";
 	left: 0;
 	bottom: 0;
-	/* box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.9),
-    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
-    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.9),
-    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
-  transition: all 0.3s ease; */
 }
 
 .btnToGray span:before {
@@ -290,6 +270,88 @@
 .btnToGray span:hover:after {
 	width: 100%;
 }
+
+
+
+/* 검정->주황버튼 */
+.btnFromBlack {
+	background-color: #2a2725;
+	border: 1px solid #ff7c00;
+	color: #fffaf6;
+	/* background-image: linear-gradient(315deg, #ff7c00 0%, #f17827 74%); */
+	line-height: 50px;
+	padding: 0;
+}
+
+.btnFromBlack:hover {
+	background-color: #ff7c00;
+	border: 1px solid #ff7c00;
+	color: #fffaf6;
+	/* background-image: linear-gradient(315deg, #fd8f28 0%, #ffa754 74%); */
+}
+
+.btnFromBlack span {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.btnFromBlack:before, .btnFromBlack:after {
+	position: absolute;
+	content: "";
+	right: 0;
+	top: 0;
+}
+
+.btnFromBlack:before {
+	height: 0%;
+	width: 0.1px;
+}
+
+.btnFromBlack:after {
+	width: 0%;
+	height: 0.1px;
+}
+
+.btnFromBlack:hover:before {
+	height: 100%;
+}
+
+.btnFromBlack:hover:after {
+	width: 100%;
+}
+
+.btnFromBlack span:before, .btnFromBlack span:after {
+	position: absolute;
+	content: "";
+	left: 0;
+	bottom: 0;
+}
+
+.btnFromBlack span:before {
+	width: 0.1px;
+	height: 0%;
+}
+
+.btnFromBlack span:after {
+	width: 0%;
+	height: 0.1px;
+}
+
+.btnFromBlack span:hover:before {
+	height: 100%;
+}
+
+.btnFromBlack span:hover:after {
+	width: 100%;
+}
+
+
+
+
+
+
 
 /* input 상자 */
 input {

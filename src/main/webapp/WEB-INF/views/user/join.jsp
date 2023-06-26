@@ -34,24 +34,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           action="/join"
           onsubmit="return formValidation()"
           name="join_form"
-          enctype="multipart/form-data"
         >
-          <div id="imgPreview" style="display: none">
-            <!-- 프로필 이미지 미리보기 -->
-            <img
-              src=""
-              style="border-radius: 40px"
-              width="80px"
-              height="80px"
-            />
-          </div>
-          <label for="uiFilePath">프로필 이미지 : </label>
-          <input
-            type="file"
-            name="uiFile"
-            id="uiFile"
-            onchange="imgPreview(this)"
-          />
 
           <!-- 아이디 입력 -->
           <div>
@@ -61,7 +44,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 type="text"
                 name="uiId"
                 id="uiId"
-                onkeyup="checkId(this)"
+                onkeyup="return checkId()"
                 placeholder=" 아이디"
               />
             </label>
@@ -84,7 +67,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 type="text"
                 name="uiNickname"
                 id="uiNickname"
-                onkeyup="return checkNickName()"
+                onkeyup="return checkNickname()"
                 placeholder=" 닉네임"
               />
             </label>
@@ -93,7 +76,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <span class="error-fail"> 이미 사용 중인 닉네임입니다. </span>
               </c:if>
             </div>
-            <div id="error-checkNickName">
+            <div id="error-checkNickname">
               <!-- 경고 텍스트 -->
             </div>
           </div>
@@ -159,13 +142,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
     <!-- javascript -->
     <script src="${path}/resources/js/user/formCheck.js"></script>
-    <script>
-      function imgPreview(obj) {
-        let file = obj.files[0];
-        let imgObj = document.querySelector("#imgPreview>img");
-        imgObj.src = URL.createObjectURL(file); //이미지 src의 url 생성
-        document.querySelector("#imgPreview").style.display = "";
-      }
-    </script>
+    
   </body>
 </html>

@@ -19,10 +19,7 @@
 	<jsp:include page="../common/header.jsp"></jsp:include>
 
 	<div class="content">
-		<h3>프로필 수정</h3>
-
-
-
+		<h3>프로필 관리</h3>
 		<!-- 수정 영역 -->
 
 		<!-- 프로필 사진 변경-->
@@ -59,18 +56,21 @@
 			</div>
 
 		</div>
-
+		
+		
 
 		<div class="form-all-wrap">
-			<!-- 아이디 -->
-			<div>
-				<p>아이디 : ${user.uiId}</p>
+			<!-- 기존 닉네임과 이이디 -->
+			<div class="myInfo">
+				<h4>${user.uiNickname}</h4>
+				<p>@${user.uiId}</p>
 			</div>
-
+			
 			<!-- 닉네임 변경하기 -->
 			<div class="form-nickname-wrap">
-				<!-- 기존 닉네임 -->
-				<p>닉네임 : ${user.uiNickname}</p>
+				<h5>
+					별명 관리
+				</h5>
 				<div class="form-nickname">
 					<form method="POST" action="/myInfo-updateN" name="update_form"
 						onsubmit="return updateNickname()">
@@ -95,9 +95,10 @@
 			<!-- 비밀번호 변경하기 -->
 			<div class="form-password-wrap">
 				<!-- 기존비밀번호 -->
-				<div>
-					<p>기존 비밀번호 : ${user.uiPassword}</p>
-				</div>
+				<h5>
+					비밀번호 관리
+				</h5>
+				<!-- 기존 비밀번호 : ${user.uiPassword} -->
 				<div class="form-password">
 					<form method="POST" action="/myInfo-updateP" name="update_form"
 						onsubmit="return updatePassword()">
@@ -130,6 +131,9 @@
 
 			<!-- 이메일 변경하기 -->
 			<div class="form-email-wrap">
+				<h5>
+					이메일 관리
+				</h5>
 				<div class="form-email">
 					<form method="POST" action="/myInfo-updateE" name="update_form"
 						onsubmit="return updateEmail()">
@@ -153,11 +157,11 @@
 
 		<div class="button-etc-wrap">
 			<div class="button-back">
-				<button class="button-custom btnOrange" type="button"
+				<button class="button-custom btnFromBlack" type="button"
 					onclick="history.back();">취소</button>
 			</div>
 			<div class="button-delete">
-				<button class="button-custom btnToOrange" onclick="deleteCheck()">
+				<button class="button-custom btnFromBlack" onclick="deleteCheck()">
 					탈퇴하기</button>
 			</div>
 		</div>

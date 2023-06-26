@@ -1,5 +1,41 @@
 /* 내 페이지 */
 
+h3{
+	text-align: center;
+	margin: 20px;
+}
+
+.myInfo-all-wrap{
+	display: block;
+	margin: 40px;
+}
+.myInfo-img-wrap{
+	display: inline-block;
+	
+}
+.myInfo-content{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 30px;
+}
+.button-update{
+	display: inline-block;
+	vertical-align: top;
+	float: right;
+}
+
+
+
+/*내 정보*/
+.myInfo-content > h4{
+	font-size: 30px;
+	color: #ff7c00;
+}
+.myInfo-content > p {
+	margin: 5px;
+}
+
+
 
 /* 프로필 사진 */
 /* 프로필 사진 모양 */
@@ -13,11 +49,11 @@
 
 /* 수정하기 버튼 */
 .button-update {
-  margin: 10px;
+  margin: 0 10px;
 }
 
 .button-custom {
-  width: 250px;
+  width: 120px;
   height: 50px;
 }
 
@@ -38,8 +74,8 @@
 .tab-menu .tab-list li {
   /* float: left; */
   display: inline-block;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 30px;
+  margin-left: 30px;
   padding: 20px;
 }
 

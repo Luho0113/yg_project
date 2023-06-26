@@ -1,5 +1,14 @@
 /* 프로필 수정 페이지 */
 
+h3 {
+	text-align: center;
+	margin: 20px;
+}
+
+h5{
+	font-size: 20px;
+	margin: 10px 0 5px 10px;
+}
 
 .button-custom {
 	width: 100px;
@@ -11,11 +20,20 @@
 	font-size: 14px;
 }
 
-h3 {
-	text-align: center;
-	margin: 10px;
+.myInfo{
+	display: block;
+	vertical-align: top;
+	margin-left: 10px;
+	margin-bottom: 20px;
 }
 
+.myInfo>h4{
+	font-size: 30px;
+	color: #ff7c00;
+}
+.myInfo>p{
+	margin: 5px;
+}
 /* 프로필 사진 모양 */
 .profile-image {
 	width: 200px;
@@ -58,7 +76,9 @@ h3 {
 .form-img-wrap {
 	display: inline-block;
 	text-align: center;
-	margin: 40px;
+	margin-left: 10%;
+	margin-right: 5%;
+	vertical-align: top;
 }
 
 .form-img {
@@ -97,6 +117,7 @@ h3 {
 /* 프로필 이미지 수정 부분을 제외한 다른 영역 */
 .form-all-wrap {
 	display: inline-block;
+	vertical-align: top;
 }
 
 /* 닉네임 변경하기 */
@@ -156,8 +177,9 @@ h3 {
 /* 기타 다른 버튼 */
 .button-etc-wrap {
 	display: block;
-	text-align: center;
+	
 	margin: 20px;
+	margin-left: 390px;
 }
 /* 뒤로가기 버튼 */
 .button-back {
@@ -166,4 +188,5 @@ h3 {
 /* 탈퇴하기 버튼 */
 .button-delete {
 	display: inline-block;
+	margin-left: 5px;
 }

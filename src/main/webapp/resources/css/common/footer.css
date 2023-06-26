@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 .footer {
-  height: 50px;
+  height: 100px;
   position: relative;
-  transform: translateY(-100%); 
+  transform: translateY(-0%); 
   width: 100%;
   background-color: #ff7c00;
 }

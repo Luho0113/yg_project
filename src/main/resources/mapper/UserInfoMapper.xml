@@ -6,8 +6,8 @@
 	
 	<!-- 회원 가입 -->
 	<insert id="insertUserInfo">
-		INSERT INTO user_info(ui_id, ui_nickname, ui_password, ui_file_path, ui_email)
-		VALUES(#{uiId}, #{uiNickname}, #{uiPassword}, #{uiFilePath}, #{uiEmail})
+		INSERT INTO user_info(ui_id, ui_nickname, ui_password, ui_email)
+		VALUES(#{uiId}, #{uiNickname}, #{uiPassword}, #{uiEmail})
 	</insert>
 	
 	<!-- 아이디 중복 조회 + 회원 정보 상세 -->
