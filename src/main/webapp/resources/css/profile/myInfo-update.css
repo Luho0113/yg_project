@@ -1,48 +1,54 @@
 /* 프로필 수정 페이지 */
-
 .button-custom {
-  width: 100px;
-  height: 50px;
+	width: 100px;
+	height: 50px;
 }
 
 .update-error-text {
-  color: #ff7c00;
-  font-size: 14px;
+	color: #ff7c00;
+	font-size: 14px;
 }
 
-h3{
+h3 {
 	text-align: center;
 	margin: 10px;
 }
 
 /* 프로필 사진 모양 */
-.profile-image{
+.profile-image {
 	width: 200px;
 	height: 200px;
 	border-radius: 100px;
 	object-fit: cover; /*이미지 비율 조절*/
 	transition: .3s ease;
+	overflow: hidden;
 }
+
 .profile-image:hover{
-	transition: .3s ease;
 	filter: brightness(0.5);
-	
+	transition: .3s ease;
 }
-.profile-image:hover>.hover-text{
+
+.profile-image:hover + .hover-text {
+	transition: .3s ease;
 	visibility: visible;
 }
 
+
+
 .hover-text {
- position: relative;
-  top: -100px;
-  left: 0px;
-  color: #fff;
-  z-index: 20;
-  font-size: 20px;
-  visibility: hidden;
+	position: relative;
+	top: -110px;
+	left: 0px;
+	color: #fff;
+	opacity:0.8;
+	z-index: 20;
+	font-size: 16px;
+	pointer-events: none;
+	visibility: hidden;
 }
 
-.content{
+.content {
 	display: block;
 }
 
@@ -52,113 +58,110 @@ h3{
 	text-align: center;
 	margin: 40px;
 }
-.form-img{
+
+.form-img {
 	display: block;
 }
 
 /* 프로필 사진 선택 및 이미지 미리보기 부분 */
-.img-choose{
+.img-choose {
 	display: block;
 }
 
 /* 이미지 input 박스 (숨김처리) */
-.img-input{
+.img-input {
 	display: none;
 }
-.button-img-update{
+
+
+.button-img-update {
 	display: block;
 	margin: 10px;
 	text-align: center;
 }
 
-
 /* input box 숨기기 */
-#uiFile{
+#uiFile {
 	/* visibility: hidden; */
 	display: none;
-	margin : 0px;
+	margin: 0px;
 }
-.form-img-wrap label{
+
+.form-img-wrap label {
 	cursor: pointer;
 	display: inline-block;
 }
 
-
-
-
-
-
 /* 프로필 이미지 수정 부분을 제외한 다른 영역 */
-.form-all-wrap{
+.form-all-wrap {
 	display: inline-block;
 }
 
 /* 닉네임 변경하기 */
 .form-nickname-wrap {
-  display: block;
-  
+	display: block;
 }
 
 .form-nickname {
-  display: inline-block;
+	display: inline-block;
 }
 
 .button-nickname-update {
-  display: inline-block;
+	display: inline-block;
 }
 
 .form-nickname-wrap span {
-  color: #ff7c00;
-  font-size: 14px;
+	color: #ff7c00;
+	font-size: 14px;
 }
 
 /* 비밀번호 변경하기 */
 .form-password-wrap {
-  display: block;
-  
+	display: block;
 }
 
 .form-password {
-  display: inline-block;
+	display: inline-block;
 }
+
 .button-pwd-update {
-  display: inline-block;
+	display: inline-block;
 }
 
 .form-password-wrap span {
-  color: #ff7c00;
-  font-size: 14px;
+	color: #ff7c00;
+	font-size: 14px;
 }
 
 /* 이메일 변경하기 */
 .form-email-wrap {
-  display: block;
-  
+	display: block;
 }
+
 .form-email {
-  display: inline-block;
+	display: inline-block;
 }
+
 .button-email-update {
-  display: inline-block;
+	display: inline-block;
 }
 
 .form-email-wrap span {
-  color: #ff7c00;
-  font-size: 14px;
+	color: #ff7c00;
+	font-size: 14px;
 }
-
 
 /* 기타 다른 버튼 */
-.button-etc-wrap{
+.button-etc-wrap {
 	display: block;
-  text-align: center;
-  margin: 20px;
+	text-align: center;
+	margin: 20px;
 }
 /* 뒤로가기 버튼 */
-.button-back{
+.button-back {
 	display: inline-block;
 }
 /* 탈퇴하기 버튼 */
-.button-delete{
+.button-delete {
 	display: inline-block;
 }

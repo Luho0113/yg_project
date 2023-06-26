@@ -11,6 +11,7 @@
 html {
 	background-color: #2a2725;
 	color: #fffaf6;
+	font-family: 'NanumSquare', sans-serif; /* 페이지 전체 폰트 스타일 */
 }
 
 body {

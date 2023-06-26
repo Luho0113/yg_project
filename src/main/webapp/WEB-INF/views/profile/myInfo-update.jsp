@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/WEB-INF/views/common/error-user.jsp" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
@@ -33,11 +34,16 @@
 						<label for="uiFile"> 
 							<!-- 기존 프로필 이미지  --> 
 							<img id="profileImg" src="${user.uiFilePath}" class="profile-image" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
-							<p class="hover-text">업로드</p> 
+							<div class="hover-text">
+								사진 선택
+							</div> 
 							<!-- 선택한 프로필 사진 미리보기 -->
 							<div id="imgPreview" style="display: none">
 								<!-- 프로필 이미지 미리보기 -->
 								<img src="" class="profile-image" />
+								<div class="hover-text">
+									사진 선택
+								</div>  
 							</div>
 							
 						</label>
