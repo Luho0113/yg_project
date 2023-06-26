@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file = "/WEB-INF/views/common/error-admin.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,7 +49,7 @@
 					<td>${notice.niCnt}</td>
 					<td><button class="noticeUpdate"
 							onclick="location.href='/admin/notice-update?niNum=${notice.niNum}'">수정</button>
-						<button class="noticeDelete" onclick="deleteCheck()">삭제</button></td>
+						<button class="noticeDelete" onclick="location.href='/admin/notice-delete?niNum=${notice.niNum}'; deleteCheck()">삭제</button></td>	
 				</tr>
 			</c:forEach>
 		</table>

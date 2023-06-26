@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file = "/WEB-INF/views/common/error-admin.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +55,7 @@
       <td>${report.uiNickname}</td>
       <td>${report.piCredat}</td>
       <td><button class="reportUpdate" onclick="location.href='/admin/report-update?piNum=${report.piNum}'">수정</button>
-      <button class="reportDelete" onclick="location.href='/admin/report-delete?piNum=${report.piNum}'; deleteCheck(); ">삭제</button></td>
+      <button class="reportDelete" onclick="location.href='/admin/report-delete?piNum=${report.piNum}'; deleteCheck();">삭제</button></td>
     </tr>
     </c:forEach>
 </table>
