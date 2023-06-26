@@ -6,7 +6,7 @@ function checkNull() {
 		return false;
 	}
 	let riStar = document.querySelector("#riStar");
-	if (riStar.value == '' || riStar.value == 0) {
+	if (riStar.value == '') {
 		alert('별점을 입력해주세요.');
 		return false;
 	}

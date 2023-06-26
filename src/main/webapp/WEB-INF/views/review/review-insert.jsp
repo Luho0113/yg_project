@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>리뷰 작성 페이지</title>
+<title>영감</title>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
 <link rel="stylesheet" href="${path}/resources/css/review/review-insert-star.css">
 <link rel="stylesheet" href="${path}/resources/css/review/review-insert.css">
@@ -69,7 +69,7 @@
                            ★★★★★
                            <span>★★★★★</span>
                            <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                           <input type="hidden" name="riStar" id="riStar" value="">
+                           <input type="hidden" name="riStar" id="riStar" value="0">
                        </span>
                		</td>
             </tr>
