@@ -21,6 +21,25 @@ h3{
 	height: 200px;
 	border-radius: 100px;
 	object-fit: cover; /*이미지 비율 조절*/
+	transition: .3s ease;
+}
+.profile-image:hover{
+	transition: .3s ease;
+	filter: brightness(0.5);
+	
+}
+.profile-image:hover>.hover-text{
+	visibility: visible;
+}
+
+.hover-text {
+ position: relative;
+  top: -100px;
+  left: 0px;
+  color: #fff;
+  z-index: 20;
+  font-size: 20px;
+  visibility: hidden;
 }
 
 .content{
@@ -33,12 +52,43 @@ h3{
 	text-align: center;
 	margin: 40px;
 }
+.form-img{
+	display: block;
+}
 
+/* 프로필 사진 선택 및 이미지 미리보기 부분 */
+.img-choose{
+	display: block;
+}
+
+/* 이미지 input 박스 (숨김처리) */
+.img-input{
+	display: none;
+}
 .button-img-update{
+	display: block;
 	margin: 10px;
+	text-align: center;
 }
 
 
+/* input box 숨기기 */
+#uiFile{
+	/* visibility: hidden; */
+	display: none;
+	margin : 0px;
+}
+.form-img-wrap label{
+	cursor: pointer;
+	display: inline-block;
+}
+
+
+
+
+
+
+/* 프로필 이미지 수정 부분을 제외한 다른 영역 */
 .form-all-wrap{
 	display: inline-block;
 }

@@ -25,9 +25,7 @@
 		<h3>내 프로필</h3>
 
 		<div>
-			<img src="${user.uiFilePath}" style="border-radius: 100px"
-				width="200px" height="200px"
-				onerror="this.src='https://ifh.cc/g/cDROLZ.png';" />
+			<img src="${user.uiFilePath}" class="profile-image" onerror="this.src='https://ifh.cc/g/cDROLZ.png';" />
 		</div>
 		<div>
 			닉네임 : ${user.uiNickname} <br /> 아이디 : ${user.uiId} <br /> 포인트 :

@@ -26,26 +26,37 @@
 
 		<!-- 프로필 사진 변경-->
 		<div class="form-img-wrap">
-			<form method="POST" action="/myInfo-update" name="update_form"
-				enctype="multipart/form-data">
-				<div>
-					<!-- 기존 프로필 이미지  -->
-					<img id="profileImg" src="${user.uiFilePath}" class="profile-image"
-						onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
-					<!-- 선택한 프로필 사진 미리보기 -->
-					<div id="imgPreview" style="display: none">
-						<!-- 프로필 이미지 미리보기 -->
-						<img src="" class="profile-image" />
+			<div class="form-img">
+				<form method="POST" action="/myInfo-update" name="update_form"
+					enctype="multipart/form-data">
+					<div class="img-choose">
+						<label for="uiFile"> 
+							<!-- 기존 프로필 이미지  --> 
+							<img id="profileImg" src="${user.uiFilePath}" class="profile-image" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+							<p class="hover-text">업로드</p> 
+							<!-- 선택한 프로필 사진 미리보기 -->
+							<div id="imgPreview" style="display: none">
+								<!-- 프로필 이미지 미리보기 -->
+								<img src="" class="profile-image" />
+							</div>
+							
+						</label>
 					</div>
-				</div>
-				<label for="uiFilePath"> <input type="file" name="uiFile"
-					id="uiFile" onchange="imgPreview(this)" value="${user.uiFile}" />
-				</label>
+					<!-- <div>
+					<label for="uiFile"> 
+						파일선택
+					</label>
+				</div>  -->
+					<div class="img-input">
+						<input type="file" name="uiFile" id="uiFile"
+						onchange="imgPreview(this)" value="${user.uiFile}" />
+					</div>
+					<div class="button-img-update">
+						<button class="button-custom btnToOrange">변경</button>
+					</div>
+				</form>
+			</div>
 
-				<div class="button-img-update">
-					<button class="button-custom btnToOrange">업로드</button>
-				</div>
-			</form>
 		</div>
 
 
