@@ -11,7 +11,7 @@ public class NoticeBoardVO {
 	private String niContent;
 	private String niFilePath;
 	private String niCredat;
-	private int niCnt;
+	private int niCnt; //조회수
 	private String adminId;
 	private String adminNickName;
 	private MultipartFile niFile;

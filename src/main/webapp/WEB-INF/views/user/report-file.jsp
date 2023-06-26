@@ -5,14 +5,21 @@
 <head>
 <meta charset="UTF-8">
 <title>신고 등록</title>
+<link rel="stylesheet" href="${path}/resources/css/common/header.css">
+<link rel="stylesheet" href="${path}/resources/css/common/footer.css">
+<link rel="stylesheet" href="${path}/resources/css/common/page.css">
+<link rel="stylesheet" href="${path}/resources/css/admin/report-file.css">
 </head>
 <body>
+	<!-- header area -->
+	<jsp:include page="../common/header.jsp"></jsp:include>
 <script>
 function uploadImg(obj){
 	   let file = obj.files[0];
 	   document.querySelector('#img_div>img').src = URL.createObjectURL(file);
 	   document.querySelector('#img_div').style.display='';
 	}
+/* 신고 작성 체크 */
 function writeCheck(){
 	const piTitle = document.getElementById('piTitle');
 	const piCategory = document.getElementById('piCategory');
@@ -28,15 +35,22 @@ function writeCheck(){
 		piContent.focus();
 		return false;
 	}
-	if(document.data.piCategory[0].checked==false&&
-	   document.data.piCategory[1].checked==false&&
-	   document.data.piCategory[2].checked==false&&
-	   document.data.piCategory[3].checked==false){
-	   alert("분류를 체크해주세요.");
-	   return false;	
+	flag=false;
+	for(i=0; i<fileForm.piCategory.length; i++){
+		if(fileForm.piCategory[i].checked){
+			flag=true;
+		}
+	}
+	if(flag==false){
+		alert("분류를 1개 이상 선택해주세요.")
+		return false;
+	}
+	  return true;
 }
+	
 </script>
-	<form method="POST" action="/report-file" enctype="multipart/form-data">
+<div class="content reportFile-area">
+	<form method="POST" action="/report-file" id="fileForm" enctype="multipart/form-data" onsubmit="return writeCheck()">
 	<h2>신고 등록</h2>
 	<h5>** 신고 게시판의 모든 글은 비밀글로 등록됩니다. **</h5>
 	
@@ -54,10 +68,13 @@ function writeCheck(){
 	<input type="file" id="piFilePath" name="piFile" onchange="uploadImg(this)"><br>
 	
 	<label for="piContent">내용</label>
-	<textarea rows="10" cols="80" id="piContent" name="piContent"></textarea><br>
+	<textarea rows="10" cols="80" id="piContent" name="piContent" placeholder="신고할 해당 유저의 아이디를 내용에 함께 적어주세요."></textarea><br>
 
-	<button>신고 등록</button>
-	<input type="reset" value="다시 작성">
+	<button class="fileBtn">신고 등록</button>
+	<input type="reset" class="resetBtn" value="다시 작성">
 	</form>
+	</div>
+<!-- footer area -->
+<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>

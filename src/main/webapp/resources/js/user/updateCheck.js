@@ -23,7 +23,7 @@ const uiNicknameSame = document.querySelector("#uiNicknameSame");
 //수정 유효성 검사
 //필수 입력값이 비어있으면 제출 X
 function updateValidation() {
-  join_form.submit(); /* 수정이 성공하면 submit 실행 */
+  update_form.submit(); /* 수정이 성공하면 submit 실행 */
 
   /* location.href = '/myInfo'; */
   return true;
@@ -35,7 +35,8 @@ function updateNickname() {
   //닉네임 확인
   if (uiNickname.value.trim() == "") {
     uiNickname.focus();
-    document.getElementById("error-checkNickName").innerHTML = '<span style="color:red;"> 닉네임을 입력해주세요.</span>';
+    document.getElementById("error-checkNickName").innerHTML =
+      '<span"> 닉네임을 입력해주세요.</span>';
     update_form.addEventListener("submit", onUpdateSubmit);
     return false;
   } else if (!checkNickName()) {
@@ -51,7 +52,8 @@ function updatePassword() {
   //비밀번호
   if (uiPassword.value.trim() == "") {
     uiPassword.focus();
-    document.getElementById("error-checkPwd").innerHTML = '<span style="color:red;"> 새 비밀번호를 입력해주세요.</span>';
+    document.getElementById("error-checkPwd").innerHTML =
+      '<span"> 새 비밀번호를 입력해주세요.</span>';
     update_form.addEventListener("submit", onUpdateSubmit);
     return false;
   } else if (!checkPwd()) {
@@ -63,7 +65,8 @@ function updatePassword() {
   //비밀번호 확인
   if (uiPasswordSame.value.trim() == "") {
     uiPasswordSame.focus();
-    document.getElementById("error-checkPwdSame").innerHTML = '<span style="color:red;"> 비밀번호를 한 번 더 확인해주세요.</span>';
+    document.getElementById("error-checkPwdSame").innerHTML =
+      "<span> 비밀번호를 한 번 더 확인해주세요.</span>";
     update_form.addEventListener("submit", onUpdateSubmit);
     return false;
   } else if (!checkPwdSame()) {
@@ -71,6 +74,7 @@ function updatePassword() {
     update_form.addEventListener("submit", onUpdateSubmit);
     return false;
   }
+  return true;
 }
 
 //이메일 변경
@@ -78,7 +82,8 @@ function updateEmail() {
   //이메일 확인
   if (uiEmail.value.trim() == "") {
     uiEmail.focus();
-    document.getElementById("error-checkEmail").innerHTML = '<span style="color:red;"> 이메일을 입력해주세요.</span>';
+    document.getElementById("error-checkEmail").innerHTML =
+      "<span> 이메일을 입력해주세요.</span>";
     update_form.addEventListener("submit", onUpdateSubmit);
     return false;
   } else if (!checkEmail) {
@@ -86,6 +91,7 @@ function updateEmail() {
     update_form.addEventListener("submit", onUpdateSubmit);
     return false;
   }
+  return true;
 }
 
 //메소드 목록
@@ -93,12 +99,13 @@ function updateEmail() {
 function checkPwd() {
   if (!REG_ID.test(uiPassword.value)) {
     document.getElementById("error-checkPwd").innerHTML =
-      '<span style="color:red;"> 8글자 이상의 영문자, 숫자, 특수기호(!@#*%_)를 포함해주세요.</span>';
+      "<span> 8글자 이상의 영문자, 숫자, 특수기호(!@#*%_)를 포함해주세요.</span>";
     uiPassword.focus();
     return false;
   } else if (uiPassword.value.length > 20) {
     uiPassword.focus();
-    document.getElementById("error-checkPwd").innerHTML = '<span style="color:red;"> 20자 이내로 입력해주세요.</span>';
+    document.getElementById("error-checkPwd").innerHTML =
+      "<span> 20자 이내로 입력해주세요.</span>";
     return false;
   } else {
     document.getElementById("error-checkPwd").innerHTML = "";
@@ -109,7 +116,8 @@ function checkPwd() {
 function checkPwdSame() {
   if (uiPassword.value != uiPasswordSame.value) {
     uiPasswordSame.focus();
-    document.getElementById("error-checkPwdSame").innerHTML = '<span style="color:red;"> 비밀번호 확인이 올바르지 않습니다. </span>';
+    document.getElementById("error-checkPwdSame").innerHTML =
+      "<span> 비밀번호 확인이 올바르지 않습니다. </span>";
     return false;
   } else {
     document.getElementById("error-checkPwdSame").innerHTML = "";
@@ -121,12 +129,14 @@ function checkPwdSame() {
 function checkNickName() {
   if (uiNickname.value.length > 16) {
     uiNickname.focus();
-    document.getElementById("error-checkNickName").innerHTML = '<span style="color:red;"> 16자 이내로 입력해주세요.</span>';
+    document.getElementById("error-checkNickName").innerHTML =
+      "<span> 16자 이내로 입력해주세요.</span>";
     return false;
   }
   if (!REG_NICKNAME.test(uiNickname.value)) {
     uiNickname.focus();
-    document.getElementById("error-checkNickName").innerHTML = '<span style="color:red;">2글자 이상의 한글, 영문자, 숫자만 사용가능합니다.</span>';
+    document.getElementById("error-checkNickName").innerHTML =
+      "<span>2글자 이상의 한글, 영문자, 숫자만 사용가능합니다.</span>";
     return false;
   } else {
     document.getElementById("error-checkNickName").innerHTML = "";
@@ -139,7 +149,8 @@ function checkNickName() {
 function checkEmail() {
   if (!REG_EMAIL.test(uiEmail.value)) {
     uiEmail.focus();
-    document.getElementById("error-checkEmail").innerHTML = '<span style="color:red;">이메일이 올바르지 않습니다.</span>';
+    document.getElementById("error-checkEmail").innerHTML =
+      "<span>이메일이 올바르지 않습니다.</span>";
     return false;
   } else {
     document.getElementById("error-checkEmail").innerHTML = "";

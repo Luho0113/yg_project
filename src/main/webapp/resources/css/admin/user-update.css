@@ -1,0 +1,32 @@
+@charset "UTF-8";
+.updateUser-area{
+    padding: 50px;
+}
+h2{
+    margin-bottom: 20px;
+}
+input[type="text"]{
+    padding: .4em .4em;
+}
+#uiId, #uiNickname, #uiPassword, #uiFilePath, #uiEmail,
+#uiReviewPoint, #uiActive, #uiReportCnt{
+    margin: .6em .6em;
+    border: 1px solid #FF7C00;
+}
+#uiReviewPoint{
+    width: 70px;    
+}
+#uiActive, #uiReportCnt{
+    width: 30px;
+}
+.updateBtn, .resetBtn{
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 0.5rem 0.5rem;
+    color: #FFFAF6;
+    background-color: #43403B;
+}
+.updateBtn{
+    margin-right: 5px;
+}
+

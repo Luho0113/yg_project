@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,13 +31,28 @@
 			<c:forEach items="${movie}" var="movie">
 				<li class="movie-box">
 					<div>
-						<a href="detail?movieId=${movie.id}&riMovieId=${movie.id}"><img id="poster" src="https://image.tmdb.org/t/p/w300${movie.posterPath}" alt="영화포스터"></a>
+						<a href="detail?movieId=${movie.id}&riMovieId=${movie.id}">
+						<img id="poster" src="https://image.tmdb.org/t/p/w300${movie.posterPath}" alt="영화포스터"  onerror="this.src='https://ifh.cc/g/zNb0Wd.jpg';">
+						</a>
 						<div class="cont-detail">
 							<div class="title">
 								<a href="detail?movieId=${movie.id}">${movie.title}</a>
 							</div>
-							<div class="release-date">${movie.releaseDate}</div>
-							<div class="director">${movie.directors}</div>
+
+	<c:set var = "string1" value = "${movie.releaseDate}"/>
+      <c:set var = "string2" value = "${fn:substring(string1, 0, 4)}" />
+							<div class="release-date">${string2}</div>
+							
+						
+
+
+     <c:set var="str1" value="${movie.directors}"/>
+       <c:set var="str2" value="${fn:replace(str1, '[', '')}"/> 
+<c:set var="str3" value="${fn:replace(str2, ']', '')}"/> 
+
+
+
+							<div class="director">${str3}</div>
 						</div>
 					</div>
 				</li>
@@ -48,18 +66,17 @@
 
 
 			<c:choose>
+			
 				<c:when test="${empty param.search}">
 					<p>검색 고고</p>
 				</c:when>
+				
 				<c:when test="${empty movie}">
 					<p>앗! 찾으시는 영화가 없네요 :(</p>
 				</c:when>
 
-				<c:otherwise>
-
-
-					
-				</c:otherwise>
+				<c:otherwise> </c:otherwise>
+				
 			</c:choose>
 
 
@@ -92,6 +109,9 @@
     </div>
     </c:forEach>
     
+    <c:if test="${empty reviewerList}">
+    <p>찾으시는 리뷰어가 없어요 :(</p>
+    </c:if>
     
    </div>
     

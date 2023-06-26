@@ -27,7 +27,7 @@ h3 {
   text-align: center;
 }
 
-.error-massage {
+.error_message-wrap span {
   color: #ff7c00;
 }
 
@@ -38,5 +38,14 @@ h3 {
 /* 가입 안내 메세지 */
 .to-join {
   text-align: center;
+}
+
+.to-join a {
+  color: #fffaf6;
+  transition: all 0.3s ease;
+}
+
+.to-join a:hover {
+  transition: all 0.3s ease;
   color: #ff7c00;
 }

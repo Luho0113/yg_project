@@ -17,6 +17,9 @@ input[type="text"], textarea{
 #niNum, #niCnt{
     width: 30px;
 }
+#niNum{
+    text-align: center;
+}
 #niNum, #niCredat, #niCnt, #niTitle, #niFilePath, #niContent{
     margin: .6em .6em;
     border: 1px solid #FF7C00;

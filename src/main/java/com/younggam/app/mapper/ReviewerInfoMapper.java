@@ -14,7 +14,7 @@ public interface ReviewerInfoMapper {
 	List<ReviewInfoVO> selectDetailReviewersInfos(String riMovieId);
 	
 	//별점 출력
-	ReviewInfoVO selectStarInfos(String riStar);
+	ReviewInfoVO selectStarInfos(String riMovieId);
 	
 	//포인트 출력
 	

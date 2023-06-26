@@ -1,0 +1,26 @@
+/* 회원 가입 */
+
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* input */
+.login-form {
+  text-align: center;
+}
+
+.login-form span {
+  color: #ff7c00;
+  font-size: 14px;
+}
+
+/* 가입하기 버튼 */
+.button-join {
+  margin: 10px;
+}
+
+.button-custom {
+  width: 250px;
+  height: 50px;
+}

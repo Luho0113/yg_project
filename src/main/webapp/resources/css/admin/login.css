@@ -1,0 +1,70 @@
+@charset "UTF-8";
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+h2 {
+    margin-top: 200px;
+    color:#FF7C00;
+    text-align: center;
+  }
+body {
+    background: #2a2725;
+    font-family: 'Roboto', sans-serif;
+    
+  }
+  form {
+    position:relative;
+    margin: 50px auto;
+    width: 380px;
+    height: auto;
+  }
+input {
+    padding: 16px;
+    border-radius:7px;
+    border:0px;
+    background: #43403B;
+    display: block;
+    margin: 15px;
+    width: 300px;  
+    color:#FFFAF6;
+    font-size:18px;
+    height: 54px;
+  }
+input:focus {
+    outline-color: #2a2725;
+    background: #FFFAF6;
+    color: #FF7C00;
+  }
+button {
+    float:right;
+    height: 121px;
+    width: 50px;
+    border: 0px;
+    background: #FF7C00;
+    border-radius:7px;
+    padding: 10px;
+    color: #FFFAF6;
+    font-size:22px;
+  }
+.admin-icon {
+    position:absolute;
+    top:68px;
+    right: 80px;
+    color:#FF7C00;
+  }
+.keyPass-icon {
+    position:absolute;
+    top:136px;
+    right: 80px;
+    color: #FF7C00;
+  }
+input::-webkit-input-placeholder {
+    color: #FFFAF6;
+  }
+input:focus::-webkit-input-placeholder {
+    color: #FF7C00;
+  }

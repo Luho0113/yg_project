@@ -4,31 +4,39 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.younggam.app.mapper.ReviewInfoMapper">
 
-	<select id="selectReviewInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
-		select r.ri_num, r.ri_content, r.ri_credate, r.ri_star, r.ri_like_cnt, r.ri_update_date, r.ri_movie_id, r.ri_spoil, u.ui_id, u.ui_nickname, u.ui_file_path
-		from review_info r, user_info u
-		where r.ui_id = u.ui_id
-		order by r.ri_credate desc
-	</select>
-	
-	<select id="selectReviewInfo" resultType="com.younggam.app.vo.ReviewInfoVO">
-		select r.*, u.* 
-		from review_info r, user_info u
-		where r.ui_id = u.ui_id and ri_num = #{riNum}
-	</select>
-	
-	<insert id="insertReviewInfo">
-		insert into review_info(ri_content, ui_id, ri_movie_id, ri_star, ri_direction_point, ri_acting_point, ri_story_point, ri_visual_point, ri_ost_point, ri_genre, ri_spoil) 
-		values (#{riContent}, #{uiId}, #{riMovieId}, #{riStar}, #{riDirectionPoint}, #{riActingPoint}, #{riStoryPoint}, #{riVisualPoint}, #{riOstPoint}, #{riGenre}, #{riSpoil})
-	</insert>
+   <select id="selectReviewInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
+      select u.ui_id, u.ui_nickname, u.ui_file_path, u.ui_review_point, u.ui_active, r.ri_num, r.ri_content, left(r.ri_credate, 10) ri_credate, r.ri_star, r.ri_like_cnt, r.ri_view_cnt, r.ri_dislike_cnt, left(r.ri_update_date, 10) ri_update_date, r.ri_movie_id, r.ri_genre, r.ri_spoil, r.ri_direction_point, r.ri_acting_point, r.ri_story_point, r.ri_visual_point, r.ri_ost_point
+      from user_info u, review_info r
+      where u.ui_id = r.ui_id
+      order by r.ri_credate desc
+   </select>
+   
+   <select id="selectReviewInfoSortGenre" parameterType="String" resultType="com.younggam.app.vo.ReviewInfoVO">
+      select u.ui_id, u.ui_nickname, u.ui_file_path, u.ui_review_point, u.ui_active, r.ri_num, r.ri_content, left(r.ri_credate, 10) ri_credate, r.ri_star, r.ri_like_cnt, r.ri_view_cnt, r.ri_dislike_cnt, left(r.ri_update_date, 10) ri_update_date, r.ri_movie_id, r.ri_genre, r.ri_spoil, r.ri_direction_point, r.ri_acting_point, r.ri_story_point, r.ri_visual_point, r.ri_ost_point
+      from user_info u, review_info r
+      where u.ui_id = r.ui_id
+         and r.ri_genre like '%' #{genre} '%'
+      order by r.ri_credate desc
+   </select>
+   
+   <select id="selectReviewInfo" resultType="com.younggam.app.vo.ReviewInfoVO">
+      select r.*, u.* 
+      from review_info r, user_info u
+      where r.ui_id = u.ui_id and ri_num = #{riNum}
+   </select>
+   
+   <insert id="insertReviewInfo">
+      insert into review_info(ri_content, ui_id, ri_movie_id, ri_star, ri_direction_point, ri_acting_point, ri_story_point, ri_visual_point, ri_ost_point, ri_genre, ri_spoil) 
+      values (#{riContent}, #{uiId}, #{riMovieId}, #{riStar}, #{riDirectionPoint}, #{riActingPoint}, #{riStoryPoint}, #{riVisualPoint}, #{riOstPoint}, #{riGenre}, #{riSpoil})
+   </insert>
 
-	
-	<!-- 해당 사용자의 리뷰 정보를 조회 -->
-	<select id="selectUserReviewInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
-		SELECT ri.*, ui.*
-		FROM user_info ui, review_info ri
-		WHERE ui.ui_id = ri.ui_id AND ui.ui_nickname = #{uiNickname}
-		ORDER BY ri.ri_credate DESC
-	</select>
+   
+   <!-- 해당 사용자의 리뷰 정보를 조회 -->
+   <select id="selectUserReviewInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
+      SELECT ri.*, ui.*   
+      FROM user_info ui, review_info ri
+      WHERE ui.ui_id = ri.ui_id AND ui.ui_nickname = #{uiNickname}
+      ORDER BY ri.ri_credate DESC
+   </select>
 
 </mapper>

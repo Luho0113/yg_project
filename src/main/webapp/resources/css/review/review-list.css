@@ -34,7 +34,7 @@
 .createDateSort>select{
     border: 1px solid #FF7C00;
     background-color: #2A2725;
-    color: #FFFFFF;
+    color: #FFFAF6;
     width: 120PX;
     height: 30PX;
     padding: 5PX;
@@ -48,18 +48,21 @@
     margin: 0px; /* 값 변경 하지마라 */
     padding: 5px;
     float: left;
-
-    border: 1px solid turquoise;
-    font-size: 14px;
+	font-size: 14px;
+	
+	border-top: 1px solid #FF7C00;
 }
 
 .riGenreBar li{
     padding: 10px;
 }
+.riGenreBar a{
+	color: #A8A39D;
+}
+
 
 /* 리뷰 목록 전체를 묶는 div */
 .riListContainer{
-
     width: calc(100% - 200px); /* 값 변경 하지마라 */
     margin: 0px 0px 0px 200px; /* 값 변경 하지마라 */
     
@@ -143,10 +146,14 @@
     display: inline-block;
     text-align: center;
     position: absolute;
-    margin: 5px 0px 0px 10px;
-    color: #FF7C00;
-    font-size: 13px; /* 폰트 사이즈 정해지면 수정 하기 */
+    margin: 4px 0px 0px 10px;
 }
+
+.nickName a{
+	color: #FF7C00;
+    font-size: 14px; /* 폰트 사이즈 정해지면 수정 하기 */
+}
+
 
 .riListReviewContent{
     display: inline-block;
@@ -157,11 +164,25 @@
     margin-top: 80px; /* .riListMovieInfo 만큼 떨어뜨리기 */
     padding: 10px 10px 10px 10px;
     font-size: 13px; /* 최대 3줄로 하고 자간을 넓혔으면 좋겠다.  수정 필요*/
-    line-height: 20px;
 }
 
 .riListReviewContent>a{
 	color: #fffaf6;
+	
+	/* 글 내용이 많을 때 더보기 처리하는 로직 */
+	overflow: hidden;
+    text-overflow: ellipsis;
+	
+	display: -webkit-box;
+    -webkit-line-clamp: 4; /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap:break-word; 
+    line-height: 1.3em;
+    height: 5.2em; /* line-height 곱하기 -webkit-line-clamp */
+}
+
+.riListReviewContent>a:hover{
+	cursor: pointer;
 }
 
 .riListComment{

@@ -52,11 +52,12 @@ public class MyInfoController {
 		UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user"); // 세션에 저장된 정보를 가져옴, user의 데이터타입=object
 
 		userInfo.setUiId(sessionUserInfo.getUiId()); // userInfoVO(0, id, pwd, name -> 1, id, pwd, name)
+		userInfo.setUiFilePath(sessionUserInfo.getUiFilePath());
+		userInfo.setUiNickname(sessionUserInfo.getUiNickname());
+		userInfo.setUiPassword(sessionUserInfo.getUiPassword());
+		userInfo.setUiEmail(sessionUserInfo.getUiEmail());
 		
-		if(uiService.selectUserInfoByUiNickname(userInfo) != null) {
-			m.addAttribute("msg", "uiNickname exist");
-			return "profile/myInfo-update";
-		} else if (uiService.updateUserInfo(userInfo)) { // 사용자가 입력한 값을 userInfo에 담아서 서비스에게 전달
+		if (uiService.updateUserInfo(userInfo)) { // 사용자가 입력한 값을 userInfo에 담아서 서비스에게 전달
 			m.addAttribute("msg", "정보가 수정되었습니다.");
 			session.setAttribute("user", userInfo); // 수정이 완료되면(return값이 1이면) 세션의 정보도 업데이트
 			return "profile/myInfo";
@@ -70,7 +71,7 @@ public class MyInfoController {
 	public String updateNickname(@ModelAttribute UserInfoVO userInfo, HttpSession session, Model m) {
 		UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user");
 		userInfo.setUiId(sessionUserInfo.getUiId());
-		
+		userInfo.setUiFilePath(sessionUserInfo.getUiFilePath());
 		userInfo.setUiPassword(sessionUserInfo.getUiPassword());
 		userInfo.setUiEmail(sessionUserInfo.getUiEmail());
 		
@@ -98,6 +99,7 @@ public class MyInfoController {
 	public String updatePassword(@ModelAttribute UserInfoVO userInfo, HttpSession session, Model m) {
 		UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user");
 		userInfo.setUiId(sessionUserInfo.getUiId());
+		userInfo.setUiFilePath(sessionUserInfo.getUiFilePath());
 		userInfo.setUiNickname(sessionUserInfo.getUiNickname());
 		userInfo.setUiEmail(sessionUserInfo.getUiEmail());
 		
@@ -118,6 +120,7 @@ public class MyInfoController {
 	public String updateEmail(@ModelAttribute UserInfoVO userInfo, HttpSession session, Model m) {
 		UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user");
 		userInfo.setUiId(sessionUserInfo.getUiId());
+		userInfo.setUiFilePath(sessionUserInfo.getUiFilePath());
 		userInfo.setUiNickname(sessionUserInfo.getUiNickname());
 		userInfo.setUiPassword(sessionUserInfo.getUiPassword());
 		

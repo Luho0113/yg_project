@@ -21,7 +21,7 @@
 		<td>${adminVO.adminId}</td>
 		<td>${adminVO.adminName}</td>
 		<td>${adminVO.adminNickName}</td>
-		<td><img src="${adminVO.adminFilePath}"></td>
+		<td><img src="${adminVO.adminFilePath}" width="150"></td>
 		<td>${adminVO.adminEmail}</td>
 	</tr>
 	</c:forEach>

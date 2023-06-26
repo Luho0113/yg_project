@@ -1,0 +1,114 @@
+/* 프로필 수정 페이지 */
+
+.button-custom {
+  width: 100px;
+  height: 50px;
+}
+
+.update-error-text {
+  color: #ff7c00;
+  font-size: 14px;
+}
+
+h3{
+	text-align: center;
+	margin: 10px;
+}
+
+/* 프로필 사진 모양 */
+.profile-image{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	object-fit: cover; /*이미지 비율 조절*/
+}
+
+.content{
+	display: block;
+}
+
+/* 프로필 사진 변경하기 */
+.form-img-wrap {
+	display: inline-block;
+	text-align: center;
+	margin: 40px;
+}
+
+.button-img-update{
+	margin: 10px;
+}
+
+
+.form-all-wrap{
+	display: inline-block;
+}
+
+/* 닉네임 변경하기 */
+.form-nickname-wrap {
+  display: block;
+  
+}
+
+.form-nickname {
+  display: inline-block;
+}
+
+.button-nickname-update {
+  display: inline-block;
+}
+
+.form-nickname-wrap span {
+  color: #ff7c00;
+  font-size: 14px;
+}
+
+/* 비밀번호 변경하기 */
+.form-password-wrap {
+  display: block;
+  
+}
+
+.form-password {
+  display: inline-block;
+}
+.button-pwd-update {
+  display: inline-block;
+}
+
+.form-password-wrap span {
+  color: #ff7c00;
+  font-size: 14px;
+}
+
+/* 이메일 변경하기 */
+.form-email-wrap {
+  display: block;
+  
+}
+.form-email {
+  display: inline-block;
+}
+.button-email-update {
+  display: inline-block;
+}
+
+.form-email-wrap span {
+  color: #ff7c00;
+  font-size: 14px;
+}
+
+
+/* 기타 다른 버튼 */
+.button-etc-wrap{
+	display: block;
+  text-align: center;
+  margin: 20px;
+}
+/* 뒤로가기 버튼 */
+.button-back{
+	display: inline-block;
+}
+/* 탈퇴하기 버튼 */
+.button-delete{
+	display: inline-block;
+}

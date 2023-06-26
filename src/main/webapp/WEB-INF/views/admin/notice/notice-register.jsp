@@ -5,14 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항 등록</title>
-<link rel="stylesheet" href="${path}/resources/css/common/header.css">
+<link rel="stylesheet" href="${path}/resources/css/admin/header.css">
 <link rel="stylesheet" href="${path}/resources/css/common/footer.css">
 <link rel="stylesheet" href="${path}/resources/css/common/page.css">
 <link rel="stylesheet" href="${path}/resources/css/admin/notice-register.css">
 </head>
 <body>
 	<!-- header area -->
-	<jsp:include page="../common/header.jsp"></jsp:include>
+	<jsp:include page="../header/header.jsp"></jsp:include>
 <script>
 function uploadImg(obj){
 	   let file = obj.files[0];
@@ -33,9 +33,10 @@ function writeCheck(){
 		niContent.focus();
 		return false;
 	}
+}
 </script>
-<div class="noticeRegi-area">
-	<form method="POST" action="/admin/notice-register" enctype="multipart/form-data">
+<div class="content noticeRegi-area">
+	<form method="POST" action="/admin/notice-register" enctype="multipart/form-data" onsubmit="return writeCheck()">
 	<h2>공지사항 등록</h2>
 	
 	<label for="niTitle">제목</label>
@@ -50,8 +51,8 @@ function writeCheck(){
 	<button class="regiBtn">공지사항 등록</button>
 	<input type="reset" class="resetBtn" value="다시 작성">
 	</form>
-<!-- footer area -->
-<!-- <jsp:include page="../common/footer.jsp"></jsp:include> -->
 </div>
+<!-- footer area -->
+<jsp:include page="../../common/footer.jsp"></jsp:include>
 </body>
 </html>

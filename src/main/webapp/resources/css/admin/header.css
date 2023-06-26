@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+/* 메뉴바 */
+.navbar {
+  background-color: #ff7c00;
+  width: 100%;
+  overflow: hidden;
+}
+
+.navbar-left {
+  float: left;
+  margin: 6px;
+}
+
+.navbar-right {
+  float: right;
+  margin: 6px;
+}
+
+.navbar li {
+  display: inline-block;
+}
+.navbar li > a {
+  display: block;
+  padding: 5px 10px;
+  color: #2a2725;
+}
+
+/* 메뉴바의 로고 */
+.nav-logo {
+  display: block;
+  margin: 5px 5px 0px 5px;
+  float: left;
+}
+
+.nav-logo > a > img {
+  width: 40px;
+}
+
+/* 전체 페이지 로고 */
+.logo {
+  display: block;
+  text-align: center;
+}
+
+.logo > a > img {
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 180px;
+  border: 1px solid red;
+}
+
+/* 메뉴바 관리자 프로필 사진 */
+.admin-icon {
+  margin: 5px;
+}
+
+#admin-Img {
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+}
+

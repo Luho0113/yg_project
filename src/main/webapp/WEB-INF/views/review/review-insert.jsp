@@ -11,7 +11,9 @@
 <link rel="stylesheet" href="${path}/resources/css/common/footer.css">
 <link rel="stylesheet" href="${path}/resources/css/common/page.css">
 <link rel="stylesheet" href="${path}/resources/css/review/review-insert-star.css">
+<link rel="stylesheet" href="${path}/resources/css/review/review-insert.css">
 <script src="${path}/resources/js/review/review-star.js"></script>
+<script src="${path}/resources/js/review/review-insert.js"></script>
 </head>
 
 <body>
@@ -19,19 +21,24 @@
 <jsp:include page="../common/header.jsp"></jsp:include>
 
 <!-- content area -->
-<h3>리뷰 작성 페이지</h3><%-- 이후 페이지 정리 필요함 --%>
+<div class="content">
+
+    <div class="margin"></div>
     
 	<form autocomplete="off" action="/review-insert" method="GET" name="form">
-        <div class="autocomplete" style="width:300px;">
+        <div class="autocomplete">
           <input id="myInput" type="text" name="search" placeholder="영화, 감독, 배우를 검색해보세요." value="${param.search}">
         </div>
-        <input type="submit">
+
+        <div class="searchButton">
+            <input type="submit">
+        </div>
     </form>
 	
-    <form action="/review-insert" method="POST">
+    <form action="/review-insert" method="POST" onsubmit="return checkNull()">
     	<input type="hidden" id="riMovieId" name="riMovieId" value="">
     	<input type="hidden" id="riGenre" name="riGenre" value="">
-        <table>
+        <table class="reviewInfo">
             <tr>
                 <th>감독</th><td id="director"></td>
             </tr>
@@ -42,19 +49,19 @@
                 <th>영감 포인트</th>
                 <td>
                     <input type="checkbox" id="riDirectionPoint" name="riDirectionPoint" value="0" onchange="younggamPointCheck(this)">
-                    <label for="dirction">연출</label>
+                    <label for="riDirectionPoint">연출</label>
 
                     <input type="checkbox" id="riActingPoint" name="riActingPoint" value="0" onchange="younggamPointCheck(this)">
-                    <label for="acting">연기</label>
+                    <label for="riActingPoint">연기</label>
 
                     <input type="checkbox" id="riStoryPoint" name="riStoryPoint" value="0" onchange="younggamPointCheck(this)">
-                    <label for="story">스토리</label>
+                    <label for="riStoryPoint">스토리</label>
                     
 					<input type="checkbox" id="riOstPoint" name="riOstPoint" value="0" onchange="younggamPointCheck(this)">
-                    <label for="ost">OST</label>
+                    <label for="riOstPoint">OST</label>
                     
                     <input type="checkbox" id="riVisualPointl" name="riVisualPoint" value="0" onchange="younggamPointCheck(this)">
-                    <label for="visual">영상미</label><br>
+                    <label for="riVisualPointl">영상미</label><br>
                 </td>
             </tr>
             <tr>
@@ -70,18 +77,19 @@
             </tr>
         </table>
         <div>
-            <textarea placeholder="리뷰를 작성하세요." style="height: 300px; width: 600px;" name="riContent" id="riContent"></textarea>
+            <textarea placeholder="리뷰를 작성하세요." name="riContent" class="riContent" id="riContent"></textarea>
         </div>
-        <div>
+        <div class="spoilContainer">
             <input type="checkbox" id="riSpoil" name="riSpoil" value="1" onchange="spoilCheck(this)">
             <input type="hidden" id="riSpoil_hidden" name="riSpoil" value="0">
             <label for="riSpoil">해당 리뷰는 스포일러를 포함하고 있습니다.</label>
         </div>
-        <div>
+        <div class="buttonContainer">
             <button type="submit">등록</button>
             <button type="button" onclick="location.href='reviews'">취소</button>
         </div>
     </form>
+</div>
     
 <!-- footer area -->
 <jsp:include page="../common/footer.jsp"></jsp:include>

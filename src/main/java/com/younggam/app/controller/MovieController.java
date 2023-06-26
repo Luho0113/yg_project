@@ -48,22 +48,29 @@ public class MovieController {
 	@GetMapping("/detail")
 	public String getCast(@RequestParam("movieId") String movieId, 
 						  @RequestParam("riMovieId") String riMovieId, 
-						  @RequestParam("riStar")  String riStar,  Model m) {
+						//  @RequestParam("riStar")  String riStar, 
+						  Model m) {
 		m.addAttribute("cast", movieDetailService.getCast(movieId)); //은진 수지가 만든 메소드
 		m.addAttribute("movieData",movieDetailService.getMovieDetail(movieId)); //은진 수지가 만든 메소드
 		m.addAttribute("movieRate",movieDetailService.getMovieCertification(movieId)); //은진 수지가 만든 메소드
 		
 		List<ReviewInfoVO> detailReviewerList = reviewerInfoService.selectDetailReviewersInfo(riMovieId); 
 		m.addAttribute("reviewer",detailReviewerList);
-		
-		ReviewInfoVO star = reviewerInfoService.selectStarInfo(riStar);
+	
+		ReviewInfoVO star = reviewerInfoService.selectStarInfo(riMovieId);
 		m.addAttribute("star", star);
 		
 		return "movie/detail"; 
 	}
 	
-	//위에 별점, 포인트 추가
 	
+	//현재 상영 영화/리뷰어
+//	@GetMapping("/")
+	public String getNowPlaying(@RequestParam("movieId") String movieId, Model m) {
+		m.addAttribute("nowPlaying", movieDetailService.getNowPlaying(movieId));
+		
+		return "index";
+	}
 
 
 	

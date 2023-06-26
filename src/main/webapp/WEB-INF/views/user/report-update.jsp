@@ -7,8 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>신고 글 수정</title>
+<link rel="stylesheet" href="${path}/resources/css/common/header.css">
+<link rel="stylesheet" href="${path}/resources/css/common/footer.css">
+<link rel="stylesheet" href="${path}/resources/css/common/page.css">
+<link rel="stylesheet" href="${path}/resources/css/admin/report-update.css">
 </head>
 <body>
+	<!-- header area -->
+	<jsp:include page="../common/header.jsp"></jsp:include>
 <script>
 function uploadImg(obj){
 	   let file = obj.files[0];
@@ -16,12 +22,14 @@ function uploadImg(obj){
 	   document.querySelector('#img_div').style.display='';
 	}
 </script>
+<div class="content updateReport-area">
 	<form method="POST" action="/report-update" enctype="multipart/form-data">
 	<h2>신고 글 수정</h2>
-	<input type="hidden" name="piNum" value="${report.piNum}">
+	<label for="piNum">번호</label>
+	<input type="number" id="piNum" name="piNum" value="${report.piNum}" readonly><br>
 	
 	<label for="piCredat">작성일</label>
-	<input type="text" name="piCredat" value="${report.piCredat}" readonly><br>
+	<input type="text" id="piCredat" name="piCredat" value="${report.piCredat}" readonly><br>
 	
 	<label for="piTitle">제목</label>
 	<input type="text" id="piTitle" name="piTitle" value="${report.piTitle}"><br>
@@ -54,9 +62,11 @@ function uploadImg(obj){
 	<label for="piContent">내용</label>
 	<textarea rows="10" cols="80" id="piContent" name="piContent">${report.piContent}</textarea><br>
 
-	<button>신고 글 수정</button>
-	<input type="reset" value="다시 작성">
-	
+	<button class="updateBtn">신고 글 수정</button>
+	<input type="reset" class="resetBtn" value="다시 작성">
 	</form>
+</div>
+	<!-- footer area -->
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>

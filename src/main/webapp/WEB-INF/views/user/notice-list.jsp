@@ -6,26 +6,30 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항 페이지</title>
+<link rel="stylesheet" href="${path}/resources/css/common/header.css">
+<link rel="stylesheet" href="${path}/resources/css/common/footer.css">
+<link rel="stylesheet" href="${path}/resources/css/common/page.css">
+<link rel="stylesheet"
+	href="${path}/resources/css/admin/notice-list.css">
 </head>
 <body>
-<h2>공지사항</h2>
-<form action="/notices" method="GET">
-	<input type="text" name="niTitle" placeholder="제목" value="${param.niTitle}">
-	<input type="text" name="niContent" placeholder="내용" value="${param.niContent}">
-	<button>공지 검색</button>
-</form> 
-<div align=right>
-<button onclick="location.href='/'">My YoungGam Home</button>
-<button onclick="location.href='/logout'">로그아웃</button>
-</div>
-<table class="noticeTable" border="1">
+   <!-- header area -->
+	<jsp:include page="../common/header.jsp"></jsp:include>
+   
+   <div class="content noticeArea">
+      <h2>영감 공지사항</h2>
+      <form action="/notices" method="GET">
+	      <input type="text" id="niTitle" name="niTitle" placeholder="제목" value="${param.niTitle}">
+	      <input type="text" id="niContent" name="niContent" placeholder="내용" value="${param.niContent}">
+	<button class="noticeSearch">공지 검색</button>
+</form>
+<table class="noticeTable">
    <tr>
-      <th>번호</th>
-      <th>제목</th>
-      <th>작성자</th>
-      <th>작성일</th>
-      <th>조회수</th>
- 
+      <th><h4>번호</h4></th>
+      <th><h4>제목</h4></th>
+      <th><h4>작성자</h4></th>
+      <th><h4>작성일</h4></th>
+      <th><h4>조회수</h4></th>
    </tr>
    <c:if test="${empty page.list}">
       <th colspan="12">공지사항 목록이 없습니다.</th>
@@ -73,7 +77,10 @@
       html += '<a href="/notices?page=' + (end + 1) + '&niTitle=${param.niTitle}&niContent=${param.niContent}"></a>';
    }
    document.querySelector('#pageDiv').innerHTML = html;
-</script>
-</c:if>
+      </script>
+   </c:if>
+</div>
+   <!-- footer area -->
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>

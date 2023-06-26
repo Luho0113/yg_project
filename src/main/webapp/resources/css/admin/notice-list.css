@@ -12,12 +12,17 @@ th, td{
     padding-bottom: 8px;
     padding-left: 8px;
     padding-right: 8px;
+    border: 0.5px solid #FFFAF6;
 }
 h2 {
     font-weight: bold;
     color: #FF7C00;
     padding-bottom: 30px;
   }
+.noticeTable, th, td{
+    border: 1px solid #A8A39D;
+    border-collapse: collapse;
+}
 .noticeTable th h4{
     font-weight: bold;
     font-size: 16px;
@@ -28,6 +33,7 @@ h2 {
     font-weight: normal;
     font-size: 14px;
 }
+
 .registerBtn{
     margin-bottom: 20px;
     background-color: #43403B;
@@ -39,6 +45,7 @@ input[type="text"]{
     padding: .4em .4em;
     border: 2px solid #FF7C00;
     margin-right: 5px;
+    margin-bottom: 20px;
 }
 .noticeSearch{
     margin-left: 5px;
@@ -47,23 +54,15 @@ input[type="text"]{
     background-color: #43403B;
     color: #FFFAF6; 
 }
+.niTitle{
+    color: #FFFAF6;
+}
 .noticeUpdate, .noticeDelete{
     border-radius: 5px;
     padding: .3rem .3rem;
     background-color: #43403B;
     color: #FFFAF6;
 }
-.admin-home, .admin-logout{
-    border-radius: 5px;
-    padding: .5em .5em;
-    color: #FF7C00;
-    background-color: #2a2725;
-    border-color: #FF7C00;
-    font-weight: bold;
-}
-.moveBtn{
-    padding-left: 630px; 
-}
-.admin-home{
-    margin-right: 6px;
+.noticeUpdate{
+    margin-right: 3px;
 }

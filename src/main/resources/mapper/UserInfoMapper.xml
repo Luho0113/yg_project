@@ -10,7 +10,7 @@
 		VALUES(#{uiId}, #{uiNickname}, #{uiPassword}, #{uiFilePath}, #{uiEmail})
 	</insert>
 	
-	<!-- 아이디 중복 조회 -->
+	<!-- 아이디 중복 조회 + 회원 정보 상세 -->
 	<select id="selectUserInfoByUiId" resultType="com.younggam.app.vo.UserInfoVO" >
 		SELECT * FROM user_info
 		WHERE ui_id = #{uiId}
@@ -30,7 +30,7 @@
 		AND ui_password = #{uiPassword}
 	</select>
 
-	<!-- 회원 탈퇴 -->
+	<!-- 회원 탈퇴 + 회원 삭제 -->
 	<delete id="deleteUserInfo">
 		DELETE FROM user_info
 		WHERE ui_id = #{uiId}
@@ -39,8 +39,7 @@
 	<!-- 정보수정 -->
 	<update id="updateUserInfo">
 		UPDATE user_info
-		SET ui_password = #{uiPassword}, ui_nickname = #{uiNickname}, 
-			ui_file_path = #{uiFilePath}, ui_email = #{uiEmail}
+		SET ui_file_path = #{uiFilePath}
 		WHERE ui_id = #{uiId}
 	</update>
 	
@@ -70,10 +69,55 @@
 		FROM user_info ui, review_info ri
 		WHERE ui.ui_id = ri.ui_id AND ui.ui_id = #{uiId}
 	</select>
+	
+	
+<!-- 관리자 회원 관리 -->
+<!-- 유저 페이징 목록 + 검색 -->
+<select id="selectUserInfosByAdmin" resultType="com.younggam.app.vo.UserInfoVO">
+	select * from User_info
+	<where>
+	<if test='uiId != null and uiId != ""'>
+		ui_id like concat('%', #{uiId}, '%')
+	</if>
+	<if test='uiNickname != null and uiNickname != ""'>
+		and ui_nickname like concat('%', #{uiNickname}, '%')
+	</if>
+	</where>
+	order by ui_id desc
+</select>
 
-	
-	
-	<!-- 관리자 -->
+<!-- 회원 수정 -->
+<update id="updateUserByAdmin">
+	update User_info 
+	set ui_nickname = #{uiNickname},
+	ui_password = #{uiPassword}
+	<if test='uiFilePath != null and uiFilePath != ""'>
+	, ui_file_path = #{uiFilePath}
+	</if>
+	, ui_email = #{uiEmail}, ui_review_point = #{uiReviewPoint},
+	ui_active = #{uiActive}, ui_report_cnt = #{uiReportCnt}
+	where ui_id = #{uiId}
+</update>
+
+<!-- 비활성화 계정 회원 목록 + 페이징 + 검색 -->
+<select id="selectInactiveUsers" resultType="com.younggam.app.vo.UserInfoVO">
+	select * from User_info
+	<where>
+	<if test='uiId != null and uiId != ""'>
+		ui_id like concat('%', #{uiId}, '%')
+	</if>
+	<if test='uiNickname != null and uiNickname != ""'>
+		and ui_nickname like concat('%', #{uiNickname}, '%')
+	</if>
+		and ui_active = 0
+	</where>
+	order by ui_id desc
+</select>
+
+
+
+
+
 
 
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 관리자 홈 페이지 */
 * {
   margin: 0;
@@ -6,13 +7,13 @@
 }
 body {
   min-height: 100vh;
-  background-color: rgb(42, 40, 37);
+  background-color: #2A2725;
 }
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: rgb(42, 40, 37);
+  background: #2A2725;
 }
 ::-webkit-scrollbar-thumb {
   background: #ff7c00;
@@ -29,7 +30,7 @@ nav {
   height: 100%;
   width: 250px;
   padding: 10px 14px;
-  background-color: rgb(42, 40, 37);
+  background-color: #2A2725;
   border-right: 4px solid #fffaf6;
   transition: all 0.5s ease;
 }
@@ -97,18 +98,18 @@ nav .menu-items {
   justify-content: center;
   color: #ff7c00;
 }
-.menu-items li a .admin-home .admin-user .admin-report .admin-logout {
+.menu-items li a .admin-home .admin-user .admin-report .admin-logout .admin-profile {
   font-size: 18px;
   font-weight: 400;
   color: #a8a39d;
   transition: all 0.5s ease;
 }
-nav.close li a .admin-home .admin-user .admin-report .admin-logout {
+nav.close li a .admin-home .admin-user .admin-report .admin-logout .admin-profile {
   opacity: 0;
   pointer-events: none;
 }
 .nav-links li a:hover i,
-.nav-links li a:hover .admin-home .admin-user .admin-report .admin-logout {
+.nav-links li a:hover .admin-home .admin-user .admin-report .admin-logout .admin-profile{
   color: #a8a39d;
 }
 .menu-items .logout {
@@ -118,7 +119,7 @@ nav.close li a .admin-home .admin-user .admin-report .admin-logout {
 .dashboard {
   position: relative;
   left: 250px;
-  background-color: rgb(42, 40, 37);
+  background-color: #2A2725;
   min-height: 100vh;
   width: calc(100% - 250px);
   padding: 10px 14px;
@@ -130,23 +131,23 @@ nav.close ~ .dashboard {
 }
 .dashboard .dash-top{
   position: fixed;
-  display: flex;
-  justify-content: space-between;
-  top: 0;
-  left: 250px;
-  padding: 10px 14px;
-  transition: var(--tran-05);
-  z-index: 10;
-}
-.dashboard .dash-top .fa-bars{
-  font-size: 26px;
-  color: #FF7C00;
-  cursor: pointer;
+    top: 0;
+    left: 250px;
+    right: 0;
+    height: 60px;
+    color: #2A2725;
+    display: flex;
+    background-color: #ff7c00;
 }
 .dash-top img{
-  width: 50px;
+  width: 52px;
   border-radius: 50%;
-  margin-left: 1050px;
+  margin-left: 1170px;
+}
+.dash-top .admin-nickname{
+  margin-top: 20px; 
+  font-weight: bold;
+  color: #FFFAF6;
 }
 .dash-content .title {
   display: flex;
@@ -184,7 +185,7 @@ nav.close ~ .dashboard {
   align-items: center;
   border-radius: 12px;
   width: 25%;
-  padding: 15px 20px;
+  padding: 30px 30px;
   background-color: #ff7c00;
   transition: all 0.5s ease;
 }
@@ -222,11 +223,11 @@ nav.close ~ .dashboard {
     opacity: 1;
     pointer-events: auto;
   }
-  nav li a .admin-home .admin-logout .admin-report .admin-user {
+  nav li a .admin-home .admin-logout .admin-report .admin-user .admin-profile{
     opacity: 0;
     pointer-events: none;
   }
-  nav.close li a .admin-home .admin-logout .admin-report .admin-user {
+  nav.close li a .admin-home .admin-logout .admin-report .admin-user .admin-profile{
     opacity: 1;
     pointer-events: auto;
   }
@@ -235,6 +236,14 @@ nav.close ~ .dashboard {
     width: calc(100% - 73px);
   }
   nav.close ~ .dashboard {
+    left: 250px;
+    width: calc(100% - 250px);
+  }
+  nav ~ .dashboard .dash-top{
+    left: 73px;
+    width: calc(100% - 73px);
+  }
+  nav.close ~ .dashboard .dash-top{
     left: 250px;
     width: calc(100% - 250px);
   }
@@ -261,11 +270,11 @@ nav.close ~ .dashboard {
     opacity: 0;
     pointer-events: none;
   }
-  nav li a .admin-home .admin-logout .admin-report .admin-user {
+  nav li a .admin-home .admin-logout .admin-report .admin-user .admin-profile {
     opacity: 0;
     pointer-events: none;
   }
-  nav.close li a .admin-home .admin-logout .admin-report .admin-user {
+  nav.close li a .admin-home .admin-logout .admin-report .admin-user .admin-profile {
     opacity: 0;
     pointer-events: none;
   }
@@ -277,6 +286,14 @@ nav.close ~ .dashboard {
     left: 73px;
     width: calc(100% - 73px);
   }
+  nav ~ .dashboard .dash-top{
+    left: 0;
+    width: 100%;
+  }
+  nav.close ~ .dashboard .dash-top{
+    left: 0;
+    width: 100%;
+}
 }
 
 /* To-Do List */
@@ -441,19 +458,11 @@ td {
 
 /* To-Do List, 캘린더 정렬 */
 .main {
-  margin-top: 100px;
   display: flex;
   justify-content: space-evenly;
  }
 
-/* .main-todo {
-  float: left;
-  margin: auto;
-  width: 500px;
-}
 
-.main-calendar {
-  float: left;
-  margin: auto;
-} */
+
+
 

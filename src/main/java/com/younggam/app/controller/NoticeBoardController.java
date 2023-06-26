@@ -31,7 +31,7 @@ public class NoticeBoardController {
 	@GetMapping("/admin/notices")
 	public String goNotices(@ModelAttribute NoticeBoardVO notice, Model m) {
 		m.addAttribute("page", niService.getNotices(notice));
-		return "admin/notice-list";
+		return "admin/notice/notice-list";
 	}
 
 	//공지사항 보기(유저)
@@ -49,13 +49,13 @@ public class NoticeBoardController {
 		NoticeBoardVO notice = niService.seeNotice(niNum);
 		m.addAttribute("notice", notice);
 		niService.updateCnt(niNum); //조회수
-		return "admin/notice-view";
+		return "admin/notice/notice-view";
 		}
 	
 	//공지사항 등록
 	@GetMapping("/admin/notice-register")
 	public String registerNotice() {
-		return "admin/notice-register";
+		return "admin/notice/notice-register";
 	}
 	 
 	@PostMapping("/admin/notice-register")
@@ -71,7 +71,7 @@ public class NoticeBoardController {
 		}
 		m.addAttribute("msg", msg);
 		m.addAttribute("url", url);
-		return "/admin/notice-list";
+		return "common/msg";
 	}
 	
 	//공지사항 수정
@@ -79,7 +79,7 @@ public class NoticeBoardController {
 	public String updateNotice(Model m, @RequestParam("niNum") int niNum) {
 		NoticeBoardVO notice = niService.seeNotice(niNum);
 		m.addAttribute("notice", notice);
-		return "admin/notice-update";
+		return "admin/notice/notice-update";
 	}
 	
 	@PostMapping("/admin/notice-update")
@@ -92,21 +92,21 @@ public class NoticeBoardController {
 		}
 		m.addAttribute("msg", msg);
 		m.addAttribute("url", url);
-		return "admin/notice-list";
+		return "common/msg";
 	}
 	
 	//공지사항 삭제
 	@GetMapping("/admin/notice-delete")
 	public String deleteNotice(Model m, @RequestParam("niNum") int niNum) {
 		String msg = "공지사항 삭제가 실패하였습니다.";
-		String url = "/admin/notice-view?niNum=" + niNum;
+		String url = "/admin/notice?niNum=" + niNum;
 		if (niService.deleteNotice(niNum)) {
 			msg = "공지사항이 삭제되었습니다.";
 			url = "/admin/notices";
 		}
 		m.addAttribute("msg", msg);
 		m.addAttribute("url", url);
-		return "admin/notice-list";
+		return "common/msg";
 	}		
 }
 

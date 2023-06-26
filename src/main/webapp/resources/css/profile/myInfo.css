@@ -1,4 +1,14 @@
-@charset "UTF-8";
+/* 내 페이지 */
+
+/* 수정하기 버튼 */
+.button-update {
+  margin: 10px;
+}
+
+.button-custom {
+  width: 250px;
+  height: 50px;
+}
 
 /* 탭 메뉴 */
 .tap-wrap {
@@ -21,13 +31,21 @@
   margin-left: auto;
   padding: 20px;
 }
+
+/* 현재 누르고 있는 탭메뉴 */
 .tab-menu .tab-list li.tab-active .tab-button {
   font-weight: bold;
   color: #ff7c00;
+  transition: all 0.3s ease;
 }
+
+/* 누르고 있지 않은 탭메뉴 */
 .tab-menu .tab-list .tab-button {
+  color: #fffaf6;
   font-size: 20px;
 }
+
+/* 탭 메뉴의 내용 공간 */
 .tab-menu .cont_area {
   margin-top: 10px;
 }
@@ -41,13 +59,23 @@
   line-height: 100px;
 }
 
+/* 내용이 없는 경우 */
+.reviews-empty {
+  text-align: center;
+}
+.coments-empty {
+  text-align: center;
+}
+.likes-empty {
+  text-align: center;
+}
 
 /* 리뷰 내용 */
-.user-review{
-	border: 1px solid #ff7c00;
-	margin: 10px;
+.user-review {
+  border: 1px solid #ff7c00;
+  margin: 10px;
 }
 
 .user-review-text {
-	margin: 0 10px;
+  margin: 0 10px;
 }

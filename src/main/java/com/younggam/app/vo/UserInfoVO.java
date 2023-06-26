@@ -16,6 +16,10 @@ public class UserInfoVO {
 	private String uiEmail; //ui_email 회원 이메일
 	private String uiReviewPoint; //ui_review_point 리뷰포인트
 	private String uiActive; //ui_active 회원 상태
+	private int uiReportCnt; //신고 횟수
+	
+	private int page=1; //page 초기값
+	private int rows=10; //한 페이지 당 정보 갯수
 	
 	private MultipartFile uiFile;
 	

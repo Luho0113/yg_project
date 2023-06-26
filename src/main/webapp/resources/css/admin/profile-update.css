@@ -1,0 +1,34 @@
+@charset "UTF-8";
+.updateAdmin-area{
+    margin-left: 250px; 
+}
+h2{
+    font-weight: bold;
+    color: #A8A39D;
+    padding-bottom: 20px;
+    padding-top: 130px;
+}
+input[type="text"]{
+    padding: .4em .4em;
+}
+#adminId, #adminNickName, #adminPwd, #adminFilePath, #adminEmail{
+    margin: .6em .6em;
+    border: 1px solid #FF7C00;
+    width: 250px;
+}
+.updateBtn, .resetBtn{
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 0.5rem 0.5rem;
+    color: #FFFAF6;
+    background-color: #43403B;
+}
+.resetBtn{
+    width: 100px;
+}
+.updateBtn{
+    margin-right: 5px;
+}
+label{
+    color: #FFFAF6;
+}
