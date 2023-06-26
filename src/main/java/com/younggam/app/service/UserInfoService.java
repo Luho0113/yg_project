@@ -25,8 +25,9 @@ public class UserInfoService {
 	
 	
 	//프로필 사진 저장 경로 설정
-	private final String uploadFilePath = "C:\\Users\\USER\\git\\yg_project\\src\\main\\webapp\\resources\\upload";
+	private final String uploadFilePath = "C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
 	//저장 경로 : C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload
+	private final String deleteFilePath = "C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp";
 	
 	//회원 가입
 	public boolean join(UserInfoVO userInfo) throws IllegalStateException, IOException {
@@ -74,7 +75,7 @@ public class UserInfoService {
 	}
 	
 	
-	//회원 정보 수정
+	// 회원 정보 수정 - 프로필 사진 변경하기
 	public boolean updateUserInfo(UserInfoVO userInfo) throws IllegalStateException, IOException {
 		String extName = userInfo.getUiFile().getOriginalFilename();
 
@@ -84,23 +85,32 @@ public class UserInfoService {
 			}
 			String name = UUID.randomUUID().toString(); // 문자와 숫자로 이루어진 난수
 			File file = new File(uploadFilePath, name + extName);
-
+			
+			//이미 프로필 사진이 있다면 해당 파일 제거
+			if(userInfo.getUiFilePath() != null) {
+				File exfile = new File(deleteFilePath + userInfo.getUiFilePath());
+				exfile.delete();
+			} 
+			
 			userInfo.getUiFile().transferTo(file);
 			userInfo.setUiFilePath("/resources/upload/" + name + extName);
 		} 
 		return uiMapper.updateUserInfo(userInfo) == 1;
 	}
 	
+	// 회원 정보 수정 - 닉네임 변경하기
 	public boolean updateUserNickname(UserInfoVO userInfo) {
 		
 		return uiMapper.updateUserNickname(userInfo) == 1;
 	}
 	
+	// 회원 정보 수정 - 비밀번호 변경하기
 	public boolean updateUserPassword(UserInfoVO userInfo) {
 		
 		return uiMapper.updateUserPassword(userInfo) == 1;
 	}
 	
+	// 회원 정보 수정 - 이메일주소 변경하기
 	public boolean updateUserEmail(UserInfoVO userInfo) {
 		
 		return uiMapper.updateUserEmail(userInfo) == 1;
