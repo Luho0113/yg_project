@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+html{
+	font-family: 'NanumSquare', sans-serif;
+}
+
+
 /* 메뉴바 */
 .navbar {
   background-color: #ff7c00;

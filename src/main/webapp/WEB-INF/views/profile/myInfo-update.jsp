@@ -48,11 +48,6 @@
 							
 						</label>
 					</div>
-					<!-- <div>
-					<label for="uiFile"> 
-						파일선택
-					</label>
-				</div>  -->
 					<div class="img-input">
 						<input type="file" name="uiFile" id="uiFile"
 						onchange="imgPreview(this)" value="${user.uiFile}" />

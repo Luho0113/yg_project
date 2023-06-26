@@ -84,9 +84,13 @@
 /* 리뷰 내용 */
 .user-review {
   border: 1px solid #ff7c00;
-  margin: 10px;
+  margin: 15px 0;
+  border-radius: 5px;
 }
 
+/* 리뷰 내용 텍스트 */
 .user-review-text {
-  margin: 0 10px;
+  margin: 0 20px 0 20px;
+  padding: 50px;
+  line-height: 100%;
 }

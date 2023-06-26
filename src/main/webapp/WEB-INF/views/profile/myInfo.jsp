@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="/WEB-INF/views/common/error-user.jsp" %>
+<%@ include file="/WEB-INF/views/common/error-user.jsp"%>
 
 
 <c:set var="path" value="${pageContext.request.contextPath}" />
@@ -24,17 +24,26 @@
 		<!-- 내 프로필 정보(user)는 세션에서 가져옴 -->
 		<h3>내 프로필</h3>
 
-		<div>
-			<img src="${user.uiFilePath}" class="profile-image" onerror="this.src='https://ifh.cc/g/cDROLZ.png';" />
+		<div class="myInfo-all-wrap">
+			<div class="myInfo-img-wrap">
+				<div>
+					<img src="${user.uiFilePath}" class="profile-image"
+						onerror="this.src='https://ifh.cc/g/cDROLZ.png';" />
+				</div>
+			</div>
+
+			<div class="myInfo-content">
+				<h4>${user.uiNickname}</h4>
+				<p>@${user.uiId}</p>
+				<p>point : ${user.uiReviewPoint}</p>
+			</div>
+
+			<div class="button-update">
+				<button class="button-custom btnOrange"
+					onclick="location.href='/myInfo-update'">수정하기</button>
+			</div>
 		</div>
-		<div>
-			닉네임 : ${user.uiNickname} <br /> 아이디 : ${user.uiId} <br /> 포인트 :
-			${user.uiReviewPoint} <br />
-		</div>
-		<div class="button-update">
-			<button class="button-custom btnOrange"
-				onclick="location.href='/myInfo-update'">수정하기</button>
-		</div>
+
 
 		<!-- 작성한 후기 정보는 ReviewInfoVO에서 가져옴 -->
 		<div class="tap-wrap">

@@ -5,7 +5,9 @@ body{
     color:#A8A39D;
 }
 .noticeRegi-area{
+	display: block;
     padding: 50px;
+    overflow: hidden;
 }
 input[type="text"], textarea{
     padding: .4em .4em;
@@ -29,4 +31,25 @@ h2{
 }
 .regiBtn{
     margin-right: 5px;
+}
+
+.content-wrap{
+	display: block;
+}
+
+.label{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.niContent{
+	display: inline-block;
+}
+
+.regi-button{
+	display: block;
+}
+.button-custom{
+	width: 200px;
+	height: 50px;
 }
