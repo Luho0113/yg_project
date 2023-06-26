@@ -46,7 +46,7 @@
 
 					</div>
 					<div class="star">
-						<h3>별점 ${star}</h3>
+						<h3>별점 ${star.riStar}</h3>
 					</div>
 					<div class="rt-ot-r">
 						<div>상영시간 ${movieData[0].runtime} 분</div>
@@ -103,7 +103,7 @@
 					</div>
 					
 					<div class="review-body">
-					<a href="/review?riNum=${reviewer.riNum}&movieId=${movieData[0].id}">${reviewer.riContent}
+					<a href="/review?riNum=${reviewer.riNum}&movieId=${reviewer.riMovieId}">${reviewer.riContent}
 					</a>
 					</div>
 					

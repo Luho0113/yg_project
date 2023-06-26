@@ -20,12 +20,19 @@
 
 <!--소수점 삭제 -->
 <select id="selectStarInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
-  SELECT ROUND(AVG(ri_star), 1)
+  SELECT ROUND(AVG(ri_star), 1) ri_star
   FROM review_info
   WHERE ri_movie_id = #{riMovieId}
 </select>
 
-<!-- 영감포인트 -->
+<!-- 최근 리뷰 리스트 -->
+<!-- 일단 리뷰어 최신순으로 정보 다 불러오기 -->
+<select id="selectNewReviewersInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
+select r.*, u.* 
+from review_info r, user_info u
+where r.ui_id = u.ui_id
+order by r.ri_credate desc
+</select>
 
 
 </mapper>

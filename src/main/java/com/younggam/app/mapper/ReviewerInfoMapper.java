@@ -18,5 +18,8 @@ public interface ReviewerInfoMapper {
 	
 	//포인트 출력
 	
+	//최근 리뷰어 리스트
+	List<ReviewInfoVO> selectNewReviewersInfos(ReviewInfoVO reviews);
+	
 	
 }

@@ -25,11 +25,15 @@
     
     <article class="box-office">
     <h3>박스오피스/상영중인 영화?</h3>
+   
+   <c:forEach items="${nowPlaying}" var="nowPlaying"> 
 <div class="box-office-list">
-<img id="poster"
+<!--  <img id="poster"
 	src="https://image.tmdb.org/t/p/original/${nowPlaying.posterPath}">
-
+-->
 </div>
+ </c:forEach>
+ 
     </article>
 
 
@@ -127,8 +131,8 @@
     
     <article class="new-reviews">
     <h3>최근리뷰///좋아요 많은 리뷰</h3>
-    <!--  
-	 		<c:forEach items="${reviewList}" var="review" varStatus="status"> 
+     
+	 		<c:forEach items="${newReviewList}" var="review" varStatus="status"> 
 				<div class="review-card">
 					<div class="review-header">
 						<div>
@@ -136,35 +140,36 @@
 								src="${review.uiFilePath}"
 								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
 							</a>
-							<div>리뷰어이름${review.uiNickname}</div>
+							<div>리뷰어이름 ${review.uiNickname}</div>
 						</div>
 					</div>
-					<div class="review-body">내용${review.riContent}></div>
+					<div class="review-body">내용 ${review.riContent}</div>
 					<div class="review-like">
 						<div>좋아요</div>
 						<div>댓글</div>
 					</div>
 				</div>
 		 	</c:forEach>
-		 	-->
 		 	
-		 	<div class="review-card">
+		 	<!-- 
+		 	 <div class="review-card">
 					<div class="review-header">
 						<div>
-							<a href="userReview?uiNickname=${_____}"> 
+							<a href="userReview?uiNickname=${newReviewList.uiNickname}"> 
 							<img
-								src="${______}"
+								src="${newReviewList.uiFilePath}"
 								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
 							</a>
-							<div>리뷰어이름${______}</div>
+							<div>리뷰어이름${newReviewList.uiNickname}</div>
 						</div>
 					</div>
-					<div class="review-body">내용${_______}></div>
+					<div class="review-body">내용${newReviewList.riContent}></div>
 					<div class="review-like">
 						<div>좋아요</div>
 						<div>댓글</div>
 					</div>
 				</div>
+				 -->
 				<div class="review-card">
 					<div class="review-header">
 						<div>
