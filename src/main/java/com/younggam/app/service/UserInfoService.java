@@ -27,6 +27,8 @@ public class UserInfoService {
 	//프로필 사진 저장 경로 설정
 	private final String uploadFilePath = "C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
 	//저장 경로 : C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload
+	
+	//삭제 경로 설정
 	private final String deleteFilePath = "C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp";
 	
 	//회원 가입
