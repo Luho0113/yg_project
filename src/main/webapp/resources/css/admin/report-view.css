@@ -1,4 +1,7 @@
 @charset "UTF-8";
+html{
+	font-family: 'NanumSquare', sans-serif;
+}
 .reportView-area{
     padding: 50px;
 }

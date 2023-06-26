@@ -1,4 +1,7 @@
 @charset "UTF-8";
+html{
+	font-family: 'NanumSquare', sans-serif;
+}
 body{
     font-weight: 300;
     line-height: 1.42em;

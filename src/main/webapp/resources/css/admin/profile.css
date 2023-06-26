@@ -1,4 +1,7 @@
 @charset "UTF-8";
+html{
+	font-family: 'NanumSquare', sans-serif;
+}
 .th, td{
   padding-top: 8px;
   padding-bottom: 8px;

@@ -1,15 +1,14 @@
 @charset "UTF-8";
+html{
+	font-family: 'NanumSquare', sans-serif;
+}
+
 /* 관리자 홈 페이지 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-html{
-	font-family: 'NanumSquare', sans-serif;
-}
-
 body {
   min-height: 100vh;
   background-color: #2A2725;
