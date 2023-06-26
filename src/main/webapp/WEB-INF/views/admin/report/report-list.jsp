@@ -54,7 +54,7 @@
       <td>${report.uiNickname}</td>
       <td>${report.piCredat}</td>
       <td><button class="reportUpdate" onclick="location.href='/admin/report-update?piNum=${report.piNum}'">수정</button>
-      <button class="reportDelete" onclick="deleteCheck()">삭제</button></td>
+      <button class="reportDelete" onclick="location.href='/admin/report-delete?piNum=${report.piNum}'; deleteCheck(); ">삭제</button></td>
     </tr>
     </c:forEach>
 </table>
