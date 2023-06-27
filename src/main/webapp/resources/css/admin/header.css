@@ -1,15 +1,18 @@
 @charset "UTF-8";
 
-html{
-	font-family: 'NanumSquare', sans-serif;
-}
-
 /* 메뉴바 */
 .navbar {
   background-color: #ff7c00;
   width: 100%;
   overflow: hidden;
 }
+
+.navbar ul{
+	margin: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
 
 .navbar-left {
   float: left;
@@ -19,6 +22,7 @@ html{
 .navbar-right {
   float: right;
   margin: 6px;
+  margin-top: 14px;
 }
 
 .navbar li {
@@ -33,12 +37,38 @@ html{
 /* 메뉴바의 로고 */
 .nav-logo {
   display: block;
-  margin: 5px 5px 0px 5px;
+  margin-top: 14px;
+  margin-left: 20px;
+  margin-right: 20px;
   float: left;
 }
 
 .nav-logo > a > img {
-  width: 40px;
+  width: 54px;
+}
+
+/* 검색 버튼 */
+.search-button{
+	width: 50px;
+	height: 50px;
+	border: 0;
+	background-color: transparent;
+	position: absolute;
+	left: 486px;
+	top: 13px;
+	font-size: 24px;
+	line-height: 25px;
+	cursor: pointer;
+}
+
+/* 검색바 */
+.main-input{
+	width: 240px;
+	height: 25px;
+	padding: 10px;
+}
+.main-input::placeholder{
+	font-size: 14px;
 }
 
 /* 전체 페이지 로고 */
@@ -48,10 +78,10 @@ html{
 }
 
 .logo > a > img {
-  margin: 10px;
+  margin: 70px;
   margin-left: auto;
   margin-right: auto;
-  width: 180px;
+  width: 356px;
   border: 1px solid red;
 }
 
