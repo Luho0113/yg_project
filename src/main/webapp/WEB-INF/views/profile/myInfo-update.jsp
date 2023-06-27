@@ -13,6 +13,13 @@
 <link rel="stylesheet" href="${path}/resources/css/common/button.css" />
 <link rel="stylesheet"
 	href="${path}/resources/css/profile/myInfo-update.css" />
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+/>
 </head>
 <body>
 	<!-- header area -->
@@ -76,18 +83,18 @@
 						onsubmit="return updateNickname()">
 						<!-- 닉네임 입력 -->
 						<label> <input class="input" type="text" name="uiNickname"
-							id="uiNickname" onkeyup="return checkNickName()"
+							id="uiNickname" onkeyup="return checkNickname()"
 							placeholder="새 닉네임" maxlength="16"/>
 						</label>
 						<div class="button-nickname-update">
-							<button class="button-custom btnToOrange">수정</button>
+							<button class="button-custom btnToOrange ">수정</button>
 						</div>
 					</form>
 				</div>
 				<c:if test="${msg == 'uiNickname exist'}">
 					<span class="error_fail"> 이미 사용 중인 닉네임입니다. </span>
 				</c:if>
-				<div class="update-error-text" id="error-checkNickName">
+				<div class="update-error-text" id="error-checkNickname">
 					<!-- 경고 텍스트 -->
 				</div>
 			</div>

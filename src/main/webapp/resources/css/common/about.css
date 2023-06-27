@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+
+
+
+
+
+.yg-description{
+	display: block;
+}
+
+.yg-summary-wrap{
+	display: block;
+	text-align: center;
+	margin: 40px;
+}
+
+.yg-summary{
+	display: inline-block;
+}
+
+.yg-summary-img{
+	display: inline-block;
+}
+
+.yg-summary-img>a>i{
+	width: 100px;
+	height: 100px;
+	font-size: 75px;
+	vertical-align: top;
+}

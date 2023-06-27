@@ -121,7 +121,7 @@ public class MyInfoController {
 		return "profile/myInfo-update";
 	}
 	
-	@PostMapping()
+	@PostMapping("/myInfo-updateE")
 	public String updateEmail(@ModelAttribute UserInfoVO userInfo, HttpSession session, Model m) {
 		UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user");
 		userInfo.setUiId(sessionUserInfo.getUiId());
