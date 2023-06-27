@@ -1,132 +1,147 @@
 /* 내 페이지 */
-
-h3{
+h3 {
 	text-align: center;
 	margin: 20px;
 }
 
-.myInfo-all-wrap{
+a, a:hover{
+	color: #fffaf6;
+}
+
+.myInfo-all-wrap {
 	display: block;
 	margin: 40px;
 }
-.myInfo-img-wrap{
+
+.myInfo-img-wrap {
 	display: inline-block;
-	
 }
-.myInfo-content{
+
+.myInfo-content {
 	display: inline-block;
 	vertical-align: top;
 	margin-left: 30px;
 }
-.button-update{
+
+.button-update {
 	display: inline-block;
 	vertical-align: top;
 	float: right;
 }
 
-
-
 /*내 정보*/
-.myInfo-content > h4{
+.myInfo-content>h4 {
 	font-size: 30px;
 	color: #ff7c00;
 }
-.myInfo-content > p {
+
+.myInfo-content>p {
 	margin: 5px;
 }
 
-
-
 /* 프로필 사진 */
 /* 프로필 사진 모양 */
-.profile-image{
+.profile-image {
 	width: 200px;
 	height: 200px;
 	border-radius: 100px;
 	object-fit: cover; /*이미지 비율 조절*/
 }
 
-
 /* 수정하기 버튼 */
 .button-update {
-  margin: 0 10px;
+	margin: 0 10px;
 }
 
 .button-custom {
-  width: 120px;
-  height: 50px;
+	width: 120px;
+	height: 50px;
 }
 
 /* 탭 메뉴 */
 .tap-wrap {
-  padding: 15px;
+	padding: 15px;
 }
+
 .tab-menu {
-  position: relative;
-  width: 100%;
+	position: relative;
+	width: 100%;
 }
+
 .tab-menu .tab-list {
-  width: 100%;
-  overflow: hidden;
-  border-bottom: 1px solid #ff7c00;
-  text-align: center;
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid #ff7c00;
+	text-align: center;
 }
+
 .tab-menu .tab-list li {
-  /* float: left; */
-  display: inline-block;
-  margin-right: 30px;
-  margin-left: 30px;
-  padding: 20px;
+	/* float: left; */
+	display: inline-block;
+	margin-right: 30px;
+	margin-left: 30px;
+	padding: 20px;
 }
 
 /* 현재 누르고 있는 탭메뉴 */
 .tab-menu .tab-list li.tab-active .tab-button {
-  font-weight: bold;
-  color: #ff7c00;
-  transition: all 0.3s ease;
+	font-weight: bold;
+	color: #ff7c00;
+	transition: all 0.3s ease;
 }
 
 /* 누르고 있지 않은 탭메뉴 */
 .tab-menu .tab-list .tab-button {
-  color: #fffaf6;
-  font-size: 20px;
+	color: #fffaf6;
+	font-size: 20px;
 }
 
 /* 탭 메뉴의 내용 공간 */
 .tab-menu .cont_area {
-  margin-top: 10px;
+	margin-top: 10px;
 }
+
 .tab-menu .cont_area .cont {
-  display: none;
-  color: #fff;
-  border: 1px solid green;
-  text-align: left;
-  width: 100%;
-  height: 50%;
-  line-height: 100px;
+	display: none;
+	color: #fff;
+	border: 1px solid green;
+	text-align: left;
+	width: 100%;
+	height: 50%;
+	line-height: 100px;
 }
 
 /* 내용이 없는 경우 */
 .reviews-empty {
-  text-align: center;
+	text-align: center;
 }
+
 .coments-empty {
-  text-align: center;
+	text-align: center;
 }
+
 .likes-empty {
-  text-align: center;
+	text-align: center;
 }
 
 /* 리뷰 내용 */
 .user-review {
-  border: 1px solid #ff7c00;
-  margin: 15px 0;
-  border-radius: 5px;
+	border: 1px solid #ff7c00;
+	margin: 15px 0;
+	border-radius: 5px;
 }
 
 /* 리뷰 내용 텍스트 */
 .user-review-text {
-  margin: 0 20px 0 20px;
-  padding: 50px;
-  line-height: 100%;
+	margin: 0 20px 0 20px;
+	padding: 50px;
+	line-height: 100%;
+}
+
+/* 긴 리뷰 내용 텍스트 줄이기 */
+.description {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }

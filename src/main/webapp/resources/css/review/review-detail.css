@@ -182,7 +182,7 @@ hr{
 
 .commentContainer{
     position: relative;
-    min-height: 200px;
+    min-height: 150px;
 
     border-bottom: 1px solid #A8A39D;
 }

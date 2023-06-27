@@ -55,7 +55,7 @@
       <td>${report.uiNickname}</td>
       <td>${report.piCredat}</td>
       <td><button class="reportUpdate" onclick="location.href='/admin/report-update?piNum=${report.piNum}'">수정</button>
-      <button class="reportDelete" onclick="location.href='/admin/report-delete?piNum=${report.piNum}'; deleteCheck();">삭제</button></td>
+      <button class="reportDelete" onclick="deleteCheck(${report.piNum});">삭제</button></td>
     </tr>
     </c:forEach>
 </table>
@@ -63,12 +63,12 @@
 <c:if test="${!(empty page.list)}">
 <script>
 <!-- 삭제 버튼 -->
-	function deleteCheck() {
+	function deleteCheck(e) {
 		if(!confirm('삭제하시면 복구할 수 없습니다. \n정말로 삭제하시겠습니까?')){
 			alert("삭제가 취소되었습니다.");
 			return false;
 		}else{
-			location.href="/admin/report-delete?piNum=${report.piNum}";
+			location.href="/admin/report-delete?piNum=" + e;
 		}
 	}
    const pages = ${page.pages}; 

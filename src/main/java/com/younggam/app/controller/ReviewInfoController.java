@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.younggam.app.service.MovieDetailService;
 import com.younggam.app.service.MovieService;
+import com.younggam.app.service.ReviewCommentService;
 import com.younggam.app.service.ReviewService;
+import com.younggam.app.vo.ReviewCommentVO;
 import com.younggam.app.vo.ReviewInfoVO;
 import com.younggam.app.vo.UserInfoVO;
 
@@ -30,6 +32,9 @@ public class ReviewInfoController {
    
    @Autowired
    private MovieDetailService movieDetailService;
+   
+   @Autowired
+   private ReviewCommentService rcService;
    
    //전체 리뷰 조회
    @GetMapping("/reviews")
@@ -51,8 +56,10 @@ public class ReviewInfoController {
    @GetMapping("/review")
    public String getReview(@RequestParam("riNum") int riNum, @RequestParam("movieId") String movieId, Model m) {
       ReviewInfoVO review = riServie.selectReviewInfo(riNum);
+      List<ReviewCommentVO> comments = rcService.selectReviewComment(riNum);
       m.addAttribute("movie", movieDetailService.getMovieDetail(movieId));
       m.addAttribute("review", review);
+      m.addAttribute("comments", comments);
       return "review/review-detail";
    }
    

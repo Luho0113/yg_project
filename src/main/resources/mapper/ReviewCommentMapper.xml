@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.younggam.app.mapper.ReviewCommentMapper">
+
+	<select id="selectReviewComment" resultType="com.younggam.app.vo.ReviewCommentVO">
+		select u.*, c.* 
+		from user_info u, review_comment c 
+		where u.ui_id = c.ui_id
+			and ri_num = #{riNum};
+	</select>
+
+	<insert id="insertReviewComment">
+		insert  into review_comment(rc_content, ri_num, ui_id) 
+		values (#{rcContent}, #{riNum}, #{uiId})
+	</insert>
+
+</mapper>

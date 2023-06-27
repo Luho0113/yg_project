@@ -13,8 +13,6 @@
 </head>
 <body>
 
-
-
 	<!-- header area -->
 	<jsp:include page="../common/header.jsp"></jsp:include>
 
@@ -47,7 +45,7 @@
 								<div class="user-review-text">
 									<a
 										href="/review?riNum=${myReview.riNum}&movieId=${myReview.riMovieId}">
-										${myReview.riContent} </a>
+										<p class="description">${myReview.riContent}</p> </a>
 								</div>
 							</div>
 						</c:forEach>
