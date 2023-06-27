@@ -73,8 +73,9 @@ public class MovieDetailService {
 
 	// 영화 정보
 	// 나라,장르 등 때문에 이것도 map 사용
-	public List<MovieVO> getMovieDetail(String movieId) {
-		List<MovieVO> movieDataList = new ArrayList<>(); // detail에 MovieId를 검색한 내용
+	public MovieVO getMovieDetail(String movieId) {
+		//List<MovieVO> movieDataList = new ArrayList<>();
+		MovieVO movieVO = new MovieVO();// detail에 MovieId를 검색한 내용
 		try {
 
 			OkHttpClient client = new OkHttpClient();
@@ -94,7 +95,7 @@ public class MovieDetailService {
 			// JSON배열{~~} 중 "cast"로 되어있는 것을 하나하나 castsJson배열에 담는다.
 			// JSON 형식으로 만들어진 jsonObject에서 cast[]를 뽑아서 cast에 담는다.
 
-			MovieVO movieVO = new MovieVO();
+			
 			MovieService movieService = new MovieService();
 
 			movieVO.setTitle(jsonObject.getString("title"));
@@ -109,12 +110,11 @@ public class MovieDetailService {
 			/* 감독명이 안나왔었는데 MovieService 생성 후 무비서비스틔 겟크레딧메소드에 movieId를 담아 감독명을 저장함 */
 			movieVO.setDirectors(movieService.getCredit(movieId));
 
-			movieDataList.add(movieVO);
 
 		} catch (Exception e) {
 			log.error("error=>{}", e);
 		}
-		return movieDataList;
+		return movieVO;
 	}
 
 	// 영화 등급

@@ -21,7 +21,8 @@ public class MainController {
 	@Autowired
 	private MovieMainService movieMainService;
 	
-
+@Autowired
+private MovieDetailService movieDetailService;
 	
 	//현재 상영 영화/
 	@GetMapping("/")
@@ -54,19 +55,23 @@ public class MainController {
 		
 		//2. 결과값에서 무비아이디 꺼내기 riMovieId
 		
-		List<MovieVO> MovieInfo = new ArrayList<>();
+		List<MovieVO> movieInfo = new ArrayList<>();
 				
-//		for(int i=0; i<5; i++) {
-//			List<MovieVO> movievo = MovieDetailService.getMovieDetail(BestMovieList.get(i).getRiMovieId());
-//			
-//		
-//		
-//		}
-//		
-		m.addAttribute("MovieInfo", MovieInfo);
+		for(int i=0; i<5; i++) {
 		
+				MovieVO movievo = movieDetailService.getMovieDetail(BestMovieList.get(i).getRiMovieId());
+				movieInfo.add(movievo);
+		}
+
+				m.addAttribute("MovieInfo", movieInfo);
+
 		return "index";
 	}
+
+
+	
+	
+	
 	
 	
 	//웹사이트 정보

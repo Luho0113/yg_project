@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
-<c:set var = "string1" value = "${movieData[0].releaseDate}"/>
+<c:set var = "string1" value = "${movieData.releaseDate}"/>
       <c:set var = "string2" value = "${fn:substring(string1, 0, 4)}" />
 
 <!DOCTYPE html>
@@ -33,16 +33,16 @@
 			<div class="movie-info">
 				<div class="movie-details1">
 					<img id="poster"
-						src="https://image.tmdb.org/t/p/original/${movieData[0].posterPath}"
+						src="https://image.tmdb.org/t/p/original/${movieData.posterPath}"
 						onerror="this.src='https://ifh.cc/g/zNb0Wd.jpg';">
 				</div>
 				<div class="movie-details2">
-					<h2>${movieData[0].title}</h2>
+					<h2>${movieData.title}</h2>
 					<div class="rd-g-n">
 					     
 						<div>${string2}</div>
-						<div>${movieData[0].genreIds[0]}</div>
-						<div>${movieData[0].productionConturies[0]}</div>
+						<div>${movieData.genreIds[0]}</div>
+						<div>${movieData.productionConturies[0]}</div>
 
 					</div>
 					<div class="star">
@@ -53,13 +53,13 @@
 			
 					
 					<div class="rt-ot-r">
-						<div>상영시간  ${movieData[0].runtime} 분</div>
-						<div>원제     ${movieData[0].originalTitle}</div>
+						<div>상영시간  ${movieData.runtime} 분</div>
+						<div>원제     ${movieData.originalTitle}</div>
 						<div>연령 등급 ${movieRate[0].certification} 세</div>
 					</div>
 					<div class="review-button">
 						<button class="button-custom btnOrange" type="button"
-						onclick="location.href='review-insert?search=${movieData[0].title}'">🖋평가하기</button>
+						onclick="location.href='review-insert?search=${movieData.title}'">🖋평가하기</button>
 					</div>
 					
 				</div>
@@ -68,7 +68,7 @@
 
 		<article class="overview">
 			<h3>줄거리</h3>
-			<div>${movieData[0].overview}</div>
+			<div>${movieData.overview}</div>
 		</article>
 		<article class="cast-list">
 			<h3>출연진</h3>

@@ -23,7 +23,7 @@
     <div class="margin"></div>
     
     <div class="autocomplete">
-      <input id="myInput" type="text" name="search" value="${movie[0].title}" readonly="readonly">
+      <input id="myInput" type="text" name="search" value="${movie.title}" readonly="readonly">
     </div>
 
 	
@@ -43,7 +43,7 @@
             <tr>
                 <th>개봉 연도</th>
                 <td id="releaseDate">
-                	<c:set var="releaseDate" value="${movie[0].releaseDate}"></c:set>
+                	<c:set var="releaseDate" value="${movie.releaseDate}"></c:set>
                 	${fn:substring(releaseDate,0,4)}
                 </td>
             </tr>

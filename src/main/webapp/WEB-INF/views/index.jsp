@@ -1,37 +1,38 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>영감</title>
-    <!-- 스타일 -->
-    <link rel="stylesheet"
-	href="${path}/resources/css/main/main.css">
-  </head>
-  <body>
-    <!-- header area -->
-    <jsp:include page="./common/header.jsp"></jsp:include>
+<head>
+<meta charset="UTF-8" />
+<title>영감</title>
+<!-- 스타일 -->
+<link rel="stylesheet" href="${path}/resources/css/main/main.css">
+</head>
+<body>
+	<!-- header area -->
+	<jsp:include page="./common/header.jsp"></jsp:include>
 
 
 
 
- <section class="content">
-    
-    <article class="box-office">
-    <h3>박스오피스/상영중인 영화?</h3>
-   
-  <c:forEach items="${nowPlaying}" var="nowPlaying"> 
-<div class="box-office-list">
-  <img id="poster"
-	src="https://image.tmdb.org/t/p/original/${nowPlaying.posterPath}">
+	<section class="content">
 
-</div>
- </c:forEach>
- 
+		<article class="box-office">
+			<h3>박스오피스/상영중인 영화?</h3>
 
-<!--   슬라이드 해보는중..
+			<c:forEach items="${nowPlaying}" var="nowPlaying">
+				<div class="box-office-list">
+					<img id="poster"
+						src="https://image.tmdb.org/t/p/original/${nowPlaying.posterPath}">
+
+				</div>
+			</c:forEach>
+
+
+			<!--   슬라이드 해보는중..
    <div class="slideshow-container">
      
         <div class="mySlideDiv fade">
@@ -46,21 +47,21 @@
               
    </div>
     -->
-           
-            
-               
-  
- 
-  
- 
-    </article>
 
 
-    
-    <article class="highest-rated-movies">
-        <h3>별점 높은 순</h3>
+
+
+
+
+
+		</article>
+
+
+
+		<article class="highest-rated-movies">
+			<h3>별점 높은 순</h3>
 			<ul class="movies">
-                <!-- 
+				<!-- 
 			<c:forEach items="${____}" var="_____">
 				<li class="movie-box">
 					
@@ -79,69 +80,77 @@
 			</c:forEach>
 			 -->
 
-             
+
 				<li class="movie-box">
-                        <div>
-                        <!-- 
-						<a href="detail?movieId=${MovieInfo.id}&riMovieId=${MovieInfo.id}">
-						<img id="poster" src="https://image.tmdb.org/t/p/w300${MovieInfo.posterPath}" onerror="this.src='https://ifh.cc/g/zNb0Wd.jpg';"></a>
-						<div class="cont-detail">
-							<div class="title">
-								<a href="detail?movieId=${MovieInfo.title}">영화 제목: ${MovieInfo.title }</a>
-							</div>
-							<div class="release-date">${MovieInfo.releaseDate}년</div>
-							 -->
-							<c:forEach items="${BestMovieList}" var="BestMovieList" varStatus="status"> 
-							<div class="star-rate">${BestMovieList.riStar}</div>
-							</c:forEach>
-							
-						</div>
-				<!-- 	</div>  -->
+					<div>
+						<c:forEach items="${MovieInfo}" var="MovieInfo" varStatus="status">
+							<a href="detail?movieId=${MovieInfo.id}&riMovieId=${MovieInfo.id}">
+								<img id="poster"
+								src="https://image.tmdb.org/t/p/w300${MovieInfo.posterPath}"
+								onerror="this.src='https://ifh.cc/g/zNb0Wd.jpg';">
+							</a>
+							<div class="cont-detail">
+								<div class="title">
+									<a href="detail?movieId=${MovieInfo.title}">영화 제목:
+										${MovieInfo.title}</a>
+								</div>
+								<div class="release-date">${MovieInfo.releaseDate}년</div>
+					</div> 
+					</c:forEach> 
+					
+					
+					
+					<c:forEach items="${BestMovieList}" var="BestMovieList"
+						varStatus="status">
+						<div class="star-rate">${BestMovieList.riStar}</div>
+					</c:forEach>
+					</div>
 				</li>
 
 			</ul>
-    </article>
+		</article>
 
 
-    
-    <article class="new-reviews">
-    <h3>최신 리뷰</h3>
-     
-	 		<c:forEach items="${newReviewList}" var="review" varStatus="status"> 
+
+		<article class="new-reviews">
+			<h3>최신 리뷰</h3>
+
+			<c:forEach items="${newReviewList}" var="review" varStatus="status">
 				<div class="review-card">
 					<div class="review-header">
 						<div>
-							<a href="userReview?uiNickname=${review.uiNickname}"> 
-							<img src="${review.uiFilePath}"
+							<a href="userReview?uiNickname=${review.uiNickname}"> <img
+								src="${review.uiFilePath}"
 								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
-							</a> 
+							</a>
 							<div>${review.uiNickname}</div>
 						</div>
 					</div>
 					<div class="review-body">
-					<a href="/review?riNum=${review.riNum}&movieId=${review.riMovieId}">${review.riContent}
-					</a>
-	</div>
+						<a
+							href="/review?riNum=${review.riNum}&movieId=${review.riMovieId}">${review.riContent}
+						</a>
+					</div>
 					<div class="review-like">
 						<div>좋아요</div>
 						<div>댓글</div>
 					</div>
 				</div>
-		 	</c:forEach>
-		 	
-	
-			
+			</c:forEach>
+
+
+
 		</article>
 
 
-</section>
+	</section>
 
 
 
-    <!-- footer area -->
-    <jsp:include page="./common/footer.jsp"></jsp:include>
-    
-    <script type="text/javascript">
+	<!-- footer area -->
+	<jsp:include page="./common/footer.jsp"></jsp:include>
+
+	<script type="text/javascript">
 
     $(document).ready(function () {
         $(".mySlideDiv").not(".active").hide(); //화면 로딩 후 첫번째 div를 제외한 나머지 숨김
@@ -213,5 +222,5 @@
     }
     
     </script>
-  </body>
+</body>
 </html>

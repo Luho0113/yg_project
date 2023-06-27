@@ -25,10 +25,10 @@
 
 		<div class="reivewContainer" id="reivewContainer">
 			<div class="movieInfo" id="movieInfo">
-				<span class="movieTitle" id="movieTitle">${movie[0].title}</span>
-				<span class="releaseDate" id="releaseDate">${movie[0].releaseDate} | </span>
-				<span class="genre" id="genre">${movie[0].genreIds[0]} | </span>
-				<span class="country" id="country">${movie[0].productionConturies[0]}</span>
+					<span class="movieTitle" id="movieTitle">${movie.title}</span>
+					<span class="releaseDate" id="releaseDate">${movie.releaseDate} | </span>
+					<span class="genre" id="genre">${movie.genreIds} | </span>
+					<span class="country" id="country">${movie.productionConturies}</span>
 			</div>
 
 			<hr>
@@ -38,7 +38,7 @@
 			</div>
 
 			<div class="posterContainer" id="posterContainer">
-				<img class="posetPath" id="posterPath" src="https://image.tmdb.org/t/p/original${movie[0].posterPath}">
+				<img class="posetPath" id="posterPath" src="https://image.tmdb.org/t/p/original${movie.posterPath}">
 			</div>
 
 			<div class="profileBox" id="profileBox">
