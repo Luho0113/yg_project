@@ -33,11 +33,9 @@
             <tr>
                 <th>감독</th>
                 <td id="director">
-                	<c:forEach items="${movie}" var="movie">
-                		<c:forEach items="${movie.directors}" var="directors">
-                			${directors}
-                		</c:forEach>
-                	</c:forEach>
+               		<c:forEach items="${movie.directors}" var="directors">
+               			${directors}
+               		</c:forEach>
                 </td>
             </tr>
             <tr>
