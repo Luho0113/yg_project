@@ -56,7 +56,7 @@
 				</ul>
 
 				<div class="cont_area">
-					<div id="tab1 js-load" class="cont" style="display: block">
+					<div id="tab1" class="cont" style="display: block">
 						<!-- 작성한 후기가 없는 경우 -->
 						<c:if test="${empty myReviews}">
 							<div class="reviews-empty">작성한 후기가 없습니다.</div>
@@ -94,44 +94,6 @@
 			</div>
 		</div>
 	</div>
-	
-	
-	<!-- 페이지번호 -->
-	<div id="pageDiv" style="text-align:center">
-	
-	</div>
-	
-	<c:if test="${!(empty page.list)}">
-		<script>
-			const pages = ${page.pages} //총 페이지 개수
-			const page = ${page.pageNum}; //현재 페이지
-			const start = Math.floor((page-1)/10)*10+1; 
-			const end = (start + 9) > pages ? pages : (start + 9); //총 페이지보다 크다면 pages, end=10
-			
-			let html = '';
-			
-			if(start != 1){
-				html += '<a href="/boards?page=' + (start-1) + '&biTitle=${param.biTitle}">&#x25c0</a>'; //왼쪽화살표
-			}
-
-			for(let i=start; i<=end; i++){
-				if(i==page){
-					//현재 페이지는 선택할 수 없도록 a태그를 없앰
-					html += ' [' + i + '] ';	
-				} else {
-					html += ' <a href="/boards?page=' + i + '&biTitle=${param.biTitle}">[' + i + ']</a>';
-				}
-			}
-			
-			if(end != pages){
-					html += '<a href="/boards?page=' + (end + 1) + '&biTitle=${param.biTitle}">&#9654</a>'; //오른쪽화살표
-			}
-			
-			
-			document.querySelector('#pageDiv').innerHTML = html;
-		</script>
-	</c:if>
-	
 	
 
 	<!-- footer area -->

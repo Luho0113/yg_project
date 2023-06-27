@@ -1,0 +1,31 @@
+/* 에러 화면 */
+.button-custom {
+	width: 220px;
+	height: 50px;
+	margin-top: 10px;
+}
+
+.error-wrap {
+	text-align: center;
+}
+
+.error-wrap img {
+	width: 300px;
+	margin-top: 20px;
+}
+
+.error-message {
+	text-align: center;
+	margin: 20px auto 50px auto;
+}
+
+/* 다른 페이지 안내 */
+.button-login {
+	display: block;
+	text-align: center;
+}
+
+.button-home {
+	display: block;
+	text-align: center;
+}
