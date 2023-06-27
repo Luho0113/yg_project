@@ -17,13 +17,20 @@
 	<jsp:include page="../common/header.jsp"></jsp:include>
 
 	<div class="content">
-		<div class="profile-wrap">
-			<div class="profile-img">
-				<img src="${myReviews[0].uiFilePath}" style="border-radius: 100px"
-					width="200px" height="200px"
-					onerror="this.src='https://ifh.cc/g/cDROLZ.png';" />
+		<h3>프로필</h3>
+		
+		<div class="myInfo-all-wrap">
+			<div class="myInfo-img-wrap">
+				<div>
+					<img src="${myReviews[0].uiFilePath}" class="profile-image"
+						onerror="this.src='https://ifh.cc/g/cDROLZ.png';" />
+				</div>
 			</div>
-			<div>닉네임 : ${myReviews[0].uiNickname}</div>
+	
+			<div class="myInfo-content">
+				<h4>${myReviews[0].uiNickname}</h4>
+			</div>
+			
 		</div>
 
 		<div class="tap-wrap">
@@ -32,7 +39,7 @@
 					<li class="tab-active"><a href="#tab1" class="tab-button">후기</a>
 					</li>
 					<li><a href="#tab2" class="tab-button">댓글</a></li>
-					<li><a href="#tab3" class="tab-button">좋아요</a></li>
+					
 				</ul>
 
 				<div class="cont_area">
@@ -55,9 +62,7 @@
 					<div id="tab2" class="cont">
 						<div class="coments-empty">작성한 댓글이 없습니다.</div>
 					</div>
-					<div id="tab3" class="cont">
-						<div class="likes-empty">좋아요한 후기가 없습니다.</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>

@@ -73,7 +73,7 @@
 						<li><a href="/join">회원가입</a></li>
 						<li>
 							<div class="myInfo-icon">
-								<a href="/myInfo"> <img id="myInfo-Img" alt="내프로필"
+								<a href="/login"> <img id="myInfo-Img" alt="내프로필"
 									src="${user.uiFilePath}"
 									onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
 								</a> ${user.uiNickname}님

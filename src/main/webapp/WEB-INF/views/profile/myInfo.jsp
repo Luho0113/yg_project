@@ -52,7 +52,7 @@
 					<li class="tab-active"><a href="#tab1" class="tab-button">후기</a>
 					</li>
 					<li><a href="#tab2" class="tab-button">댓글</a></li>
-					<li><a href="#tab3" class="tab-button">좋아요</a></li>
+		
 				</ul>
 
 				<div class="cont_area">
@@ -74,10 +74,21 @@
 						</c:forEach>
 					</div>
 					<div id="tab2" class="cont">
-						<div class="coments-empty">작성한 댓글이 없습니다.</div>
-					</div>
-					<div id="tab3" class="cont">
-						<div class="likes-empty">좋아요한 후기가 없습니다.</div>
+						<!-- 작성한 댓글이 없는 경우 -->
+						<c:if test="${empty myComments}">
+							<div class="coments-empty">작성한 댓글이 없습니다.</div>
+						</c:if>				
+						
+						<!-- 작성한 댓글이 있는 경우 -->
+						<c:forEach items="${myComments}" var="myComment">
+							<div class="user-review">
+								<div class="user-review-text">
+									<a
+										href="/review?riNum=${myComment.rcNum}&movieId=${myComment.rcMovieId}">
+										<p class="description">${myComment.rcContent}</p> </a>
+								</div>
+							</div>
+						</c:forEach>
 					</div>
 				</div>
 			</div>

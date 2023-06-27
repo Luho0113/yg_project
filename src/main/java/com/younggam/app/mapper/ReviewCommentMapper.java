@@ -12,4 +12,6 @@ public interface ReviewCommentMapper {
 	//댓글 작성
 	int insertReviewComment(ReviewCommentVO reviewCommentVO);
 
+	//나의 리뷰
+	List<ReviewCommentVO> selectUserReviewComment(ReviewCommentVO reviewCommentVO);
 }

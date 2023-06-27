@@ -16,5 +16,13 @@
 		insert  into review_comment(rc_content, ri_num, ui_id) 
 		values (#{rcContent}, #{riNum}, #{uiId})
 	</insert>
-
+	
+	<!-- 나의 댓글 가져오기 -->
+	<select id="selectUserReviewComment" resultType="com.younggam.app.vo.ReviewCommentVO">
+		select u.*, c.* 
+		from user_info u, review_comment c 
+		where u.ui_id = c.ui_id
+		and ui_nickname = #{uiNickname};
+	</select>
+	
 </mapper>

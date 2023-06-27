@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.younggam.app.service.ReviewCommentService;
 import com.younggam.app.service.ReviewService;
 import com.younggam.app.service.UserInfoService;
+import com.younggam.app.vo.ReviewCommentVO;
 import com.younggam.app.vo.ReviewInfoVO;
 import com.younggam.app.vo.UserInfoVO;
 
@@ -28,6 +30,9 @@ public class MyInfoController {
 	
 	@Autowired
 	private ReviewService riService;
+	
+	@Autowired
+	private ReviewCommentService rcService;
 
 	// 1)내 프로필
 	@GetMapping("/myInfo")
@@ -140,10 +145,16 @@ public class MyInfoController {
 	
 	// 리뷰 조회 (리뷰서비스사용하는거!!!!)
 	@GetMapping("/userReview")
-	public String getReview(@RequestParam("uiNickname") String uiNickname, Model m) {
+	public String getReview(@RequestParam("uiNickname") String uiNickname, ReviewCommentVO reviewCommentVO, Model m) {
 		
 		List<ReviewInfoVO> myReviews = riService.selectUserReviewInfos(uiNickname);
 		m.addAttribute("myReviews", myReviews);
+		
+		
+		List<ReviewCommentVO> myComments = rcService.selectUserReviewComment(reviewCommentVO);
+		reviewCommentVO.getRcContent();
+		m.addAttribute("myComments", myComments);
+		
 		
 		return "profile/userReviewList";
 	}

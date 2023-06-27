@@ -23,5 +23,10 @@ public class ReviewCommentService {
 	public boolean insertReviewComment(ReviewCommentVO reviewCommentVO) {
 		return rcMapper.insertReviewComment(reviewCommentVO) == 1;
 	}
+	
+	//나의 리뷰
+	public List<ReviewCommentVO> selectUserReviewComment(ReviewCommentVO reviewCommentVO){
+		return rcMapper.selectUserReviewComment(reviewCommentVO);
+	}
 
 }
