@@ -89,8 +89,8 @@
 <%-- 댓글 부분 시작 --%>
 		<c:choose>
 			<c:when test="${empty comments}">
-				<div class="" id="">
-						당신의 영감을 남겨보세용.
+				<div class="emptyComment">
+							첫 번째 댓글을 남겨주세요!
 				</div>
 			</c:when>
 			

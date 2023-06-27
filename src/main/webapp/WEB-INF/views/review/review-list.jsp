@@ -63,7 +63,7 @@
          <!-- riListContainer: 리뷰 목록 전체를 묶는 div -->
          
          <c:if test="${empty reviewList}">
-         	<div class="emptyReview">당신의 영감을 남겨주세용</div>
+         	<div class="emptyReview">앗! 아직 영감이 없어요.</div>
          </c:if>
 
          <c:forEach items="${reviewList}" var="reivew" varStatus="status">
