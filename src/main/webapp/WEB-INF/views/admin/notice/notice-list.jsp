@@ -49,7 +49,7 @@
 					<td>${notice.niCnt}</td>
 					<td><button class="noticeUpdate"
 							onclick="location.href='/admin/notice-update?niNum=${notice.niNum}'">수정</button>
-						<button class="noticeDelete" onclick="location.href='/admin/notice-delete?niNum=${notice.niNum}'; deleteCheck()">삭제</button></td>	
+						<button class="noticeDelete" onclick="deleteCheck(${notice.niNum})">삭제</button></td>	
 				</tr>
 			</c:forEach>
 		</table>
@@ -57,12 +57,12 @@
 		<c:if test="${!(empty page.list)}">
 			<script>
 			<!-- 삭제 버튼 -->
-			function deleteCheck() {
+			function deleteCheck(e) {
 				if(!confirm('삭제하시면 복구할 수 없습니다. \n정말로 삭제하시겠습니까?')){
 					alert("삭제가 취소되었습니다.");
 					return false;
 				}else{
-					location.href="/admin/notice-delete?niNum=${notice.niNum}";
+					location.href="/admin/notice-delete?niNum=" + e;
 				}
 			}
 				const pages = ${page.pages};

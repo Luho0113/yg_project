@@ -57,7 +57,7 @@
 		            <td>${user.uiReportCnt}</td>
 					<td>
 					<button class="userUpdate" onclick="location.href='/admin/user-update?uiId=${user.uiId}'">수정</button>
-					<button class="userDelete" onclick="deleteCheck(${user.uiId})">탈퇴</button>
+					<button class="userDelete" onclick="deleteCheck(${user.uiId});">탈퇴</button>
 					</td>
 				</tr>
 			</c:forEach>
