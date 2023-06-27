@@ -93,7 +93,7 @@ function uploadImg(obj){
 	<input type="text" id="adminNickName" name="adminNickName" value="${admin.adminNickName}"><br>
 
 	<label for="adminPwd">비밀번호</label> 
-	<input type="text" id="adminPwd" name="adminPwd" value="${admin.adminPwd}"><br>
+	<input type="password" id="adminPwd" name="adminPwd" value="${admin.adminPwd}"><br>
 
 	<div id="img_div" style="display: none">
 			<img src="${admin.adminFilePath}" width="200">

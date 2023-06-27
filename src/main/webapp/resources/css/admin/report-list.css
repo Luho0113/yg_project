@@ -4,7 +4,7 @@ html{
 }
 body{
     font-weight: 300;
-    line-height: 1.42em;
+    line-height: 2em;
     color:#A8A39D;
 }
 .reportArea{
@@ -16,13 +16,23 @@ th, td{
     padding-left: 8px;
     padding-right: 8px;
 }
+th{
+    border-top: 0.5px solid #FF7C00;
+    border-bottom: 0.5px solid #FF7C00;
+}
+td{
+    border-top: 0.3px  #A8A39D;
+    border-bottom: 0.3px dotted #A8A39D;
+}
 h2 {
     font-weight: bold;
     color: #FF7C00;
     padding-bottom: 30px;
   }
+.reportTable{
+    margin-top: 8px;
+}
 .reportTable, th, td{
-    border: 1px solid #A8A39D;
     border-collapse: collapse;
 }
 .reportTable th h4{
@@ -36,22 +46,23 @@ h2 {
     font-size: 14px;
 }
 .fileBtn{
+    margin-top: 10px;
     margin-bottom: 20px;
     background-color: #43403B;
     color: #FFFAF6;
     border-radius: 5px;
-    padding: 0.5rem 0.5rem;
+    padding: 0.6rem 0.6rem;
 }
 input[type="text"]{
-    padding: .4em .4em;
+    padding: .5em .5em;
     border: 2px solid #FF7C00;
     margin-right: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .reportSearch{
     margin-left: 5px;
     border-radius: 5px;
-    padding: 0.3rem 0.3rem;
+    padding: 0.4rem 0.4rem;
     background-color: #43403B;
     color: #FFFAF6; 
 }
@@ -60,7 +71,7 @@ input[type="text"]{
 }
 .reportUpdate, .reportDelete{
     border-radius: 5px;
-    padding: .3rem .3rem;
+    padding: .4rem .4rem;
     background-color: #43403B;
     color: #FFFAF6;
 }

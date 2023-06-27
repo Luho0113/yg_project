@@ -9,7 +9,7 @@ h2{
     margin-bottom: 20px;
 }
 input[type="text"], textarea{
-    padding: .4em .4em;
+    padding: .5em .5em;
 }
 #piTitle{
     width: 350px;
@@ -18,8 +18,7 @@ input[type="text"], textarea{
     width: 80px;
 }
 #piNum{
-    width: 30px;
-    text-align: center;
+    width: 25px;
 }
 #piNum, #piCredat, #piTitle, #piCategory, #piFilePath, #piContent{
     margin: .6em .6em;
@@ -28,11 +27,22 @@ input[type="text"], textarea{
 .updateBtn, .resetBtn{
     margin-top: 20px;
     border-radius: 5px;
-    padding: 0.5rem 0.5rem;
+    padding: 0.6rem 0.6rem;
     color: #FFFAF6;
     background-color: #43403B;
 }
 .updateBtn{
     margin-right: 5px;
 }
+label{
+	display: inline-block;
+	vertical-align: middle;
+}
+#piContent{
+    display: inline-block;
+    vertical-align: top; 
+}
+
+
+
 

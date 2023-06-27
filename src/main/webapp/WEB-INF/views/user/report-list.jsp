@@ -54,7 +54,7 @@
    <tr>
    	  <td>${report.piNum}</td>	
       <td>
-      <a class=piTitle href="/report?piNum=${report.piNum}">
+      <a class="piTitle" href="/report?piNum=${report.piNum}">
       ${report.piTitle} &nbsp;
       <i class="fa-solid fa-lock"></i> ['신고 게시판은 작성자와 관리자만 볼 수 있는 게시판입니다.']
       </a>

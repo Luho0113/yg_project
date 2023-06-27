@@ -18,8 +18,19 @@ h2 {
     padding-bottom: 20px;
     padding-top: 130px;
   }
+th{
+    /* border-left: 0.5px dotted #A8A39D; */
+    border-right: 0.5px dotted #FF7C00;
+    border-bottom: 0.5px solid #FF7C00;
+    border-top: 0.5px solid #FF7C00;
+}
+td{
+    border-top: 0.3px dotted #FF7C00;
+    border-bottom: 0.3px dotted #FF7C00;
+    /* border-right: 0.3px dotted #A8A39D;
+    border-left: 0.3px dotted #A8A39D; */
+}
 .adminView-table, th, td{
-    border: 1px solid #A8A39D;
     border-collapse: collapse;
 }
 h5{
@@ -43,4 +54,10 @@ h5{
     background-color: #43403B;
     color: #FFFAF6;
     text-align: center;
+}
+.profile-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+    object-fit: cover; /*이미지 비율 조절*/
 }

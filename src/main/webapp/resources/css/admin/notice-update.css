@@ -1,7 +1,4 @@
 @charset "UTF-8";
-html{
-	font-family: 'NanumSquare', sans-serif;
-}
 .updateNoti-area{
     padding: 50px;
 }
@@ -9,7 +6,7 @@ h2{
     margin-bottom: 20px;
 }
 input[type="text"], textarea{
-    padding: .4em .4em;
+    padding: .5em .5em;
 }
 #niTitle{
     width: 350px;
@@ -18,10 +15,7 @@ input[type="text"], textarea{
     width: 80px;
 }
 #niNum, #niCnt{
-    width: 30px;
-}
-#niNum{
-    text-align: center;
+    width: 25px;
 }
 #niNum, #niCredat, #niCnt, #niTitle, #niFilePath, #niContent{
     margin: .6em .6em;
@@ -30,10 +24,18 @@ input[type="text"], textarea{
 .updateBtn, .resetBtn{
     margin-top: 20px;
     border-radius: 5px;
-    padding: 0.5rem 0.5rem;
+    padding: 0.6rem 0.6rem;
     color: #FFFAF6;
     background-color: #43403B;
 }
 .updateBtn{
     margin-right: 5px;
+}
+label{
+    display: inline-block;
+    vertical-align: middle;
+}
+#niContent{
+    display: inline-block;
+    vertical-align: top; 
 }

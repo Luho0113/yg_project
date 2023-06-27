@@ -19,10 +19,13 @@ input[type="text"]{
     border: 1px solid #FF7C00;
     width: 250px;
 }
+#adminPwd{
+    padding: .4rem .4em;
+}
 .updateBtn, .resetBtn{
     margin-top: 20px;
     border-radius: 5px;
-    padding: 0.5rem 0.5rem;
+    padding: 0.6rem 0.6rem;
     color: #FFFAF6;
     background-color: #43403B;
 }

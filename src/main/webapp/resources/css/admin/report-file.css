@@ -4,20 +4,20 @@ html{
 }
 body{
     font-weight: 300;
-    line-height: 1.42em;
+    line-height: 2em;
     color:#A8A39D;
 }
 .reportFile-area{
     padding: 50px;
 }
 input[type="text"], textarea{
-    padding: .4em .4em;
+    padding: .5em .5em;
 }
 input[type="text"]{
     width: 350px;
 }
 #piTitle, #piCategory, #piFilePath, #piContent{
-    margin: .6em .6em;
+    margin: .7em .7em;
     border: 1px solid #FF7C00;
 }
 h5{
@@ -29,10 +29,14 @@ h2{
 .fileBtn, .resetBtn{
     margin-top: 20px;
     border-radius: 5px;
-    padding: 0.5rem 0.5rem;
+    padding: 0.6rem 0.6rem;
     color: #FFFAF6;
     background-color: #43403B;
 }
 .fileBtn{
     margin-right: 5px;
+}
+label{
+    display: inline-block;
+    vertical-align: top;
 }

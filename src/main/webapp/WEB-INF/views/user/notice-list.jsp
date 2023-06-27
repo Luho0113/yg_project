@@ -39,7 +39,7 @@
    <tr>
    	  <td>${notice.niNum}</td>	
       <td>
-      <a href="/notice?niNum=${notice.niNum}">${notice.niTitle}</a>
+      <a class="niTitle" href="/notice?niNum=${notice.niNum}">${notice.niTitle}</a>
       </td>
       <td>${notice.adminNickName}</td>
       <td>${notice.niCredat}</td>

@@ -16,16 +16,19 @@ input[type="text"]{
     margin: .6em .6em;
     border: 1px solid #FF7C00;
 }
+#uiPassword{
+    padding: .4rem .4em;
+}
 #uiReviewPoint{
     width: 70px;    
 }
 #uiActive, #uiReportCnt{
-    width: 30px;
+    width: 25px;
 }
 .updateBtn, .resetBtn{
     margin-top: 20px;
     border-radius: 5px;
-    padding: 0.5rem 0.5rem;
+    padding: 0.6rem 0.6rem;
     color: #FFFAF6;
     background-color: #43403B;
 }

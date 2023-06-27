@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ include file = "/WEB-INF/views/common/error-admin.jsp"%>    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +26,7 @@ function uploadImg(obj){
 	<form method="POST" action="/admin/notice-update" enctype="multipart/form-data">
 	<h2>공지사항 수정</h2>
 	<label for="niNum">번호</label>
-	<input type="number" id="niNum" name="niNum" value="${notice.niNum}" readonly><br>
+	<input type="text" id="niNum" name="niNum" value="${notice.niNum}" readonly><br>
 	
 	<label for="niCredat">작성일</label>
 	<input type="text" id="niCredat" name="niCredat" value="${notice.niCredat}" readonly><br>

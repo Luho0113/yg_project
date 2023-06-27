@@ -41,8 +41,8 @@
 	<c:forEach items="${page.list}" var="user">
 		<tr>
 			<td>${user.uiId}</td>
-			<td><a href="/admin/user?uiId=${user.uiId}">${user.uiNickname}</a></td>
-			<td><img src="${user.uiFilePath}" width="150"></td>
+			<td><a class="uiNickname" href="/admin/user?uiId=${user.uiId}">${user.uiNickname}</a></td>
+			<td><img class="profile-img" src="${user.uiFilePath}" width="150"></td>
 			<td>${user.uiEmail}</td>
 			<td>${user.uiReviewPoint}</td>
 			<td>

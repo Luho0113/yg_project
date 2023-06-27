@@ -85,7 +85,7 @@ public class NoticeBoardController {
 	@PostMapping("/admin/notice-update")
 	public String noticeUpdate(NoticeBoardVO notice, Model m) throws Exception {
 		String msg = "공지사항 수정이 실패하였습니다.";
-		String url = "/notice-update?niNum=" + notice.getNiNum();
+		String url = "/admin/notice-update?niNum=" + notice.getNiNum();
 		if (niService.updateNotice(notice)) {
 			msg = "공지사항이 수정되었습니다";
 			url = "/admin/notices";

@@ -13,6 +13,9 @@ body {
   min-height: 100vh;
   background-color: #2A2725;
 }
+a{
+  text-decoration-line: none;
+}
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -146,7 +149,7 @@ nav.close ~ .dashboard {
 .dash-top img{
   width: 52px;
   border-radius: 50%;
-  margin-left: 1170px;
+  margin-left: 1000px;
 }
 .dash-top .admin-nickname{
   margin-top: 20px; 
@@ -158,7 +161,7 @@ nav.close ~ .dashboard {
   align-items: center;
   margin: 60px 0 30px 0;
 }
-.dash-content .title i {
+.dash-content .title .fa-house {
   position: relative;
   height: 35px;
   width: 35px;
@@ -170,6 +173,21 @@ nav.close ~ .dashboard {
   justify-content: center;
   font-size: 24px;
 }
+.dash-content .title .fa-list, .fa-calendar{
+  position: relative;
+  height: 35px;
+  width: 65px;
+  background-color: #ff7c00;
+  border-radius: 6px;
+  color: rgb(42, 40, 37);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+
+
 .dash-content .title .text {
   font-size: 24px;
   font-weight: 500;

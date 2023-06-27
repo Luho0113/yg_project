@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file = "/WEB-INF/views/common/error-admin.jsp"%>    
+<%@ include file = "/WEB-INF/views/common/error-admin.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +31,7 @@ function uploadImg(obj){
 	<input type="text" id="uiNickname" name="uiNickname" value="${user.uiNickname}"><br>
 
 	<label for="uiPassword">비밀번호</label> 
-	<input type="text" id="uiPassword" name="uiPassword" value="${user.uiPassword}"><br>
+	<input type="password" id="uiPassword" name="uiPassword" value="${user.uiPassword}"><br>
 
 	<div id="img_div" style="display: none">
 			<img src="${user.uiFilePath}" width="200">

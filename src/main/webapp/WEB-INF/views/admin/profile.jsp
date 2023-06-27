@@ -95,7 +95,7 @@
 			<c:if test="${admin.adminFilePath == null}">
 			</c:if>
 			<c:if test="${admin.adminFilePath != null}">
-			<img src="${admin.adminFilePath}" width="150">
+			<img class="profile-img" src="${admin.adminFilePath}" width="150">
 			</c:if>
 			</td>
 		</tr>
