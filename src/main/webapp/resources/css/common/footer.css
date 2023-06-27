@@ -5,5 +5,71 @@
   position: relative;
   transform: translateY(-0%); 
   width: 100%;
-  background-color: #ff7c00;
+  background-color: #2a2725;
+  border-top: 2px solid #ff7c00;
+}
+
+.footer-content-wrap{
+	margin: 20px;
+	padding-bottom : 20px;
+}
+
+
+
+/* footer에서 이동하는 게시판 링크 목록 */
+.footer-lists > ul{
+	display: block;
+}
+
+.footer-link {
+	display: inline-block;
+	margin: 10px;
+	font-size: 20px;
+}
+
+.footer-link > a{
+	color: #fffaf6;
+	transition: all 0.3s ease;
+	font-weight: 600;
+}
+.footer-link > a:hover{
+	color: #FFA147;
+	transition: all 0.3s ease;
+	font-weight: 600;
+}
+
+.footer-link > a > span {
+	font-weight: 800;
+	color: #FFA147;
+}
+.footer-link > a >span :hover{
+	font-weight: 800;
+}
+
+
+.web-info{
+	margin: 10px;
+}
+
+/* 카피라이트 문구 */
+#copyright{
+	display: block;
+	margin: 10px;
+}
+
+
+/* 영화관 링크 */
+.icon-lists{
+	display: block;	
+}
+.icon{
+	display: inline-block;
+	margin: 10px;
+}
+
+.icon > a> img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	object-fit: scale-down; /*이미지 비율 조절*/
 }

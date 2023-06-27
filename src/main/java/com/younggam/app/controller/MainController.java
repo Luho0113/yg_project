@@ -42,4 +42,12 @@ public class MainController {
 	}
 	
 	
+	//웹사이트 정보
+	@GetMapping("/about")
+	public String about() {
+		return "common/about";
+	}
+	
+	
+	
 }
