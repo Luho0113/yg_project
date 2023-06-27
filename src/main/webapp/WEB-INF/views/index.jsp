@@ -17,10 +17,6 @@
 
 
 
-
-
-
-
  <section class="content">
     
     <article class="box-office">
@@ -73,56 +69,6 @@
 						</div>
 					</div>
 				</li>
-                				<li class="movie-box">
-                        <div>
-						<a href="detail?movieId=${_______}&riMovieId=${______}"><img id="poster" src="https://ifh.cc/g/zNb0Wd.jpg" alt="영화포스터"></a>
-						<div class="cont-detail">
-							<div class="title">
-								<a href="detail?movieId=${movie.id}">영화 제목:길게했을때 대비000</a>
-							</div>
-							<div class="release-date">0000년</div>
-							<div class="star-rate">★★★★★</div>
-						</div>
-					</div>
-				</li>
-                				<li class="movie-box">
-                        <div>
-						<a href="detail?movieId=${_______}&riMovieId=${______}"><img id="poster" src="https://ifh.cc/g/zNb0Wd.jpg" alt="영화포스터"></a>
-						<div class="cont-detail">
-							<div class="title">
-								<a href="detail?movieId=${movie.id}">영화 제목:길게했을때 대비000</a>
-							</div>
-							<div class="release-date">0000년</div>
-							<div class="star-rate">★★★★★</div>
-						</div>
-					</div>
-				</li>
-                				<li class="movie-box">
-                        <div>
-						<a href="detail?movieId=${_______}&riMovieId=${______}"><img id="poster" src="https://ifh.cc/g/zNb0Wd.jpg" alt="영화포스터"></a>
-						<div class="cont-detail">
-							<div class="title">
-								<a href="detail?movieId=${movie.id}">영화 제목:길게했을때 대비000</a>
-							</div>
-							<div class="release-date">0000년</div>
-							<div class="star-rate">★★★★★</div>
-						</div>
-					</div>
-				</li>
-                				<li class="movie-box">
-                        <div>
-						<a href="detail?movieId=${_______}&riMovieId=${______}"><img id="poster" src="https://ifh.cc/g/zNb0Wd.jpg" alt="영화포스터"></a>
-						<div class="cont-detail">
-							<div class="title">
-								<a href="detail?movieId=${movie.id}">영화 제목:길게했을때 대비000</a>
-							</div>
-							<div class="release-date">0000년</div>
-							<div class="star-rate">★★★★★</div>
-						</div>
-					</div>
-				</li>
-                
-                
 
 			</ul>
     </article>
@@ -130,7 +76,7 @@
 
     
     <article class="new-reviews">
-    <h3>최근리뷰///좋아요 많은 리뷰</h3>
+    <h3>최신 리뷰</h3>
      
 	 		<c:forEach items="${newReviewList}" var="review" varStatus="status"> 
 				<div class="review-card">
@@ -140,10 +86,13 @@
 							<img src="${review.uiFilePath}"
 								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
 							</a> 
-							<div>리뷰어이름 ${review.uiNickname}</div>
+							<div>${review.uiNickname}</div>
 						</div>
 					</div>
-					<div class="review-body">내용 ${review.riContent}</div>
+					<div class="review-body">
+					<a href="/review?riNum=${review.riNum}&movieId=${review.riMovieId}">${review.riContent}
+					</a>
+	</div>
 					<div class="review-like">
 						<div>좋아요</div>
 						<div>댓글</div>
@@ -151,63 +100,12 @@
 				</div>
 		 	</c:forEach>
 		 	
-		 	<!-- 
-		 	 <div class="review-card">
-					<div class="review-header">
-						<div>
-							<a href="userReview?uiNickname=${newReviewList.uiNickname}"> 
-							<img
-								src="${newReviewList.uiFilePath}"
-								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
-							</a>
-							<div>리뷰어이름${newReviewList.uiNickname}</div>
-						</div>
-					</div>
-					<div class="review-body">내용${newReviewList.riContent}></div>
-					<div class="review-like">
-						<div>좋아요</div>
-						<div>댓글</div>
-					</div>
-				</div>
-				 -->
-			<!-- 	<div class="review-card">
-					<div class="review-header">
-						<div>
-							<a href="userReview?uiNickname=${_____}"> 
-							<img
-								src="${______}"
-								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
-							</a>
-							<div>리뷰어이름${______}</div>
-						</div>
-					</div>
-					<div class="review-body">내용${_______}></div>
-					<div class="review-like">
-						<div>좋아요</div>
-						<div>댓글</div>
-					</div>
-				</div>
-				-->
+	
 			
 		</article>
 
 
-
-
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

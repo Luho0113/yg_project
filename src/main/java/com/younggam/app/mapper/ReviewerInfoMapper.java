@@ -22,4 +22,7 @@ public interface ReviewerInfoMapper {
 	List<ReviewInfoVO> selectNewReviewersInfos(ReviewInfoVO reviews);
 	
 	
+	
+	//별점 높은 영화 리스트
+	List<ReviewInfoVO> selectBestReviewersInfos(ReviewInfoVO reviews);
 }

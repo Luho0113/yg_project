@@ -85,7 +85,7 @@ border-radius: 3%;
   color: #ff7c00;
 }
 .movie-box .release-date {
-  
+  margin-top: 1px;
 }
 .movie-box .director {
 

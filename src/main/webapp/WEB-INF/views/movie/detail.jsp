@@ -46,8 +46,12 @@
 
 					</div>
 					<div class="star">
-						<h3>별점 ${star.riStar}</h3>
+						<h3>★ ${star.riStar}</h3>
 					</div>
+				
+	
+			
+					
 					<div class="rt-ot-r">
 						<div>상영시간  ${movieData[0].runtime} 분</div>
 						<div>원제     ${movieData[0].originalTitle}</div>
@@ -96,8 +100,7 @@
 							<img src="${reviewer.uiFilePath}"
 								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
 								</a>
-							<div>
-							
+							<div>					
 							${reviewer.uiNickname}</div>	
 						</div>
 					</div>
@@ -124,6 +127,7 @@
 
 	<!-- footer area -->
 	<jsp:include page="../common/footer.jsp"></jsp:include>
+	
 
 </body>
 

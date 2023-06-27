@@ -36,6 +36,9 @@ public class MainController {
 		List<ReviewInfoVO> newReviewList = movieMainService.selectNewReviewersInfo(reviews);
 		m.addAttribute("newReviewList",newReviewList);
 		return "index";
+		
+		
+		
 	}
 	
 	

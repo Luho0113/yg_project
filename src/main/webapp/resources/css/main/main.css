@@ -45,7 +45,7 @@
 .movie-box img {
     width: 100%;
     height: 100%;
-     /* rgba(0, 0, 0, 0.2) 그림자 효과*/
+ 
      box-shadow: 0 8px 8px 0 rgba(238, 233, 233, 0.2), 0 6px 20px 0 rgba(238, 234, 234, 0);
  
  }
@@ -76,36 +76,51 @@
 
 
 
-.review-list{
+.new-reviews{
   border: 1px solid yellow;
 }
+
 
 .review-card{
   display: inline-block; 
 border: 4px solid #FF7C00;
   border-radius: 15px;
-  height: 300px;
+  height: 160px;
   width: 250px;
-  margin: 0px 3px;
+  padding: 19px;
 }
 
 .review-header{
- 
   border: 1px solid gold;
+ margin: 5px;
 }
 
 .review-header div{
   display: inline-block; 
+    display: inline-block; 
+  vertical-align: middle;
 }
+
 
 .review-header img {
   width: 50px;
   height: auto;
+  border-radius: 25px;
 }
 
 .review-body{
   border: 1px solid firebrick;
-  height: 70%;
+  height: 60px;
+  overflow: hidden;  		
+  text-overflow: ellipsis;  
+  white-space: nowrap; 		
+  word-break:break-all;
+  margin: 2px;
+}
+
+.review-body a{
+	color: #FFFAF6;
+	margin: 5px;
 }
 
 .review-like{
@@ -115,4 +130,9 @@ border: 4px solid #FF7C00;
 
 .review-like div{
   display: inline-block; 
+  
+  
+  
 }
+
+
