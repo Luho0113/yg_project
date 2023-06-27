@@ -86,42 +86,58 @@
 			</div>
 
 			<div class="buttonGroup" id="buttonGroup">
-					<button name="likeButton" id="likeButton" value="">좋아요</button>
-					<button name="dislikeButton" id="dislikeButton" value="">싫어요</button> 
-					<button name="commentButton" id="commentButton" value="">댓글</button>
+					<button name="likeButton" id="likeButton" value="1">좋아요</button>
+					<button name="dislikeButton" id="dislikeButton" value="1">싫어요</button> 
+					<button name="commentButton" id="commentButton" value="1">댓글</button>
 			</div>
 		</div>
 
-
-
-		<div class="commentContainer" id="commentContainer">
-			<div class="commentProfileBox" id="commentProfileBox">
-				<img id="profile" src="${reivew.uiFilePath}"
-					onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+<%-- 댓글 부분 시작 --%>
+		<c:choose>
+			<c:when test="${comments == null}">
+				<div class="" id="">
+						당신의 영감을 남겨보세용.
+				</div>
+			</c:when>
+			<c:otherwise>
+				<c:forEach items="${comments}" var="comment">
+					<div class="commentContainer" id="commentContainer">
+						<div class="commentProfileBox" id="commentProfileBox">
+							<img id="profile" src="${comment.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+						</div>
+				
+						<div class="commentNickName" id="commentNickName">
+							${comment.uiNickname}
+						</div>
+				
+						<div class="commentDate" id="commentDate">
+							${comment.rcCredate}
+						</div>
+				
+						<div class="hambugerMenu" id="hambugerMenu">
+							<!-- 여기에 메뉴 아이콘 넣기 -->
+						</div>
+				
+						<div class="commentContent" id="commentContent">
+							${comment.rcContent}
+						</div>
+				
+						<div class="commentLike" id="commentLike">
+							<button type="button" class="commentLikeButton">♥ ${comment.rcLikeCnt}</button>
+							<input class="commentLikeCnt" type="hidden" value="">
+						</div>
+					</div>
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
+		
+		<form action="/review-comment" method="POST">
+			<div>
+				<textarea placeholder="댓글을 작성하세요." name="rcContent" class="rcContent"></textarea>
+				<input type="hidden" name="riNum" value="${review.riNum}">
+				<button>등록</button>
 			</div>
-
-			<div class="commentNickName" id="commentNickName">
-				${reivew.uiNickname}
-			</div>
-
-			<div class="commentDate" id="commentDate">
-				??
-			</div>
-
-			<div class="hambugerMenu" id="hambugerMenu">
-				<!-- 여기에 메뉴 아이콘 넣기 -->
-			</div>
-
-			<div class="commentContent" id="commentContent">
-				??
-			</div>
-
-			<div class="commentLike" id="commentLike">
-				<button type="button" class="commentLikeButton">♥ 15</button>
-				<input class="commentLikeCnt" type="hidden" value="">
-			</div>
-
-		</div>
+		</form>
 
 
 	</div>

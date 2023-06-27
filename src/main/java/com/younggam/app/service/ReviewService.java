@@ -24,6 +24,7 @@ public class ReviewService {
       return riMapper.selectReviewInfoSortGenre(reviews);
    }
    
+   //리뷰 작성
    public boolean insertReviewInfo(ReviewInfoVO review) {
       int result = riMapper.insertReviewInfo(review);
       if(result == 1) {
