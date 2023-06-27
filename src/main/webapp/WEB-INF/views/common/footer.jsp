@@ -9,7 +9,7 @@
 		<!-- 사이트 안내 -->
 		<div class="footer-lists">
 			<ul>
-				<li class="footer-link"><a href="/about"><span>about
+				<li class="footer-link"><a href="/about"><span>About
 							YoungGam</span></a></li>
 				<li class="footer-link"><a href="/notices">공지사항</a></li>
 				<li class="footer-link"><a href="/reports">신고게시판</a></li>
