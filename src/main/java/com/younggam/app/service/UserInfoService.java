@@ -32,20 +32,8 @@ public class UserInfoService {
 	private final String deleteFilePath = "C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp";
 	
 	//회원 가입
-	public boolean join(UserInfoVO userInfo) throws IllegalStateException, IOException {
+	public boolean join(UserInfoVO userInfo) {
 		
-		String extName = userInfo.getUiFile().getOriginalFilename();
-
-		if (!"".equals(extName)) {
-			if (extName.lastIndexOf(".") != -1) { // 확장자명이 틀리면 idx = -1
-				extName = extName.substring(extName.lastIndexOf(".")); // .jpg, .png
-			}
-			String name = UUID.randomUUID().toString(); // 문자와 숫자로 이루어진 난수
-			File file = new File(uploadFilePath, name + extName);
-
-			userInfo.getUiFile().transferTo(file);
-			userInfo.setUiFilePath("/resources/upload/" + name + extName);
-		} 
 		return uiMapper.insertUserInfo(userInfo)==1;
 	}
 	

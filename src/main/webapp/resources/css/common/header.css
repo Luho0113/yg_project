@@ -83,6 +83,7 @@
   width: 30px;
   height: 30px;
   vertical-align: middle;
+  object-fit: cover; /*이미지 비율 조절*/
 }
 
 /* 전체 페이지 로고 */

@@ -30,7 +30,7 @@ public class UserInfoController {
 	}
 	
 	@PostMapping("/join")
-	public String join(@ModelAttribute UserInfoVO user, Model m) throws IllegalStateException, IOException {
+	public String join(@ModelAttribute UserInfoVO user, Model m) {
 		
 		m.addAttribute("msg", "join fail");
 		

@@ -46,6 +46,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 id="uiId"
                 onkeyup="return checkId()"
                 placeholder=" 아이디"
+                maxlength="20"
               />
             </label>
             <div>
@@ -69,6 +70,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 id="uiNickname"
                 onkeyup="return checkNickname()"
                 placeholder=" 닉네임"
+                maxlength="16"
               />
             </label>
             <div>
@@ -91,6 +93,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 id="uiPassword"
                 onkeyup="return checkPwd()"
                 placeholder=" 비밀번호"
+                maxlength="20"
               />
             </label>
             <div id="error-checkPwd">
@@ -107,6 +110,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 id="uiPasswordSame"
                 onkeyup="return checkPwdSame()"
                 placeholder=" 비밀번호 확인"
+                maxlength="20"
               />
             </label>
             <div id="error-checkPwdSame">
