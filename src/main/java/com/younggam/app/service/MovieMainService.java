@@ -76,8 +76,8 @@ public class MovieMainService {
 	
 	
 	//별점 높은 영화
-	public List<ReviewInfoVO> selectBestReviewersInfo (ReviewInfoVO reviews){
-		return riMapper.selectBestReviewersInfos(reviews);
+	public List<ReviewInfoVO> selectBestMoviesInfo (ReviewInfoVO reviews){
+		return riMapper.selectBestMoviesInfos(reviews);
 	}
 	
 	 

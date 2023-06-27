@@ -92,7 +92,10 @@
 			<h2>포인트</h2>
 		</article>
 		<article class="review-list">
-			<c:forEach items="${reviewer}" var="reviewer" varStatus="status">
+		<h3>최신 리뷰</h3>
+		
+			<c:forEach items="${reviewer}" var="reviewer" begin="0" end="3" varStatus="status">
+				<c:out value=""/>
 				<div class="review-card">
 					<div class="review-header">
 						<div>

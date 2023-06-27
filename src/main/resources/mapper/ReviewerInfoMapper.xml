@@ -35,7 +35,7 @@ order by r.ri_credate desc
 </select>
 
 <!-- 별점 높은 영화 -->
-<select id="selectBestReviewersInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
+<select id="selectBestMoviesInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
 select ri_movie_id, round(AVG(ri_star), 1) ri_star
 from review_info
 group by ri_movie_id
