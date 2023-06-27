@@ -77,28 +77,23 @@
 			</div>
 
 			<div class="reviewComment" id="reviewComment">
-				좋아요 ${review.riLikeCnt} 댓글 ?? 조회수 ${review.riViewCnt}
+				댓글 ${review.rcCount} 조회수 ${review.riViewCnt}
 			</div>
 
 			<div class="riListReviewContent" id="riListReviewContent">
 				<!-- riListReviewContent: 리뷰 그 자체,, div  -->
 				${review.riContent}
 			</div>
-
-			<div class="buttonGroup" id="buttonGroup">
-					<button name="likeButton" id="likeButton" value="1">좋아요</button>
-					<button name="dislikeButton" id="dislikeButton" value="1">싫어요</button> 
-					<button name="commentButton" id="commentButton" value="1">댓글</button>
-			</div>
 		</div>
 
 <%-- 댓글 부분 시작 --%>
 		<c:choose>
-			<c:when test="${comments == null}">
+			<c:when test="${empty comments}">
 				<div class="" id="">
 						당신의 영감을 남겨보세용.
 				</div>
 			</c:when>
+			
 			<c:otherwise>
 				<c:forEach items="${comments}" var="comment">
 					<div class="commentContainer" id="commentContainer">
@@ -107,11 +102,24 @@
 						</div>
 				
 						<div class="commentNickName" id="commentNickName">
-							${comment.uiNickname}
+							<a href="userReview?uiNickname=${comment.uiNickname}">
+								${comment.uiNickname}
+							</a>
 						</div>
 				
 						<div class="commentDate" id="commentDate">
 							${comment.rcCredate}
+						</div>
+						
+						<div class="commentHamburger">
+							<c:choose>
+								<c:when test="${user.uiId == comment.uiId}">
+									<button onclick="deleteComment(${comment.rcNum})">X</button>
+								</c:when>
+								<c:otherwise>
+									<button onclick="location.href='/report-file'">신고</button>
+								</c:otherwise>
+							</c:choose>
 						</div>
 				
 						<div class="hambugerMenu" id="hambugerMenu">
@@ -132,10 +140,10 @@
 		</c:choose>
 		
 		<form action="/review-comment" method="POST">
-			<div>
+			<div class="commentSubmit">
 				<textarea placeholder="댓글을 작성하세요." name="rcContent" class="rcContent"></textarea>
 				<input type="hidden" name="riNum" value="${review.riNum}">
-				<button>등록</button>
+				<button>댓글 등록</button>
 			</div>
 		</form>
 

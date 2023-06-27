@@ -4,45 +4,54 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.younggam.app.mapper.ReviewInfoMapper">
 
-   <select id="selectReviewInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
-	      select u.ui_id, u.ui_nickname, u.ui_file_path, u.ui_active, r.ri_num, r.ri_content, left(r.ri_credate, 10) ri_credate, r.ri_star, r.ri_like_cnt, r.ri_view_cnt, r.ri_dislike_cnt, left(r.ri_update_date, 10) ri_update_date, r.ri_movie_id, r.ri_genre, r.ri_spoil, r.ri_direction_point, r.ri_acting_point, r.ri_story_point, r.ri_visual_point, r.ri_ost_point
-	      from user_info u, review_info r
-	      where u.ui_id = r.ui_id
-	      order by r.ri_credate desc
-   </select>
-   
-   <select id="selectReviewInfoSortGenre" parameterType="String" resultType="com.younggam.app.vo.ReviewInfoVO">
+	<!-- 리뷰 목록 출력 -->
+  	<select id="selectReviewInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
+		select count(rc_num) rc_count, r.*, u.*
+		from user_info u inner join review_info r on u.ui_id = r.ui_id
+				left outer join review_comment c on r.ri_num = c.ri_num
+		group by r.ri_num
+		order by r.ri_credate desc
+   	</select>
+   	
+   	<!-- 리뷰 목록 장르 정렬 -->
+   	<select id="selectReviewInfoSortGenre" parameterType="String" resultType="com.younggam.app.vo.ReviewInfoVO">
       	select u.ui_id, u.ui_nickname, u.ui_file_path, u.ui_active, r.ri_num, r.ri_content, left(r.ri_credate, 10) ri_credate, r.ri_star, r.ri_like_cnt, r.ri_view_cnt, r.ri_dislike_cnt, left(r.ri_update_date, 10) ri_update_date, r.ri_movie_id, r.ri_genre, r.ri_spoil, r.ri_direction_point, r.ri_acting_point, r.ri_story_point, r.ri_visual_point, r.ri_ost_point
       	from user_info u, review_info r
       	where u.ui_id = r.ui_id
         	and r.ri_genre like '%' #{genre} '%'
       	order by r.ri_credate desc
-   </select>
+   	</select>
    
-   <select id="selectReviewInfo" resultType="com.younggam.app.vo.ReviewInfoVO">
-      	select r.*, u.* 
-      	from review_info r, user_info u
-      	where r.ui_id = u.ui_id and ri_num = #{riNum}
-   </select>
-   
-   <insert id="insertReviewInfo">
+   	<!-- 리뷰 한 개 출력 -->
+   	<select id="selectReviewInfo" resultType="com.younggam.app.vo.ReviewInfoVO">
+      	select count(rc_num) rc_count, r.*, u.*
+		from user_info u inner join review_info r on u.ui_id = r.ui_id
+			left outer join review_comment c on r.ri_num = c.ri_num
+		where r.ri_num = #{riNum}
+		group by r.ri_num
+   	</select>
+   	
+   	
+   	<!-- 리뷰 등록 -->
+   	<insert id="insertReviewInfo">
    	  	insert into review_info(ri_content, ui_id, ri_movie_id, ri_star, ri_direction_point, ri_acting_point, ri_story_point, ri_visual_point, ri_ost_point, ri_genre, ri_spoil) 
       	values (#{riContent}, #{uiId}, #{riMovieId}, #{riStar}, #{riDirectionPoint}, #{riActingPoint}, #{riStoryPoint}, #{riVisualPoint}, #{riOstPoint}, #{riGenre}, #{riSpoil})
-   </insert>
+   	</insert>
    
-   <update id="updateReviewInfo">
-   		update review_info 
-   			set ri_content = #{riContent}, 
-   				ri_star = #{riStar}, 
-   				ri_direction_point = #{riDirectionPoint},
-   				ri_acting_point = #{riActingPoint},
-   				ri_story_point = #{riStoryPoint},
-   				ri_visual_point = #{riVisualPoint},
-   				ri_ost_point = #{riOstPoint},
-   				ri_spoil = #{riSpoil},
-   				ri_update_date = now()
+   	<!-- 리뷰 수정 -->
+ 	<update id="updateReviewInfo">
+ 		update review_info 
+ 			set ri_content = #{riContent}, 
+ 				ri_star = #{riStar}, 
+ 				ri_direction_point = #{riDirectionPoint},
+ 				ri_acting_point = #{riActingPoint},
+ 				ri_story_point = #{riStoryPoint},
+ 				ri_visual_point = #{riVisualPoint},
+ 				ri_ost_point = #{riOstPoint},
+ 				ri_spoil = #{riSpoil},
+ 				ri_update_date = now()
 		where ri_num = #{riNum}
-   </update>
+ 	</update>
    
    <!-- 리뷰 삭제 -->
    <delete id="deleteReviewInfo">

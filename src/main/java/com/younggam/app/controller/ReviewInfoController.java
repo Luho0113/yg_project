@@ -99,14 +99,10 @@ public class ReviewInfoController {
 	   return "redirect:/reviews";
    }
    
-   
    //리뷰 삭제
    @GetMapping("/review-delete")
    public String deleteReview(@RequestParam("riNum") int riNum, Model m, @ModelAttribute UserInfoVO userInfo, HttpSession session) {
-		
-	   UserInfoVO sessionUserInfo = (UserInfoVO) session.getAttribute("user"); // 세션에 저장된 정보를 가져옴, user의 데이터타입=object
-	   userInfo.setUiId(sessionUserInfo.getUiId());
-	   
+	   userInfo = (UserInfoVO) session.getAttribute("user"); // 세션에 저장된 정보를 가져옴, user의 데이터타입=object
 	   if(riServie.deleteReviewInfo(riNum)) {
 		   m.addAttribute("user", userInfo);
 		   return "redirect:/reviews";

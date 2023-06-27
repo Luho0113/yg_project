@@ -34,6 +34,8 @@ public class ReviewInfoVO {
 	  	
 	  	private String genre;
 	  	
+	  	private int rcCount; //댓글 수
+	  	
 	  	
 
 }

@@ -5,6 +5,7 @@
 
 <mapper namespace="com.younggam.app.mapper.ReviewCommentMapper">
 
+	<!-- 하나의 리뷰에 달린 댓글 가져오기 -->
 	<select id="selectReviewComment" resultType="com.younggam.app.vo.ReviewCommentVO">
 		select u.*, c.* 
 		from user_info u, review_comment c 
@@ -12,10 +13,17 @@
 			and ri_num = #{riNum};
 	</select>
 
+	<!-- 댓글 작성 -->
 	<insert id="insertReviewComment">
 		insert  into review_comment(rc_content, ri_num, ui_id) 
 		values (#{rcContent}, #{riNum}, #{uiId})
 	</insert>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="deleteReviewComment">
+		delete from review_comment 
+		where rc_num = #{rcNum}
+	</delete>
 	
 	<!-- 나의 댓글 가져오기 -->
 	<select id="selectUserReviewComment" resultType="com.younggam.app.vo.ReviewCommentVO">

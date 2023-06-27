@@ -13,9 +13,6 @@
 <link rel="stylesheet" href="${path}/resources/css/review/review-list-star.css">
 <link rel="stylesheet" href="${path}/resources/css/review/review-list.css">
 <script src="${path}/resources/js/review/review-list.js"></script>
-<script>
-console.log(${reviewList[0].riLikeCnt});
-</script>
 </head>
 <body>
 <!-- header area -->
@@ -64,6 +61,10 @@ console.log(${reviewList[0].riLikeCnt});
 
       <div class="riListContainer" id="riListContainer">
          <!-- riListContainer: 리뷰 목록 전체를 묶는 div -->
+         
+         <c:if test="${empty reviewList}">
+         	<div class="emptyReview">당신의 영감을 남겨주세용</div>
+         </c:if>
 
          <c:forEach items="${reviewList}" var="reivew" varStatus="status">
          
@@ -120,7 +121,7 @@ console.log(${reviewList[0].riLikeCnt});
                </div>
                
                <div class="riListComment" id="riListComment">
-                  좋아요 ${reivew.riLikeCnt}  댓글 2
+               		댓글 ${reivew.rcCount}
                </div>
 
                <div class="riListDate" id="riListDate">

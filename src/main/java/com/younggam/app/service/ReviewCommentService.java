@@ -24,6 +24,11 @@ public class ReviewCommentService {
 		return rcMapper.insertReviewComment(reviewCommentVO) == 1;
 	}
 	
+	//댓글 삭제
+	public boolean deleteReviewComment(int rcNum) {
+		return rcMapper.deleteReviewComment(rcNum) == 1;
+	}
+	
 	//나의 리뷰
 	public List<ReviewCommentVO> selectUserReviewComment(ReviewCommentVO reviewCommentVO){
 		return rcMapper.selectUserReviewComment(reviewCommentVO);

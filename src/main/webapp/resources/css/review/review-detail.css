@@ -42,7 +42,7 @@ hr{
 }
 
 .releaseDate, .genre, .country{
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .profileBox{
@@ -70,7 +70,7 @@ hr{
 .nickName>a{
 	color: #FF7C00;
     font-weight: bold;
-    font-size: 15px; /* 폰트 사이즈 정해지면 수정 하기 */
+    font-size: 17px; /* 폰트 사이즈 정해지면 수정 하기 */
 }
 
 .buttonContainer{
@@ -140,7 +140,6 @@ hr{
 
 .riListReviewContent{
     margin: 40px auto 20px auto; 
-    width: 90%;
     padding: 40px 60px;
 
     background-color: #43403B;
@@ -149,7 +148,7 @@ hr{
 
     letter-spacing: 1px;
     line-height: 30px;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .buttonGroup{
@@ -200,10 +199,13 @@ hr{
     display: inline-block;
     text-align: center;
     position: absolute;
-    margin: 25px 0px 0px 10px;
-    color: #FF7C00;
+    margin: 25px 0px 0px 12px;
     font-weight: bold;
-    font-size: 13px; /* 폰트 사이즈 정해지면 수정 하기 */
+    font-size: 15px; /* 폰트 사이즈 정해지면 수정 하기 */
+}
+
+.commentNickName>a{
+	color: #FF7C00;
 }
 
 .commentDate{
@@ -216,13 +218,31 @@ hr{
     color: #A8A39D;
 }
 
-.commentContent{
-    display: inline-block;
-    position: absolute;
-    margin: 0px 50px 0px 50px;
-    
+.commentHamburger{
+	display: inline-block;
+	position: absolute;
+    right: 1%;
+	margin: 55px 2px 0px 0px;
+}
 
-    font-size: 13px;
+.commentHamburger>button{
+	border:0px;
+	outline:0px;
+	
+    background-color: transparent;
+    color: #A8A39D;
+}
+
+.commentHamburger>button:hover{
+	cursor: pointer;
+	color: #FF7C00;
+}
+
+.commentContent{
+    margin: 0px 50px 0px 50px;
+    padding-bottom: 55px;
+  
+    font-size: 15px;
     color: #A8A39D;
 
     letter-spacing: 1px;
@@ -255,3 +275,41 @@ hr{
     opacity: 50%;   
     cursor: pointer;
 }
+
+.rcContent{
+	margin: 10px auto 0px auto; 
+    height: auto;
+    width: 1120px;
+    padding: 40px 40px;
+
+    background-color: #43403B;
+    border: none;
+    color: #FFFAF6;
+    outline: none;
+
+    letter-spacing: 1px;
+    line-height: 30px;
+    font-size: 15px;
+	font-family: 'NanumSquare', sans-serif;
+    resize: none;
+}
+
+.commentSubmit>button{
+    width: 1200px;
+    height: 50px;
+
+    background-color: #2A2725;
+	outline: 0;
+	border: 0;
+
+    font-size: 20px;
+    color: #A8A39D;
+    font-family: 'NanumSquare', sans-serif;
+}
+
+.commentSubmit>button:hover{
+    color: #FF7C00; 
+    cursor: pointer;
+}
+
+
