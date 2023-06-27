@@ -146,3 +146,17 @@ a, a:hover{
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
+
+
+.js-load{
+	display: none;
+}
+.js-load.active{
+	display: block;
+}
+.is_comp.js-load:after {
+    display: none;
+}
+.btn-wrap, .user-review-text, .user-review {
+    display: block;
+}

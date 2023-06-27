@@ -2,13 +2,24 @@
 .button-custom{
 	width: 240px;
   	height: 50px;
+  	margin-top: 30px;
 }
 
+.welcome-wrap{
+	text-align: center;
+}
+.welcome-wrap img{
+	width: 560px;
+	margin-top: 40px;
+}
 .success-message {
   text-align: center;
+  margin: 20px;
 }
 
 .button-login {
   text-align: center;
-  margin: 10px;
+  margin: 20px;
 }
+
+
