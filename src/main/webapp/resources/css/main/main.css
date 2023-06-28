@@ -34,10 +34,11 @@
 
 .movie-box{
     border: 1px solid cornflowerblue;
-    display : inline-block;
-    width: 18%;
-    height: 20.8% ;
-    margin: 0.5% 0% 0.5% 1.2%;
+   display : inline-block;
+  width: 18%;
+  height: 20.8% ;
+  margin: 0.5% 0% 0.5% 1.2%;
+  vertical-align: top;
 }
 
 .movie-box a{
@@ -47,14 +48,15 @@
 }
 
 .movie-box img {
-    width: 100%;
-    height: 100%;
- 
-     box-shadow: 0 8px 8px 0 rgba(238, 233, 233, 0.2), 0 6px 20px 0 rgba(238, 234, 234, 0);
- 
+  width: 100%;
+height:300px;
+    /* rgba(0, 0, 0, 0.2) 그림자 효과*/
+    box-shadow: 0 8px 15px 0 rgba(238, 233, 233, 0.2);
+border-radius: 3%;
  }
 
 .cont-detail{
+	
     border: 1px solid orange;
 }
 
@@ -66,6 +68,9 @@
     
 }
 
+.title a{
+	color: white;
+}
 .title a:hover{
     color: #ff7c00;
 }
