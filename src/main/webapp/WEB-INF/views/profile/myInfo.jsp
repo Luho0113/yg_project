@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="/WEB-INF/views/common/error-user.jsp"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
@@ -89,6 +89,10 @@
 
 							</div>
 						</c:forEach>
+						<div class="list-load">
+							<a href="#" id="load">더보기</a>
+						</div>
+						
 					</div>
 					<div id="tab2" class="cont">
 						<!-- 작성한 댓글이 없는 경우 -->
@@ -178,6 +182,19 @@
 			}
 			
 		}
+		
+		
+		
+		//더보기 버튼
+		 $('.cont > .user-review').hide();
+	     $(".cont > .user-review").slice(0, 5).css("display", "block"); 
+	     $("#load").click(function(e){
+	        e.preventDefault();
+	        $(".cont >.user-review:hidden").slice(0, 5).fadeIn(200).css('display', 'block'); // 클릭시 more 갯수 지저정
+	        if($(".cont >.user-review:hidden").length == 0){ // 컨텐츠 남아있는지 확인
+	            $('#load').fadeOut(100); // 컨텐츠 없을 시 버튼 사라짐
+	        }
+	    });
 	</script>
 </body>
 </html>
