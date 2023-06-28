@@ -166,7 +166,7 @@ img {vertical-align: middle;}
 		<article class="new-reviews">
 			<h3>최신 리뷰</h3>
 			<div class="new-reviews-box">
-				<c:forEach items="${newReviewList}" var="review" begin="0" end="3">
+				<c:forEach items="${newReviewList}" var="review" begin="0" end="6">
 					<div class="review-card">
 						
 						<div class="review-header">
@@ -200,6 +200,20 @@ img {vertical-align: middle;}
 				</c:forEach>
 			</div>
 		</article>
+
+
+
+
+
+<h1>더보기 테스트</h1>
+
+	<c:forEach items="${newReviewList}" var="review" begin="0" end="6">			
+<div class="review-nickname">${review.uiNickname}</div>
+				</c:forEach>
+
+
+
+
 
 	</section>
 

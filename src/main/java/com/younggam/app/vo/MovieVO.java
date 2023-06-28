@@ -28,8 +28,6 @@ public class MovieVO {
 	private String certification;
 	
 	
-
-
 	
 	
 	
