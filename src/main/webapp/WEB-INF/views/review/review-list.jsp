@@ -131,8 +131,49 @@
             </div>
          </c:forEach>
       </div>
-   </div>
+<div id="pageDiv" style="text-align:center; font-size: 14pt" ></div>
+   </div> <!-- .content 끝 -->
 <!-- footer area -->
 <jsp:include page="../common/footer.jsp"></jsp:include>
+
+<!-- 페이징 처리 시작 -->
+<c:if test="${!(empty page.list)}">
+<script>
+	const pages = ${page.pages}; //전체 페이지 (이건 기본으로 들어 있음)
+	const page = ${page.pageNum}; //현재 페이지 (이건 기본으로 들어 있음)
+	const start = Math.floor((page-1)/10)*10+1; //현재 화면에서 시작 페이지 (11~20이면 start = 11)
+	const end = (start + 9) > pages ? pages : (start + 9); //현재 페이지에서 끝 페이지 (11~20이면 end = 20) 
+
+	console.log(page);
+	
+	let html = '';
+	if(start!=1){
+		html += '<a href="/reviews?page=' + (start-1); //페이지 이동할 때 url
+//      	if('${param.biTitle}'){
+//          	html += '&biTitle=${param.biTitle}';
+//	       	}
+		//여기 밑에 있는 것들이 페이징 바가 되는 것임 
+        html += '">&#x25c0</a>'; 
+  	}
+	
+	for(let i = start; i<=end; i++){
+		if(i==page){ //현재 선택된 page=N이 현재 화면의 첫 페이지라면
+			html += ' [' + i + '] '; 
+		}else{
+			if(i == 1){ //현재 선택된 page=N이 1이라면
+				html += ' <a href="/reviews">[' + i + ']</a> ';
+			}else{//현재 선택된 page=N이 1이 아니라면 
+				html += ' <a href="/reviews?page=' + i + '">[' + i + ']</a> ';
+			}
+		}
+	}
+	if(end != pages){ //현재 페이지의 마지막 페이지가 전체 페이지 번호의 마지막이 아니라면
+		html += '<a href="/reviews?page=' + (end + 1) + '">&#9654</a>';
+	}
+	
+	document.querySelector('#pageDiv').innerHTML = html;
+</script>
+</c:if>
+
 </body>
 </html>
