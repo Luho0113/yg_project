@@ -69,24 +69,6 @@ private MovieDetailService movieDetailService;
 			m.addAttribute("MovieInfo", movieInfo);
 		}
 	
-		
-		
-//		try {
-//			
-//			
-//		for(int i=0; i<5; i++) {
-//				MovieVO movievo = movieDetailService.getMovieDetail(BestMovieList.get(i).getRiMovieId());
-//				movieInfo.add(movievo);
-//		}
-//				m.addAttribute("MovieInfo", movieInfo);
-//		} 
-//		catch(IndexOutOfBoundsException e) {
-//			for(int i=0; i<BestMovieList.size(); i++) {
-//				MovieVO movievo = movieDetailService.getMovieDetail(BestMovieList.get(i).getRiMovieId());
-//				movieInfo.add(movievo);
-//		}
-//			m.addAttribute("MovieInfo", movieInfo);
-//		}
 		return "index";
 	}
 
