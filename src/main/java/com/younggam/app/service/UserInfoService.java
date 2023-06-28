@@ -142,6 +142,12 @@ public class UserInfoService {
 		return uiMapper.updateUserByAdmin(user)==1;
 	}
 	
+	//회원 탈퇴
+	public boolean kickoutUser(String uiId) {
+		return uiMapper.kickoutUser(uiId)==1;
+		
+	}
+	
 	
 
 }

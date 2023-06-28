@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.younggam.app.service.UserInfoService;
@@ -174,17 +175,17 @@ public class UserInfoController {
 		
 	//회원 삭제
 		@GetMapping("/admin/user-delete")
-		public String deleteUserByAdmin(Model m, UserInfoVO user) {
+		public String deleteUserByAdmin(Model m, @RequestParam("uiId") String uiId) {
 			String msg = "회원 정보 삭제가 실패하였습니다.";
-			String url = "/admin/user?uiId=" + user.getUiId();
-			if(uiService.deleteUserInfo(user)) {
+			String url = "/admin/user?uiId=" + uiId;
+			if(uiService.kickoutUser(uiId)) {
 				msg = "회원 정보가 삭제되었습니다.";
 				url = "/admin/users";
 			}
 			m.addAttribute("msg", msg);
 			m.addAttribute("url", url);
 			return "common/msg";
-		}	
+		}
 		
 		
 	

@@ -54,7 +54,7 @@
             <td>${user.uiReportCnt}</td>
 			<td>
 			<button class="userUpdate" onclick="location.href='/admin/user-update?uiId=${user.uiId}'">수정</button>
-			<button class="userDelete" onclick="deleteCheck()">탈퇴</button>
+			<button class="userDelete" onclick="deleteCheck(this)" value="${user.uiId}">탈퇴</button>
 			</td>
 		</tr>
 		</c:forEach>
@@ -63,12 +63,12 @@
 <c:if test="${!(empty page.list)}">
 <script>
 	<!-- 탈퇴 버튼 -->
-	function deleteCheck() {
+	function deleteCheck(e) {
 		if(!confirm('해당 회원을 탈퇴시키면 복구할 수 없습니다. \n정말로 탈퇴시키시겠습니까?')){
 			alert("탈퇴가 취소되었습니다.");
 			return false;
 		}else{
-			location.href="/admin/user-delete?uiId=${user.uiId}";
+			location.href="/admin/user-delete?uiId=" + e.value;
 		}
 	}
 	const pages = ${page.pages};

@@ -114,6 +114,10 @@
 	order by ui_id desc
 </select>
 
+	<delete id="kickoutUser">
+		delete from User_info
+		where ui_id = #{uiId}
+	</delete>
 
 
 
