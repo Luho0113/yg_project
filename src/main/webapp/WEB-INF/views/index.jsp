@@ -12,6 +12,7 @@
 <title>영감</title>
 <!-- 스타일 -->
 <link rel="stylesheet" href="${path}/resources/css/main/main.css">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
 </head>
 <body>
 	<!-- header area -->

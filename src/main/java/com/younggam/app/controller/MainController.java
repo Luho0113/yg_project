@@ -26,9 +26,7 @@ private MovieDetailService movieDetailService;
 	
 	//현재 상영 영화/
 	@GetMapping("/")
-//	public String home() {
-//		return "index";
-//		
+	
 	public String home(  
 						 @ModelAttribute ReviewInfoVO reviews,
 						 @ModelAttribute MovieVO movies,

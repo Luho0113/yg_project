@@ -94,9 +94,9 @@ border-radius: 3%;
   display: inline-block; 
 border: 2px solid #FF7C00;
   border-radius: 15px;
-  height: 160px;
+  height: 180px;
   width: 250px;
-  padding: 19px;
+  padding: 20px;
 }
 
 .review-header{
@@ -119,12 +119,15 @@ border: 2px solid #FF7C00;
 
 .review-body{
   border: 1px solid firebrick;
-  height: 60px;
+
   overflow: hidden;  		
   text-overflow: ellipsis;  
   white-space: nowrap; 		
   word-break:break-all;
   margin: 2px;
+   -webkit-line-clamp: 4; /* 라인수 */
+   line-height: 1.3em;
+   height: 5.5em; /* line-height 곱하기 -webkit-line-clamp */
 }
 
 .review-body a{
