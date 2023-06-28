@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+html {
+	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
+	
+}
+
 /* 메뉴바 */
 .navbar {
   background-color: #ff7c00;
@@ -23,15 +28,19 @@
   float: right;
   margin: 6px;
   margin-top: 14px;
+  margin-right: 15px;
 }
 
 .navbar li {
   display: inline-block;
 }
+
 .navbar li > a {
   display: block;
   padding: 5px 10px;
   color: #2a2725;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 /* 메뉴바의 로고 */
@@ -69,6 +78,7 @@
 }
 .main-input::placeholder{
 	font-size: 14px;
+	font-family: 'NanumSquareRound';
 }
 
 /* 전체 페이지 로고 */
@@ -88,11 +98,16 @@
 /* 메뉴바 관리자 프로필 사진 */
 .admin-icon {
   margin: 5px;
+  line-height: 30px;
+  font-weight: bold;
 }
 
 #admin-Img {
-  border-radius: 10px;
-  width: 20px;
-  height: 20px;
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  object-fit: cover; /*이미지 비율 조절*/
+  margin-right: 5px;
 }
 
