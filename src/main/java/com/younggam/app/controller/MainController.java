@@ -54,15 +54,39 @@ private MovieDetailService movieDetailService;
 		//2. 결과값에서 무비아이디 꺼내기 riMovieId
 		
 		List<MovieVO> movieInfo = new ArrayList<>();
-				
-		for(int i=0; i<5; i++) {
-		
+			
+		if(BestMovieList.size()>4) {
+			for(int i=0; i<5; i++) {
 				MovieVO movievo = movieDetailService.getMovieDetail(BestMovieList.get(i).getRiMovieId());
 				movieInfo.add(movievo);
 		}
-
 				m.addAttribute("MovieInfo", movieInfo);
-
+		} else {
+			for(int i=0; i<BestMovieList.size(); i++) {
+				MovieVO movievo = movieDetailService.getMovieDetail(BestMovieList.get(i).getRiMovieId());
+				movieInfo.add(movievo);
+		}
+			m.addAttribute("MovieInfo", movieInfo);
+		}
+	
+		
+		
+//		try {
+//			
+//			
+//		for(int i=0; i<5; i++) {
+//				MovieVO movievo = movieDetailService.getMovieDetail(BestMovieList.get(i).getRiMovieId());
+//				movieInfo.add(movievo);
+//		}
+//				m.addAttribute("MovieInfo", movieInfo);
+//		} 
+//		catch(IndexOutOfBoundsException e) {
+//			for(int i=0; i<BestMovieList.size(); i++) {
+//				MovieVO movievo = movieDetailService.getMovieDetail(BestMovieList.get(i).getRiMovieId());
+//				movieInfo.add(movievo);
+//		}
+//			m.addAttribute("MovieInfo", movieInfo);
+//		}
 		return "index";
 	}
 

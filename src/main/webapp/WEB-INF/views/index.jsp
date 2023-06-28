@@ -16,6 +16,70 @@
 	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css"
 	rel="stylesheet">
 </head>
+<style>
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
 <body>
 	<!-- header area -->
 	<jsp:include page="./common/header.jsp"></jsp:include>
@@ -28,37 +92,38 @@
 		<article class="box-office">
 			<h3>박스오피스/상영중인 영화?</h3>
 
-			<c:forEach items="${nowPlaying}" var="nowPlaying">
-				<div class="box-office-list">
-					<!-- 
-					<img id="box-office-poster"
-						src="https://image.tmdb.org/t/p/original/${nowPlaying.posterPath}">
-					<h2>${nowPlaying.title}</h2>
-			 -->
+			
 
-					<img id="box-office-poster" src="https://ifh.cc/g/zNb0Wd.jpg">
+<div class="slideshow-container">
+<c:forEach items="${nowPlaying}" var="nowPlaying">
+
+<div class="mySlides fade">
+  <div class="numbertext">페이지번호</div>
+  <img src="https://image.tmdb.org/t/p/original/${nowPlaying.posterPath}" style="width:200px">
+  <div class="text">${nowPlaying.title}</div>
+</div>
+
+	</c:forEach>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
 
 
 
-				</div>
-			</c:forEach>
 
 
-			<!--   슬라이드 해보는중..
-   <div class="slideshow-container">
-     
-        <div class="mySlideDiv fade">
-         <c:forEach items="${nowPlaying}" var="nowPlaying"> 
-           <img id="poster"
-	src="https://image.tmdb.org/t/p/original/${nowPlaying.posterPath}">
-	  </c:forEach> 
-        </div>
-        
-        <a class="prev" onclick="prevSlide()">&#10094;</a>
-        <a class="next" onclick="nextSlide()">&#10095;</a>
-              
-   </div>
-    -->
+
+
+
+
+
+
+
 
 		</article>
 
@@ -141,75 +206,29 @@
 	<!-- footer area -->
 	<jsp:include page="./common/footer.jsp"></jsp:include>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$(".mySlideDiv").not(".active").hide(); //화면 로딩 후 첫번째 div를 제외한 나머지 숨김
 
-			setInterval(nextSlide, 4000); //4초(4000)마다 다음 슬라이드로 넘어감
-		});
+<script>
+let slideIndex = 0;
+showSlides();
 
-		//이전 슬라이드
-		function prevSlide() {
-			$(".mySlideDiv").hide(); //모든 div 숨김
-			var allSlide = $(".mySlideDiv"); //모든 div 객체를 변수에 저장
-			var currentIndex = 0; //현재 나타난 슬라이드의 인덱스 변수
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
 
-			//반복문으로 현재 active클래스를 가진 div를 찾아 index 저장
-			$(".mySlideDiv").each(function(index, item) {
-				if ($(this).hasClass("active")) {
-					currentIndex = index;
-				}
 
-			});
-
-			//새롭게 나타낼 div의 index
-			var newIndex = 0;
-
-			if (currentIndex <= 0) {
-				//현재 슬라이드의 index가 0인 경우 마지막 슬라이드로 보냄(무한반복)
-				newIndex = allSlide.length - 1;
-			} else {
-				//현재 슬라이드의 index에서 한 칸 만큼 뒤로 간 index 지정
-				newIndex = currentIndex - 1;
-			}
-
-			//모든 div에서 active 클래스 제거
-			$(".mySlideDiv").removeClass("active");
-
-			//새롭게 지정한 index번째 슬라이드에 active 클래스 부여 후 show()
-			$(".mySlideDiv").eq(newIndex).addClass("active");
-			$(".mySlideDiv").eq(newIndex).show();
-
-		}
-
-		//다음 슬라이드
-		function nextSlide() {
-			$(".mySlideDiv").hide();
-			var allSlide = $(".mySlideDiv");
-			var currentIndex = 0;
-
-			$(".mySlideDiv").each(function(index, item) {
-				if ($(this).hasClass("active")) {
-					currentIndex = index;
-				}
-
-			});
-
-			var newIndex = 0;
-
-			if (currentIndex >= allSlide.length - 1) {
-				//현재 슬라이드 index가 마지막 순서면 0번째로 보냄(무한반복)
-				newIndex = 0;
-			} else {
-				//현재 슬라이드의 index에서 한 칸 만큼 앞으로 간 index 지정
-				newIndex = currentIndex + 1;
-			}
-
-			$(".mySlideDiv").removeClass("active");
-			$(".mySlideDiv").eq(newIndex).addClass("active");
-			$(".mySlideDiv").eq(newIndex).show();
-
-		}
-	</script>
 </body>
 </html>
