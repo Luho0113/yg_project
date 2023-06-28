@@ -10,6 +10,7 @@
 <title>영감</title>
 <!-- 스타일 -->
 <link rel="stylesheet" href="${path}/resources/css/profile/myInfo.css" />
+<link rel="stylesheet" href="${path}/resources/css/common/header.css" />
 </head>
 <body>
 

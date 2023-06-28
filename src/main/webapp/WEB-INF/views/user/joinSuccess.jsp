@@ -11,6 +11,7 @@
 <!-- 스타일 -->
 <link rel="stylesheet" href="${path}/resources/css/user/joinSuccess.css" />
 <link rel="stylesheet" href="${path}/resources/css/common/button.css" />
+<link rel="stylesheet" href="${path}/resources/css/common/header.css" />
 </head>
 <body>
 	<!-- 회원 가입 성공 결과 화면 -->

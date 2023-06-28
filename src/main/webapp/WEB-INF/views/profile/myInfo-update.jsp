@@ -11,6 +11,7 @@
 <title>프로필 수정</title>
 <!-- 스타일 -->
 <link rel="stylesheet" href="${path}/resources/css/common/button.css" />
+<link rel="stylesheet" href="${path}/resources/css/common/header.css" />
 <link rel="stylesheet"
 	href="${path}/resources/css/profile/myInfo-update.css" />
 <link

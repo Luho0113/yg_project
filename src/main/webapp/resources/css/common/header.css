@@ -23,6 +23,7 @@
   float: right;
   margin: 6px;
   margin-top: 14px;
+  margin-right: 15px;
 }
 
 .navbar li {
@@ -35,6 +36,11 @@
   font-weight: bold;
   font-size: 18px;
 }
+
+.no-login{
+	padding: 4px;
+}
+
 
 /* 메뉴바의 로고 */
 .nav-logo {
@@ -56,7 +62,7 @@
 	border: 0;
 	background-color: transparent;
 	position: absolute;
-	left: 486px;
+	left: 495px;
 	top: 13px;
 	font-size: 24px;
 	line-height: 25px;
@@ -71,6 +77,7 @@
 }
 .main-input::placeholder{
 	font-size: 14px;
+	font-family: 'NanumSquareRound';
 }
 
 
@@ -87,6 +94,7 @@
   height: 30px;
   vertical-align: middle;
   object-fit: cover; /*이미지 비율 조절*/
+  margin-right: 5px;
 }
 
 /* 전체 페이지 로고 */

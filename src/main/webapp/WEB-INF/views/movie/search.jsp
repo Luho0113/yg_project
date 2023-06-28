@@ -9,11 +9,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-
+<title>영감</title>
+<!-- 스타일 -->
 <link rel="stylesheet"
 	href="${path}/resources/css/movie/movie-search.css">
 <script src="${path}/resources/js/movie-search.js"></script>
+<link rel="stylesheet" href="${path}/resources/css/common/header.css" />
 </head>
 <body>
 	<!-- header area -->
