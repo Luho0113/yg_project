@@ -91,7 +91,7 @@ public class UserInfoController {
 			} 
  			
  			//사용자의 default uiActive = 1, 자동으로 로그인 성공 처리
- 			return "index";
+ 			return "redirect:/";
  		}
  		
  		//로그인에 실패한 경우 (없는 계정이거나 아이디 or 비밀번호가 틀렸을 때)
@@ -106,7 +106,7 @@ public class UserInfoController {
 	public String userLogout(HttpSession session) {
 		
 		session.invalidate(); //세션 초기화
-		return "index";
+		return "redirect:/";
 		
 	}
 	

@@ -49,6 +49,11 @@
 
 .web-info{
 	margin: 10px;
+	
+}
+
+.web-info > div{
+	line-height: 35px;
 }
 
 /* 카피라이트 문구 */

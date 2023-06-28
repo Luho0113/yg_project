@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>영감</title>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
 <link rel="stylesheet" href="${path}/resources/css/review/review-insert-star.css">
 <link rel="stylesheet" href="${path}/resources/css/review/review-insert.css">
 <script src="${path}/resources/js/review/review-star.js"></script>

@@ -136,7 +136,7 @@ a, a:hover{
 	margin: 0 20px 0 20px;
 	padding: 50px;
 	line-height: 100%;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 }
 
 /* 긴 리뷰 내용 텍스트 줄이기 */
@@ -144,6 +144,8 @@ a, a:hover{
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
+	line-height: 1.3em;
+	height: 3.9em; /* line-height 곱하기 -webkit-line-clamp */
 	overflow: hidden;
 }
 

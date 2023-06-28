@@ -27,10 +27,12 @@
 	
 	<!-- 나의 댓글 가져오기 -->
 	<select id="selectUserReviewComment" resultType="com.younggam.app.vo.ReviewCommentVO">
-		select u.*, c.* 
-		from user_info u, review_comment c 
-		where u.ui_id = c.ui_id
-		and ui_nickname = #{uiNickname};
+		select u.*, c.*, r.*
+		from user_info u inner join review_comment c on u.ui_id = c.ui_id
+	    left outer join review_info r on c.ri_num = r.ri_num
+		where ui_nickname = #{uiNickname}
+	    order by c.rc_credate desc
 	</select>
+	
 	
 </mapper>

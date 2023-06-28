@@ -29,7 +29,7 @@ public class ReviewCommentService {
 		return rcMapper.deleteReviewComment(rcNum) == 1;
 	}
 	
-	//나의 리뷰
+	//나의 댓글
 	public List<ReviewCommentVO> selectUserReviewComment(ReviewCommentVO reviewCommentVO){
 		return rcMapper.selectUserReviewComment(reviewCommentVO);
 	}

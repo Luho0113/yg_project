@@ -60,7 +60,21 @@
 
 					</div>
 					<div id="tab2" class="cont">
-						<div class="coments-empty">작성한 댓글이 없습니다.</div>
+						<!-- 작성한 댓글이 없는 경우 -->
+						<c:if test="${empty myComments}">
+							<div class="coments-empty">작성한 댓글이 없습니다.</div>
+						</c:if>				
+						
+						<!-- 작성한 댓글이 있는 경우 -->
+						<c:forEach items="${myComments}" var="myComment">
+							<div class="user-review">
+								<div class="user-review-text">
+									<a
+										href="/review?riNum=${myComment.riNum}&movieId=${myComment.riMovieId}">
+										<p class="description">${myComment.rcContent}</p>  </a>
+								</div>
+							</div>
+						</c:forEach>
 					</div>
 					
 				</div>
