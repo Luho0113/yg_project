@@ -47,8 +47,15 @@
 
 					</div>
 					<div class="star">
-						<h3>★ ${star.riStar}</h3>
+						
+						<c:if test="${empty star.riStar}">
+						<h3>★ -</h3>
+						</c:if>
+<c:if test="${not empty star.riStar}"> 
+ <h3>★ ${star.riStar}</h3>
+</c:if>
 					</div>
+					
 				
 	
 			
@@ -120,6 +127,24 @@
 					</div>
 				</div>
 			</c:forEach>
+			
+							<c:if test="${empty reviewer}">
+						<div class="review-card">
+					
+					<div class="review-body">
+					<a href="review-insert?search=${movieData.title}">리뷰를 작성해보세요
+					</a>
+					</div>
+					
+				
+					</div>
+						</c:if>
+
+
+
+			
+			
+			
 		</article>
 	</section>
 

@@ -98,6 +98,7 @@ public class MovieDetailService {
 			
 			MovieService movieService = new MovieService();
 
+			movieVO.setId(jsonObject.getString("id"));
 			movieVO.setTitle(jsonObject.getString("title"));
 			movieVO.setPosterPath(jsonObject.getString("poster_path"));// 영화포스터
 			movieVO.setReleaseDate(jsonObject.getString("release_date"));// 개봉일

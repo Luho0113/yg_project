@@ -135,8 +135,7 @@ img {vertical-align: middle;}
 					<li class="movie-box">
 						<div>
 
-							<c:out value="${MovieInfo.id}" />
-
+						
 							<a
 								href="detail?movieId=${MovieInfo.id}&riMovieId=${MovieInfo.id}">
 								<img id="poster"
@@ -145,8 +144,7 @@ img {vertical-align: middle;}
 							</a>
 							<div class="cont-detail">
 								<div class="title">
-									<a
-										href="detail?movieId=${MovieInfo.id}&riMovieId=${MovieInfo.id}">${MovieInfo.title}</a>
+									<a href="detail?movieId=${MovieInfo.id}&riMovieId=${MovieInfo.id}">${MovieInfo.title}</a>
 								</div>
 								<c:set var="String1" value="${MovieInfo.releaseDate}" />
 								<c:set var="string2" value="${fn:substring(String1, 0, 4)}" />
