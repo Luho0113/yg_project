@@ -1,6 +1,7 @@
 @charset "UTF-8";
 html {
-	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */	
+	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
+	
 }
 .updateUser-area{
     padding: 50px;
@@ -15,6 +16,18 @@ input[type="text"]{
 #uiReviewPoint, #uiActive, #uiReportCnt{
     margin: .6em .6em;
     border: 1px solid #FF7C00;
+}
+#uiFilePath{
+    display: none;
+}
+.btn-upload{
+    margin-left: 6px;
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+    color: #FFFAF6;
+    background-color: #43403B;
+    border-radius: 5px;
+    font-size: 14px
 }
 #uiPassword{
     padding: .4rem .4em;

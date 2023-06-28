@@ -36,7 +36,9 @@ function uploadImg(obj){
 	<div id="img_div" style="display: none">
 			<img src="${user.uiFilePath}" width="200">
 	</div>
-	<label for="uiFile">프로필 이미지</label> 
+	<label for="uiFile">프로필 이미지
+		<div class="btn-upload">이미지</div>
+	</label>
 	<input type="file" id="uiFilePath" name="uiFile" onchange="uploadImg(this)"><br>
 	
 	<label for="uiEmail">이메일</label> 
