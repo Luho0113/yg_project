@@ -54,7 +54,7 @@ public interface UserInfoMapper {
 	
 	List<UserInfoVO> selectInactiveUsers(UserInfoVO user); //비활성화 회원 목록 + 페이징 + 검색
 	
-	int kickoutUser(String uiId);
+	int dropoutUser(String uiId); //회원 삭제
 	
 	
 	//리뷰 포인트 지급

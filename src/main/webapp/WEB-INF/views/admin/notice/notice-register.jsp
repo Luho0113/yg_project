@@ -42,7 +42,9 @@ function writeCheck(){
 	<label for="niTitle">제목</label>
 	<input type="text" id="niTitle" name="niTitle"><br>
 	
-	<label for="niFilePath">첨부</label>
+	<label for="niFilePath">첨부
+		<div class="btn-upload">공지 파일</div>
+	</label>
 	<input type="file" id="niFilePath" name="niFile" onchange="uploadImg(this)"><br>
 	
 	<label for="niContent">내용</label>

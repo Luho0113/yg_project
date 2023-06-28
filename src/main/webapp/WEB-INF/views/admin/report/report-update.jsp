@@ -57,7 +57,10 @@ function uploadImg(obj){
 	<div id="img_div" style="display: none">
 			<img src="${report.piFilePath}" width="200">
 	</div>
-	<br><label for="piFilePath">첨부</label>
+	<br>
+	<label for="piFilePath">첨부
+		<div class="btn-upload">증거 파일</div>
+	</label>
 	<input type="file" id="piFilePath" name="piFile" onchange="uploadImg(this)"><br>
 	
 	<label for="piContent">내용</label>

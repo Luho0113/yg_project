@@ -1,6 +1,7 @@
 @charset "UTF-8";
 html {
-	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */	
+	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
+	
 }
 .updateAdmin-area{
     margin-left: 250px; 
@@ -21,6 +22,18 @@ input[type="text"]{
 }
 #adminPwd{
     padding: .4rem .4em;
+}
+#adminFilePath{
+    display: none;
+}
+.btn-upload{
+    margin-left: 6px;
+    display: inline-block;
+    padding: 0.04rem 0.04rem;
+    color: #FFFAF6;
+    background-color: #43403B;
+    border-radius: 5px;
+    font-size: 14px
 }
 .updateBtn, .resetBtn{
     margin-top: 20px;

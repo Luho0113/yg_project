@@ -21,8 +21,29 @@ input[type="text"], textarea{
     width: 25px;
 }
 #piNum, #piCredat, #piTitle, #piCategory, #piFilePath, #piContent{
-    margin: .6em .6em;
+    margin: .7em .7em;
     border: 1px solid #FF7C00;
+}
+#piCategory, #piFilePath, #piContent{
+    margin: 1em 1em;
+}
+#piContent{
+    margin-top: 17px;
+}
+#piFilePath{
+    display: none;
+}
+input[type="checkbox"]{
+    accent-color: #FF7C00;
+}
+.btn-upload{
+    margin-left: 6px;
+    display: inline-block;
+    padding: 0.04rem 0.04rem;
+    color: #FFFAF6;
+    background-color: #43403B;
+    border-radius: 5px;
+    font-size: 14px
 }
 .updateBtn, .resetBtn{
     margin-top: 20px;
@@ -34,10 +55,10 @@ input[type="text"], textarea{
 .updateBtn{
     margin-right: 5px;
 }
-label{
+/* label{
 	display: inline-block;
 	vertical-align: middle;
-}
+} */
 #piContent{
     display: inline-block;
     vertical-align: top; 

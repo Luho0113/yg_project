@@ -114,7 +114,8 @@
 	order by ui_id desc
 </select>
 
-	<delete id="kickoutUser">
+<!-- 회원 삭제 -->
+	<delete id="dropoutUser">
 		delete from User_info
 		where ui_id = #{uiId}
 	</delete>

@@ -178,7 +178,7 @@ public class UserInfoController {
 		public String deleteUserByAdmin(Model m, @RequestParam("uiId") String uiId) {
 			String msg = "회원 정보 삭제가 실패하였습니다.";
 			String url = "/admin/user?uiId=" + uiId;
-			if(uiService.kickoutUser(uiId)) {
+			if(uiService.dropoutUser(uiId)) {
 				msg = "회원 정보가 삭제되었습니다.";
 				url = "/admin/users";
 			}

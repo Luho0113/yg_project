@@ -20,6 +20,18 @@ input[type="text"]{
     margin: .7em .7em;
     border: 1px solid #FF7C00;
 }
+#niFilePath{
+    display: none;
+}
+.btn-upload{
+    margin-left: 6px;
+    display: inline-block;
+    padding: 0.04rem 0.04rem;
+    color: #FFFAF6;
+    background-color: #43403B;
+    border-radius: 5px;
+    font-size: 14px
+}
 h2{
     margin-bottom: 20px;
 }

@@ -143,8 +143,8 @@ public class UserInfoService {
 	}
 	
 	//회원 탈퇴
-	public boolean kickoutUser(String uiId) {
-		return uiMapper.kickoutUser(uiId)==1;
+	public boolean dropoutUser(String uiId) {
+		return uiMapper.dropoutUser(uiId)==1;
 		
 	}
 	

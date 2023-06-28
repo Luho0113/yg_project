@@ -1,6 +1,7 @@
 @charset "UTF-8";
 html {
-	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */	
+	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
+	
 }
 body{
     font-weight: 300;
@@ -19,6 +20,21 @@ input[type="text"]{
 #piTitle, #piCategory, #piFilePath, #piContent{
     margin: .7em .7em;
     border: 1px solid #FF7C00;
+}
+input[type="checkbox"]{
+    accent-color: #FF7C00;
+}
+#piFilePath{
+    display: none;
+}
+.btn-upload{
+    margin-left: 6px;
+    display: inline-block;
+    padding: 0.04rem 0.04rem;
+    color: #FFFAF6;
+    background-color: #43403B;
+    border-radius: 5px;
+    font-size: 14px
 }
 h5{
     margin-bottom: 10px;

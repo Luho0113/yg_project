@@ -98,7 +98,9 @@ function uploadImg(obj){
 	<div id="img_div" style="display: none">
 			<img src="${admin.adminFilePath}" width="200">
 	</div>
-	<label for="aiFile">프로필 이미지</label> 
+	<label for="aiFilePath">프로필 이미지
+		<div class="btn-upload">이미지 선택</div>
+	</label>
 	<input type="file" id="adminFilePath" name="aiFile" onchange="uploadImg(this)"><br>
 	
 	<label for="adminEmail">이메일</label> 
