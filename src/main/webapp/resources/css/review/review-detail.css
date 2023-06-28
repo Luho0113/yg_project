@@ -169,7 +169,7 @@ hr{
 
     font-size: 20px;
     color: #FFFFFF;
-    font-family: 'NanumSquare', sans-serif;
+    font-family: 'NanumSquareRound';
 }
 
 .buttonGroup>button:hover{
@@ -308,7 +308,7 @@ hr{
     letter-spacing: 1px;
     line-height: 30px;
     font-size: 15px;
-	font-family: 'NanumSquare', sans-serif;
+	font-family: 'NanumSquareRound';
     resize: none;
 }
 
@@ -322,7 +322,7 @@ hr{
 
     font-size: 20px;
     color: #A8A39D;
-    font-family: 'NanumSquare', sans-serif;
+    font-family: 'NanumSquareRound';
 }
 
 .commentSubmit>button:hover{

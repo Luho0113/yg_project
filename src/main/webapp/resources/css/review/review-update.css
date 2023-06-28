@@ -54,7 +54,6 @@ input[type=text]{
     text-align: left;
     color: #A8A39D;
     width: 1200px;
-    font-family: 'NanumSquare', sans-serif;
 }
 
 .reviewInfo th{
@@ -82,7 +81,6 @@ input[type=checkbox]{
     letter-spacing: 1px;
     line-height: 30px;
     font-size: 15px;
-	font-family: 'NanumSquare', sans-serif;
     resize: none;
 }
 
