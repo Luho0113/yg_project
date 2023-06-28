@@ -122,6 +122,9 @@
 								</div>
 							</div>
 						</c:forEach>
+						<div class="list-load">
+							<a href="#" id="load">더보기</a>
+						</div>
 					</div>
 				</div>
 			</div>
