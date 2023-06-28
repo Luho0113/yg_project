@@ -6,12 +6,14 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
   <head>
     <meta charset="UTF-8" />
+    
+    <title>영감</title>
+    <!-- 스타일 -->
+    <link rel="stylesheet" href="${path}/resources/css/common/header.css" />
     <link
       rel="stylesheet"
       href="${path}/resources/css/admin/login-suspended.css"
     />
-    <title>영감</title>
-    <!-- 스타일 -->
   </head>
   <body>
     <!-- 로그인 실패 안내 페이지 (정지된 계정 전용) -->

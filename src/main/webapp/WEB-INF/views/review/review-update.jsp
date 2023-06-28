@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
 <link rel="stylesheet" href="${path}/resources/css/review/review-update-star.css">
 <link rel="stylesheet" href="${path}/resources/css/review/review-update.css">
+<link rel="stylesheet" href="${path}/resources/css/common/header.css" />
 <script src="${path}/resources/js/review/review-update.js"></script>
 </head>
 <body>

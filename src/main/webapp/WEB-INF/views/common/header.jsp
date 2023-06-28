@@ -67,7 +67,7 @@
 				</c:if>
 				<!-- 로그아웃한 경우 -->
 				<c:if test="${user.uiId == null}">
-					<ul>
+					<ul class="no-login">
 						<li><a href="/login">로그인</a></li>
 						<!-- onclick="location.href='/login'" -->
 						<li><a href="/join">회원가입</a></li>

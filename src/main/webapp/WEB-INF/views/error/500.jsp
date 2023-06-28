@@ -10,6 +10,7 @@
 <!-- 스타일 -->
 <link rel="stylesheet" href="${path}/resources/css/common/error.css" />
 <link rel="stylesheet" href="${path}/resources/css/common/button.css" />
+<link rel="stylesheet" href="${path}/resources/css/common/header.css" />
 </head>
 <body>
 	<!-- 404 error -->

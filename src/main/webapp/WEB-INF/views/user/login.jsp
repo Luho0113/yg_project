@@ -11,6 +11,7 @@
 <!-- 스타일 -->
 <link rel="stylesheet" href="${path}/resources/css/common/button.css" />
 <link rel="stylesheet" href="${path}/resources/css/user/login.css" />
+<link rel="stylesheet" href="${path}/resources/css/common/header.css" />
 </head>
 <body>
 	<!-- header area -->

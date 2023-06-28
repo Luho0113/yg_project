@@ -15,6 +15,7 @@
 <link rel="stylesheet"
 	href="${path}/resources/css/movie/movie-detail.css">
 <link rel="stylesheet" href="${path}/resources/css/common/button.css" />
+<link rel="stylesheet" href="${path}/resources/css/common/header.css" />
 </head>
 
 <body>
