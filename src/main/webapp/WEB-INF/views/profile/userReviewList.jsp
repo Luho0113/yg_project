@@ -63,16 +63,24 @@
 
 				<div class="cont_area">
 					<div id="tab1" class="cont" style="display: block">
+						<!-- 작성한 후기가 없는 경우 -->
 						<c:if test="${empty myReviews}">
-							<div class="reviews-empty">첫 영감을 남겨주세요!</div>
-							<div class="button-review">
-								<button class="button-custom btnFromBlack"
-									onclick="location.href='/review-insert'">
-									<span>영감 남기기</span>
-								</button>
-							</div>
+							<c:if test="${user.uiId != myReview.uiId}">
+								<div class="reviews-empty">앗! 작성한 영감이 없어요.</div>
+							</c:if>
+							<!-- 로그인한 유저와 리뷰의 유저의 아이디가 동일한 경우 -->
+							<c:if test="${user.uiId == myReview.uiId}">
+								<div class="reviews-empty">첫 영감을 남겨주세요!</div>
+								<div class="button-review">
+									<button class="button-custom btnFromBlack"
+										onclick="location.href='/review-insert'">
+										<span>영감 남기기</span>
+									</button>
+								</div>
+							</c:if>
+
 						</c:if>
-						
+
 						<!-- 작성한 후기가 있는 경우 -->
 						<c:forEach items="${myReviews}" var="myReview">
 							<div class="user-review">
@@ -83,7 +91,7 @@
 									</a>
 								</div>
 								<div class="user-review-info">
-									<span>댓글 ${myReview.rcCount} | </span> <span>작성일
+									<span>댓글 ${myReview.rcCount}</span> <span>|</span> <span>작성일
 										${fn:substring(myReview.riCredate, 0,10)}</span>
 									<!-- 로그인한 유저와 리뷰의 유저의 아이디가 동일한 경우 -->
 									<c:if test="${user.uiId == myReview.uiId}">
@@ -102,13 +110,18 @@
 					<div id="tab2" class="cont">
 						<!-- 작성한 댓글이 없는 경우 -->
 						<c:if test="${empty myComments}">
-							<div class="coments-empty">첫 댓글을 남겨주세요!</div>
-							<div class="button-comment">
-								<button class="button-custom btnFromBlack"
-									onclick="location.href='/reviews'">
-									<span>댓글 남기기</span>
-								</button>
-							</div>
+							<c:if test="${user.uiId != myComment.uiId}">
+								<div class="reviews-empty">앗! 작성한 댓글이 없어요.</div>
+							</c:if>
+							<c:if test="${user.uiId == myComment.uiId}">
+								<div class="coments-empty">첫 댓글을 남겨주세요!</div>
+								<div class="button-comment">
+									<button class="button-custom btnFromBlack"
+										onclick="location.href='/reviews'">
+										<span>댓글 남기기</span>
+									</button>
+								</div>
+							</c:if>
 						</c:if>
 
 						<!-- 작성한 댓글이 있는 경우 -->

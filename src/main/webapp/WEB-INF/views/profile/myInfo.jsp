@@ -78,12 +78,12 @@
 									</a>
 								</div>
 								<div class="user-review-info">
-									<span>댓글 ${myReview.rcCount} | </span> <span>작성일
+									<span>댓글 ${myReview.rcCount}</span> <span>|</span> <span>작성일
 										${fn:substring(myReview.riCredate, 0,10)}</span>
 
-									<button class="delete"
+									<button class="button-custom btnFromBlack"
 										onclick="deleteReview(${myReview.riNum})">삭제</button>
-									<button class="update"
+									<button class="button-custom btnFromBlack"
 										onclick="location.href='/review-update?riNum=${myReview.riNum}'">수정</button>
 								</div>
 
@@ -113,7 +113,8 @@
 								</div>
 								<div class="user-review-info">
 									<span>작성일 ${fn:substring(myComment.rcCredate, 0,10)}</span>
-									<button onclick="deleteComment(${myComment.rcNum})">삭제</button>
+									<button class="button-custom btnFromBlack"
+										onclick="deleteComment(${myComment.rcNum})">삭제</button>
 								</div>
 							</div>
 						</c:forEach>

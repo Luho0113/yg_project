@@ -4,21 +4,71 @@
 
 html {
 	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
+	
 }
 
+.content{
+	letter-spacing: 1px;
+}
 
+h1, h2{
+	margin: 20px;
+}
+
+h1{
+	font-size: 50px;
+}
+
+h2{
+	margin-bottom: 30px;
+}
+
+span{
+	color: #ff7c00;
+}
+
+.content > p{
+	margin: 22px;
+	font-size: 16px;
+}
+
+/* 웹 페이지 소개 */
 .yg-description{
 	display: block;
+	margin: 20px;
+	margin-bottom: 10px;
+	font-size: 16px;
 }
 
+.yg-description div, p {
+	margin-bottom: 10px;	
+}
+
+.yg-description-part1{
+	display: block;
+	padding-bottom: 30px;
+}
+
+.yg-description-part2{
+	padding-bottom: 30px;
+}
+
+.yg-description-part3{
+	padding-bottom: 30px;
+	color: #ff7c00;
+}
+/* 사이트의 주요 기능 */
 .yg-summary-wrap{
 	display: block;
 	text-align: center;
 	margin: 40px;
+	margin-top: 120px;
 }
 
 .yg-summary{
 	display: inline-block;
+	margin: 50px;
+		
 }
 
 .yg-summary-img{
@@ -28,6 +78,13 @@ html {
 .yg-summary-img>a>i{
 	width: 100px;
 	height: 100px;
-	font-size: 75px;
+	font-size: 100px;
 	vertical-align: top;
 }
+
+
+.yg-summary-text{
+	font-size: 25px;
+	margin: 20px;
+}
+

@@ -58,7 +58,7 @@ a, a:hover{
 	margin: 0 10px;
 }
 
-.button-custom {
+.button-update > .button-custom {
 	width: 120px;
 	height: 50px;
 }
@@ -166,6 +166,11 @@ a, a:hover{
 	color: #a8a39d;
 }
 
+.user-review-info span{
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
 /* 긴 리뷰 내용 텍스트 줄이기 */
 .description {
 	display: -webkit-box;
@@ -176,16 +181,15 @@ a, a:hover{
 	overflow: hidden;
 }
 
+.user-review button-custom{
+	text-align: center;
+}
 
-.js-load{
-	display: none;
-}
-.js-load.active{
-	display: block;
-}
-.is_comp.js-load:after {
-    display: none;
-}
-.btn-wrap, .user-review-text, .user-review {
-    display: block;
+.user-review button{
+	width: 50px;
+	height: 25px;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 25px;
+	font-size: 14px;
 }
