@@ -36,6 +36,9 @@ public class ReviewInfoVO {
 	  	
 	  	private int rcCount; //댓글 수
 	  	
+	  	private int page = 1;
+	  	private int rows = 5;
+	  	
 	  	
 
 }

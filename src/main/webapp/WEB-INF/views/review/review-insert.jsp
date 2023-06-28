@@ -31,7 +31,7 @@
         </div>
 
         <div class="searchButton">
-            <input type="submit">
+            <input type="submit" class="movie-search-input">
         </div>
     </form>
 	

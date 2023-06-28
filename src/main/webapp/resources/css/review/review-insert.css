@@ -8,8 +8,9 @@
 }
 
 .autocomplete {
+	position: relative;
 	display: inline-block;
-	width: 1100px;
+	width: 1120px;
 	border-bottom: 2px solid #FF7C00;
 }
 
@@ -24,9 +25,9 @@
     
     border: none;
     background-color: transparent;
-	width: 1100px;
 	
 	color: #FFFAF6;
+    width: 1080px;
 }
 
 
@@ -34,7 +35,7 @@
     float: right;
 }
 
-input[type=submit]{
+.movie-search-input{
     display: inline-block;
 
     background-image: url(../../../resources/images/돋보기.svg);
@@ -43,6 +44,10 @@ input[type=submit]{
     background-size: contain;
     color: transparent;
     cursor: pointer;
+        padding: 15px;
+        border: 1px solid transparent;
+         font-size: 16px;
+         margin: 10px 0 15px 0;
 }
 
 .autocomplete-items {
@@ -80,7 +85,7 @@ input[type=checkbox]{
 .riContent, .riContent:focus{
     margin: 40px 0px 0px 0px; 
     height: 200px;
-    width: 1200px;
+    width: 1078px;
     padding: 40px 60px;
 
     background-color: #43403B;

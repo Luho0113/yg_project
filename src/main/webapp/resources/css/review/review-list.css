@@ -64,6 +64,7 @@
 /* 리뷰 목록 전체를 묶는 div */
 .riListContainer{
     width: calc(100% - 200px); /* 값 변경 하지마라 */
+    min-height: 800px;
     margin: 0px 0px 0px 200px; /* 값 변경 하지마라 */
     
 }

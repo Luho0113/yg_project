@@ -27,37 +27,12 @@
 
   
   
-  * {
-    box-sizing: border-box;
-  }
+
   
-  body {
-    font: 16px Arial;  
-  }
+
   
-  /*the container must be positioned relative:*/
-  .autocomplete {
-    position: relative;
-    display: inline-block;
-  }
-  
-  input {
-    border: 1px solid transparent;
-    background-color: #f1f1f1;
-    padding: 10px;
-    font-size: 16px;
-  }
-  
-  input[type=text] {
-    background-color: #f1f1f1;
-    width: 100%;
-  }
-  
-  input[type=submit] {
-    background-color: DodgerBlue;
-    color: #FFFAF6;
-    cursor: pointer;
-  }
+
+
   
   .autocomplete-items {
     position: absolute;

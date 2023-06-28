@@ -131,7 +131,6 @@
             </div>
          </c:forEach>
       </div>
-
    </div>
 <!-- footer area -->
 <jsp:include page="../common/footer.jsp"></jsp:include>

@@ -39,8 +39,7 @@ public class ReviewInfoController {
    //전체 리뷰 조회
    @GetMapping("/reviews")
    public String getReviewList(@ModelAttribute ReviewInfoVO reviewInfo, Model m) {
-      List<ReviewInfoVO> reviewList = riServie.selectReviewInfos(reviewInfo);
-      m.addAttribute("reviewList", reviewList);
+      m.addAttribute("reviewList", riServie.selectReviewInfos(reviewInfo));
       return "review/review-list";
    }
    
