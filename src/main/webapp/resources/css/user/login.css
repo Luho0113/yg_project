@@ -29,6 +29,10 @@ h3 {
 	margin-left: -132px;
 }
 
+#checkId{
+	color: #ff7c00;
+}
+
 /* 경고 메세지 */
 .error_message-wrap {
   text-align: center;

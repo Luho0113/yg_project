@@ -17,6 +17,8 @@
 	/* height: 50px; */
 	cursor: pointer;
 	font-size: 16px;
+	font-family: 'NanumSquareRound';
+	font-weight: bold;
 	/* box-shadow: 2px 2px 2px 0px rgba(32, 32, 32, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1); */
 }
 
@@ -371,4 +373,5 @@ input:focus {
 	margin: 5px;
 	font-size: 16px;
 	padding-left: 10px; /* placeholder의 글자 조절 */
+	font-family: 'NanumSquareRound';
 }

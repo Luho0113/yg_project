@@ -85,7 +85,7 @@
 						<!-- 닉네임 입력 -->
 						<label> <input class="input" type="text" name="uiNickname"
 							id="uiNickname" onkeyup="return checkNickname()"
-							placeholder="새 닉네임" maxlength="16"/>
+							placeholder=" 새 닉네임" maxlength="16"/>
 						</label>
 						<div class="button-nickname-update">
 							<button class="button-custom btnToOrange ">수정</button>
@@ -114,14 +114,14 @@
 
 						<label> <input class="input" type="password"
 							name="uiPassword" id="uiPassword" onkeyup="return checkPwd()"
-							placeholder="새 비밀번호" maxlength="20"/>
+							placeholder=" 새 비밀번호" maxlength="20"/>
 						</label>
 
 						<!-- 비밀번호 확인 입력 -->
 
 						<label> <input class="input" type="password"
 							name="uiPasswordSame" id="uiPasswordSame"
-							onkeyup="return checkPwdSame()" placeholder="비밀번호 확인" maxlength="20"/>
+							onkeyup="return checkPwdSame()" placeholder=" 비밀번호 확인" maxlength="20"/>
 						</label>
 
 						<div class="button-pwd-update">
@@ -149,7 +149,7 @@
 
 						<label> <input class="input" type="email" name="uiEmail"
 							id="uiEmail" value="${user.uiEmail}"
-							onkeyup="return checkEmail()" placeholder="이메일" />
+							onkeyup="return checkEmail()" placeholder=" 이메일" />
 						</label>
 
 						<div class="button-email-update">
