@@ -38,11 +38,13 @@ public class MyInfoController {
 
 	// 1)내 프로필
 	@GetMapping("/myInfo")
-	public String myInfo(@RequestParam("uiNickname") String uiNickname,@ModelAttribute ReviewCommentVO reviewCommentVO, Model m) {
-
+	public String myInfo(@RequestParam("uiNickname") String uiNickname,@ModelAttribute ReviewCommentVO reviewCommentVO, UserInfoVO userInfo, HttpSession session, Model m) {
+		
+		log.info("userInfo ===> {}", userInfo);
+		
 		List<ReviewInfoVO> myReviews = riService.selectUserReviewInfos(uiNickname);
 		m.addAttribute("myReviews", myReviews);
-
+		log.info("myReviews ===> {}", myReviews);
 		log.info("uiNickname ===> {}", uiNickname);
 
 		List<ReviewCommentVO> myComments = rcService.selectUserReviewComment(reviewCommentVO);
@@ -152,11 +154,12 @@ public class MyInfoController {
 	// 리뷰 조회 (리뷰서비스사용하는거!!!!)
 	@GetMapping("/userReview")
 	public String getReview(@RequestParam("uiNickname") String uiNickname,
-			@ModelAttribute ReviewCommentVO reviewCommentVO, Model m) {
-		
+			@ModelAttribute ReviewCommentVO reviewCommentVO, UserInfoVO userInfo, HttpSession session, Model m) {
+
 		List<ReviewInfoVO> myReviews = riService.selectUserReviewInfos(uiNickname);
 		m.addAttribute("myReviews", myReviews);
 		log.info("uiNickname ===> {}", uiNickname);
+		log.info("myReviews ===> {}", myReviews);
 
 		List<ReviewCommentVO> myComments = rcService.selectUserReviewComment(reviewCommentVO);
 		log.info("reviewCommentVO ===> {}", reviewCommentVO);

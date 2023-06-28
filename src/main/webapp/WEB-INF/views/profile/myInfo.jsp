@@ -36,6 +36,7 @@
 			<div class="myInfo-content">
 				<h4>${user.uiNickname}</h4>
 				<p>@${user.uiId}</p>
+				<p>포인트 : ${user.uiReviewPoint}</p>
 			</div>
 
 			<div class="button-update">

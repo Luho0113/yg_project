@@ -46,6 +46,7 @@ uri="http://java.sun.com/jsp/jstl/functions"%>
           <div class="myInfo-content">
             <h4>${user.uiNickname}</h4>
             <p>@${myReviews[0].uiId}</p>
+            <p>포인트 : ${user.uiReviewPoint}</p>
           </div>
 
           <div class="button-update">
