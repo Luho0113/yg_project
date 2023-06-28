@@ -153,7 +153,7 @@ public class MyInfoController {
 	@GetMapping("/userReview")
 	public String getReview(@RequestParam("uiNickname") String uiNickname,
 			@ModelAttribute ReviewCommentVO reviewCommentVO, Model m) {
-
+		
 		List<ReviewInfoVO> myReviews = riService.selectUserReviewInfos(uiNickname);
 		m.addAttribute("myReviews", myReviews);
 		log.info("uiNickname ===> {}", uiNickname);

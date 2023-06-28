@@ -56,6 +56,7 @@ public class ReviewService {
    
    //작성한 리뷰 조회하기
    public List<ReviewInfoVO> selectUserReviewInfos(String uiNickname){
+	   // PageHelper.startPage(uiNickname.getPage(), uiNickname.getRows());
       return riMapper.selectUserReviewInfos(uiNickname);
    }
 }
