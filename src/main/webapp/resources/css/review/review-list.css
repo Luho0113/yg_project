@@ -75,7 +75,10 @@ html {
 }
 
 .emptyReview{
-	height: 800px;
+	height: 700px;
+	padding-top: 100px;
+	
+	text-align: center;
 }
 
 
