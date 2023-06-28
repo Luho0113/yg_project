@@ -57,4 +57,8 @@ public interface UserInfoMapper {
 	int kickoutUser(String uiId);
 	
 	
+	//리뷰 포인트 지급
+	int updateUserInfoReviewPoint(String uiId);
+	
+	
 }

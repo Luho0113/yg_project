@@ -120,12 +120,12 @@
 	</delete>
 
 
-
-
-
-
-
-
+<!-- 리뷰 작성 시 포인트 지급 -->
+	<update id="updateUserInfoReviewPoint">
+		update user_info 
+			set ui_review_point = ui_review_point + 20 
+		where ui_id= #{uiId};
+	</update>
 
 
 </mapper>

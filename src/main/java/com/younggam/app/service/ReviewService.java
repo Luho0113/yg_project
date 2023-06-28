@@ -6,13 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.younggam.app.mapper.ReviewInfoMapper;
+import com.younggam.app.mapper.UserInfoMapper;
 import com.younggam.app.vo.ReviewInfoVO;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class ReviewService {
    
    @Autowired
    private ReviewInfoMapper riMapper;
+   
+   @Autowired
+   private UserInfoMapper uiMapper;
    
    //일반 목록
    public List<ReviewInfoVO> selectReviewInfos(ReviewInfoVO reviews){
@@ -28,6 +35,8 @@ public class ReviewService {
    public boolean insertReviewInfo(ReviewInfoVO review) {
       int result = riMapper.insertReviewInfo(review);
       if(result == 1) {
+    	 uiMapper.updateUserInfoReviewPoint(review.getUiId()); 
+    	 log.info("user Info=>{}", review);
          return true;
       }
       return false;
