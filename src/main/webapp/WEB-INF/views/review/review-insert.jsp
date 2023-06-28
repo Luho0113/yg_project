@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="/WEB-INF/views/common/error-user.jsp"%>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
@@ -109,6 +110,16 @@ var movieGenreId = new Array();
 		movieGenreId.push("${movie['genreIds']}");
     </c:forEach>
 autocomplete(document.getElementById("myInput"), movieTitle, movieDirectors, movieReleaseDate, movieId, movieGenreId);
+
+
+//textarea 크기 자동 조절
+const DEFAULT_HEIGHT = 30; // textarea 기본 height
+const $textarea = document.querySelector('#riContent');
+$textarea.oninput = (event) => {
+	  const $target = event.target;
+	  $target.style.height = 0;
+	  $target.style.height = DEFAULT_HEIGHT + ($target.scrollHeight - 100) + 'px';
+};
 </script>
 
 </html>

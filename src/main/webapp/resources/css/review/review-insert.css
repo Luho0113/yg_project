@@ -86,7 +86,7 @@ input[type=checkbox]{
 /* 리뷰 작성하는 textarea */
 .riContent, .riContent:focus{
     margin: 40px 0px 0px 0px; 
-    height: 200px;
+    height: 30px;
     width: 1078px;
     padding: 40px 60px;
 
