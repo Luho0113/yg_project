@@ -35,7 +35,11 @@ public class ReviewService {
    
    //리류 상세
    public ReviewInfoVO selectReviewInfo (int riNum) {
-      return riMapper.selectReviewInfo(riNum);
+	   ReviewInfoVO review = riMapper.selectReviewInfo(riNum);
+	   if(review != null) {
+		   riMapper.updateReviewInfoVeiwCnt(review);
+	   }
+      return review;
    }
    
    //리뷰 수정

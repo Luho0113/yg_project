@@ -86,7 +86,7 @@
 			</div>
 
 			<div class="reviewComment" id="reviewComment">
-				댓글 ${review.rcCount} 조회수 ${review.riViewCnt}
+				댓글 ${review.rcCount} &nbsp; &nbsp; 조회수 ${review.riViewCnt}
 			</div>
 
 			<div class="riListReviewContent" id="riListReviewContent">

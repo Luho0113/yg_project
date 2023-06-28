@@ -32,6 +32,12 @@
 		group by r.ri_num
    	</select>
    	
+   	<!-- 리뷰 들어올 때 조회수 올라가기 -->
+   	<update id="updateReviewInfoVeiwCnt">
+   		update review_info 
+   			set ri_view_cnt = ri_view_cnt + 1 
+   		where ri_num = #{riNum};
+   	</update>
    	
    	<!-- 리뷰 등록 -->
    	<insert id="insertReviewInfo">

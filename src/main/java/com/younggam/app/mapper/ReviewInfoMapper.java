@@ -15,6 +15,9 @@ public interface ReviewInfoMapper {
    //한 개의 리뷰 조회
    ReviewInfoVO selectReviewInfo(int riNum);
    
+   //리뷰 조회수 증가
+   int updateReviewInfoVeiwCnt(ReviewInfoVO review);
+   
    //리뷰 작성
    int insertReviewInfo(ReviewInfoVO review);
    

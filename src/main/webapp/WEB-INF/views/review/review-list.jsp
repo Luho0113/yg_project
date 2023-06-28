@@ -111,7 +111,7 @@
                   </div>
 
                   <div class="starPoint">
-                     <span class="star">☆☆☆☆☆<span class="starRange">★★★★★</span>
+                     <span class="star">★★★★★<span class="starRange">★★★★★</span>
                         <input type="range" value="1" step="1" min="0" max="10">
                         <input type="hidden" class="riStar" value="${reivew.riStar}" readonly="readonly">
                      </span>
@@ -126,7 +126,7 @@
                </div>
                
                <div class="riListComment">
-               		댓글 ${reivew.rcCount}
+               		댓글 ${reivew.rcCount} &nbsp; &nbsp; 조회수 ${reivew.riViewCnt}
                </div>
 
                <div class="riListDate">
