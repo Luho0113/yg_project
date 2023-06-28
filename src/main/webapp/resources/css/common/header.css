@@ -32,6 +32,8 @@
   display: block;
   padding: 5px 10px;
   color: #2a2725;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 /* 메뉴바의 로고 */
@@ -76,6 +78,7 @@
 .myInfo-icon {
   margin: 5px;
   line-height: 30px;
+  font-weight: bold;
 }
 
 #myInfo-Img {

@@ -69,7 +69,9 @@
 									<a
 										href="/review?riNum=${myReview.riNum}&movieId=${myReview.riMovieId}">
 										<p class="description">${myReview.riContent}</p> </a>
+									
 								</div>
+								<span>${myReview.riCredate}</span>
 							</div>
 						</c:forEach>
 					</div>
@@ -84,7 +86,7 @@
 							<div class="user-review">
 								<div class="user-review-text">
 									<a
-										href="/review?riNum=${myComment.rcNum}&movieId=${myComment.rcMovieId}">
+										href="/review?riNum=${myComment.riNum}&movieId=${myComment.riMovieId}">
 										<p class="description">${myComment.rcContent}</p> </a>
 								</div>
 							</div>
