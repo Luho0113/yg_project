@@ -99,8 +99,12 @@ img {vertical-align: middle;}
 
 <div class="mySlides fade">
   <div class="numbertext">페이지번호</div>
+  <a href="detail?movieId=${nowPlaying.id}&riMovieId=${nowPlaying.id}">
   <img src="https://image.tmdb.org/t/p/original/${nowPlaying.posterPath}" style="width:200px">
+  </a>
   <div class="text">${nowPlaying.title}</div>
+  <div class="text">${nowPlaying.overview}</div>
+
 </div>
 
 	</c:forEach>
