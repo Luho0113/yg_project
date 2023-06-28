@@ -143,14 +143,14 @@ a, a:hover{
 
 
 /* 리뷰 내용 */
-.user-review {
+.user-review, .user-comment {
 	border: 1px solid #ff7c00;
 	margin: 15px 0;
 	border-radius: 5px;
 }
 
 /* 리뷰 내용 텍스트 */
-.user-review-text {
+.user-review-text, .user-comment-text {
 	margin: 0 20px 0 20px;
 	padding: 40px 50px 0px 50px;
 	line-height: 100%;
@@ -159,14 +159,15 @@ a, a:hover{
 
 
 /* 리뷰 기타 정보 */
-.user-review-info{
+.user-review-info, .user-comment-info{
 	display: block;
 	margin: 0 20px 0 10px;
 	text-align: right;
 	color: #a8a39d;
 }
 
-.user-review-info span{
+.user-review-info span
+, .user-comment-info span{
 	margin-right: 5px;
 	margin-left: 5px;
 }
@@ -181,11 +182,13 @@ a, a:hover{
 	overflow: hidden;
 }
 
-.user-review button-custom{
+.user-review button-custom,
+.user-comment button-custom {
 	text-align: center;
 }
 
-.user-review button{
+.user-review button,
+.user-comment button{
 	width: 50px;
 	height: 25px;
 	vertical-align: middle;
@@ -194,7 +197,7 @@ a, a:hover{
 	font-size: 14px;
 }
 
-.list-load{
+.review-load, .comment-load{
 	text-align: center;
 	font-size: 18px;
 }

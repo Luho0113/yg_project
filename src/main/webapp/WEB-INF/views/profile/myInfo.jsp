@@ -89,10 +89,10 @@
 
 							</div>
 						</c:forEach>
-						<div class="list-load">
-							<a href="#" id="load">더보기</a>
+						<div class="review-load">
+							<a href="#" id="review-load">더보기</a>
 						</div>
-						
+
 					</div>
 					<div id="tab2" class="cont">
 						<!-- 작성한 댓글이 없는 경우 -->
@@ -108,22 +108,22 @@
 
 						<!-- 작성한 댓글이 있는 경우 -->
 						<c:forEach items="${myComments}" var="myComment">
-							<div class="user-review">
-								<div class="user-review-text">
+							<div class="user-comment">
+								<div class="user-comment-text">
 									<a
 										href="/review?riNum=${myComment.riNum}&movieId=${myComment.riMovieId}">
 										<p class="description">${myComment.rcContent}</p>
 									</a>
 								</div>
-								<div class="user-review-info">
+								<div class="user-comment-info">
 									<span>작성일 ${fn:substring(myComment.rcCredate, 0,10)}</span>
 									<button class="button-custom btnFromBlack"
 										onclick="deleteComment(${myComment.rcNum})">삭제</button>
 								</div>
 							</div>
 						</c:forEach>
-						<div class="list-load">
-							<a href="#" id="load">더보기</a>
+						<div class="comment-load">
+							<a href="#" id="comment-load">더보기</a>
 						</div>
 					</div>
 				</div>
@@ -188,14 +188,25 @@
 		
 		
 		
-		//더보기 버튼
+		//후기 더보기 버튼
 		 $('.cont > .user-review').hide();
 	     $(".cont > .user-review").slice(0, 5).css("display", "block"); 
-	     $("#load").click(function(e){
+	     $("#review-load").click(function(e){
 	        e.preventDefault();
 	        $(".cont >.user-review:hidden").slice(0, 5).fadeIn(200).css('display', 'block'); // 클릭시 more 갯수 지저정
 	        if($(".cont >.user-review:hidden").length == 0){ // 컨텐츠 남아있는지 확인
-	            $('#load').fadeOut(100); // 컨텐츠 없을 시 버튼 사라짐
+	            $('#review-load').fadeOut(100); // 컨텐츠 없을 시 버튼 사라짐
+	        }
+	    });
+	     
+	   //댓글 더보기 버튼
+		 $('.cont > .user-comment').hide();
+	     $(".cont > .user-comment").slice(0, 5).css("display", "block"); 
+	     $("#comment-load").click(function(e){
+	        e.preventDefault();
+	        $(".cont >.user-comment:hidden").slice(0, 5).fadeIn(200).css('display', 'block'); // 클릭시 more 갯수 지저정
+	        if($(".cont >.user-comment:hidden").length == 0){ // 컨텐츠 남아있는지 확인
+	            $('#comment-load').fadeOut(100); // 컨텐츠 없을 시 버튼 사라짐
 	        }
 	    });
 	</script>
