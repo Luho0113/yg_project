@@ -118,13 +118,24 @@
                   </div>
                </div>
                
-               <div class="riListReviewContent">
-                  <a href="/review?riNum=${reivew.riNum}&movieId=${reivew.riMovieId}">
-                     <!-- riListReviewContent: 리뷰 그 자체,, div  -->
-                     ${reivew.riContent}
-                  </a>
-               </div>
-               
+               <!-- riListReviewContent: 리뷰 그 자체,, div  -->
+               <c:choose>
+               		<c:when test="${reivew.riSpoil eq 1}">
+						<div class="riListReviewContent">
+                  			<a href="/review?riNum=${reivew.riNum}&movieId=${reivew.riMovieId}">
+			                     스포일러 포함 리뷰입니다. 
+                  			</a>
+               			</div>
+	               </c:when>
+	               <c:otherwise>
+						<div class="riListReviewContent">
+                  			<a href="/review?riNum=${reivew.riNum}&movieId=${reivew.riMovieId}">
+			                     ${reivew.riContent}
+                  			</a>
+               			</div>
+	               </c:otherwise>           
+               </c:choose>
+
                <div class="riListComment">
                		댓글 ${reivew.rcCount} &nbsp; &nbsp; 조회수 ${reivew.riViewCnt}
                </div>

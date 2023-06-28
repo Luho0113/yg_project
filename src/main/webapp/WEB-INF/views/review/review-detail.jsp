@@ -151,11 +151,20 @@
 		</c:choose>
 		
 		<form action="/review-comment" method="POST">
-			<div class="commentSubmit">
-				<textarea placeholder="댓글을 작성하세요." name="rcContent" class="rcContent"></textarea>
-				<input type="hidden" name="riNum" value="${review.riNum}">
-				<button>댓글 등록</button>
-			</div>
+			<c:choose>
+				<c:when test="${empty user}">
+					<div class="commentSubmit">
+						<textarea placeholder="로그인 후 이용 가능합니다." name="rcContent" class="rcContent" readonly="readonly"></textarea>
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class="commentSubmit">
+						<textarea placeholder="댓글을 작성하세요." name="rcContent" class="rcContent"></textarea>
+						<input type="hidden" name="riNum" value="${review.riNum}">
+						<button>댓글 등록</button>
+					</div>
+				</c:otherwise>
+			</c:choose>
 		</form>
 
 

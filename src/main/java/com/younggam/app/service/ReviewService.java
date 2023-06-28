@@ -36,7 +36,6 @@ public class ReviewService {
       int result = riMapper.insertReviewInfo(review);
       if(result == 1) {
     	 uiMapper.updateUserInfoReviewPoint(review.getUiId()); 
-    	 log.info("user Info=>{}", review);
          return true;
       }
       return false;
