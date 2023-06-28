@@ -59,8 +59,8 @@
 						<div>연령 등급 ${movieRate[0].certification} 세</div>
 					</div>
 					<div class="review-button">
-						<button class="button-custom btnOrange" type="button"
-						onclick="location.href='review-insert?search=${movieData.title}'">🖋평가하기</button>
+						<button class="button-custom btnFromBlack" type="button"
+						onclick="location.href='review-insert?search=${movieData.title}'">영감 남기기</button>
 					</div>
 					
 				</div>

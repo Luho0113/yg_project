@@ -12,7 +12,9 @@
 <title>영감</title>
 <!-- 스타일 -->
 <link rel="stylesheet" href="${path}/resources/css/main/main.css">
-<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+<link
+	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css"
+	rel="stylesheet">
 </head>
 <body>
 	<!-- header area -->
@@ -28,8 +30,16 @@
 
 			<c:forEach items="${nowPlaying}" var="nowPlaying">
 				<div class="box-office-list">
-					<img id="poster"
+					<!-- 
+					<img id="box-office-poster"
 						src="https://image.tmdb.org/t/p/original/${nowPlaying.posterPath}">
+					<h2>${nowPlaying.title}</h2>
+			 -->
+
+					<img id="box-office-poster" src="https://ifh.cc/g/zNb0Wd.jpg">
+
+
+
 				</div>
 			</c:forEach>
 
@@ -55,57 +65,73 @@
 		<article class="highest-rated-movies">
 			<h3>별점 높은 순</h3>
 			<ul class="movies">
-				<li class="movie-box">
-					<div>
-						<c:forEach items="${MovieInfo}" var="MovieInfo" varStatus="status"
-							begin="0" end="4">
+				<c:forEach items="${MovieInfo}" var="MovieInfo" varStatus="status"
+					begin="0" end="4">
+					<li class="movie-box">
+						<div>
+
 							<c:out value="${MovieInfo.id}" />
 
-							<a href="detail?movieId=${MovieInfo.id}&riMovieId=${MovieInfo.id}">
+							<a
+								href="detail?movieId=${MovieInfo.id}&riMovieId=${MovieInfo.id}">
 								<img id="poster"
-									 src="https://image.tmdb.org/t/p/w300${MovieInfo.posterPath}"
-									 onerror="this.src='https://ifh.cc/g/zNb0Wd.jpg';">
+								src="https://image.tmdb.org/t/p/w300${MovieInfo.posterPath}"
+								onerror="this.src='https://ifh.cc/g/zNb0Wd.jpg';">
 							</a>
 							<div class="cont-detail">
 								<div class="title">
-									<a href="detail?movieId=${MovieInfo.id}&riMovieId=${MovieInfo.id}">${MovieInfo.title}</a>
+									<a
+										href="detail?movieId=${MovieInfo.id}&riMovieId=${MovieInfo.id}">${MovieInfo.title}</a>
 								</div>
 								<c:set var="String1" value="${MovieInfo.releaseDate}" />
 								<c:set var="string2" value="${fn:substring(String1, 0, 4)}" />
 								<div class="release-date">${string2}</div>
 								<h1>★ ${BestMovieList[status.index].riStar}</h1>
 							</div>
-						</c:forEach>
-					</div>
-				</li>
+
+						</div>
+					</li>
+				</c:forEach>
 			</ul>
 		</article>
 
 
 		<article class="new-reviews">
 			<h3>최신 리뷰</h3>
+			<div class="new-reviews-box">
+				<c:forEach items="${newReviewList}" var="review" begin="0" end="3">
+					<div class="review-card">
+						
+						<div class="review-header">
+							<div class="review-img">
+								<a href="userReview?uiNickname=${review.uiNickname}"> <img
+									src="${review.uiFilePath}"
+									onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+								</a>
+							</div>
 
-			<c:forEach items="${newReviewList}" var="review" begin="0" end="4">
-				<div class="review-card">
-					<div class="review-header">
-						<div>
-							<a href="userReview?uiNickname=${review.uiNickname}"> 
-							<img src="${review.uiFilePath}"
-								 onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
-							</a>
-							<div>${review.uiNickname}</div>
+							<div class="review-nickname">${review.uiNickname}</div>
+
 						</div>
-					</div>
-					<div class="review-body">
-						<a href="/review?riNum=${review.riNum}&movieId=${review.riMovieId}">${review.riContent}</a>
-					</div>
-					<div class="review-like">
-						<div>좋아요</div>
-						<div>댓글</div>
-					</div>
-				</div>
-			</c:forEach>
+						<div class="review-body">
+							<div class="review-body-text">
+								<a
+									href="/review?riNum=${review.riNum}&movieId=${review.riMovieId}">
+									<p>${review.riContent}</p>
+								</a>
+							</div>
 
+
+						</div>
+
+						<div class="review-like">
+							<div>좋아요</div>
+							<div>댓글</div>
+						</div>
+						
+					</div>
+				</c:forEach>
+			</div>
 		</article>
 
 	</section>

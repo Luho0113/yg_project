@@ -1,204 +1,224 @@
 @charset "UTF-8";
 
-
 html {
 	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
 }
 
-#poster{
-	
-	width:200px;
-	
-}
-.box-office{
-    border: 1px solid red;
-    margin-top: 5%;
+#box-office-poster {
+	width: 200px;
 }
 
-.box-office-list{
-    border: 1px solid blue;
-    display : inline-block;
-    width: 80%;
-    height: 300px;
-    margin: 3% 10%;
+.box-office {
+	border: 1px solid red;
+	margin-top: 5%;
 }
 
-.highest-rated-movies{
-    border: 1px solid green;
-    margin-top: 10%;
+.box-office-list {
+	border: 1px solid blue;
+	display: inline-block;
+	width: 80%;
+	height: 300px;
+	margin: 3% 10%;
 }
 
-.highest-rated-movies h3{
-    margin-bottom: 10px;
+.highest-rated-movies {
+	border: 1px solid green;
+	margin-top: 10%;
 }
 
-.movies{
-    border: 1px solid blueviolet;
+.highest-rated-movies h3 {
+	margin-bottom: 10px;
 }
 
-.movie-box{
-    border: 1px solid cornflowerblue;
-   display : inline-block;
-  width: 18%;
-  height: 20.8% ;
-  margin: 0.5% 0% 0.5% 1.2%;
-  vertical-align: top;
+.movies {
+	border: 1px solid blueviolet;
 }
 
-.movie-box a{
-    display: block;
-    height: 100%;
-    border: 1px solid khaki;
+.movie-box {
+	border: 1px solid cornflowerblue;
+	display: inline-block;
+	width: 18%;
+	height: 20.8%;
+	margin: 0.5% 0% 0.5% 1.2%;
+	vertical-align: top;
 }
 
 .movie-box img {
-  width: 100%;
-height:300px;
-    /* rgba(0, 0, 0, 0.2) 그림자 효과*/
-    box-shadow: 0 8px 15px 0 rgba(238, 233, 233, 0.2);
-border-radius: 3%;
- }
-
-.cont-detail{
-	
-    border: 1px solid orange;
+	width: 213px;
+	height: 300px;
+	/* rgba(0, 0, 0, 0.2) 그림자 효과*/
+	box-shadow: 0 8px 15px 0 rgba(238, 233, 233, 0.2);
+	border-radius: 3%;
 }
 
-.title{
-    border: 1px solid yellowgreen;
-    font-size: 1.05rem;
-    font-style: bold;
-    height: 45px;
-    
+.movie-box a {
+	display: block;
+	height: 100%;
+	border: 1px solid khaki;
 }
 
-.title a{
+.cont-detail {
+	border: 1px solid orange;
+}
+
+.title {
+	border: 1px solid yellowgreen;
+	font-size: 1.05rem;
+	font-style: bold;
+	height: 45px;
+}
+
+.title a {
 	color: white;
 }
-.title a:hover{
-    color: #ff7c00;
+
+.title a:hover {
+	color: #ff7c00;
 }
 
-.release-date{
-    border: 1px solid rebeccapurple;
+.release-date {
+	border: 1px solid rebeccapurple;
 }
 
-.star-rate{
-    border: 1px solid rebeccapurple;
+.star-rate {
+	border: 1px solid rebeccapurple;
 }
 
-
-
-.new-reviews{
-  border: 1px solid yellow;
+.new-reviews {
+	border: 1px solid yellow;
 }
 
-
-.review-card{
-  display: inline-block; 
-border: 2px solid #FF7C00;
-  border-radius: 15px;
-  height: 180px;
-  width: 250px;
-  padding: 20px;
+.new-reviews h3 {
+	display: block;
+	font-size: 1.17em;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
 }
 
-.review-header{
-  border: 1px solid gold;
- margin: 5px;
+.new-reviews-box {
+	border: 2px solid red;
+	margin-left: 10px;
+	display: block;
 }
 
-.review-header div{
-  display: inline-block; 
-    display: inline-block; 
-  vertical-align: middle;
+.review-card {
+	display: inline-block;
+	border: 2px solid #FF7C00;
+	border-radius: 15px;
+	height: 260px;
+	width: 250px;
+	padding: 19px;
+	vertical-align: top;
 }
 
-
-.review-header img {
-  width: 50px;
-  height: auto;
-  border-radius: 25px;
+.review-header {
+	border: 1px solid gold;
+	margin: 5px;
+	height: 50px;
+	display: block;
 }
 
-.review-body{
-  border: 1px solid firebrick;
-
-  overflow: hidden;  		
-  text-overflow: ellipsis;  
-  white-space: nowrap; 		
-  word-break:break-all;
-  margin: 2px;
-   -webkit-line-clamp: 4; /* 라인수 */
-   line-height: 1.3em;
-   height: 5.5em; /* line-height 곱하기 -webkit-line-clamp */
+.review-img {
+	display: inline-block;
 }
 
-.review-body a{
+.review-nickname {
+	display: inline-block;
+	vertical-align: top;
+	margin: 15px auto 15px 10px;
+}
+
+.review-img img {
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	display: inline-block;
+}
+
+.review-body {
+	display: block;
+	border: 1px solid firebrick;
+	overflow: hidden;
+	word-break: break-all;
+	margin: 2px;
+	height: 175px;
+}
+
+.review-body a {
 	color: #FFFAF6;
 	margin: 5px;
 }
 
-.review-like{
-  display: inline-block; 
-  border: 1px solid teal;
+.review-body-text {
+	display: -webkit-box;
+	margin: 5px;
+	-webkit-line-clamp: 4; /* 라인수 */
+	-webkit-box-orient: vertical; 
+	line-height: 1.3em;
+	height: 5.2em; /* line-height 곱하기 -webkit-line-clamp */
+	overflow: hidden;
 }
 
-.review-like div{
-  display: inline-block; 
+.review-body-text > p{
+	display: block;
+}
+
+
+.review-like {
+	display: inline-block;
+	border: 1px solid teal;
+	margin-left: 165px;
+}
+
+.review-like div {
+	display: inline-block;
 }
 
 /*슬라이드************************************/
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1440px;
-  position: relative;
-  margin: auto;
-  margin-top: 120px;
+	max-width: 1440px;
+	position: relative;
+	margin: auto;
+	margin-top: 120px;
 }
 
 /* effect */
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
 
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
 
 /* Next & previous buttons */
 .prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;	
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
 }
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+	right: 0;
+	border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0, 0, 0, 0.8);
 }
-
