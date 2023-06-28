@@ -119,15 +119,28 @@ a, a:hover{
 /* 내용이 없는 경우 */
 .reviews-empty {
 	text-align: center;
+	margin-top: 20px;
 }
 
 .coments-empty {
 	text-align: center;
+	margin-top: 20px;
 }
 
-.likes-empty {
+.button-review, .button-comment{
 	text-align: center;
+	margin-bottom: 20px;
 }
+
+.button-review > button-custom,
+.button-comment > button-custom
+{
+	width: 220px;
+	height: 50px;
+}
+
+
+
 
 /* 리뷰 내용 */
 .user-review {
@@ -139,9 +152,18 @@ a, a:hover{
 /* 리뷰 내용 텍스트 */
 .user-review-text {
 	margin: 0 20px 0 20px;
-	padding: 50px;
+	padding: 40px 50px 0px 50px;
 	line-height: 100%;
 	letter-spacing: 1px;
+}
+
+
+/* 리뷰 기타 정보 */
+.user-review-info{
+	display: block;
+	margin: 0 20px 0 10px;
+	text-align: right;
+	color: #a8a39d;
 }
 
 /* 긴 리뷰 내용 텍스트 줄이기 */

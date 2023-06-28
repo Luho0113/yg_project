@@ -62,10 +62,12 @@
    
    <!-- 해당 사용자의 리뷰 정보를 조회 -->
    <select id="selectUserReviewInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
-      SELECT ri.*, ui.*   
-      FROM user_info ui, review_info ri
-      WHERE ui.ui_id = ri.ui_id AND ui.ui_nickname = #{uiNickname}
-      ORDER BY ri.ri_credate DESC
+      select count(rc_num) rc_count, r.*, u.*
+		from user_info u inner join review_info r on u.ui_id = r.ui_id
+		left outer join review_comment c on r.ri_num = c.ri_num
+		where u.ui_nickname = #{uiNickname}
+		group by r.ri_num
+		order by r.ri_credate desc
    </select>
 
 </mapper>

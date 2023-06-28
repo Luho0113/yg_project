@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="/WEB-INF/views/common/error-user.jsp"%>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
@@ -36,7 +36,6 @@
 			<div class="myInfo-content">
 				<h4>${user.uiNickname}</h4>
 				<p>@${user.uiId}</p>
-				<p>point : ${user.uiReviewPoint}</p>
 			</div>
 
 			<div class="button-update">
@@ -53,14 +52,20 @@
 					<li class="tab-active"><a href="#tab1" class="tab-button">후기</a>
 					</li>
 					<li><a href="#tab2" class="tab-button">댓글</a></li>
-		
+
 				</ul>
 
 				<div class="cont_area">
 					<div id="tab1" class="cont" style="display: block">
 						<!-- 작성한 후기가 없는 경우 -->
 						<c:if test="${empty myReviews}">
-							<div class="reviews-empty">작성한 후기가 없습니다.</div>
+							<div class="reviews-empty">첫 영감을 남겨주세요!</div>
+							<div class="button-review">
+								<button class="button-custom btnFromBlack"
+									onclick="location.href='/review-insert'">
+									<span>영감 남기기</span>
+								</button>
+							</div>
 						</c:if>
 
 						<!-- 작성한 후기가 있는 경우 -->
@@ -69,26 +74,46 @@
 								<div class="user-review-text">
 									<a
 										href="/review?riNum=${myReview.riNum}&movieId=${myReview.riMovieId}">
-										<p class="description">${myReview.riContent}</p> </a>
-									
+										<p class="description">${myReview.riContent}</p>
+									</a>
 								</div>
-								<span>${myReview.riCredate}</span>
+								<div class="user-review-info">
+									<span>댓글 ${myReview.rcCount} | </span> <span>작성일
+										${fn:substring(myReview.riCredate, 0,10)}</span>
+
+									<button class="delete"
+										onclick="deleteReview(${myReview.riNum})">삭제</button>
+									<button class="update"
+										onclick="location.href='/review-update?riNum=${myReview.riNum}'">수정</button>
+								</div>
+
 							</div>
 						</c:forEach>
 					</div>
 					<div id="tab2" class="cont">
 						<!-- 작성한 댓글이 없는 경우 -->
 						<c:if test="${empty myComments}">
-							<div class="coments-empty">작성한 댓글이 없습니다.</div>
-						</c:if>				
-						
+							<div class="coments-empty">첫 댓글을 남겨주세요!</div>
+							<div class="button-comment">
+								<button class="button-custom btnFromBlack"
+									onclick="location.href='/reviews'">
+									<span>댓글 남기기</span>
+								</button>
+							</div>
+						</c:if>
+
 						<!-- 작성한 댓글이 있는 경우 -->
 						<c:forEach items="${myComments}" var="myComment">
 							<div class="user-review">
 								<div class="user-review-text">
 									<a
 										href="/review?riNum=${myComment.riNum}&movieId=${myComment.riMovieId}">
-										<p class="description">${myComment.rcContent}</p> </a>
+										<p class="description">${myComment.rcContent}</p>
+									</a>
+								</div>
+								<div class="user-review-info">
+									<span>작성일 ${fn:substring(myComment.rcCredate, 0,10)}</span>
+									<button onclick="deleteComment(${myComment.rcNum})">삭제</button>
 								</div>
 							</div>
 						</c:forEach>
@@ -97,7 +122,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 
 	<!-- footer area -->
 	<jsp:include page="../common/footer.jsp"></jsp:include>
@@ -133,9 +158,25 @@
 							});
 		}
 		
-		
+		function deleteReview(e){
+			
+			if(confirm('정말 삭제하시겠습니까?')){
+				window.location.href = '/review-delete?riNum=' + e;
+				alert('삭제되었습니다.');
+				history.go(0);
+			}
+			
+		}
 
-
+		function deleteComment(e){
+			
+			if(confirm('정말 삭제하시겠습니까?')){
+				window.location.href = '/delete-comment?rcNum=' + e;
+				alert('삭제되었습니다.');
+				history.go(0);
+			}
+			
+		}
 	</script>
 </body>
 </html>
