@@ -32,6 +32,7 @@ onload = function() {
 			})
 			.catch(err => console.error(err));
 
+	//별점 넣는 부분
 	const starPointArray = document.getElementsByClassName("starPoint");
 	const starPoint = starPointArray[i];
 	

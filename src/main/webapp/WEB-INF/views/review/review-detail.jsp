@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,20 +26,28 @@
 
 		<div class="reivewContainer" id="reivewContainer">
 			<div class="movieInfo" id="movieInfo">
+				<a href="detail?movieId=${review.riMovieId}&riMovieId=${review.riMovieId}">
 					<span class="movieTitle" id="movieTitle">${movie.title}</span>
-					<span class="releaseDate" id="releaseDate">${movie.releaseDate} | </span>
-					<span class="genre" id="genre">${movie.genreIds} | </span>
-					<span class="country" id="country">${movie.productionConturies}</span>
+				</a>
+				<span class="releaseDate" id="releaseDate">${fn:substring(movie.releaseDate,0,4)} &nbsp; | &nbsp; </span>
+				<span class="genre" id="genre">
+					<c:forEach items="${movie.genreIds}" var="genre">
+						${genre} &nbsp;
+					</c:forEach> | &nbsp; 
+				</span> 
+				<span class="country" id="country">
+					<c:forEach items="${movie.productionConturies}" var="country">
+						${country} &nbsp;
+					</c:forEach>
+				</span>
 			</div>
 
 			<hr>
 
-			<div class="hambugerMenu" id="hambugerMenu">
-				<!-- 여기에 메뉴 아이콘 넣기 -->
-			</div>
-
 			<div class="posterContainer" id="posterContainer">
-				<img class="posetPath" id="posterPath" src="https://image.tmdb.org/t/p/original${movie.posterPath}">
+				<a href="detail?movieId=${review.riMovieId}&riMovieId=${review.riMovieId}">
+					<img class="posterPath" src="https://image.tmdb.org/t/p/original${movie.posterPath}">
+				</a>
 			</div>
 
 			<div class="profileBox" id="profileBox">
@@ -60,7 +69,7 @@
 						<button class="update" onclick="location.href='/review-update?riNum=${review.riNum}'">수정</button>
 					</c:when>
 					<c:otherwise>
-						<button class="follow">구독</button>
+						<button class="follow" onclick="location.href='/report-file'">신고</button>
 					</c:otherwise>
 				</c:choose>
 			</div>
@@ -98,7 +107,9 @@
 				<c:forEach items="${comments}" var="comment">
 					<div class="commentContainer" id="commentContainer">
 						<div class="commentProfileBox" id="commentProfileBox">
-							<img id="profile" src="${comment.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+							<a href="userReview?uiNickname=${comment.uiNickname}">
+								<img id="profile" src="${comment.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+							</a>
 						</div>
 				
 						<div class="commentNickName" id="commentNickName">
@@ -131,7 +142,7 @@
 						</div>
 				
 						<div class="commentLike" id="commentLike">
-							<button type="button" class="commentLikeButton">♥ ${comment.rcLikeCnt}</button>
+							<button type="button" class="commentLikeButton">♥ &nbsp; ${comment.rcLikeCnt}</button>
 							<input class="commentLikeCnt" type="hidden" value="">
 						</div>
 					</div>

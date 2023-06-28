@@ -5,26 +5,26 @@ html {
 	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
 }
 
-.star {
-    position: relative;
-    font-size: 20px;
-    color: #ddd;
-  }
+.star{
+	position: relative;
+	font-size: 20px;
+	color: #FF7C00;
+}
   
-  .star input {
+.star input{
     width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
     opacity: 0;
     cursor: pointer;
-  }
+}
   
-  .star span {
-    width: 0;
-    position: absolute; 
-    left: 0;
-    color: #FF7C00;
-    overflow: hidden;
-    pointer-events: none;
-  }
+.star span{
+	width: 0;
+	position: absolute; 
+	left: 0;
+	color: #FF7C00;
+	overflow: hidden;
+	pointer-events: none;
+}

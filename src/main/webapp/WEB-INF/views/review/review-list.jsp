@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -68,112 +70,97 @@
 
          <c:forEach items="${reviewList}" var="reivew" varStatus="status">
          
-            <div class="riListElement" id="riListElement">
+            <div class="riListElement">
                <!-- riListElement: 리뷰 하나의 내용을 묶는 div  -->
                <!-- 이걸 반복 생성하면 되지 않을까  -->
-               <input type="hidden" id="riMovieId" class="riMovieId" value="${reivew.riMovieId}" readonly="readonly"> 
-               <input type="hidden" id="index" class="index" value="${status.index}" readonly="readonly">
+               <input type="hidden" class="riMovieId" value="${reivew.riMovieId}" readonly="readonly"> 
+               <input type="hidden" class="index" value="${status.index}" readonly="readonly">
                
                
-               <div class="riListPoster" id="riListPoster">
-                  <img id="posterPath" class="posterPath">
-                  <!-- posterPath: 포스터 img  -->
+               <div class="riListPoster">
+					<a href="detail?movieId=${reivew.riMovieId}&riMovieId=${reivew.riMovieId}">
+                  		<img class="posterPath">
+                  	</a>
                </div>
 
-               <div class="riListMovieInfo" id="riListMovieInfo">
-                  <!-- riListMovieInfo: 영화 제목 및 연도를 표시하는 div  -->
-                  <span class="riMovieTitle" id="riMovieTitle"></span>
-                  <span id="riListReleaseDate" class="riListReleaseDate"></span>
+			   <!-- riListMovieInfo: 영화 제목 및 연도를 표시하는 div  -->
+               <div class="riListMovieInfo">
+               		<a href="detail?movieId=${reivew.riMovieId}&riMovieId=${reivew.riMovieId}">
+                  		<span class="riMovieTitle"></span>
+               		</a>
+                  	<span class="riListReleaseDate"></span>
                </div>
 
-               <div class="riListUserInfo" id="riListUserInfo">
-                  <!-- riListUserInfo: 작성자 프로필 이미지, 닉네임, 별점을 표시하는 div  -->
-                  <div class="profileBox" id="profileBox">
+               <!-- riListUserInfo: 작성자 프로필 이미지, 닉네임, 별점을 표시하는 div  -->
+               <div class="riListUserInfo">
+                  <div class="profileBox">
                      <a href="userReview?uiNickname=${reivew.uiNickname}">
-                        <img id="profile" src="${reivew.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+                        <img class="profile" src="${reivew.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
                      </a>
                   </div>
 
-                  <div class="nickName" id="nickName">
+                  <div class="nickName">
                   	<a href="userReview?uiNickname=${reivew.uiNickname}">
                   		${reivew.uiNickname}
                   	</a>
                   </div>
 
-                  <%-- 별점 숫자로 표시 --%>
-                  <div class="starPointText" id="starPointText">
+                  <!-- 별점 숫자로 표시 -->
+                  <div class="starPointText">
                      <span>(${reivew.riStar})</span>
                   </div>
 
-                  <div class="starPoint" id="starPoint">
-                     <span class="star"> ★★★★★ <span class="starRange">★★★★★</span>
+                  <div class="starPoint">
+                     <span class="star">☆☆☆☆☆<span class="starRange">★★★★★</span>
                         <input type="range" value="1" step="1" min="0" max="10">
-                        <input type="hidden" class="riStar" id="riStar" value="${reivew.riStar}" readonly="readonly">
+                        <input type="hidden" class="riStar" value="${reivew.riStar}" readonly="readonly">
                      </span>
                   </div>
                </div>
                
-               <div class="riListReviewContent" id="riListReviewContent">
+               <div class="riListReviewContent">
                   <a href="/review?riNum=${reivew.riNum}&movieId=${reivew.riMovieId}">
                      <!-- riListReviewContent: 리뷰 그 자체,, div  -->
                      ${reivew.riContent}
                   </a>
                </div>
                
-               <div class="riListComment" id="riListComment">
+               <div class="riListComment">
                		댓글 ${reivew.rcCount}
                </div>
 
-               <div class="riListDate" id="riListDate">
-                  <!-- riListDate: 리뷰 작성 일자 div  -->
-                  ${reivew.riCredate}
+               <div class="riListDate">
+               		${fn:substring(reivew.riCredate,0,10)}
                </div>
             </div>
          </c:forEach>
+         
+		<c:if test="${fn:length(reviewList) >= 5}">
+         	<div class="review-load">
+           		<a href="#" id="review-load">더보기</a>
+         	</div>
+       	</c:if>
       </div>
-<div id="pageDiv" style="text-align:center; font-size: 14pt" ></div>
    </div> <!-- .content 끝 -->
 <!-- footer area -->
 <jsp:include page="../common/footer.jsp"></jsp:include>
 
-<!-- 페이징 처리 시작 -->
-<c:if test="${!(empty page.list)}">
+<!-- javascript -->
 <script>
-	const pages = ${page.pages}; //전체 페이지 (이건 기본으로 들어 있음)
-	const page = ${page.pageNum}; //현재 페이지 (이건 기본으로 들어 있음)
-	const start = Math.floor((page-1)/10)*10+1; //현재 화면에서 시작 페이지 (11~20이면 start = 11)
-	const end = (start + 9) > pages ? pages : (start + 9); //현재 페이지에서 끝 페이지 (11~20이면 end = 20) 
-
-	console.log(page);
-	
-	let html = '';
-	if(start!=1){
-		html += '<a href="/reviews?page=' + (start-1); //페이지 이동할 때 url
-//      	if('${param.biTitle}'){
-//          	html += '&biTitle=${param.biTitle}';
-//	       	}
-		//여기 밑에 있는 것들이 페이징 바가 되는 것임 
-        html += '">&#x25c0</a>'; 
-  	}
-	
-	for(let i = start; i<=end; i++){
-		if(i==page){ //현재 선택된 page=N이 현재 화면의 첫 페이지라면
-			html += ' [' + i + '] '; 
-		}else{
-			if(i == 1){ //현재 선택된 page=N이 1이라면
-				html += ' <a href="/reviews">[' + i + ']</a> ';
-			}else{//현재 선택된 page=N이 1이 아니라면 
-				html += ' <a href="/reviews?page=' + i + '">[' + i + ']</a> ';
+//후기 더보기 버튼
+	$(".riListContainer > .riListElement").hide(); //개별 리뷰를 숨김
+	$(".riListContainer > .riListElement").slice(0, 5).css("display", "block"); //개별 리뷰 안 보이게
+	$("#review-load").click( //더보기 버튼 역할
+		function(e) {
+			e.preventDefault();
+			$(".riListContainer >.riListElement:hidden").slice(0, 5).fadeIn(200).css(
+					"display", "block"); // 클릭시 more 갯수 지정
+			if ($(".riListContainer >.riListElement:hidden").length == 0) {
+				// 컨텐츠 남아있는지 확인
+				$("#review-load").fadeOut(100); // 컨텐츠 없을 시 버튼 사라짐
 			}
 		}
-	}
-	if(end != pages){ //현재 페이지의 마지막 페이지가 전체 페이지 번호의 마지막이 아니라면
-		html += '<a href="/reviews?page=' + (end + 1) + '">&#9654</a>';
-	}
-	
-	document.querySelector('#pageDiv').innerHTML = html;
+	);
 </script>
-</c:if>
-
 </body>
 </html>
