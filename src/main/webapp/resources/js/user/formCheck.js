@@ -110,7 +110,7 @@ function checkId() {
 //비밀번호 유효성 검사
 function checkPwd() {
   if (!REG_PASSWORD.test(uiPassword.value)) {
-    document.getElementById("error-checkPwd").innerHTML = "<span> 8글자 이상의 영문자, 숫자, 특수기호(!@#*%_)를 모두 포함해주세요.</span>";
+    document.getElementById("error-checkPwd").innerHTML = "<span> 8글자 이상의 영문 대소문자, 숫자, 특수기호(!@#*%_)를 모두 포함해주세요.</span>";
     uiPassword.focus();
     return false;
   } else {

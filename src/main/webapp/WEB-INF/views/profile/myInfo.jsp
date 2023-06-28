@@ -89,9 +89,11 @@
 
 							</div>
 						</c:forEach>
-						<div class="review-load">
-							<a href="#" id="review-load">더보기</a>
-						</div>
+						<c:if test="${fn:length(myReviews) >= 5}">
+							<div class="review-load">
+								<a href="#" id="review-load">더보기</a>
+							</div>
+						</c:if>
 
 					</div>
 					<div id="tab2" class="cont">
@@ -122,9 +124,11 @@
 								</div>
 							</div>
 						</c:forEach>
-						<div class="comment-load">
-							<a href="#" id="comment-load">더보기</a>
-						</div>
+						<c:if test="${fn:length(myComments) >= 5}">
+							<div class="comment-load">
+								<a href="#" id="comment-load">더보기</a>
+							</div>
+						</c:if>
 					</div>
 				</div>
 			</div>
