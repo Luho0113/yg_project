@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+
+html {
+	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
+}
+
 /* li, ul 태그 초기화(프론트할 때 공통으로 사용하는 css에 넣어서 초기화한 후 사용하면 좋을 것 같음) */
 #posterPath{
     width: 130px;

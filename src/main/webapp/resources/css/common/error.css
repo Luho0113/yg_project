@@ -1,4 +1,9 @@
 /* 에러 화면 */
+
+html {
+	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
+}
+
 .button-custom {
 	width: 220px;
 	height: 50px;

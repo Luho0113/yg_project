@@ -1,5 +1,10 @@
 /* 로그인 화면 */
 
+html {
+	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
+}
+
+
 /* 로그인 */
 h3 {
   text-align: center;

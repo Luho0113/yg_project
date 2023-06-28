@@ -2,7 +2,9 @@
 
 
 
-
+html {
+	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
+}
 
 
 .yg-description{

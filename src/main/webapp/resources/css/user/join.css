@@ -1,5 +1,9 @@
 /* 회원 가입 */
 
+html {
+	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
+}
+
 h3 {
   text-align: center;
   margin: 20px;
