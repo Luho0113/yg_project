@@ -131,12 +131,14 @@ input[type=checkbox]{
     color: #FF7C00;
     
     font-family: 'NanumSquareRound';
+    transition: all 0.3s ease;
 }
 
 .buttonContainer button:first-child:hover{
     background-color: #FF7C00;
     color: #43403B;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .buttonContainer button:nth-child(2){
@@ -152,6 +154,7 @@ input[type=checkbox]{
     color: #A8A39D;
     
     font-family: 'NanumSquareRound';
+    transition: all 0.3s ease;
 }
 
 
@@ -159,6 +162,7 @@ input[type=checkbox]{
 .buttonContainer button:nth-child(2):hover{
     border: 2px solid #FF7C00;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 

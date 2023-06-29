@@ -1,10 +1,9 @@
 /* 내 페이지 */
-
 html {
 	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
 }
 
-.main-input{
+.main-input {
 	width: 240px;
 	height: 25px;
 	padding: 10px;
@@ -15,7 +14,7 @@ h3 {
 	margin: 20px;
 }
 
-a, a:hover{
+a, a:hover {
 	color: #fffaf6;
 }
 
@@ -64,7 +63,7 @@ a, a:hover{
 	margin: 0 10px;
 }
 
-.button-update > .button-custom {
+.button-update>.button-custom {
 	width: 120px;
 	height: 50px;
 }
@@ -77,6 +76,10 @@ a, a:hover{
 .tab-menu {
 	position: relative;
 	width: 100%;
+}
+
+.tab-list {
+	box-shadow: 0px 1px 0px 0px #14141466;
 }
 
 .tab-menu .tab-list {
@@ -115,7 +118,7 @@ a, a:hover{
 .tab-menu .cont_area .cont {
 	display: none;
 	color: #fff;
-	border: 1px solid green;
+	/* border: 1px solid green; */
 	text-align: left;
 	width: 100%;
 	height: 50%;
@@ -133,26 +136,22 @@ a, a:hover{
 	margin-top: 20px;
 }
 
-.button-review, .button-comment{
+.button-review, .button-comment {
 	text-align: center;
 	margin-bottom: 20px;
 }
 
-.button-review > button-custom,
-.button-comment > button-custom
-{
+.button-review>button-custom, .button-comment>button-custom {
 	width: 220px;
 	height: 50px;
 }
-
-
-
 
 /* 리뷰 내용 */
 .user-review, .user-comment {
 	border: 1px solid #ff7c00;
 	margin: 15px 0;
 	border-radius: 5px;
+	box-shadow: 0px 2px 1px 2px #14141466;
 }
 
 /* 리뷰 내용 텍스트 */
@@ -163,17 +162,15 @@ a, a:hover{
 	letter-spacing: 1px;
 }
 
-
 /* 리뷰 기타 정보 */
-.user-review-info, .user-comment-info{
+.user-review-info, .user-comment-info {
 	display: block;
 	margin: 0 20px 0 10px;
 	text-align: right;
 	color: #a8a39d;
 }
 
-.user-review-info span
-, .user-comment-info span{
+.user-review-info span, .user-comment-info span {
 	margin-right: 5px;
 	margin-left: 5px;
 }
@@ -188,13 +185,11 @@ a, a:hover{
 	overflow: hidden;
 }
 
-.user-review button-custom,
-.user-comment button-custom {
+.user-review button-custom, .user-comment button-custom {
 	text-align: center;
 }
 
-.user-review button,
-.user-comment button{
+.user-review button, .user-comment button {
 	width: 50px;
 	height: 25px;
 	vertical-align: middle;
@@ -203,7 +198,17 @@ a, a:hover{
 	font-size: 14px;
 }
 
-.review-load, .comment-load{
+.review-load, .comment-load {
 	text-align: center;
 	font-size: 18px;
+	transition: all 0.3s ease;
+}
+
+.review-load a, .comment-load a {
+	transition: all 0.3s ease;
+}
+
+.review-load a:hover, .comment-load a:hover {
+	color: #ff7c00;
+	transition: all 0.3s ease;
 }

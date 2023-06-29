@@ -4,64 +4,63 @@ html {
 	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
 }
 
-
 /* 메뉴바 */
 .navbar {
-  background-color: #ff7c00;
-  width: 100%;
-  overflow: hidden;
+	background-color: #ff7c00;
+	width: 100%;
+	overflow: hidden;
+	box-shadow: 0px 2px 1px 2px #2523238a;
 }
 
-.navbar ul{
+.navbar ul {
 	margin: 0px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
 
-
 .navbar-left {
-  float: left;
-  margin: 6px;
+	float: left;
+	margin: 6px;
 }
 
 .navbar-right {
-  float: right;
-  margin: 6px;
-  margin-top: 14px;
-  margin-right: 15px;
+	float: right;
+	margin: 6px;
+	margin-top: 14px;
+	margin-right: 15px;
 }
 
 .navbar li {
-  display: inline-block;
-}
-.navbar li > a {
-  display: block;
-  padding: 5px 10px;
-  color: #2a2725;
-  font-weight: bold;
-  font-size: 18px;
+	display: inline-block;
 }
 
-.no-login{
+.navbar li>a {
+	display: block;
+	padding: 5px 10px;
+	color: #2a2725;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.no-login {
 	padding: 4px;
 }
 
-
 /* 메뉴바의 로고 */
 .nav-logo {
-  display: block;
-  margin-top: 14px;
-  margin-left: 20px;
-  margin-right: 20px;
-  float: left;
+	display: block;
+	margin-top: 14px;
+	margin-left: 20px;
+	margin-right: 20px;
+	float: left;
 }
 
-.nav-logo > a > img {
-  width: 54px;
+.nav-logo>a>img {
+	width: 54px;
 }
 
 /* 검색 버튼 */
-.search-button{
+.search-button {
 	width: 50px;
 	height: 50px;
 	border: 0;
@@ -75,44 +74,42 @@ html {
 }
 
 /* 검색바 */
-.main-input{
-	
+.main-input {
 	/* padding: 10px; */
+	
 }
-.main-input::placeholder{
+
+.main-input::placeholder {
 	font-size: 14px;
 	font-family: 'NanumSquareRound';
 }
 
-
 /* 메뉴바 프로필 사진 */
 .myInfo-icon {
-  margin: 5px;
-  line-height: 30px;
-  font-weight: bold;
+	margin: 5px;
+	line-height: 30px;
+	font-weight: bold;
 }
 
 #myInfo-Img {
-  border-radius: 15px;
-  width: 30px;
-  height: 30px;
-  vertical-align: middle;
-  object-fit: cover; /*이미지 비율 조절*/
-  margin-right: 5px;
+	border-radius: 15px;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	object-fit: cover; /*이미지 비율 조절*/
+	margin-right: 5px;
 }
 
 /* 전체 페이지 로고 */
 .logo {
-  display: block;
-  text-align: center;
+	display: block;
+	text-align: center;
 }
 
-.logo > a > img {
-  margin: 70px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 356px;
-  border: 1px solid red;
+.logo>a>img {
+	margin: 70px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 356px;
+	border: 1px solid red;
 }
-
-

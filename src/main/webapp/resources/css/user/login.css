@@ -43,6 +43,7 @@ h3 {
 .check-id{
 	text-align: center;
 	margin-left: -132px;
+	margin-bottom: 5px;
 }
 
 #checkId{
@@ -75,4 +76,8 @@ h3 {
 .to-join a:hover {
   transition: all 0.3s ease;
   color: #ff7c00;
+}
+
+input[type=checkbox]{
+    accent-color: #FF7C00;
 }
