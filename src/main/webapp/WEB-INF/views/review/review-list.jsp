@@ -27,9 +27,10 @@
          <div class="genreSort" id="genreSort">장르별</div>
          <div class="createDateSort" id="createDateSort">
             <select class="sort" onchange="sortChange(this)">
-            	<option value="default">작성일순 정렬</option>
-               	<option value="new">최신순</option>
-               	<option value="old">오래된순</option>
+               	<option value="new" 
+               		<c:if test="${param.sort == 'new'}">selected="selected"</c:if>>최신순</option>
+               	<option value="old"
+               		<c:if test="${param.sort == 'old'}">selected="selected"</c:if>>오래된순</option>
             </select>
          </div>
       </div>
