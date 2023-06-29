@@ -30,7 +30,7 @@
 				<div class="movie-details1">
 					<img id="poster"
 						 src="https://image.tmdb.org/t/p/original/${movieData.posterPath}"
-						 onerror="this.src='https://ifh.cc/g/zNb0Wd.jpg';">
+						 onerror="this.src='${path}/resources/images/noImage.png';">
 				</div>
 				<div class="movie-details2">
 					<h2>${movieData.title}</h2>

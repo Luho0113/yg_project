@@ -33,7 +33,7 @@
 				<li class="movie-box">
 					<div>
 						<a href="detail?movieId=${movie.id}&riMovieId=${movie.id}">
-						<img id="poster" src="https://image.tmdb.org/t/p/w300${movie.posterPath}" alt="영화포스터"  onerror="this.src='https://ifh.cc/g/zNb0Wd.jpg';">
+						<img id="poster" src="https://image.tmdb.org/t/p/w300${movie.posterPath}" alt="영화포스터"  onerror="this.src='${path}/resources/images/noImage.png';">
 						</a>
 						<div class="cont-detail">
 							<div class="title">
