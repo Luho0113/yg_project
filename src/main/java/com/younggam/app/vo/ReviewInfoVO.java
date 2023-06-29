@@ -33,11 +33,11 @@ public class ReviewInfoVO {
 	  	private String uiFilePath; //참조키: 유저 아이디
 	  	
 	  	private String genre;
+	  	private String sort;
 	  	
 	  	private int rcCount; //댓글 수
 	  	
-	  	private int page = 1;
-	  	private int rows = 4;
+	  	
 	  	
 	  	
 

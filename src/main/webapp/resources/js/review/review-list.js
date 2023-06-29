@@ -44,3 +44,17 @@ onload = function() {
 
 	}
 }
+
+function sortChange(e){
+	const urlParams = new URL(location.href).searchParams;
+	const genre = urlParams.get('genre');
+	
+	if(genre == null || genre == ""){
+		window.location.href = '/reviews?sort=' + e.value;
+	}else{
+		window.location.href = '/review-sort?genre=' + genre + '&sort=' + e.value;
+	}
+	
+	
+	
+}

@@ -45,7 +45,7 @@ public class ReviewInfoController {
    
    //전체 리뷰 조회 (장르별) 이름 바꾸고 싶음
    @GetMapping("/review-sort")
-   public String getReviewList(@RequestParam("genre") String genre, @ModelAttribute ReviewInfoVO reviewInfo, Model m) {
+   public String getReviewListSort(@ModelAttribute ReviewInfoVO reviewInfo, Model m) {
       List<ReviewInfoVO> reviewList = riServie.selectReviewInfoSortGenre(reviewInfo);
       m.addAttribute("reviewList", reviewList);
       return "review/review-list";
