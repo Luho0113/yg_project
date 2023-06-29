@@ -6,20 +6,20 @@
     color: #ddd;
   }
   
-  .star input {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
-  }
+.star input {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	opacity: 0;
+	cursor: pointer;
+ }
   
-  .star span {
+.star span {
     width: 0;
     position: absolute; 
     left: 0;
     color: #FF7C00;
     overflow: hidden;
     pointer-events: none;
-  }
+}

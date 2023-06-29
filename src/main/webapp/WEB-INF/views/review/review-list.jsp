@@ -186,7 +186,7 @@
             </div>
          </c:forEach>
          
-      <c:if test="${fn:length(reviewList) >= 5}">
+      <c:if test="${fn:length(reviewList) > 5}">
             <div class="review-load">
                  <a href="#" id="review-load">더보기</a>
             </div>

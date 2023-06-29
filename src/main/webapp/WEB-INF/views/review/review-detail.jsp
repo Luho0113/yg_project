@@ -15,7 +15,6 @@
 <script src="${path}/resources/js/review/review-detail.js"></script>
 </head>
 <body>
-
 <%-- header area --%>
 <jsp:include page="../common/header.jsp"></jsp:include>
 
@@ -42,7 +41,7 @@
 				</span>
 			</div>
 
-			<hr>
+			<hr class="reviewLine">
 
 			<div class="posterContainer" id="posterContainer">
 				<a href="detail?movieId=${review.riMovieId}&riMovieId=${review.riMovieId}">
@@ -131,19 +130,10 @@
 									<button onclick="location.href='/report-file'">신고</button>
 								</c:otherwise>
 							</c:choose>
-						</div>
-				
-						<div class="hambugerMenu" id="hambugerMenu">
-							<!-- 여기에 메뉴 아이콘 넣기 -->
-						</div>
+						</div>	
 				
 						<div class="commentContent" id="commentContent">
 							${comment.rcContent}
-						</div>
-				
-						<div class="commentLike" id="commentLike">
-							<button type="button" class="commentLikeButton">♥ &nbsp; ${comment.rcLikeCnt}</button>
-							<input class="commentLikeCnt" type="hidden" value="">
 						</div>
 					</div>
 				</c:forEach>

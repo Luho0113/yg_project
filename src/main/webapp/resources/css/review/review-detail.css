@@ -5,8 +5,7 @@ html {
 }
 
 .space{
-    height: 50px;
-
+	height: 100px;	
 }
 
 .reivewContainer{
@@ -20,7 +19,7 @@ html {
     display: inline-block;
 }
 
-hr{
+.reviewLine{
     width: 81%;
     border: 1px solid #FF7C00;
 }
@@ -121,7 +120,7 @@ hr{
 }
 
 .starPoint{
-    margin: 75px 0px 0px 8px;
+    margin: 85px 0px 0px 8px;
     display: inline-block;
 
     position: absolute;
@@ -200,7 +199,7 @@ hr{
 
 .commentContainer{
     position: relative;
-    min-height: 150px;
+    min-height: 100px;
 
     border-bottom: 1px solid #A8A39D;
 }
@@ -259,40 +258,13 @@ hr{
 
 .commentContent{
     margin: 0px 50px 0px 50px;
-    padding-bottom: 55px;
+    padding-bottom: 45px;
   
     font-size: 15px;
     color: #A8A39D;
 
     letter-spacing: 1px;
     line-height: 20px;
-}
-
-.commentLike{
-    display: inline-block;
-    position: absolute;
-    margin: 0px 0px 10px 10px;
-    bottom: 0px;
-}
-
-.commentLikeButton{
-    width: 50px;
-    height: 30px;
-    border-radius: 5px;
-
-    border: 0;
-    background-color: transparent;
-    
-
-    text-align: center;
-    font-size: 13px;
-    color: #FF7C00;
-}
-
-.commentLikeButton:hover{
-    background-color: #A8A39D;
-    opacity: 50%;   
-    cursor: pointer;
 }
 
 .rcContent{
