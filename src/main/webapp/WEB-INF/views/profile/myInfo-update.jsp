@@ -183,22 +183,6 @@
 
 	<!-- javascript -->
 	<script src="${path}/resources/js/user/updateCheck.js"></script>
-	<script>
-		function imgPreview(obj) {
-			let file = obj.files[0];
-			let imgObj = document.querySelector("#imgPreview>img");
-			imgObj.src = URL.createObjectURL(file); //이미지 src의 url 생성
-			document.querySelector("#imgPreview").style.display = "";
-			document.querySelector("#profileImg").style.display = "none";
-		}
 
-		function deleteCheck() {
-			if (!confirm("정말 탈퇴하시겠습니까?")) {
-				return false;
-			} else {
-				location.href = "/user/delete";
-			}
-		}
-	</script>
 </body>
 </html>

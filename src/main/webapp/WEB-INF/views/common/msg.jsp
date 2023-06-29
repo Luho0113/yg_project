@@ -10,8 +10,8 @@
 <body>
 
 <script>
-   alert('${msg}');
-   location.href='${url}';
+	Swal.fire('${msg}');
+   	location.href='${url}';
 </script>
 
 

@@ -34,7 +34,7 @@ h5{
 	display: block;
 	vertical-align: top;
 	margin-left: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 .myInfo>h4{
@@ -89,6 +89,7 @@ h5{
 	margin-left: 10%;
 	margin-right: 5%;
 	vertical-align: top;
+	margin-top: 20px
 }
 
 .form-img {
@@ -128,6 +129,7 @@ h5{
 .form-all-wrap {
 	display: inline-block;
 	vertical-align: top;
+	margin-top: 20px
 }
 
 /* 닉네임 변경하기 */

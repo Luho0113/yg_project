@@ -136,7 +136,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             </div>
           </div>
           <div class="button-join">
-            <button class="button-custom btnOrange">가입하기</button>
+            <button class="button-custom btnFromBlack">가입하기</button>
           </div>
         </form>
       </div>

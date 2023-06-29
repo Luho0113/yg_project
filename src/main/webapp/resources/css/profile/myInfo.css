@@ -141,10 +141,11 @@ a, a:hover {
 	margin-bottom: 20px;
 }
 
-.button-review>button-custom, .button-comment>button-custom {
+.button-review > .button-custom, .button-comment > .button-custom {
 	width: 220px;
 	height: 50px;
 }
+
 
 /* 리뷰 내용 */
 .user-review, .user-comment {
