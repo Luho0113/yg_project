@@ -5,6 +5,13 @@ html {
 	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
 }
 
+.main-input{
+	width: 240px;
+	height: 25px;
+	padding: 10px;
+}
+
+
 /*적용 안됨...*/
 /*영감의 검색결과 글씨 조정*/
 .content h2 {

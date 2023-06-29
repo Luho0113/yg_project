@@ -76,9 +76,8 @@ html {
 
 /* 검색바 */
 .main-input{
-	width: 240px;
-	height: 25px;
-	padding: 10px;
+	
+	/* padding: 10px; */
 }
 .main-input::placeholder{
 	font-size: 14px;
