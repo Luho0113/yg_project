@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file = "/WEB-INF/views/common/error-admin.jsp"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +43,7 @@
 		<tr>
 			<td>${user.uiId}</td>
 			<td><a class="uiNickname" href="/admin/user?uiId=${user.uiId}">${user.uiNickname}</a></td>
-			<td><img class="profile-img" src="${user.uiFilePath}" width="150"></td>
+			<td><img class="profile-img" src="${user.uiFilePath}" width="150" onerror="this.src='${path}/resources/images/yg_profile.png';"></td>
 			<td>${user.uiEmail}</td>
 			<td>${user.uiReviewPoint}</td>
 			<td>

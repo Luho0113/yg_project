@@ -52,7 +52,7 @@
 
 			<div class="profileBox" id="profileBox">
 				<a href="userReview?uiNickname=${review.uiNickname}">
-					<img id="profile" src="${review.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+					<img id="profile" src="${review.uiFilePath}" onerror="this.src='${path}/resources/images/yg_profile.png';">
 				</a>
 			</div>
 
@@ -108,7 +108,7 @@
 					<div class="commentContainer" id="commentContainer">
 						<div class="commentProfileBox" id="commentProfileBox">
 							<a href="userReview?uiNickname=${comment.uiNickname}">
-								<img id="profile" src="${comment.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+								<img id="profile" src="${comment.uiFilePath}" onerror="this.src='${path}/resources/images/yg_profile.png';">
 							</a>
 						</div>
 				

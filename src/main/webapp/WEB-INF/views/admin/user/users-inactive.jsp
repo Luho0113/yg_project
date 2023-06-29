@@ -42,7 +42,7 @@
 		<tr>
 			<td>${user.uiId}</td>
 			<td><a class="uiNickname" href="/admin/user?uiId=${user.uiId}">${user.uiNickname}</a></td>
-			<td><img class="profile-img" src="${user.uiFilePath}" width="150"></td>
+			<td><img class="profile-img" src="${user.uiFilePath}" width="150" onerror="this.src='${path}/resources/images/yg_profile.png';"></td>
 			<td>${user.uiEmail}</td>
 			<td>${user.uiReviewPoint}</td>
 			<td>

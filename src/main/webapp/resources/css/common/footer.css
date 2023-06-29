@@ -82,4 +82,5 @@ html {
 	height: 100px;
 	border-radius: 50px;
 	object-fit: scale-down; /*이미지 비율 조절*/
+	box-shadow: 0px 1px 2px 1px rgb(238 233 233 / 9%);
 }

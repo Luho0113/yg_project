@@ -9,14 +9,14 @@ html {
   padding-right: 8px;
 }
 .adminView-table{
-    margin-left: 250px; 
+    margin-left: 250px;
 }
 h2 {
     padding-left: 250px;
     font-weight: bold;
     color: #A8A39D;
     padding-bottom: 20px;
-    padding-top: 130px;
+    padding-top: 100px;
   }
 th{
     /* border-left: 0.5px dotted #A8A39D; */
@@ -25,13 +25,14 @@ th{
     border-top: 0.5px solid #FF7C00;
 }
 td{
-    border-top: 0.3px dotted #FF7C00;
-    border-bottom: 0.3px dotted #FF7C00;
+    border-top: 0.5px dotted #FF7C00;
+    border-bottom: 0.5px dotted #FF7C00;
     /* border-right: 0.3px dotted #A8A39D;
     border-left: 0.3px dotted #A8A39D; */
 }
 .adminView-table, th, td{
     border-collapse: collapse;
+    padding: 11px;
 }
 h5{
     font-weight: bold;
@@ -54,6 +55,7 @@ h5{
     background-color: #43403B;
     color: #FFFAF6;
     text-align: center;
+    font-size: 14px;
 }
 .profile-img{
     width: 150px;

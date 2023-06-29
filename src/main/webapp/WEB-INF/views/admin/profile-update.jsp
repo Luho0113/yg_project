@@ -19,63 +19,9 @@
 <script src="${path}/resources/js/admin/home.js"></script>
 </head>
 <body>
-	<nav>
-		<div class="younggam-logo">
-		  <div class="younggam-img">
-			<img src="${path}/resources/images/yg_logo_orange.png" alt="영감 관리자" />
-		  </div>
-		  <span class="younggam-logo">YoungGam</span>
-		</div>
-		<div class="menu-items">
-		  <ul class="nav-links">
-			<li>
-			  <a href="/admin/home">
-				<i class="fa-solid fa-house"></i>
-				<span class="admin-home">Home</span>
-			  </a>
-			</li>
-			<li>
-			  <a href="/admin/users">
-				<i class="fa-solid fa-user"></i>
-				<span class="admin-user">회원 관리</span>
-			  </a>
-			</li>
-			<li>
-			  <a href="/admin/notices">
-				<i class="fa-solid fa-flag"></i>
-				<span class="admin-user">공지사항</span>
-			  </a>
-			</li>
-			<li>
-			  <a href="/admin/reports">
-				<i class="fa-solid fa-clipboard"></i>
-				<span class="admin-report">신고 게시판 관리</span>
-			  </a>
-			</li>
-			<li>
-			  <a href="/admin/profile">
-				<i class="fa-solid fa-pen"></i>
-				<span class="admin-profile">관리자 정보</span>
-			  </a>
-			</li>
-		  </ul>
-  
-		  <ul class="logout">
-			<li>
-			  <a href="/admin/logout">
-				<i class="fa-solid fa-right-from-bracket"></i>
-				<span class="admin-logout">로그아웃</span>
-			  </a>
-			</li>
-		  </ul>
-		</div>
-	  </nav>
-  
-  <section class="dashboard">
-      <div class="dash-top">
-        <a href="/admin/profile"><img src="${admin.adminFilePath}" alt="영감 관리자">
-        </a>&nbsp;<a class="admin-nickname" href="/admin/profile">${admin.adminNickName} 님</a>
-      </div>
+	<!-- header area -->
+	<jsp:include page="./header/header.jsp"></jsp:include>
+
 <script>
 function uploadImg(obj){
 	   let file = obj.files[0];
@@ -85,6 +31,7 @@ function uploadImg(obj){
 </script>
 	<div class="content updateAdmin-area">
 	<form method="POST" action="/admin/update" enctype="multipart/form-data">
+	<div class="updateAdmin-area">
 	<h2>관리자 정보 수정</h2>
 	<label for="adminId">아이디</label>
 	<input type="text" id="adminId" name="adminId" value="${admin.adminId}" readonly><br>
@@ -109,6 +56,7 @@ function uploadImg(obj){
 	<button class="updateBtn">관리자 정보 수정</button>
 	<input type="reset" class="resetBtn" value="다시 작성">
 	</form>
+	</div>
 </div>
 </body>
 </html>

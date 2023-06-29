@@ -7,6 +7,11 @@ body{
     line-height: 2em;
     color:#A8A39D;
 }
+.main-input {
+	width: 240px;
+	height: 25px;
+	padding: 10px;
+}
 .noticeArea{
     padding: 50px;
 }

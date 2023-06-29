@@ -78,7 +78,7 @@
             </tr>
         </table>
         <div>
-            <textarea placeholder="리뷰를 작성하세요." name="riContent" class="riContent" id="riContent"></textarea>
+            <textarea placeholder=" 리뷰를 작성하세요." name="riContent" class="riContent" id="riContent"></textarea>
         </div>
         <div class="spoilContainer">
             <input type="checkbox" id="riSpoil" name="riSpoil" value="1" onchange="spoilCheck(this)">

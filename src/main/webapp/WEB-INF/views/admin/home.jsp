@@ -18,16 +18,12 @@
 <title>영감 관리자 페이지</title>
 </head>
 <body>
-
 	<!-- header area -->
 	<jsp:include page="./header/header.jsp"></jsp:include>
 
-
-
-
 	<section class="dashboard">
 		<div class="admin-profile-wrap">
-			<p>영감 관리자 프로필</p>
+			<h3>영감 관리자 프로필</h3>
 			<div class="admin-profile">
 				<div class="admin-profile-img">
 					<a href="/admin/profile"> <img src="${admin.adminFilePath}"
@@ -36,14 +32,11 @@
 					</a>
 				</div>
 				<div class="admin-profile-info">
-					<p>관리자 아이디</p>
-					<p>기타</p>
-					<p>기타</p>
-
+					<h4>아이디&nbsp; &nbsp; &nbsp; ${admin.adminId}</h4>
+					<h4>닉네임&nbsp; &nbsp; &nbsp; ${admin.adminNickName}</h4>
+					<h4>이메일&nbsp; &nbsp; &nbsp; ${admin.adminEmail}</h4>
 				</div>
 			</div>
-
-
 
 		</div>
 		<div class="dash-content">
@@ -72,11 +65,8 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</section>
-
-
 
 </body>
 </html>

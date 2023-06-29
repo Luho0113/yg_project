@@ -39,7 +39,7 @@ input[type="checkbox"]{
 .btn-upload{
     margin-left: 6px;
     display: inline-block;
-    padding: 0.04rem 0.04rem;
+    padding: 0.5rem 0.5rem;
     color: #FFFAF6;
     background-color: #43403B;
     border-radius: 5px;

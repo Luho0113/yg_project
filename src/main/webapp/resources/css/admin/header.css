@@ -30,7 +30,6 @@ html {
 	margin-bottom: 5px;
 }
 
-
 .navbar-left {
   float: left;
 }
@@ -65,7 +64,9 @@ html {
   width: 54px;
 }
 
-
+.admin-nickname{
+	color: #FFFAF6;
+}
 
 /* 전체 페이지 로고 */
 .logo {
