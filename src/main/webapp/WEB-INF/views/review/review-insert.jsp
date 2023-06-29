@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="/WEB-INF/views/common/error-user.jsp"%>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
@@ -12,9 +11,10 @@
 <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
 <link rel="stylesheet" href="${path}/resources/css/review/review-insert-star.css">
 <link rel="stylesheet" href="${path}/resources/css/review/review-insert.css">
-<link rel="stylesheet" href="${path}/resources/css/common/header.css" />
+<link rel="stylesheet" href="${path}/resources/css/common/header.css"/>
 <script src="${path}/resources/js/review/review-star.js"></script>
 <script src="${path}/resources/js/review/review-insert.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 
 <body>
@@ -120,6 +120,24 @@ $textarea.oninput = (event) => {
 	  $target.style.height = 0;
 	  $target.style.height = DEFAULT_HEIGHT + ($target.scrollHeight - 100) + 'px';
 };
+
+function checkNull() {
+	const riMovieId = document.querySelector("#riMovieId");
+	if (riMovieId.value == null || riMovieId.value == "") {
+		alert('영화 정보를 입력해주세요.');
+		return false;
+	}
+	const riStar = document.querySelector("#riStar");
+	if (riStar.value == '') {
+		alert('별점을 입력해주세요.');
+		return false;
+	}
+	const riContent = document.querySelector('.riContent');
+	if (riContent.value == null || riContent.value.trim() == "") {
+		alert('영화 후기를 입력해주세요.');
+		return false;
+	}
+}
 </script>
 
 </html>

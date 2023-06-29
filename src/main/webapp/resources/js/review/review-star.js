@@ -25,8 +25,6 @@ function spoilCheck(checkbox){
 	}
 }
 
-
-
 /* 검색한 후 input에 focus 하기(그러면 검색결과 생성과 동시에 연관검색어가 보여진다.) */
 /* onload 말고 submit 했을 때만,,, 으로 하고싶은데,, */
 onload =  function(){
