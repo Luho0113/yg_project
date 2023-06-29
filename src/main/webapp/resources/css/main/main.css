@@ -10,13 +10,11 @@ html {
 	font-size: 18px;
 }
 
+
 .main-input {
 	width: 260px;
-	/* height: 25px; */
 	padding: 13.5px;
 }
-
-
 
 
 /* Slideshow container */
@@ -61,26 +59,35 @@ html {
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
+* {
+	box-sizing: border-box;
+}
 
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
+body {
+	font-family: Verdana, sans-serif;
+}
+
+.mySlides {
+	display: none;
+}
+
+img {
+	vertical-align: middle;
+}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 100%;
-  display: inline-block;
-  margin: 10px;
-  height: 550px;
-
+	max-width: 100%;
+	display: inline-block;
+	margin: 10px;
+	height: 550px;
 }
 
-.mySlides fade{
-	  text-align: left;
+.mySlides fade {
+	text-align: left;
 }
 
-.now-poster{
+.now-poster {
 	width: 400px;
 	display: inline-block;
 	text-align: center;
@@ -89,112 +96,106 @@ img {vertical-align: middle;}
 
 #box-office-poster {
 	width: 360px;
-	
 }
 
-
-.now-detail{
+.now-detail {
 	display: inline-block;
 	text-align: left;
 	width: 700px;
 	vertical-align: top;
-	margin: 385px 15px;
-	
+	margin: 370px 15px;
 }
 
-.text-title{
-	font-size: 2em;
+.text-title {
+	font-size: 2.2em;
 	margin-bottom: 5px;
 }
-.text-overview{
-	
+
+.text-overview {
+	line-height: 25px;
+	margin: 10px 5px;
 }
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
 }
 
 /* The dots/bullets/indicators */
 .dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
 }
 
-.span-dot{
-text-align:center
-
+.span-dot {
+	text-align: center
 }
+
 .active {
-  background-color: #717171;
+	background-color: #717171;
 }
 
 /* Fading animation */
 .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+	from {opacity: .4}
+
+to {
+	opacity: 1
+}
+
 }
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-
+	.text {
+		font-size: 11px
+	}
 }
 
-
-
-
-
-
-
-
-
 .box-office {
-	
-	margin-top: 5%;
+	margin-top: 2%;
 	height: 600px;
-	width:1200px;
+	width: 1200px;
 	display: inline-block;
 	text-align: left;
-	
 }
 
 .box-office-list {
-
 	display: inline-block;
 	width: 80%;
 	height: 300px;
 	margin: 3% 10%;
 }
 
+
+/*별점 높은 영화*/
+
 .highest-rated-movies {
-	
 	margin-top: 5%;
 }
 
@@ -202,12 +203,7 @@ text-align:center
 	margin-bottom: 10px;
 }
 
-.movies {
-	
-}
-
 .movie-box {
-
 	display: inline-block;
 	width: 18%;
 	height: 20.8%;
@@ -218,7 +214,6 @@ text-align:center
 .movie-box img {
 	width: 213px;
 	height: 300px;
-	/* rgba(0, 0, 0, 0.2) 그림자 효과*/
 	box-shadow: 0 8px 15px 0 rgba(238, 233, 233, 0.2);
 	border-radius: 3%;
 	text-align: left;
@@ -227,19 +222,17 @@ text-align:center
 .movie-box a {
 	display: block;
 	height: 100%;
-	
 }
 
 .cont-detail {
-
 	height: 100px;
 }
 
 .title {
-
-	font-size: 1.05rem;
+	margin-top: 4px;
+	font-size: 1.1rem;
 	font-style: bold;
-	height: 45px;
+	height: 70px;
 }
 
 .title a {
@@ -250,16 +243,10 @@ text-align:center
 	color: #ff7c00;
 }
 
-.release-date {
-	
-}
 
-.star-rate {
-	
-}
+/*리뷰 목록*/
 
 .new-reviews {
-	
 	height: 390px;
 	margin-top: 5%;
 }
@@ -274,39 +261,38 @@ text-align:center
 	font-weight: bold;
 }
 
-.new-reviews .more p{
+.new-reviews .more p {
 	font-size: 1em;
 	text-align: right;
 	margin-right: 20px;
 }
 
-.more a{
+.more a {
 	color: #fffaf6;
 }
 
 .new-reviews-box {
-
 	margin: 10px 15px;
 	display: block;
-	    height: 300px;
+	height: 300px;
 }
 
 .review-card {
 	display: inline-block;
-    border: 2px solid #FF7C00;
-    border-radius: 15px;
-    height: 290px;
-    width: 260px;
-    padding: 19px;
-    vertical-align: top;
-    margin: 0px 12px;
+	border: 2px solid #FF7C00;
+	border-radius: 15px;
+	height: 290px;
+	width: 260px;
+	padding: 19px;
+	vertical-align: top;
+	margin: 0px 12px;
 }
 
 .review-header {
-border-bottom: 1px solid #A8A39D;
-    margin: 2px;
-    height: 55px;
-    display: block;
+	border-bottom: 1px solid #A8A39D;
+	margin: 2px;
+	height: 55px;
+	display: block;
 }
 
 .review-img {
@@ -328,7 +314,6 @@ border-bottom: 1px solid #A8A39D;
 
 .review-body {
 	display: block;
-
 	overflow: hidden;
 	word-break: break-all;
 	margin: 2px;
@@ -348,6 +333,7 @@ border-bottom: 1px solid #A8A39D;
 	line-height: 1.15em;
 	height: 9.2em; /* line-height 곱하기 -webkit-line-clamp */
 	overflow: hidden;
+	line-height: 25px;
 }
 
 .review-body-text>p {
@@ -356,8 +342,7 @@ border-bottom: 1px solid #A8A39D;
 
 .review-comment {
 	display: inline-block;
-	border: 1px solid teal;
-	margin-left: 130px;
+	margin-left: 150px;
 }
 
 .review-comment div {
@@ -365,46 +350,42 @@ border-bottom: 1px solid #A8A39D;
 }
 
 
-
-
-
 /*별점*/
 
-  
-  .starPointText{
+.starPointText {
 	float: right;
-    margin: 5px 0px 0px 0px;
-    font-size: 12px;
+	margin: 5px 0px 0px 0px;
+	font-size: 12px;
 	letter-spacing: 2px;
 }
 
-.starPoint{
-    float: right;
-    margin-right: 5px;
+.starPoint {
+	float: right;
+	margin-right: 5px;
 }
-  
-  .star{
+
+.star {
 	position: relative;
 	font-size: 20px;
 	color: #fffc;
 }
-  
-.star input{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
+
+.star input {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	opacity: 0;
+	cursor: pointer;
 }
 
-.star-box{
+.star-box {
 	height: 50px;
 }
-  
-.star span{
+
+.star span {
 	width: 0;
-	position: absolute; 
+	position: absolute;
 	left: 0;
 	color: #FF7C00;
 	overflow: hidden;

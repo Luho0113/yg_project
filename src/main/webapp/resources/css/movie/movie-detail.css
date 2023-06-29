@@ -4,92 +4,75 @@ html {
 	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
 }
 
-.main-input{
+.main-input {
 	width: 240px;
 	height: 25px;
 	padding: 10px;
 }
 
-.movie-content{
+/*영화 상세정보*/
 
-  width:100%;
-
+.movie-content {
+	width: 100%;
 }
 
-.movie-info{
- 
-    text-align:center;
-   margin: 15px 0px 7px -20px;
+.movie-info {
+	text-align: center;
+	margin: 15px 0px 7px -20px;
 }
 
-.movie-details1  {
-  display: inline-block; 
-
-   
-
+.movie-details1 {
+	display: inline-block;
 }
 
-.movie-details1-img{
-	 width: 300px;
-  height: 400px;
+.movie-details1-img {
+	width: 300px;
+	height: 400px;
 }
 
-.movie-details2 h2{
-	  margin-bottom: 10px;
+.movie-details2 h2 {
+	margin-bottom: 10px;
 }
 
-.movie-details2{
-	display: inline-block; 
-
-	height: 400px ;
-	 width: 70%;
-	text-align:left;
+.movie-details2 {
+	display: inline-block;
+	height: 400px;
+	width: 70%;
+	text-align: left;
 	vertical-align: top;
 }
 
-.movie-details2 h2{
+.movie-details2 h2 {
 	font-size: 2em;
 	margin: 2%;
 }
 
-/*
-.movie-info h3 {
-
-}
-*/
-
-
-.movie-info img{
-   width: 100%;
-   height: 400px;
-   border-radius: 3%;
-height: 425px;
+.movie-info img {
+	width: 100%;
+	height: 400px;
+	border-radius: 3%;
+	height: 425px;
 }
 
-
-.rd-g-n div{
-  display: inline-block; 
-
-  margin: 0% 1% 0% 2%;
-  font-size: 1em;
+.rd-g-n div {
+	display: inline-block;
+	margin: 0% 1% 0% 2%;
+	font-size: 1em;
 }
 
-/**********************/
-.star{
-margin: 2%;
-font-size: 1em;
+.star {
+	margin: 2%;
+	font-size: 1em;
 }
-/**************************/
 
-
-.rt-ot-r div{
-
-  margin: 2%;
-  font-size: 1em;
+.rt-ot-r div {
+	margin: 2%;
+	font-size: 1em;
 }
+
 
 /* 후기 작성 버튼 */
-.review-button{
+.review-button {
 	/*버튼의 위치*/
 	border-radius: 15px;
 	font-size: 30px;
@@ -97,83 +80,70 @@ font-size: 1em;
 	text-align: left;
 }
 
-.button-custom{
+.button-custom {
 	width: 200px; /*버튼 크기 조절*/
 	height: 50px;
-	line-height: 50px;	
+	line-height: 50px;
 }
 
-.overview{
-  border: 2px solid #FF7C00;
-  border-radius: 15px;
-  height: 200px;
-  margin: 2% 0%;
+.overview {
+	border: 2px solid #FF7C00;
+	border-radius: 15px;
+	height: 200px;
+	margin: 2% 0%;
 }
 
-.overview h3{
+.overview h3 {
 	margin: 10px 10px;
 }
 
-.overview div{
-	margin: 10px;
+.overview div {
+	margin: 20px 50px;;
 	word-spacing: 3px;
+	line-height: 25px;
 }
 
-.cast-list{
-border: 2px solid #FF7C00;
-  border-radius: 15px;
-  height: 350px;
-  margin: 2% 0%;
- 
+.cast-list {
+	border: 2px solid #FF7C00;
+	border-radius: 15px;
+	height: 350px;
+	margin: 2% 0%;
 }
 
-.cast-list h3{
+.cast-list h3 {
 	margin: 10px 10px;
 }
 
-.cast-cards{
-
+.cast-cards {
 	margin: 1% 10%;
-	 text-align: center;
-	 
+	text-align: center;
 }
+
 .cast-card {
-  display: inline-block; 
-  text-align: left;
-
-  margin: 1% 2%;
-  width: 28%;
-
-
+	display: inline-block;
+	text-align: left;
+	margin: 1% 2%;
+	width: 28%;
 }
 
-.cast-card img{
-    width: 70px;
-   height: auto;
+.cast-card img {
+	width: 70px;
+	height: auto;
 }
 
-
-.cast-card .cast-name{
-
-	display: inline-block; 
-  vertical-align: top;
-  margin-top: 18px; 
-  margin-left:3px;
-word-break:break-all;
-width: 180px;
-
+.cast-card .cast-name {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 18px;
+	margin-left: 3px;
+	word-break: break-all;
+	width: 180px;
 }
 
 
-.point {
-border: 2px solid #FF7C00;
-  border-radius: 15px;
-  height: 200px;
-  margin: 2% 0%;
-}
+/*리뷰 정보*/
 
 .new-reviews {
-
 	height: 430px;
 }
 
@@ -187,39 +157,38 @@ border: 2px solid #FF7C00;
 	font-weight: bold;
 }
 
-.new-reviews .more p{
+.new-reviews .more p {
 	font-size: 1em;
 	text-align: right;
 	margin-right: 20px;
 }
 
-.more a{
+.more a {
 	color: #fffaf6;
 }
 
 .new-reviews-box {
-
-	    margin: 16px 0px;
+	margin: 16px 5px;
 	display: block;
-	    height: 330px;
+	height: 330px;
 }
 
 .review-card {
-    display: inline-block;
-    border: 2px solid #FF7C00;
-    border-radius: 15px;
-    height: 290px;
-    width: 219px;
-    padding: 23px;
-    vertical-align: top;
-    margin: 3px 13px;
+	display: inline-block;
+	border: 2px solid #FF7C00;
+	border-radius: 15px;
+	height: 290px;
+	width: 219px;
+	padding: 23px;
+	vertical-align: top;
+	margin: 3px 13px;
 }
 
 .review-header {
-border-bottom: 1px solid #A8A39D;
-    margin: 2px;
-    height: 55px;
-    display: block;
+	border-bottom: 1px solid #A8A39D;
+	margin: 2px;
+	height: 55px;
+	display: block;
 }
 
 .review-img {
@@ -241,7 +210,6 @@ border-bottom: 1px solid #A8A39D;
 
 .review-body {
 	display: block;
-
 	overflow: hidden;
 	word-break: break-all;
 	margin: 2px;
@@ -265,11 +233,11 @@ border-bottom: 1px solid #A8A39D;
 
 .review-body-text>p {
 	display: block;
+	line-height: 25px;
 }
 
 .review-comment {
 	display: inline-block;
-	border: 1px solid teal;
 	margin-left: 138px;
 }
 
@@ -288,4 +256,3 @@ border-bottom: 1px solid #A8A39D;
 .review-body-null a:hover {
 	color: #ff7c00;
 }
-

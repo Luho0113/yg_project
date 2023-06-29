@@ -1,204 +1,164 @@
 @charset "UTF-8";
 
-
 html {
 	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
 }
 
-.main-input{
+.main-input {
 	width: 240px;
 	height: 25px;
 	padding: 10px;
 }
 
-
-/*적용 안됨...*/
-/*영감의 검색결과 글씨 조정*/
-.content h2 {
-	color : white;
-}
-
-.content h2::after {
-  content: " 의 검색결과";
-  color: white;
-  font-size: 17px;
-}
-
-
-
+/*영화 리스트*/
 .movie-list {
-  
-  margin-top: 3%;
+	margin-top: 3%;
 }
 
 /*영화 글자*/
 .movie-list h3 {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
-
-
 .movie-box {
-
-  display : inline-block;
-  width: 18%;
-  height: 20.8% ;
-  margin: 0.5% 0% 0.5% 1.2%;
-  vertical-align: top;
-  }
-  
+	display: inline-block;
+	width: 18%;
+	height: 20.8%;
+	margin: 0.5% 0% 0.5% 1.2%;
+	vertical-align: top;
+}
 
 .movie-box img {
 	width: 100%;
-height:300px;
-    /* rgba(0, 0, 0, 0.2) 그림자 효과*/
-    box-shadow: 0 8px 15px 0 rgba(238, 233, 233, 0.2);
-border-radius: 3%;
+	height: 300px;
+	box-shadow: 0 8px 15px 0 rgba(238, 233, 233, 0.2);
+	border-radius: 3%;
 }
 
 /*movie-box 링크 - 포스터, 제목*/
 .movie-box a {
-  display: block;
-  height: 100%;
- 
- color:#FFFAF6; 
+	display: block;
+	height: 100%;
+	color: #FFFAF6;
 }
 
 /*영화 제목, 개봉일, 감독*/
 .movie-box .cont-detail {
-  margin: 10px 0px 20px 2px;
-  font-size: 0.9rem;
-
-  width: 98%;
-
-
+	margin: 10px 0px 20px 2px;
+	font-size: 0.9rem;
+	width: 98%;
 }
 
 .movie-box .title {
- 
-  font-size: 1.05rem;
-  font-style: bold;
-  height: 45px;
-  
-
+	font-size: 1.05rem;
+	font-style: bold;
+	height: 45px;
 }
+
 .movie-box .title a:hover {
-  color: #ff7c00;
-}
-.movie-box .release-date {
-  margin-top: 1px;
+	color: #ff7c00;
 }
 
+.movie-box .release-date {
+	margin-top: 1px;
+}
 
 
 /*리뷰어*/
-.reviewer-list {
 
-  margin-top: 3%;
+.reviewer-list {
+	margin-top: 3%;
 }
 
 /*영화 글자*/
 .reviewer-list h3 {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .reviewer-list::after {
-  content: '';
-  clear: both;
-  display: block;
+	content: '';
+	clear: both;
+	display: block;
 }
-.reviewers {
 
-  height: 100%;
-  width: 48%;
-  margin: 0.5% 0.5% 0.5% 1%;
-  float: left;
+.reviewers {
+	height: 100%;
+	width: 48%;
+	margin: 0.5% 0.5% 0.5% 1%;
+	float: left;
 }
 
 /*reviewer-box float 문제 해결*/
 .reviewers::after {
-  content: '';
-  clear: both;
-  display: block;
+	content: '';
+	clear: both;
+	display: block;
 }
 
 .reviewer-box {
-   
-  width: 80%;
-  height: 20%;
-  margin: 1% 1% 1% 10%;
-  float: left;
-  border-top: 2px solid #43403B ;
-  border-bottom: 2px solid #43403B ;
+	width: 80%;
+	height: 20%;
+	margin: 1% 1% 1% 10%;
+	float: left;
+	border-top: 2px solid #43403B;
+	border-bottom: 2px solid #43403B;
 }
 
 .reviewer-box div {
-  float: left;
+	float: left;
 }
 
 .reviewer {
- 
-  width: 50%;
-  height: 53px;
-  float: left;
-  margin: 1% 1%;
+	width: 50%;
+	height: 53px;
+	float: left;
+	margin: 1% 1%;
 }
 
 .reviewer .reviewer-name a {
-  display: block;
-  height: 30px;
-  
-  color: white;
- 
+	display: block;
+	height: 30px;
+	color: white;
 }
 
 .reviewer .img a {
-  display: block;
-  height: 50px;
- 
+	display: block;
+	height: 50px;
 }
 
 .reviewer .img {
-  
-  position: absolute;
-  overflow: hidden;
+	position: absolute;
+	overflow: hidden;
 }
 
 .reviewer .img img {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  /* border: 1px solid #fffaf6; */
-  margin: 1%;
-  object-position: center;
-
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	/* border: 1px solid #fffaf6; */
+	margin: 1%;
+	object-position: center;
 }
 
 .reviewer .reviewer-name {
-  float: right;
- 
-  width: 120px;
-  height: 30px;
-  font-size: 1.2rem;
-  text-align: center;
-  margin: 5% 1%;
+	float: right;
+	width: 120px;
+	height: 30px;
+	font-size: 1.2rem;
+	text-align: center;
+	margin: 5% 1%;
 }
 
-
-
-
 .reviewer-box .review-like {
-
-  float: right;
-  width: 10%;
-  font-size: 1rem;
-  margin: 5% 1%;
+	float: right;
+	width: 10%;
+	font-size: 1rem;
+	margin: 5% 1%;
 }
 
 .reviewer-box .review-written {
-
-  float: right;
-  width: 10%;
-  font-size: 1rem;
-  margin: 5% 1%;
+	float: right;
+	width: 10%;
+	font-size: 1rem;
+	margin: 5% 1%;
 }

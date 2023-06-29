@@ -27,32 +27,26 @@ public class MovieController {
 	@Autowired
 	private ReviewerInfoService reviewerInfoService;
 	
+	
+	//검색 페이지
 	@GetMapping("/search")
 	public String getMovie(@RequestParam Map<String, String> param, Model m) {
 		List<UserInfoVO> reviewerList = reviewerInfoService.selectReviewersInfo(param.get("search"));
 		m.addAttribute("reviewerList", reviewerList);
-		m.addAttribute("movie", movieService.getMovie(param));//배열을 전달하면 movie에 담긴 상태로 jsp 파일로 이동한다. (jsp 파일에서 for each문을 돌려 배열의 값을 꺼내면 된다.)
+		m.addAttribute("movie", movieService.getMovie(param)); //배열을 전달하면 movie에 담긴 상태로 jsp 파일로 이동한다. (jsp 파일에서 for each문을 돌려 배열의 값을 꺼내면 된다.)
 		return "movie/search";
 	}
+
 	
-//	@GetMapping("/credit")
-//	public String getCredit(@RequestParam("movieId") String movieId, Model m) {
-//		m.addAttribute("credit", movieService.getCredit(movieId)); //배열을 전달하면 movie에 담긴 상태로 jsp 파일로 이동한다. (jsp 파일에서 for each문을 돌려 배열의 값을 꺼내면 된다.)
-//		return "movie/search";
-//	}
-//배우와 감독을 출력하기 위해서 만들었으나 현재 영화 검색 페이지(=search)에서 조회 가능하기 때문에 삭제 보류(필요 없으면 삭제 하3~)
-	
-	
-	//detail 페이지
-	//MovieDetailService에 getCast()메소드에 movieId를 넣는 다음 값을 movie/detail에 출력
+	//영화 상세 페이지
 	@GetMapping("/detail")
 	public String getCast(@RequestParam("movieId") String movieId, 
 						  @RequestParam("riMovieId") String riMovieId, 
-						//  @RequestParam("riStar")  String riStar, 
 						  Model m) {
-		m.addAttribute("cast", movieDetailService.getCast(movieId)); //은진 수지가 만든 메소드
-		m.addAttribute("movieData",movieDetailService.getMovieDetail(movieId)); //은진 수지가 만든 메소드
-		m.addAttribute("movieRate",movieDetailService.getMovieCertification(movieId)); //은진 수지가 만든 메소드
+		
+		m.addAttribute("cast", movieDetailService.getCast(movieId)); 
+		m.addAttribute("movieData",movieDetailService.getMovieDetail(movieId)); 
+		m.addAttribute("movieRate",movieDetailService.getMovieCertification(movieId)); 
 		
 		List<ReviewInfoVO> detailReviewerList = reviewerInfoService.selectDetailReviewersInfo(riMovieId); 
 		m.addAttribute("reviewer",detailReviewerList);
@@ -62,11 +56,5 @@ public class MovieController {
 		
 		return "movie/detail"; 
 	}
-	
-	
-
-
-	
-	
 	
 }

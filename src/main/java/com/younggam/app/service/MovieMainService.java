@@ -26,7 +26,7 @@ public class MovieMainService {
 
 	//현재 상영 영화
 	public List<MovieVO> getNowPlaying() {
-		List<MovieVO> movieList = new ArrayList<>(); // credits에 movieId를 검색한 내용
+		List<MovieVO> movieList = new ArrayList<>();
 		
 		try {
 
@@ -41,34 +41,26 @@ public class MovieMainService {
 
 			Response response = client.newCall(request).execute();
 
-			// 요청 결과를 JSON 형식으로 변경
-			JSONObject jsonObject = new JSONObject(response.body().string()); // String 형식을 JSON 형식으로 변환한다.
+			JSONObject jsonObject = new JSONObject(response.body().string()); 
 			JSONArray nowPlayingJson = jsonObject.getJSONArray("results"); 
 			
 			for (int i = 0; i < 3; i++) {
 				MovieVO movievo = new MovieVO();
-				JSONObject object = nowPlayingJson.getJSONObject(i); // JSONArray를 하나씩(i) 꺼내서 JSONObject로 변경해서 object에서 Key로
+				JSONObject object = nowPlayingJson.getJSONObject(i); 
 					
 				movievo.setId(object.getString("id"));
 				movievo.setTitle(object.getString("title"));
 				movievo.setPosterPath(object.getString("poster_path"));
 				movievo.setOverview(object.getString("overview"));
-		//		movievo.setBackdropPath(object.getString("backdrop_path"));
-				
-			
 
 				movieList.add(movievo);
 		
-			
 			} // end of for
-				// castVO에 저장된 값을 castList에 담는다.
-			
-
-
-		} catch (Exception e) {
-			log.error("error=>{}", e);
-		}
+				
+		} catch (Exception e) { log.error("error=>{}", e); }
+		
 		return movieList;
+		
 	}
 	
 	//최근 리뷰어 리스트

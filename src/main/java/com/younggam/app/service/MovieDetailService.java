@@ -25,8 +25,8 @@ import okhttp3.Response;
 public class MovieDetailService {
 
 	// 배우 정보 추출 : 배우명, 배역명, 포스터
-	
 	public List<CastVO> getCast(String movieId) {
+
 		// 데이터를 파싱해서 VO객체에 저장한 뒤 List에 저장
 		List<CastVO> castList = new ArrayList<>(); // credits에 movieId를 검색한 내용
 
@@ -43,39 +43,33 @@ public class MovieDetailService {
 			Response response = client.newCall(request).execute();
 
 			// 요청 결과를 JSON 형식으로 변경
-			JSONObject jsonObject = new JSONObject(response.body().string()); // String 형식을 JSON 형식으로 변환한다.
-			JSONArray castsJson = jsonObject.getJSONArray("cast"); // jsonObject의 JSON배열{~~} 중 "cast"로 되어있는 것을 하나하나
-																	// castsJson배열에 담는다.
-			// JSON 형식으로 만들어진 jsonObject에서 cast[]를 뽑아서 cast에 담는다.
+			JSONObject jsonObject = new JSONObject(response.body().string()); 
+			JSONArray castsJson = jsonObject.getJSONArray("cast"); 
 
-			// for문으로 "name" 키에 맞는 값 "사람이름"을 가져와서 (JSONObject)object를 이용해서 castVO의 actor에 값을
-			// 저장한다.
 			for (int i = 0; i < 6; i++) {
 				CastVO castvo = new CastVO();
-				JSONObject object = castsJson.getJSONObject(i); // JSONArray를 하나씩(i) 꺼내서 JSONObject로 변경해서 object에서 Key로
-																// value를 뽑는 방식이다.
+				JSONObject object = castsJson.getJSONObject(i); 
+
 				castvo.setActor(object.getString("name"));
 				castvo.setCharacter(object.getString("character"));
 				castvo.setProfilePath(object.getString("profile_path"));
 
+
 				castList.add(castvo);
-			
+
 			} // end of for
-				// castVO에 저장된 값을 castList에 담는다.
-			
 
+		} catch (Exception e) {	 System.err.println(e.toString());  }
 
-		} catch (Exception e) {
-			System.err.println(e.toString());
-		}
 		return castList;
+
 	}
 
 	// 영화 정보
-	// 나라,장르 등 때문에 이것도 map 사용
 	public MovieVO getMovieDetail(String movieId) {
-		//List<MovieVO> movieDataList = new ArrayList<>();
-		MovieVO movieVO = new MovieVO();// detail에 MovieId를 검색한 내용
+
+		MovieVO movieVO = new MovieVO(); // detail에 MovieId를 검색한 내용
+
 		try {
 
 			OkHttpClient client = new OkHttpClient();
@@ -89,26 +83,21 @@ public class MovieDetailService {
 
 			Response response = client.newCall(request).execute();
 
-			// 요청 결과를 JSON 형식으로 변경
-			JSONObject jsonObject = new JSONObject(response.body().string()); // String 형식을 JSON 형식으로 변환한다.
-			// JSONArray movieDataJson = jsonObject.getJSONArray("cast"); //jsonObject의
-			// JSON배열{~~} 중 "cast"로 되어있는 것을 하나하나 castsJson배열에 담는다.
-			// JSON 형식으로 만들어진 jsonObject에서 cast[]를 뽑아서 cast에 담는다.
+			JSONObject jsonObject = new JSONObject(response.body().string()); 
 
-			
 			MovieService movieService = new MovieService();
 
 			movieVO.setId(jsonObject.getString("id"));
 			movieVO.setTitle(jsonObject.getString("title"));
-			movieVO.setPosterPath(jsonObject.getString("poster_path"));// 영화포스터
-			movieVO.setReleaseDate(jsonObject.getString("release_date"));// 개봉일
-			movieVO.setGenreIds(movieService.getGenres(movieId));// 장르
-			movieVO.setProductionConturies(movieService.getConturies(movieId));// 국가
-			movieVO.setRuntime(jsonObject.getString("runtime"));// 상영시간
+			movieVO.setPosterPath(jsonObject.getString("poster_path")); // 영화포스터
+			movieVO.setReleaseDate(jsonObject.getString("release_date")); // 개봉일
+			movieVO.setRuntime(jsonObject.getString("runtime")); // 상영시간
 			movieVO.setOriginalTitle(jsonObject.getString("original_title")); // 원제
-			movieVO.setOverview(jsonObject.getString("overview"));// 오버뷰
+			movieVO.setOverview(jsonObject.getString("overview")); // 오버뷰
 
-			/* 감독명이 안나왔었는데 MovieService 생성 후 무비서비스틔 겟크레딧메소드에 movieId를 담아 감독명을 저장함 */
+			movieVO.setGenreIds(movieService.getGenres(movieId)); // 장르
+			movieVO.setProductionConturies(movieService.getConturies(movieId)); // 국가
+
 			movieVO.setDirectors(movieService.getCredit(movieId));
 
 
@@ -119,10 +108,9 @@ public class MovieDetailService {
 	}
 
 	// 영화 등급
-	// java.lang.NumberFormatException: For input string: "certification" 
 
 	public List<MovieVO> getMovieCertification(String movieId) {
-		List<MovieVO> movieCertificationList = new ArrayList<>(); // detail에 MovieId를 검색한 내용
+		List<MovieVO> movieCertificationList = new ArrayList<>();
 		try {
 
 			OkHttpClient client = new OkHttpClient();
@@ -136,35 +124,41 @@ public class MovieDetailService {
 
 			Response response = client.newCall(request).execute();
 
-			// 요청 결과를 JSON 형식으로 변경
-			JSONObject jsonObject = new JSONObject(response.body().string()); // String 형식을 JSON 형식으로 변환한다.
+			JSONObject jsonObject = new JSONObject(response.body().string()); 
 			JSONArray results = jsonObject.getJSONArray("results");
+			
 			MovieVO movieVO = new MovieVO();
 
 			for (int i = 0; i < results.length(); i++) {
+				
 				JSONObject object = results.getJSONObject(i);
 
 				if (object.getString("iso_3166_1").equalsIgnoreCase("KR")) {
 
 					JSONArray releaseDates = object.getJSONArray("release_dates");
-					//
 
 					for (int j = 0; j < releaseDates.length(); j++) {
+						
 						JSONObject object2 = releaseDates.getJSONObject(j);
 
 						if (object2.has("certification") && object2.getString("type").equalsIgnoreCase("3")) {
 							movieVO.setCertification(object2.optString("certification"));
 						}
 					}
+					
 					movieCertificationList.add(movieVO);
+					
 					break;
 				}
 
 			}
 
 		} catch (Exception e) {
+			
 			log.error("error=>{}", e);
+		
 		}
+		
 		return movieCertificationList;
 	}
 

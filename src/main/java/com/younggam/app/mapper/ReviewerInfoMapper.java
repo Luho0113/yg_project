@@ -16,12 +16,8 @@ public interface ReviewerInfoMapper {
 	//별점 높은 순 영화 리스트
 	ReviewInfoVO selectStarInfos(String riMovieId);
 	
-	//포인트 출력
-	
 	//최근 리뷰어 리스트
 	List<ReviewInfoVO> selectNewReviewersInfos(ReviewInfoVO reviews);
-	
-	
 	
 	//별점 높은 영화 리스트
 	List<ReviewInfoVO> selectBestMoviesInfos(ReviewInfoVO reviews);
