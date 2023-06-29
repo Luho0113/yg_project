@@ -25,12 +25,16 @@ html {
 .movie-details1  {
   display: inline-block; 
 
-    width: auto;
-  height: 400px;
+   
 
 }
 
-.movie-details1 h2{
+.movie-details1-img{
+	 width: 300px;
+  height: 400px;
+}
+
+.movie-details2 h2{
 	  margin-bottom: 10px;
 }
 

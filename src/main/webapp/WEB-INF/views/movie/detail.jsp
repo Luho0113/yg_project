@@ -12,7 +12,8 @@
 <meta charset="UTF-8">
 <title>영화 상세</title>
 
-<link rel="stylesheet" href="${path}/resources/css/movie/movie-detail.css">
+<link rel="stylesheet"
+	href="${path}/resources/css/movie/movie-detail.css">
 <link rel="stylesheet" href="${path}/resources/css/common/button.css" />
 <link rel="stylesheet" href="${path}/resources/css/common/header.css" />
 </head>
@@ -28,9 +29,12 @@
 		<article class="movie-content">
 			<div class="movie-info">
 				<div class="movie-details1">
-					<img id="poster"
-						 src="https://image.tmdb.org/t/p/original/${movieData.posterPath}"
-						 onerror="this.src='${path}/resources/images/noImage.png';">
+
+					<div class=movie-details1-img>
+						<img id="poster"
+							src="https://image.tmdb.org/t/p/original/${movieData.posterPath}"
+							onerror="this.src='${path}/resources/images/noImage.png';">
+					</div>
 				</div>
 				<div class="movie-details2">
 					<h2>${movieData.title}</h2>
@@ -96,20 +100,22 @@
 
 		<article class="review-list">
 			<h3>최신 리뷰</h3>
-			<c:forEach items="${reviewer}" var="reviewer" begin="0" end="3" varStatus="status">
+			<c:forEach items="${reviewer}" var="reviewer" begin="0" end="3"
+				varStatus="status">
 				<c:out value="" />
 				<div class="review-card">
 					<div class="review-header">
 						<div>
 							<a href="userReview?uiNickname=${reviewer.uiNickname}"> <img
-							   src="${reviewer.uiFilePath}"
-							   onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+								src="${reviewer.uiFilePath}"
+								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
 							</a>
 							<div>${reviewer.uiNickname}</div>
 						</div>
 					</div>
 					<div class="review-body">
-						<a href="/review?riNum=${reviewer.riNum}&movieId=${reviewer.riMovieId}">${reviewer.riContent}</a>
+						<a
+							href="/review?riNum=${reviewer.riNum}&movieId=${reviewer.riMovieId}">${reviewer.riContent}</a>
 					</div>
 
 					<div class="review-like">
@@ -124,7 +130,8 @@
 
 					<div class="review-body-null">
 						<a href="review-insert?search=${movieData.title}">
-						<p>리뷰를 작성해보세요</p> </a>
+							<p>리뷰를 작성해보세요</p>
+						</a>
 					</div>
 
 
