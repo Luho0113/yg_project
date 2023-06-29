@@ -104,5 +104,13 @@ $textarea.oninput = (event) => {
 	  $target.style.height = 0;
 	  $target.style.height = DEFAULT_HEIGHT + ($target.scrollHeight - 100) + 'px';
 };
+
+function checkNull() {
+	const riContent = document.querySelector('.riContent');
+	if (riContent.value == null || riContent.value.trim() == "") {
+		alert('영화 후기를 입력해주세요.');
+		return false;
+	}
+}
 </script>
 </html>
