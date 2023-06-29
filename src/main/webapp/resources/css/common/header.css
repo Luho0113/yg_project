@@ -89,6 +89,7 @@ html {
 	margin: 5px;
 	line-height: 30px;
 	font-weight: bold;
+	color: #FFFAF6;
 }
 
 #myInfo-Img {
@@ -111,5 +112,4 @@ html {
 	margin-left: auto;
 	margin-right: auto;
 	width: 356px;
-	border: 1px solid red;
 }
