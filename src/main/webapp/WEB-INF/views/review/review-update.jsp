@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
@@ -96,4 +97,12 @@
 <!-- footer area -->
 <jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
+<script>const DEFAULT_HEIGHT = 120; // textarea 기본 height
+const $textarea = document.querySelector('#riContent');
+$textarea.oninput = (event) => {
+	  const $target = event.target;
+	  $target.style.height = 0;
+	  $target.style.height = DEFAULT_HEIGHT + ($target.scrollHeight - 100) + 'px';
+};
+</script>
 </html>
