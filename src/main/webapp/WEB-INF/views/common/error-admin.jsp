@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>관리자 로그인 필요</title>
+<title>영감 관리자 페이지</title>
 </head>
 <body>
 <%

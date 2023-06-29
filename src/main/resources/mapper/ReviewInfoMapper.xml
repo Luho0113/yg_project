@@ -10,7 +10,14 @@
 		from user_info u inner join review_info r on u.ui_id = r.ui_id
 				left outer join review_comment c on r.ri_num = c.ri_num
 		group by r.ri_num
-		order by r.ri_credate desc
+		<choose>
+			<when test="sort == null || sort == 'new'">
+				order by r.ri_credate desc
+			</when>
+			<otherwise>
+				order by r.ri_credate asc
+			</otherwise>
+		</choose>
    	</select>
    	
    	<!-- 리뷰 목록 장르 정렬 -->
@@ -18,9 +25,16 @@
       	select count(rc_num) rc_count, r.*, u.*
 		from user_info u inner join review_info r on u.ui_id = r.ui_id
 				left outer join review_comment c on r.ri_num = c.ri_num
-		where r.ri_genre like '%' #{genre} '%'
+		where r.ri_genre like concat ('%', #{genre}, '%') 
 		group by r.ri_num
-		order by r.ri_credate desc
+			<choose>
+				<when test='sort == "old"'>
+					order by r.ri_credate asc
+				</when>
+				<otherwise>
+					order by r.ri_credate desc
+				</otherwise>
+			</choose>
    	</select>
    
    	<!-- 리뷰 한 개 출력 -->

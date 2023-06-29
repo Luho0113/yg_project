@@ -4,6 +4,11 @@ html {
 	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
 }
 
+.main-input{
+	width: 240px;
+	height: 25px;
+	padding: 10px;
+}
 
 .margin{
     height: 100px;

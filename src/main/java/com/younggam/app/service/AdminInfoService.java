@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AdminInfoService {
 	
-	private final String pjPath = "C:\\Users\\User\\eclipse-workspace_current1\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
+	private final String pjPath = "C:\\Users\\USER\\git\\yg_project\\src\\main\\webapp\\resources\\upload";
 	@Autowired
 	private AdminInfoMapper aiMapper;
 	//관리자 로그인

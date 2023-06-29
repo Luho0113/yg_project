@@ -72,12 +72,26 @@
 						<!-- 작성한 후기가 있는 경우 -->
 						<c:forEach items="${myReviews}" var="myReview">
 							<div class="user-review">
-								<div class="user-review-text">
-									<a
-										href="/review?riNum=${myReview.riNum}&movieId=${myReview.riMovieId}">
-										<p class="description">${myReview.riContent}</p>
-									</a>
-								</div>
+								<c:choose>
+               						<c:when test="${myReview.riSpoil eq 1}">
+               							<div class="user-review-text">
+											<a
+												href="/review?riNum=${myReview.riNum}&movieId=${myReview.riMovieId}">
+												<p class="description">스포일러 포함 리뷰입니다. </p>
+											</a>
+										</div>
+									</c:when>
+									<c:otherwise>
+										<div class="user-review-text">
+											<a
+												href="/review?riNum=${myReview.riNum}&movieId=${myReview.riMovieId}">
+												<p class="description">${myReview.riContent}</p>
+											</a>
+										</div>
+									
+									</c:otherwise>
+               					</c:choose>
+								
 								<div class="user-review-info">
 									<span>댓글 ${myReview.rcCount}</span> <span>|</span> <span>작성일
 										${fn:substring(myReview.riCredate, 0,10)}</span>

@@ -26,9 +26,11 @@
       <div class="riShorSelect" id="riShorSelect">
          <div class="genreSort" id="genreSort">장르별</div>
          <div class="createDateSort" id="createDateSort">
-            <select class="sort" id="sort">
-               <option value="new">최신순</option>
-               <option value="old">오래된순</option>
+            <select class="sort" onchange="sortChange(this)">
+               	<option value="new" 
+               		<c:if test="${param.sort == 'new'}">selected="selected"</c:if>>최신순</option>
+               	<option value="old"
+               		<c:if test="${param.sort == 'old'}">selected="selected"</c:if>>오래된순</option>
             </select>
          </div>
       </div>
@@ -38,25 +40,25 @@
       <div class="riGenreBar" id="riGenreBar">
          <ul>
             <li><a href="reviews">전체</a></li>
-            <li><a href="review-sort?genre=액션">액션</a></li>
-            <li><a href="review-sort?genre=모험">모험</a></li>
-            <li><a href="review-sort?genre=애니메이션">애니메이션</a></li>
-            <li><a href="review-sort?genre=코미디">코미디</a></li>
-            <li><a href="review-sort?genre=범죄">범죄</a></li>
-            <li><a href="review-sort?genre=다큐멘터리">다큐멘터리</a></li>
-            <li><a href="review-sort?genre=드라마">드라마</a></li>
-            <li><a href="review-sort?genre=가족">가족</a></li>
-            <li><a href="review-sort?genre=판타지">판타지</a></li>
-            <li><a href="review-sort?genre=역사">역사</a></li>
-            <li><a href="review-sort?genre=공포">공포</a></li>
-            <li><a href="review-sort?genre=음악">음악</a></li>
-            <li><a href="review-sort?genre=미스터리">미스터리</a></li>
-            <li><a href="review-sort?genre=로맨스">로맨스</a></li>
-            <li><a href="review-sort?genre=SF">SF</a></li>
-            <li><a href="review-sort?genre=TV">TV 영화</a></li>
-            <li><a href="review-sort?genre=스릴러">스릴러</a></li>
-            <li><a href="review-sort?genre=전쟁">전쟁</a></li>
-            <li><a href="review-sort?genre=서부">서부</a></li>
+            <li><a href="review-sort?genre=액션&sort=">액션</a></li>
+            <li><a href="review-sort?genre=모험&sort=">모험</a></li>
+            <li><a href="review-sort?genre=애니메이션&sort=">애니메이션</a></li>
+            <li><a href="review-sort?genre=코미디&sort=">코미디</a></li>
+            <li><a href="review-sort?genre=범죄&sort=">범죄</a></li>
+            <li><a href="review-sort?genre=다큐멘터리&sort=">다큐멘터리</a></li>
+            <li><a href="review-sort?genre=드라마&sort=">드라마</a></li>
+            <li><a href="review-sort?genre=가족&sort=">가족</a></li>
+            <li><a href="review-sort?genre=판타지&sort=">판타지</a></li>
+            <li><a href="review-sort?genre=역사&sort=">역사</a></li>
+            <li><a href="review-sort?genre=공포&sort=">공포</a></li>
+            <li><a href="review-sort?genre=음악&sort=">음악</a></li>
+            <li><a href="review-sort?genre=미스터리&sort=">미스터리</a></li>
+            <li><a href="review-sort?genre=로맨스&sort=">로맨스</a></li>
+            <li><a href="review-sort?genre=SF&sort=">SF</a></li>
+            <li><a href="review-sort?genre=TV&sort=">TV 영화</a></li>
+            <li><a href="review-sort?genre=스릴러&sort=">스릴러</a></li>
+            <li><a href="review-sort?genre=전쟁&sort=">전쟁</a></li>
+            <li><a href="review-sort?genre=서부&sort=">서부</a></li>
          </ul>
       </div>
 
