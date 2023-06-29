@@ -51,9 +51,10 @@ public class MovieMainService {
 					
 				movievo.setId(object.getString("id"));
 				movievo.setTitle(object.getString("title"));
-			movievo.setPosterPath(object.getString("poster_path"));
+				movievo.setPosterPath(object.getString("poster_path"));
+				movievo.setOverview(object.getString("overview"));
 		//		movievo.setBackdropPath(object.getString("backdrop_path"));
-			//	movievo.setOverview(object.getString("overview"));
+				
 			
 
 				movieList.add(movievo);

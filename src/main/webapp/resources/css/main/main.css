@@ -4,12 +4,17 @@ html {
 	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
 }
 
-.main-input{
+.navbar li>a {
+	font-family: 'NanumSquareRound';
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.main-input {
 	width: 260px;
 	/* height: 25px; */
 	padding: 13.5px;
 }
-
 
 #box-office-poster {
 	width: 200px;
@@ -163,16 +168,15 @@ html {
 	display: -webkit-box;
 	margin: 5px;
 	-webkit-line-clamp: 4; /* 라인수 */
-	-webkit-box-orient: vertical; 
+	-webkit-box-orient: vertical;
 	line-height: 1.3em;
 	height: 5.2em; /* line-height 곱하기 -webkit-line-clamp */
 	overflow: hidden;
 }
 
-.review-body-text > p{
+.review-body-text>p {
 	display: block;
 }
-
 
 .review-like {
 	display: inline-block;
@@ -201,8 +205,6 @@ html {
 	animation-name: fade;
 	animation-duration: 1.5s;
 }
-
-
 
 /* Next & previous buttons */
 .prev, .next {

@@ -216,6 +216,25 @@ border: 2px solid #FF7C00;
 	margin: 5px;
 }
 
+.review-body-null{
+	  height: 150px;
+  margin: 2px;
+}
+
+.review-body-null a{
+	color: #FFFAF6;
+	margin: 5px;
+}
+
+.review-body-null a:hover{
+	color: #ff7c00;
+}
+
+.review-body-null p{
+	margin: 44px 28px;
+	font-size: 20px;
+}
+
 .review-like{
   text-align: right;
   margin: 5px;

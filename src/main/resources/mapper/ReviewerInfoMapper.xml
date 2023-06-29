@@ -4,42 +4,49 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.younggam.app.mapper.ReviewerInfoMapper">
 
-<select id="selectReviewersInfos" resultType="com.younggam.app.vo.UserInfoVO">
-	select u.ui_nickname, u.ui_file_path   
-	from user_info u
-	where u.ui_nickname like '%' #{uiNickname} '%'
-</select>
+	<!-- 검색어가 포함된 유저 조회 -->
+	<select id="selectReviewersInfos"
+		resultType="com.younggam.app.vo.UserInfoVO">
+		SELECT u.ui_nickname, u.ui_file_path
+		FROM user_info u
+		WHERE u.ui_nickname LIKE '%' #{uiNickname} '%'
+	</select>
 
+	<!-- 상세페이지 유저 목록 -->
+	<select id="selectDetailReviewersInfos"
+		resultType="com.younggam.app.vo.ReviewInfoVO">
+		SELECT u.ui_nickname, u.ui_file_path,
+		r.ri_movie_id,
+		r.ri_content, r.ri_num
+		FROM user_info u, review_info r
+		WHERE u.ui_id = r.ui_id AND ri_movie_id = #{riMovieId}
+	</select>
 
-<select id="selectDetailReviewersInfos" resultType="com.younggam.app.vo.ReviewInfoVO"> 
-	select u.ui_nickname, u.ui_file_path,
-		   r.ri_movie_id, r.ri_content, r.ri_num
-	from user_info u, review_info r 
-	where u.ui_id = r.ui_id and ri_movie_id = #{riMovieId}
-</select>
+	<!--별점 높은 순 영화 리스트 -->
+	<select id="selectStarInfos"
+		resultType="com.younggam.app.vo.ReviewInfoVO">
+		SELECT ROUND(AVG(ri_star), 1) ri_star
+		FROM review_info
+		WHERE ri_movie_id = #{riMovieId}
+	</select>
 
-<!--소수점 삭제 -->
-<select id="selectStarInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
-  SELECT ROUND(AVG(ri_star), 1) ri_star
-  FROM review_info
-  WHERE ri_movie_id = #{riMovieId}
-</select>
+	<!-- 최근 리뷰 리스트 -->
+	<select id="selectNewReviewersInfos"
+		resultType="com.younggam.app.vo.ReviewInfoVO">
+		SELECT r.*, u.*
+		FROM review_info r, user_info u
+		WHERE r.ui_id = u.ui_id
+		ORDER BY r.ri_credate DESC
+	</select>
 
-<!-- 최근 리뷰 리스트 -->
-<select id="selectNewReviewersInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
-select r.*, u.* 
-from review_info r, user_info u
-where r.ui_id = u.ui_id
-order by r.ri_credate desc
-</select>
-
-<!-- 별점 높은 영화 -->
-<select id="selectBestMoviesInfos" resultType="com.younggam.app.vo.ReviewInfoVO">
-select ri_movie_id, round(AVG(ri_star), 1) ri_star
-from review_info
-group by ri_movie_id
-order by 2 desc
-</select>
+	<!-- 별점 높은 영화 -->
+	<select id="selectBestMoviesInfos"
+		resultType="com.younggam.app.vo.ReviewInfoVO">
+		SELECT ri_movie_id, round(AVG(ri_star), 1) ri_star
+		FROM review_info
+		GROUP BY ri_movie_id
+		ORDER BY 2 DESC
+	</select>
 
 
 

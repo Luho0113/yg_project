@@ -78,6 +78,54 @@ img {vertical-align: middle;}
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
+  
+  
+  ////////////
+  
+  
+
+  
+  
+  
+  
+  
+  
+}
+  
+  .starPointText{
+	float: right;
+    margin: 5px 0px 0px 0px;
+    font-size: 12px;
+	letter-spacing: 2px;
+}
+
+.starPoint{
+    float: right;
+    margin-right: 5px;
+}
+  
+  .star{
+	position: relative;
+	font-size: 20px;
+	color: #fffc;
+}
+  
+.star input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+  
+.star span{
+	width: 0;
+	position: absolute; 
+	left: 0;
+	color: #FF7C00;
+	overflow: hidden;
+	pointer-events: none;
 }
 </style>
 <body>
@@ -90,7 +138,7 @@ img {vertical-align: middle;}
 	<section class="content">
 
 		<article class="box-office">
-			<h3>박스오피스/상영중인 영화?</h3>
+			<h3>현재 상영 중인 영화</h3>
 
 			
 
@@ -102,8 +150,8 @@ img {vertical-align: middle;}
   <a href="detail?movieId=${nowPlaying.id}&riMovieId=${nowPlaying.id}">
   <img src="https://image.tmdb.org/t/p/original/${nowPlaying.posterPath}" style="width:200px">
   </a>
-  <div class="text">${nowPlaying.title}</div>
-  <div class="text">${nowPlaying.overview}</div>
+  <div class="text-title">${nowPlaying.title}</div>
+  <div class="text-overview">${nowPlaying.overview}</div>
 
 </div>
 
@@ -154,6 +202,30 @@ img {vertical-align: middle;}
 								<c:set var="string2" value="${fn:substring(String1, 0, 4)}" />
 								<div class="release-date">${string2}</div>
 								<h1>★ ${BestMovieList[status.index].riStar}</h1>
+								
+								
+								 <div class="starPointText">
+                     <span>(${BestMovieList[status.index].riStar})</span>
+                  </div>
+
+                  <div class="starPoint">
+                     <span class="star">★★★★★<span class="starRange">★★★★★</span>
+                        <input type="range" value="1" step="1" min="0" max="10">
+                        <input type="hidden" class="riStar" value="${BestMovieList[status.index].riStar}" readonly="readonly">
+                     </span>
+                  </div>
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
 							</div>
 
 						</div>
@@ -165,8 +237,13 @@ img {vertical-align: middle;}
 
 		<article class="new-reviews">
 			<h3>최신 리뷰</h3>
+			<div class="more">
+			
+				<h3><a href="/reviews">더보기</a></h3>
+				
+			</div>
 			<div class="new-reviews-box">
-				<c:forEach items="${newReviewList}" var="review" begin="0" end="6">
+				<c:forEach items="${newReviewList}" var="review" begin="0" end="3">
 					<div class="review-card">
 						
 						<div class="review-header">
@@ -182,18 +259,17 @@ img {vertical-align: middle;}
 						</div>
 						<div class="review-body">
 							<div class="review-body-text">
-								<a
+								<p><a
 									href="/review?riNum=${review.riNum}&movieId=${review.riMovieId}">
-									<p>${review.riContent}</p>
-								</a>
+									 ${review.riContent}
+								</a></p>
 							</div>
 
 
 						</div>
 
-						<div class="review-like">
-							<div>좋아요</div>
-							<div>댓글</div>
+						<div class="review-comment">
+							댓글 ${reivew.rcCount}
 						</div>
 						
 					</div>
@@ -204,14 +280,14 @@ img {vertical-align: middle;}
 
 
 
-
+<!-- 더보기 시도 
 <h1>더보기 테스트</h1>
 
 	<c:forEach items="${newReviewList}" var="review" begin="0" end="6">			
 <div class="review-nickname">${review.uiNickname}</div>
 				</c:forEach>
 
-
+-->
 
 
 
@@ -242,6 +318,26 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+
+
+
+
+
+onload = function() {
+	
+	for(i = 0; i < 5; i++){
+		const starPointArray = document.getElementsByClassName("starPoint");
+		const starPoint = starPointArray[i];
+		const star = starPoint.getElementsByClassName("riStar")[0].value;
+		const starCalc = ((star * 2) * 10);
+		
+		starPoint.getElementsByClassName("starRange")[0].style.width = starCalc + '%';
+		console.log(starCalc);	
+	}
+	
+	
 }
 </script>
 

@@ -13,7 +13,7 @@ public interface ReviewerInfoMapper {
 	//상세페이지 유저 목록
 	List<ReviewInfoVO> selectDetailReviewersInfos(String riMovieId);
 	
-	//별점 출력
+	//별점 높은 순 영화 리스트
 	ReviewInfoVO selectStarInfos(String riMovieId);
 	
 	//포인트 출력
