@@ -7,7 +7,11 @@ html {
 *{
 	font-family: 'NanumSquareRound'; 
 }
-
+.main-input{
+   width: 260px;
+   /* height: 25px; */
+   padding: 13.5px;
+}
 .margin{
     height: 100px;
 }

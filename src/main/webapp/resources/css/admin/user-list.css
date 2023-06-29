@@ -9,6 +9,8 @@ body{
 }
 .userArea{
     padding: 50px;
+    text-align: center;
+    display: block;
 }
 th, td{
     padding-top: 8px;
@@ -34,6 +36,9 @@ h2 {
 }
 .userTable{
     margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
 }
 .userTable th h4{
     font-weight: bold;

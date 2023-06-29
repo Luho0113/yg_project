@@ -1,58 +1,77 @@
 @charset "UTF-8";
+
 html {
 	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
-	
 }
-body{
-    font-weight: 300;
-    line-height: 2em;
-    color:#A8A39D;
+
+.main-input {
+	width: 240px;
+	height: 25px;
+	padding: 10px;
 }
-.reportFile-area{
-    padding: 50px;
+
+body {
+	font-weight: 300;
+	line-height: 2em;
+	color: #A8A39D;
 }
-input[type="text"], textarea{
-    padding: .5em .5em;
+
+.reportFile-area {
+	padding: 50px;
 }
-input[type="text"]{
-    width: 350px;
+
+input[type="text"], textarea {
+	padding: .5em .5em;
 }
-#piTitle, #piCategory, #piFilePath, #piContent{
-    margin: .7em .7em;
-    border: 1px solid #FF7C00;
+
+input[type="text"] {
+	width: 350px;
 }
-input[type="checkbox"]{
-    accent-color: #FF7C00;
+
+#piTitle, #piCategory, #piFilePath, #piContent {
+	margin: .7em .7em;
+	border: 1px solid #FF7C00;
 }
-#piFilePath{
-    display: none;
+
+input[type="checkbox"] {
+	accent-color: #FF7C00;
 }
-.btn-upload{
-    margin-left: 6px;
-    display: inline-block;
-    padding: 0.04rem 0.04rem;
-    color: #FFFAF6;
-    background-color: #43403B;
-    border-radius: 5px;
-    font-size: 14px
+
+#piFilePath {
+	display: none;
 }
-h5{
-    margin-bottom: 10px;
+
+.btn-upload {
+	margin-left: 6px;
+	display: inline-block;
+	padding: 0.04rem 0.04rem;
+	color: #FFFAF6;
+	background-color: #43403B;
+	border-radius: 5px;
+	font-size: 14px
 }
-h2{
-    margin-bottom: 20px;
+
+h5 {
+	margin-bottom: 10px;
 }
-.fileBtn, .resetBtn{
-    margin-top: 20px;
-    border-radius: 5px;
-    padding: 0.6rem 0.6rem;
-    color: #FFFAF6;
-    background-color: #43403B;
+
+h2 {
+	margin-bottom: 20px;
 }
-.fileBtn{
-    margin-right: 5px;
+
+.fileBtn, .resetBtn {
+	margin-top: 20px;
+	border-radius: 5px;
+	padding: 0.6rem 0.6rem;
+	color: #FFFAF6;
+	background-color: #43403B;
 }
-label{
-    display: inline-block;
-    vertical-align: top;
+
+.fileBtn {
+	margin-right: 5px;
+}
+
+label {
+	display: inline-block;
+	vertical-align: top;
 }

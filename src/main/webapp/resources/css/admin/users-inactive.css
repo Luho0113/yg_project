@@ -9,6 +9,8 @@ body{
 }
 .inactiveUser-area{
     padding: 50px;
+    text-align: center;
+    display: block;
 }
 th, td{
     padding-top: 8px;
@@ -29,6 +31,13 @@ h2 {
     color: #FF7C00;
     padding-bottom: 30px;
   }
+  
+.inactiveUser-table{
+	margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
 .inactiveUser-table, th, td{
     border-collapse: collapse;
 }
