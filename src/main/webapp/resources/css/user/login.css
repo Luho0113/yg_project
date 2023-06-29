@@ -4,6 +4,12 @@ html {
 	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
 }
 
+.navbar li>a {
+	font-family: 'NanumSquareRound';
+	font-weight: bold;
+	font-size: 18px;
+}
+
 .main-input{
 	width: 240px;
 	height: 25px;
