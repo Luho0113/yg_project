@@ -10,7 +10,7 @@
 <body>
 
 <script>
-	Swal.fire('${msg}');
+	alert('${msg}');
    	location.href='${url}';
 </script>
 

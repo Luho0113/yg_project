@@ -23,6 +23,7 @@ th{
     border-right: 0.5px dotted #FF7C00;
     border-bottom: 0.5px solid #FF7C00;
     border-top: 0.5px solid #FF7C00;
+    width: 500px;
 }
 td{
     border-top: 0.5px dotted #FF7C00;
@@ -41,7 +42,7 @@ h5{
     color: #FFFAF6;
 }
 .adminView-table th{
-    width: 70px;
+    width: 100px;
 }
 .adminView-table td{
     font-weight: normal;
