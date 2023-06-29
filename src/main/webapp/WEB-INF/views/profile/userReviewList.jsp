@@ -27,7 +27,7 @@
 			<div class="myInfo-img-wrap">
 				<div>
 					<img src="${myReviews[0].uiFilePath}" class="profile-image"
-						onerror="this.src='https://ifh.cc/g/cDROLZ.png';" />
+						onerror="this.src='${path}/resources/images/yg_profile.png';" />
 				</div>
 			</div>
 

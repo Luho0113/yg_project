@@ -97,7 +97,7 @@
                <div class="riListUserInfo">
                   <div class="profileBox">
                      <a href="userReview?uiNickname=${reivew.uiNickname}">
-                        <img class="profile" src="${reivew.uiFilePath}" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+                        <img class="profile" src="${reivew.uiFilePath}" onerror="this.src='${path}/resources/images/yg_profile.png';">
                      </a>
                   </div>
 

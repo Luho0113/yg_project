@@ -140,7 +140,7 @@
 							<div class="review-img">
 								<a href="userReview?uiNickname=${review.uiNickname}"> <img
 									src="${review.uiFilePath}"
-									onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+									onerror="this.src='${path}/resources/images/yg_profile.png';">
 								</a>
 							</div>
 

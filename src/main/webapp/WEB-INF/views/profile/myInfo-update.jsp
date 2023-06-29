@@ -38,7 +38,7 @@
 					<div class="img-choose">
 						<label for="uiFile"> 
 							<!-- 기존 프로필 이미지  --> 
-							<img id="profileImg" src="${user.uiFilePath}" class="profile-image" onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+							<img id="profileImg" src="${user.uiFilePath}" class="profile-image" onerror="this.src='${path}/resources/images/yg_profile.png';">
 							<div class="hover-text">
 								사진 선택
 							</div> 

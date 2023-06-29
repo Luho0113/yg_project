@@ -64,7 +64,7 @@
 									<div class="myInfo-icon">
 										<a href="/myInfo?uiNickname=${user.uiNickname}"> <img
 											id="myInfo-Img" alt="내프로필" src="${user.uiFilePath}"
-											onerror="this.src='${path}/resources/images/noImage.png';">
+											onerror="this.src='${path}/resources/images/yg_profile.png';">
 										</a> ${user.uiNickname}
 									</div>
 								</li>
