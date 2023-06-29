@@ -37,7 +37,8 @@
 						</a>
 						<div class="cont-detail">
 							<div class="title">
-								<a href="detail?movieId=${movie.id}">${movie.title}</a>
+								<a href="detail?movieId=${movie.id}&riMovieId=${movie.id}">${movie.title}</a>
+								
 							</div>
 
 	<c:set var = "string1" value = "${movie.releaseDate}"/>
