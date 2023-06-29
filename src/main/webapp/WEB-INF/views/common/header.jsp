@@ -110,7 +110,7 @@
 	function checkNull() {
 		const inputValue = document.querySelector('#search');
 		
-		if(inputValue.value.trim().length == null){
+		if(inputValue.value.trim().length == null || inputValue.value.trim() == ""){
 			alert('검색어를 입력해주세요.');
 			history.go(0);
 			return false;

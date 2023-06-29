@@ -99,16 +99,19 @@
 -->
 
 
-<article class="new-reviews">
+		<article class="new-reviews">
 			<h3>최신 리뷰</h3>
 			<div class="more">
 
-				<p>
-					<a href="/reviews">더보기</a>
-				</p>
+				<c:if test="${fn:length(reviewer)> 4}">
+					<p>
+						<a href="/reviews">더보기</a>
+					</p>
+				</c:if>
 
 			</div>
 			<div class="new-reviews-box">
+
 				<c:forEach items="${reviewer}" var="reviewer" begin="0" end="3">
 					<div class="review-card">
 
@@ -132,37 +135,24 @@
 								</p>
 							</div>
 
-
 						</div>
 
-<div class="review-comment">조회수 ${reviewer.riViewCnt}</div>
+						<div class="review-comment">조회수 ${reviewer.riViewCnt}</div>
 					</div>
 				</c:forEach>
-				
-				
+
 				<c:if test="${empty reviewer}">
-			<div class="more">
-
-				<p></p>
-
-			</div>
-			
 					<div class="review-card">
 						<div class="review-body-null">
-						
-						<a href="/review-insert">
-							리뷰를 작성해보세요	
-						</a>
-					
+							<a href="/review-insert"> 리뷰를 작성해보세요 </a>
+						</div>
 					</div>
-							</div>
-					
-			</c:if>
+				</c:if>
 			</div>
-		
 
 
-			
+
+
 
 
 

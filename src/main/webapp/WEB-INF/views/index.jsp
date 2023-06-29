@@ -29,7 +29,7 @@
 	<section class="content">
 
 		<article class="box-office">
-			<h3>현재 상영 중인 영화</h3>
+			
 
 			
 
@@ -37,13 +37,16 @@
 <c:forEach items="${nowPlaying}" var="nowPlaying">
 
 <div class="mySlides fade">
-  <div class="numbertext">페이지번호</div>
+<div class="now-poster">
   <a href="detail?movieId=${nowPlaying.id}&riMovieId=${nowPlaying.id}">
-  <img src="https://image.tmdb.org/t/p/original/${nowPlaying.posterPath}" style="width:200px">
+  <img id="box-office-poster" src="https://image.tmdb.org/t/p/original/${nowPlaying.posterPath}">
   </a>
+  </div>
+  
+  <div class="now-detail">
   <div class="text-title">${nowPlaying.title}</div>
   <div class="text-overview">${nowPlaying.overview}</div>
-
+</div>
 </div>
 
 	</c:forEach>
@@ -128,9 +131,13 @@
 		<article class="new-reviews">
 			<h3>최신 리뷰</h3>
 			<div class="more">
-			
-				<h3><a href="/reviews">더보기</a></h3>
-				
+
+				<c:if test="${fn:length(newReviewList)> 4}">
+					<p>
+						<a href="/reviews">더보기</a>
+					</p>
+				</c:if>
+
 			</div>
 			<div class="new-reviews-box">
 				<c:forEach items="${newReviewList}" var="review" begin="0" end="3">
@@ -155,16 +162,24 @@
 								</a></p>
 							</div>
 
-
 						</div>
 
 						<div class="review-comment">
-							댓글 ${reivew.rcCount}
+							조회수 ${review.riViewCnt}
 						</div>
-						
-					</div>
+						</div>
 				</c:forEach>
+				
+				<c:if test="${empty newReviewList}">
+					<div class="review-card">
+						<div class="review-body-null">
+							<a href="/review-insert"> 리뷰를 작성해보세요 </a>
+						</div>
+					</div>
+				</c:if>
 			</div>
+			
+			
 		</article>
 
 
