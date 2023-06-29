@@ -173,7 +173,7 @@ border: 2px solid #FF7C00;
 }
 
 .new-reviews {
-	border: 1px solid yellow;
+
 	height: 430px;
 }
 
@@ -198,25 +198,25 @@ border: 2px solid #FF7C00;
 }
 
 .new-reviews-box {
-	border: 2px solid red;
-	margin: 14px 15px;
+
+	    margin: 16px 0px;
 	display: block;
 	    height: 330px;
 }
 
 .review-card {
-	display: inline-block;
+    display: inline-block;
     border: 2px solid #FF7C00;
     border-radius: 15px;
     height: 290px;
-   width: 219px;
-    padding: 19px;
+    width: 219px;
+    padding: 23px;
     vertical-align: top;
-    margin: 0px 12px;
+    margin: 3px 13px;
 }
 
 .review-header {
-border-bottom: 1px solid gold;
+border-bottom: 1px solid #A8A39D;
     margin: 2px;
     height: 55px;
     display: block;
@@ -241,7 +241,7 @@ border-bottom: 1px solid gold;
 
 .review-body {
 	display: block;
-	border: 1px solid firebrick;
+
 	overflow: hidden;
 	word-break: break-all;
 	margin: 2px;

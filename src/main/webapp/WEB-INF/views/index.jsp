@@ -46,18 +46,20 @@
   <div class="now-detail">
   <div class="text-title">${nowPlaying.title}</div>
   <div class="text-overview">${nowPlaying.overview}</div>
+
+
 </div>
 </div>
 
 	</c:forEach>
 </div>
-<br>
-
-<div style="text-align:center">
+<div class="span-dot">
   <span class="dot"></span> 
   <span class="dot"></span> 
   <span class="dot"></span> 
 </div>
+
+
 
 
 
@@ -98,7 +100,7 @@
 								
 		
 								 <div class="starPointText">
-                     <h2>(${BestMovieList[status.index].riStar})</h2s>
+                     <h2>(${BestMovieList[status.index].riStar})</h2>
                   </div>
 
                   <div class="starPoint">
@@ -229,7 +231,7 @@ function showSlides() {
 
 
 
-
+/* 별점 자바스크립트 */
 onload = function() {
 	
 	for(i = 0; i < 5; i++){

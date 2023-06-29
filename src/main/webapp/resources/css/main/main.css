@@ -69,9 +69,10 @@ img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 100%;
   display: inline-block;
-  margin: auto;
+  margin: 10px;
+  height: 550px;
 
 }
 
@@ -80,20 +81,30 @@ img {vertical-align: middle;}
 }
 
 .now-poster{
-	
+	width: 400px;
+	display: inline-block;
+	text-align: center;
+	margin: 3px;
 }
 
 #box-office-poster {
 	width: 360px;
+	
 }
 
 
 .now-detail{
+	display: inline-block;
+	text-align: left;
+	width: 700px;
+	vertical-align: top;
+	margin: 385px 15px;
 	
 }
 
 .text-title{
-	
+	font-size: 2em;
+	margin-bottom: 5px;
 }
 .text-overview{
 	
@@ -128,8 +139,13 @@ img {vertical-align: middle;}
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
+
 }
 
+.span-dot{
+text-align:center
+
+}
 .active {
   background-color: #717171;
 }
@@ -160,15 +176,17 @@ img {vertical-align: middle;}
 
 
 .box-office {
-	border: 1px solid red;
+	
 	margin-top: 5%;
-	height: 800px;
+	height: 600px;
+	width:1200px;
 	display: inline-block;
 	text-align: left;
+	
 }
 
 .box-office-list {
-	border: 1px solid blue;
+
 	display: inline-block;
 	width: 80%;
 	height: 300px;
@@ -176,8 +194,8 @@ img {vertical-align: middle;}
 }
 
 .highest-rated-movies {
-	border: 1px solid green;
-	margin-top: 10%;
+	
+	margin-top: 5%;
 }
 
 .highest-rated-movies h3 {
@@ -185,11 +203,11 @@ img {vertical-align: middle;}
 }
 
 .movies {
-	border: 1px solid blueviolet;
+	
 }
 
 .movie-box {
-	border: 1px solid cornflowerblue;
+
 	display: inline-block;
 	width: 18%;
 	height: 20.8%;
@@ -209,16 +227,16 @@ img {vertical-align: middle;}
 .movie-box a {
 	display: block;
 	height: 100%;
-	border: 1px solid khaki;
+	
 }
 
 .cont-detail {
-	border: 1px solid orange;
+
 	height: 100px;
 }
 
 .title {
-	border: 1px solid yellowgreen;
+
 	font-size: 1.05rem;
 	font-style: bold;
 	height: 45px;
@@ -233,16 +251,17 @@ img {vertical-align: middle;}
 }
 
 .release-date {
-	border: 1px solid rebeccapurple;
+	
 }
 
 .star-rate {
-	border: 1px solid rebeccapurple;
+	
 }
 
 .new-reviews {
-	border: 1px solid yellow;
+	
 	height: 390px;
+	margin-top: 5%;
 }
 
 .new-reviews h3 {
@@ -266,7 +285,7 @@ img {vertical-align: middle;}
 }
 
 .new-reviews-box {
-	border: 2px solid red;
+
 	margin: 10px 15px;
 	display: block;
 	    height: 300px;
@@ -284,7 +303,7 @@ img {vertical-align: middle;}
 }
 
 .review-header {
-border-bottom: 1px solid gold;
+border-bottom: 1px solid #A8A39D;
     margin: 2px;
     height: 55px;
     display: block;
@@ -309,7 +328,7 @@ border-bottom: 1px solid gold;
 
 .review-body {
 	display: block;
-	border: 1px solid firebrick;
+
 	overflow: hidden;
 	word-break: break-all;
 	margin: 2px;
