@@ -98,45 +98,71 @@
 		</article>
 -->
 
-		<article class="review-list">
+
+<article class="new-reviews">
 			<h3>최신 리뷰</h3>
-			<c:forEach items="${reviewer}" var="reviewer" begin="0" end="3"
-				varStatus="status">
-				<c:out value="" />
-				<div class="review-card">
-					<div class="review-header">
-						<div>
-							<a href="userReview?uiNickname=${reviewer.uiNickname}"> <img
-								src="${reviewer.uiFilePath}"
-								onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
-							</a>
-							<div>${reviewer.uiNickname}</div>
+			<div class="more">
+
+				<p>
+					<a href="/reviews">더보기</a>
+				</p>
+
+			</div>
+			<div class="new-reviews-box">
+				<c:forEach items="${reviewer}" var="reviewer" begin="0" end="3">
+					<div class="review-card">
+
+						<div class="review-header">
+							<div class="review-img">
+								<a href="userReview?uiNickname=${reviewer.uiNickname}"> <img
+									src="${reviewer.uiFilePath}"
+									onerror="this.src='https://ifh.cc/g/cDROLZ.png';">
+								</a>
+							</div>
+
+							<div class="review-nickname">${reviewer.uiNickname}</div>
+
 						</div>
-					</div>
-					<div class="review-body">
-						<a
-							href="/review?riNum=${reviewer.riNum}&movieId=${reviewer.riMovieId}">${reviewer.riContent}</a>
-					</div>
+						<div class="review-body">
+							<div class="review-body-text">
+								<p>
+									<a
+										href="/review?riNum=${reviewer.riNum}&movieId=${reviewer.riMovieId}">
+										${reviewer.riContent} </a>
+								</p>
+							</div>
 
-					<div class="review-like">
-						<div>좋아요</div>
-						<div>댓글</div>
+
+						</div>
+
+<div class="review-comment">조회수 ${reviewer.riViewCnt}</div>
 					</div>
-				</div>
-			</c:forEach>
+				</c:forEach>
+				
+				
+				<c:if test="${empty reviewer}">
+			<div class="more">
 
-			<c:if test="${empty reviewer}">
-				<div class="review-card">
+				<p></p>
 
-					<div class="review-body-null">
-						<a href="review-insert?search=${movieData.title}">
-							<p>리뷰를 작성해보세요</p>
+			</div>
+			
+					<div class="review-card">
+						<div class="review-body-null">
+						
+						<a href="/review-insert">
+							리뷰를 작성해보세요	
 						</a>
+					
 					</div>
-
-
-				</div>
+							</div>
+					
 			</c:if>
+			</div>
+		
+
+
+			
 
 
 

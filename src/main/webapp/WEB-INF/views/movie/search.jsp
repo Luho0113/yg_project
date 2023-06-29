@@ -69,7 +69,7 @@
 			<c:choose>
 			
 				<c:when test="${empty param.search}">
-					<p>검색 고고</p>
+					<p>영화를 검색해보세요</p>
 				</c:when>
 				
 				<c:when test="${empty movie}">
