@@ -7,6 +7,12 @@ html {
 	
 }
 
+.main-input{
+   width: 240px;
+   height: 25px;
+   padding: 10px;
+}
+
 .content{
 	letter-spacing: 1px;
 }
