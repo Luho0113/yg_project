@@ -1,69 +1,86 @@
 @charset "UTF-8";
+
 html {
-	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */	
+	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
 }
-.updateReport-area{
-    padding: 50px;
+
+.main-input {
+	width: 240px;
+	height: 25px;
+	padding: 10px;
 }
-h2{
-    margin-bottom: 20px;
+
+.updateReport-area {
+	padding: 50px;
 }
-input[type="text"], textarea{
-    padding: .5em .5em;
+
+h2 {
+	margin-bottom: 20px;
 }
-#piTitle{
-    width: 350px;
+
+input[type="text"], textarea {
+	padding: .5em .5em;
 }
-#piCredat{
-    width: 80px;
+
+#piTitle {
+	width: 350px;
 }
-#piNum{
-    width: 25px;
+
+#piCredat {
+	width: 80px;
 }
-#piNum, #piCredat, #piTitle, #piCategory, #piFilePath, #piContent{
-    margin: .7em .7em;
-    border: 1px solid #FF7C00;
+
+#piNum {
+	width: 25px;
 }
-#piCategory, #piFilePath, #piContent{
-    margin: 1em 1em;
+
+#piNum, #piCredat, #piTitle, #piCategory, #piFilePath, #piContent {
+	margin: .7em .7em;
+	border: 1px solid #FF7C00;
 }
-#piContent{
-    margin-top: 17px;
+
+#piCategory, #piFilePath, #piContent {
+	margin: 1em 1em;
 }
-#piFilePath{
-    display: none;
+
+#piContent {
+	margin-top: 17px;
 }
-input[type="checkbox"]{
-    accent-color: #FF7C00;
+
+#piFilePath {
+	display: none;
 }
-.btn-upload{
-    margin-left: 6px;
-    display: inline-block;
-    padding: 0.5rem 0.5rem;
-    color: #FFFAF6;
-    background-color: #43403B;
-    border-radius: 5px;
-    font-size: 14px
+
+input[type="checkbox"] {
+	accent-color: #FF7C00;
 }
-.updateBtn, .resetBtn{
-    margin-top: 20px;
-    border-radius: 5px;
-    padding: 0.6rem 0.6rem;
-    color: #FFFAF6;
-    background-color: #43403B;
+
+.btn-upload {
+	margin-left: 6px;
+	display: inline-block;
+	padding: 0.5rem 0.5rem;
+	color: #FFFAF6;
+	background-color: #43403B;
+	border-radius: 5px;
+	font-size: 14px
 }
-.updateBtn{
-    margin-right: 5px;
+
+.updateBtn, .resetBtn {
+	margin-top: 20px;
+	border-radius: 5px;
+	padding: 0.6rem 0.6rem;
+	color: #FFFAF6;
+	background-color: #43403B;
+}
+
+.updateBtn {
+	margin-right: 5px;
 }
 /* label{
 	display: inline-block;
 	vertical-align: middle;
 } */
-#piContent{
-    display: inline-block;
-    vertical-align: top; 
+#piContent {
+	display: inline-block;
+	vertical-align: top;
 }
-
-
-
-

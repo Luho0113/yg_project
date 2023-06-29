@@ -1,57 +1,75 @@
 @charset "UTF-8";
+
 html {
-	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */	
+	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
 }
-.reportView-area{
-    padding: 50px;
+
+.main-input {
+	width: 240px;
+	height: 25px;
+	padding: 10px;
 }
-th, td{
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 8px;
-    padding-right: 8px;
+
+.reportView-area {
+	padding: 50px;
 }
+
+th, td {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
 h2 {
-    font-weight: bold;
-    color: #A8A39D;
-    padding-bottom: 20px;
-  }
-th{
-    /* border-left: 0.5px dotted #A8A39D; */
-    border-right: 0.5px dotted #FF7C00;
-    border-bottom: 0.5px solid #FF7C00;
-    border-top: 0.5px solid #FF7C00;
+	font-weight: bold;
+	color: #A8A39D;
+	padding-bottom: 20px;
 }
-td{
-    border-top: 0.3px dotted #A8A39D;
-    border-bottom: 0.3px dotted #A8A39D;
-    /* border-right: 0.3px dotted #A8A39D;
+
+th {
+	/* border-left: 0.5px dotted #A8A39D; */
+	border-right: 0.5px dotted #FF7C00;
+	border-bottom: 0.5px solid #FF7C00;
+	border-top: 0.5px solid #FF7C00;
+}
+
+td {
+	border-top: 0.3px dotted #A8A39D;
+	border-bottom: 0.3px dotted #A8A39D;
+	/* border-right: 0.3px dotted #A8A39D;
     border-left: 0.3px dotted #A8A39D; */
 }
-.reportView-table, th, td{
-    border-collapse: collapse;
+
+.reportView-table, th, td {
+	border-collapse: collapse;
 }
-.reportView-table th h4{
-    font-weight: bold;
-    font-size: 16px;
-    text-align: center;
-    color: #FFFAF6; 
+
+.reportView-table th h4 {
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	color: #FFFAF6;
 }
-.reportView-table th{
-    width: 70px;
+
+.reportView-table th {
+	width: 70px;
 }
-.reportView-table td{
-    font-weight: normal;
-    font-size: 14px;
-    width: 550px;
+
+.reportView-table td {
+	font-weight: normal;
+	font-size: 14px;
+	width: 550px;
 }
-.reportUpdate, .reportDelete{
-    border-radius: 5px;
-    padding: .5rem .5rem;
-    background-color: #43403B;
-    color: #FFFAF6;
-    text-align: center;
+
+.reportUpdate, .reportDelete {
+	border-radius: 5px;
+	padding: .5rem .5rem;
+	background-color: #43403B;
+	color: #FFFAF6;
+	text-align: center;
 }
-.reportUpdate{
-    margin-right: 6px;
+
+.reportUpdate {
+	margin-right: 6px;
 }

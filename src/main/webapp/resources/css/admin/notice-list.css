@@ -14,6 +14,8 @@ body{
 }
 .noticeArea{
     padding: 50px;
+    text-align: center;
+    display: block;
 }
 th, td{
     padding-top: 8px;
@@ -36,6 +38,9 @@ h2 {
   }
 .noticeTable{
     margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
 }
 .noticeTable, th, td{
     border-collapse: collapse;
