@@ -40,7 +40,10 @@ function uploadImg(obj){
 	<div id="img_div" style="display: none">
 			<img src="${notice.niFilePath}" width="200">
 	</div>
-	<label for="niFilePath">첨부</label>
+	
+	<label for="niFilePath">첨부
+		<div class="btn-upload">공지 파일</div>
+	</label>
 	<input type="file" id="niFilePath" name="niFile" onchange="uploadImg(this)"><br>
 	
 	<label for="niContent">내용</label>

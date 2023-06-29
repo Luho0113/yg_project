@@ -10,13 +10,14 @@ h2{
     font-weight: bold;
     color: #A8A39D;
     padding-bottom: 20px;
-    padding-top: 130px;
+    padding-top: 100px;
 }
-input[type="text"]{
-    padding: .4em .4em;
+input[type="text"], input[type="password"]{
+    padding: .6em .6em;
+    border-radius: 5px;
 }
 #adminId, #adminNickName, #adminPwd, #adminFilePath, #adminEmail{
-    margin: .6em .6em;
+    margin: .7em .7em;
     border: 1px solid #FF7C00;
     width: 250px;
 }
@@ -29,7 +30,7 @@ input[type="text"]{
 .btn-upload{
     margin-left: 6px;
     display: inline-block;
-    padding: 0.04rem 0.04rem;
+    padding: 0.5rem 0.5rem;
     color: #FFFAF6;
     background-color: #43403B;
     border-radius: 5px;
@@ -41,6 +42,7 @@ input[type="text"]{
     padding: 0.6rem 0.6rem;
     color: #FFFAF6;
     background-color: #43403B;
+    font-size: 14px
 }
 .resetBtn{
     width: 100px;

@@ -24,6 +24,18 @@ input[type="text"], textarea{
     margin: .6em .6em;
     border: 1px solid #FF7C00;
 }
+#niFilePath{
+	display: none;
+}
+.btn-upload{
+    margin-left: 6px;
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+    color: #FFFAF6;
+    background-color: #43403B;
+    border-radius: 5px;
+    font-size: 14px
+}
 .updateBtn, .resetBtn{
     margin-top: 20px;
     border-radius: 5px;

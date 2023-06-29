@@ -27,7 +27,7 @@ function uploadImg(obj){
 	<form method="POST" action="/admin/report-update" enctype="multipart/form-data">
 	<h2>신고 글 수정</h2>
 	<label for="piNum">번호</label>
-	<input type="number" id="piNum" name="piNum" value="${report.piNum}" readonly><br>
+	<input type="text" id="piNum" name="piNum" value="${report.piNum}" readonly><br>
 	
 	<label for="piCredat">작성일</label>
 	<input type="text" id="piCredat" name="piCredat" value="${report.piCredat}" readonly><br>

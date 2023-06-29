@@ -16,7 +16,7 @@ body {
 a{
   text-decoration-line: none;
 }
-/*
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -31,16 +31,9 @@ a{
 ::-webkit-scrollbar-thumb:hover {
   background: #ff7c00;
 }
-*/
-
-
-
-
 .dashboard{
 	margin-bottom: 200px;
 }
-
-
 
 /* 관리자 프로필 */
 .admin-profile-wrap{
@@ -53,6 +46,13 @@ a{
 	margin-left: auto;
 	margin-right: auto;
 }
+h3{
+	margin-top: 22px;
+}
+h4{
+	text-align: left;
+}
+
 .admin-profile{
 	display: block;
 }
@@ -73,16 +73,13 @@ a{
 	object-fit: cover; /*이미지 비율 맞춰줌*/
 }
 
-
 /* 관리 기능 메뉴 */
 .dash-content{
 	text-align: center;
 }
-
 .boxes{
 	display: block;
 }
-
 .box{
 	display: inline-block;
 	width: 260px;
@@ -92,14 +89,11 @@ a{
 	border-radius: 5px;
 	margin: 10px;
 }
-
-
 .box i {
 	display: block;
 	font-size: 50px;
 	margin-top: 90px;
 }
-
 .box-text{
 	margin-top: 30px;
 }
@@ -107,12 +101,10 @@ a{
 	color: #fffaf6;
 	transition: all 0.3s ease;
 }
-
 .box a:hover{
 	color: #ff7c00;
 	transition: all 0.3s ease;
 }
-
 .box i:hover{
 	color: #ff7c00;
 	transition: all 0.3s ease;

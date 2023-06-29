@@ -52,14 +52,14 @@
 						<ul>
 							<li>
 								<div class="admin-icon">
-									<a href="/admin/home"> <img id="admin-Img"
+									<a href="/admin/profile"> <img id="admin-Img"
 										src="${admin.adminFilePath}" alt="영감 관리자"
 										onerror="this.src='${path}/resources/images/admin_default_img.png';" />
-									</a><span>${admin.adminNickName} 님</span>
+									</a><a class="admin-nickname" href="/admin/profile"><span>${admin.adminNickName} 님</span></a>
 								</div>
 							</li>
 							<li><a href="/admin/logout"> <i
-									class="fa-solid fa-right-from-bracket"></i> <span>로그아웃</span></a></li>
+									class="fa-solid fa-right-from-bracket"></i> <span> 로그아웃</span></a></li>
 						</ul>
 					</c:if>
 					<!-- 관리자 로그아웃 -->
@@ -77,7 +77,6 @@
 
 </div>
 <!-- navbar end -->
-
 
 <div class="header">
 	<div class="logo">
