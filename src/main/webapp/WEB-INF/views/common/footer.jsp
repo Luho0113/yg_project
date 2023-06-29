@@ -18,7 +18,7 @@
 		
 		<!-- 페이지 관련 정보 및 기타 안내 -->
 		<div class="web-info">
-			<div>광고 문의 | younggam_official@gmail.com</div>
+			<div>광고 문의 | younggam@gmail.com</div>
 			<div>고객센터 | 031)888-5290</div>
 			<div>주식회사 영감 | 대표 감영감</div>
 

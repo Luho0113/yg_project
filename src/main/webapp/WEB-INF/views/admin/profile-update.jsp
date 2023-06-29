@@ -71,11 +71,11 @@
 		</div>
 	  </nav>
   
-	  <section class="dashboard">
-		<div class="dash-top">
-		  <a href="/admin/profile"><img src="${admin.adminFilePath}" alt="영감 관리자">
-		  </a>&nbsp;<a class="admin-nickname" href="/admin/profile">${admin.adminNickName} 님</a>
-		</div>
+  <section class="dashboard">
+      <div class="dash-top">
+        <a href="/admin/profile"><img src="${admin.adminFilePath}" alt="영감 관리자">
+        </a>&nbsp;<a class="admin-nickname" href="/admin/profile">${admin.adminNickName} 님</a>
+      </div>
 <script>
 function uploadImg(obj){
 	   let file = obj.files[0];

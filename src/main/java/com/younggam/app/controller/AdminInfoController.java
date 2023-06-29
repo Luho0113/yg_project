@@ -68,7 +68,7 @@ public class AdminInfoController {
 	         String url = "/admin/update?adminId=" + admin.getAdminId();
 	         if(aiService.updateAdminInfo(admin)) {
 	            msg = "관리자 정보가 수정되었습니다.";
-	            url = "/admin/profile?adminId=" + admin.getAdminId();
+	            url = "/admin/home";
 	         }
 	         m.addAttribute("msg", msg);
 	         m.addAttribute("url", url);
