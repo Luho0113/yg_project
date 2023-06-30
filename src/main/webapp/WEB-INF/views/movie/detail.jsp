@@ -153,7 +153,7 @@
 				<c:if test="${empty reviewer}">
 					<div class="review-card">
 						<div class="review-body-null">
-							<a href="/review-insert"> 리뷰를 작성해보세요 </a>
+							<a href="/review-insert"> 리뷰를<br>작성해보세요 </a>
 						</div>
 					</div>
 				</c:if>
