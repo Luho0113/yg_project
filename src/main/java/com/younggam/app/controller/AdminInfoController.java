@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.younggam.app.service.AdminInfoService;
 import com.younggam.app.vo.AdminInfoVO;
+import com.younggam.app.vo.UserInfoVO;
 
 @Controller
 public class AdminInfoController {
@@ -63,10 +64,16 @@ public class AdminInfoController {
 			return "admin/profile-update";
 		}
 		@PostMapping("/admin/update")
-	     public String adminUpdate(AdminInfoVO admin, Model m) throws IllegalStateException, IOException {
+	     public String adminUpdate(AdminInfoVO admin, Model m, HttpSession session) throws IllegalStateException, IOException {
 	         String msg = "관리자 정보 수정에 실패하였습니다.";
 	         String url = "/admin/update?adminId=" + admin.getAdminId();
+	         
+	         AdminInfoVO sessionAdminInfo = (AdminInfoVO) session.getAttribute("admin");
+	         admin.setAdminNickName(sessionAdminInfo.getAdminNickName());
+	         admin.setAdminFilePath(sessionAdminInfo.getAdminFilePath());
+	         
 	         if(aiService.updateAdminInfo(admin)) {
+	        	session.setAttribute("admin", admin);
 	            msg = "관리자 정보가 수정되었습니다.";
 	            url = "/admin/home";
 	         }
