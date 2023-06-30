@@ -18,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ReportBoardService {
 	
-	private final String pjPath = "C:\\Users\\User\\eclipse-workspace_current1\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
+	private final String pjPath = "C:\\works\\workspace\\YoungGamProject\\src\\main\\webapp\\resources\\upload";
 	@Autowired
 	ReportBoardMapper piMapper;
 	
