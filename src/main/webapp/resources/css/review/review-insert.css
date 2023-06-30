@@ -4,10 +4,11 @@ html {
 	font-family: 'NanumSquareRound'; /* 페이지 전체 폰트 스타일 */
 }
 
+/*적용이안됨,,,,*/
 .main-input{
-	width: 240px;
-	height: 25px;
-	padding: 10px;
+   width: 260px;
+   /* height: 25px; */
+   padding: 13.5px;
 }
 
 .margin{
