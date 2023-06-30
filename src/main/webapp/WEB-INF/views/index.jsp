@@ -131,12 +131,26 @@
 						</div>
 						
 						<div class="review-body">
+						
+						<c:choose>
+						<c:when test="${review.riSpoil == 1}">
+						<div class="review-body-text">
+								<p>
+									<a href="/review?riNum=${review.riNum}&movieId=${review.riMovieId}">
+										스포일러 포함 리뷰입니다. </a>
+								</p>
+							</div>
+							</c:when>
+						<c:otherwise>
 							<div class="review-body-text">
 								<p>
 									<a href="/review?riNum=${review.riNum}&movieId=${review.riMovieId}">
 										${review.riContent} </a>
 								</p>
 							</div>
+						</c:otherwise>							
+							</c:choose>
+							
 						</div>
 
 						<div class="review-comment">조회수 ${review.riViewCnt}</div>
