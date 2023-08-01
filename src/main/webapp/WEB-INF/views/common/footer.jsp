@@ -39,7 +39,7 @@
 			
 			<!-- lottecinema -->
 			<div class="icon">
-				<a href="www.lottecinema.co.kr/NLCHSs" target="_blank"><img
+				<a href="https://www.lottecinema.co.kr/NLCHS" target="_blank"><img
 					src="https://www.lottecinema.co.kr/NLCHS/Content/images/common/logo.png" /></a>
 
 			</div>
